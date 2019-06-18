@@ -1,0 +1,92 @@
+<head>
+
+
+	%include templates/parts/head.html
+
+</head>
+<body>
+<!-- Navigation Bar -->
+
+	%include templates/parts/navBar.html
+
+<!-- Main Content -->
+<div class="container">
+<!-- Header -->
+<div id="pageHeader">
+<h1>
+				Gravity Ball
+			</h1>
+<p>
+				Problem written by Chris.
+			</p>
+</div>
+<hr/>
+<div class="row">
+<div class="col-md-12">
+<p>
+				Makes a ball that bounces as if under the influence of gravity.
+			</p>
+<p>
+<center>
+<img src="{{pathToRoot}}img/projects/gravityBall/demo.png" style="width:500px"/>
+</center>
+</p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<h2>Solution</h2>
+<pre id="editor" style="height:580px">public class BolaDeGravedad extends ProgramaDeGraficos {
+
+    private static final int TAMAÑO = 20;
+    private static final int RETRASAR = 20;
+    
+    private static final double GRAVEDAD = 0.5;
+    private static final double MOJADURA = 0.7;
+	
+	public void run() {
+		// Dibuja una bola en la esquina superior derecha
+		GOval oval = new GOval(0,0,TAMAÑO, TAMAÑO);
+		oval.conjuntoLleno(true);
+		añadir(oval);
+		
+		// Declarar variables de velocidad.
+		double vx = 3;
+		double vy = 0;
+		
+		while(true) {
+			// actualizar vy
+			vy = vy + GRAVEDAD;
+			
+			// ¿Debe rebotar la pelota?
+			if(oval.obtenerY() &gt; (obtenerAltura() - TAMAÑO) &amp;&amp; vy &gt; 0) {
+				vy = vy * -MOJADURA;
+			}
+			
+		    // moverse
+			oval.moverse(vx, vy);
+			
+			// pausa de animación
+			pausa(RETRASAR);
+		}
+	}
+}</pre>
+<script charset="utf-8" src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.setShowPrintMargin(false);
+   editor.renderer.setShowGutter(false); 
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+</div>
+</div>
+
+		
+		%include templates/parts/footer.html
+
+</div>
+</body>

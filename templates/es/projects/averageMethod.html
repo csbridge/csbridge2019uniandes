@@ -1,0 +1,29 @@
+<head>
+
+	%include templates/parts/head.html
+</head><body><!-- Navigation Bar -->
+	%include templates/parts/navBar.html
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Método promedio </h1><p> Escrito por Chris Piech y Mehran Sahami. </p></div><hr/><div class="row"><div class="col-md-12"><p> Esta demostración muestra un método simple que toma dos entradas y devuelve el promedio: <div class="well"><code>private double promedio(double a, double b)</code></div></p></div></div><div class="row"><div class="col-md-12"><h2> Solución </h2><pre id="editor" style="height:200px"> clase pública MétodoPromedio extiende ProgramaDeConsola {
+
+	public void run () {
+		imprimir (promedio (4, 5));
+		imprimir (promedio (10, 2));
+		imprimir (promedio (-4.1, 9.8));
+	}
+
+	Promedio doble privado (doble a, doble b) {
+		retorno (a + b) / 2;
+	}
+} </pre><script charset="utf-8" src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript"></script><script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.renderer.setShowGutter(false); 
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script></div></div>
+
+		
+		%include templates/parts/footer.html
+</div></body>

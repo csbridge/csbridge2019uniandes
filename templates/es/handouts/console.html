@@ -1,0 +1,40 @@
+<head>
+
+	%include templates/parts/head.html
+
+</head>
+<body>
+<!-- Navigation Bar -->
+
+	%include templates/parts/navBar.html
+
+<!-- Main Content -->
+<div class="container">
+<!-- Header -->
+<div id="pageHeader">
+<h1>
+				Console Program Reference
+			</h1>
+<p>
+				Written by Danielle Kain, Kevin Miller
+			</p>
+</div>
+<hr/>
+
+		Console Programs allow for interaction between your program and the user. In order to write a program, make sure your program extends ProgramaDeConsola: 
+		<div class="well"><code><pre>
+public class Ejemplo extends ProgramaDeConsola {
+		</pre></code></div>
+<br/>
+		One cool thing that Console Programs let you do is get input from the user. Below are some examples:
+		<div class="well"><code><pre>
+leerLinea(Cuerda mensajeRápido); //Lee una cadena de usuarios y devuelve
+leerInt(Cuerda mensajeRápido); //Lee en el usuario y lo devuelve.
+leerDoble(Cuerda mensajeRápido); //Lee un doble del usuario y lo devuelve.
+imprimir(Cuerda imprimirMensaje); //Imprime un mensaje a la consola.
+		</pre></code></div>
+
+		%include templates/parts/footer.html
+
+</div>
+</body>

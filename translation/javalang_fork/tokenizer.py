@@ -372,16 +372,16 @@ class JavaTokenizer(object):
         self.read_digits('01234567')
 
     def read_integer_or_float(self, c, c_next):
-        if c == '0' and c_next in 'xX':
-            return self.read_hex_integer_or_float()
-        elif c == '0' and c_next in 'bB':
-            self.read_bin_integer()
-            return BinaryInteger
-        elif c == '0' and c_next in '01234567':
-            self.read_octal_integer()
-            return OctalInteger
-        else:
-            return self.read_decimal_float_or_integer()
+        if c_next is not None:
+            if c == '0' and c_next in 'xX':
+                return self.read_hex_integer_or_float()
+            elif c == '0' and c_next in 'bB':
+                self.read_bin_integer()
+                return BinaryInteger
+            elif c == '0' and c_next in '01234567':
+                self.read_octal_integer()
+                return OctalInteger
+        return self.read_decimal_float_or_integer()
 
     def try_separator(self):
         if self.data[self.i] in Separator.VALUES:

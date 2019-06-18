@@ -106,11 +106,11 @@ TRANSLATION_OVERRIDES = {"es":
     r"(?P<loop_case>[Bb])ucle(?P<plural>s?)(?: \w+)? (?P<type_case>[Pp])ara": lambda match: "{}iclo{} {}or".format(
         "C" if match.group('loop_case').isupper() else "c",
         match.group('plural'),
-        "F" if match.group(type_case).isupper() else "f"),
+        "F" if match.group('type_case').isupper() else "f"),
     r"(?P<loop_case>[Bb])ucle(?P<plural>s?)(?: \w+)? (?P<type_case>[Mm])ientras": lambda match: "{}iclo{} {}hile".format(
         "C" if match.group('loop_case').isupper() else "c",
         match.group('plural'),
-        "W" if match.group(type_case).isupper() else "w"),
+        "W" if match.group('type_case').isupper() else "w"),
     }
 }
 

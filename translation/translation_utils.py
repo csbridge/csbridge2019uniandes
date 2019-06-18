@@ -103,12 +103,14 @@ TRANSLATION_OVERRIDES = {"es":
     # adjacent to "for loop" or "while loop" (e.g., in "re-enter the for loop while the condition is true,"
     # you end up with "... el bucle para mientras ...," which will be incorrectly parsed as:
     # "el bucle para while ..." when it should be "el bucle for mientras ...")
-    r"([Bb]ucles?(?: \w+)?) ([Pp])ara": lambda match: "{} {}or".format(
-        match.group(1),
-        "F" if match.group(2).isupper() else "f"),
-    r"([Bb]ucles?(?: \w+)?) ([Mm])ientras": lambda match: "{} {}hile".format(
-        match.group(1),
-        "W" if match.group(2).isupper() else "w"),
+    r"(?P<loop_case>[Bb])ucle(?P<plural>s?)(?: \w+)? (?P<type_case>[Pp])ara": lambda match: "{}iclo{} {}or".format(
+        "C" if match.group('loop_case').isupper() else "c",
+        match.group('plural'),
+        "F" if match.group(type_case).isupper() else "f"),
+    r"(?P<loop_case>[Bb])ucle(?P<plural>s?)(?: \w+)? (?P<type_case>[Mm])ientras": lambda match: "{}iclo{} {}hile".format(
+        "C" if match.group('loop_case').isupper() else "c",
+        match.group('plural'),
+        "W" if match.group(type_case).isupper() else "w"),
     }
 }
 

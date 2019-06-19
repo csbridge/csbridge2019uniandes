@@ -1,0 +1,75 @@
+<head>
+
+	%include templates/parts/head.html
+</head><body><!-- Navigation Bar -->
+	%include templates/parts/navBar.html
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Alcance variable </h1><p> Escrito por Chris Piech y Mehran Sahami. </p></div><hr/><div class="row"><div class="col-md-12"><h2> Variables locales </h2><p> Las variables locales se crean localmente al método (o al bloque ... consulte la sección &quot;Alcance del bloque&quot; más abajo) en el que están definidas. Se destruyen cuando se ha completado la ejecución del método. Solo se puede acceder a las variables locales desde el método en el que se declaran. Debido a su naturaleza transitoria, las variables locales no pueden almacenar información persistente sobre un objeto entre llamadas de método. </p></div></div><div class="row"><div class="col-md-12"><h2> Ejemplo de variables locales </h2><p> Considere, por ejemplo, el siguiente fragmento de código. </p><pre id="editor" style="height:200px"> clase pública UnEjemplo extiende ProgramaDeConsola {
+
+	método de vacío públicoUno
+		int a = leerInt (&quot;Entrar a:&quot;);
+		imprimir (&quot;a =&quot; + a);
+ 	}
+
+	método de vacío público
+		int b = a; // ¡ERROR!: No se puede referir a la variable a en métodoUno
+		imprimir (&quot;b =&quot; + b);
+	}
+} </pre><p> Las variables a y b son variables locales declaradas dentro de diferentes métodos en la clase UnEjemplo. Debido a que estas variables son variables locales, a solo se puede hacer referencia a dentro de métodoUno y la variable b solo se puede acceder dentro de métodoDos. Nuestro intento de inicializar b utilizando el valor de a es ilegal, ya que el código en métodoDos no puede acceder a las variables locales desde métodoUno o cualquier otro método. </p><p> Debido a que los valores de las variables locales no persisten después de que su método de contención se haya completado, la variable a se destruirá cuando el métodoUno haya finalizado la ejecución. La próxima vez que se llame a métodoUno, se creará una nueva variable a. </p></div></div><div class="row"><div class="col-md-12"><h2> Alcance del bloque </h2><p> Mientras que normalmente pensamos que las variables locales son locales a un método en particular, en Java las variables locales son en realidad locales a un bloque de código. Mientras que un método define un bloque de código (ya que las llaves de apertura y cierre del método definen un bloque), for y ciclos while que, las sentencias if, y otras construcciones también se consideran bloques de código. Si declaramos una variable local dentro de una de estas construcciones, la variable local se creará cuando se declare en el bloque y se destruya cuando el bloque finalice la ejecución. </p><p> Considere el siguiente ejemplo: </p><pre id="editor2" style="height:400px"> clase pública UnEjemplo extiende ProgramaDeConsola {
+	
+	métodos de vacío público
+		int a = 4;
+
+ 	 	para (int i = 0; i &lt;5; i ++) {
+			int b = a; // esto está bien
+
+			if (a&gt; b) {// está bien para acceder ayb aquí
+				int c = 3;
+
+				imprimir (i); // esta bien para acceder yo aqui
+				imprimir (b); // esta bien para acceder ab aqui
+				imprimir (c); // está bien acceder ac aquí
+			}
+
+			imprimir (c); // ilegal: c ya no está en el alcance aquí
+		}
+
+		imprimir (a); // está bien acceder a un aquí
+		imprimir (b); // ilegal: b está solo en alcance en el cuerpo de ciclo for
+		imprimir (i); // ilegal: solo estoy en alcance en el cuerpo de ciclo for
+	}
+} </pre><p> La variable a es local a métodoTres, por lo que acceder a dentro del ciclo for, o en el println está bien. Las variables i y b están solo en el alcance (es decir, &quot;vivo&quot;) dentro de los límites del ciclo for el cual se declaran. Ya no están disponibles cuando las dos últimas impresoras intentan acceder a ellas. La variable c solo está dentro del alcance dentro de los límites del cuerpo de la sentencia if en la que se declara. Tenga en cuenta que se creará una nueva copia de c cada vez que se ejecute el cuerpo de la sentencia if, por lo tanto, no se puede utilizar para almacenar valores a través de iteraciones del bucle. </p></div></div><!--<div class="row">
+			<div class="col-md-12">
+				<h2>Instance Variables</h2>
+				<p>More coming...</p>
+			</div>
+		</div>--><div class="row"><div class="col-md-12"><h2> Constantes </h2><p> A veces nos resultará útil definir una &quot;variable&quot; cuyo valor no cambie durante todo el programa. Tal variable se llama constante. En este caso, la constante no cumple el propósito tradicional de una variable (es decir, almacenar un valor de programa temporal). Para declarar una variable como una constante, use la palabra clave final al declarar la variable. Prácticamente todas las constantes se declaran fuera de todas las llamadas de métodos, de modo que su alcance es el programa completo. </p><p> Las constantes generalmente se escriben en mayúsculas para mostrar que no cambian. Las palabras clave final privada estática, que incluimos para una buena práctica, son importantes cuando escribe programas más grandes. <p> Considera este ejemplo: </p><pre id="editor3" style="height:180px"> clase pública UnEjemplo extiende ProgramaDeConsola {
+	
+	final estático privado ACELERACION_DE_GRAVEDAD = 9.8;
+
+	public void run () {
+		doble velocidadInicial = 0;
+		doble nuevaVelocidad = velocidadInicial + ACELERACION_DE_GRAVEDAD;
+		imprimir (&quot;velocidad después de 1 s:&quot; + nuevaVelocidad);
+	}
+} </pre></p></div></div><script charset="utf-8" src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript"></script><script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.renderer.setShowGutter(false); 
+
+   var editor2 = ace.edit("editor2");
+   editor2.setTheme('ace/theme/eclipse');
+   editor2.getSession().setMode("ace/mode/java");
+   editor2.setReadOnly(true);
+   editor2.renderer.setShowGutter(false);
+
+   var editor3 = ace.edit("editor3");
+   editor3.setTheme('ace/theme/eclipse');
+   editor3.getSession().setMode("ace/mode/java");
+   editor3.setReadOnly(true);
+   editor3.renderer.setShowGutter(false);
+</script>
+		
+		%include templates/parts/footer.html
+</div></body>

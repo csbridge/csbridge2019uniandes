@@ -1,0 +1,116 @@
+<head>
+
+	%include templates/parts/head.html
+</head><body><!-- Navigation Bar -->
+	%include templates/parts/navBar.html
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Ondas de sonido </h1><p> Inspirado por, y construido a partir de una asignación por Keith Schwarz. Creado por Chris Piech Kevin Miller y Bryce Cronkite-Ratcliff </p><p> Folletos: <a href="{{pathToRoot}}en/handouts/arrayLists.html">ArrayLists</a></p></div><hr/><div class="row"><div class="col-md-12"><p> Los seres humanos siempre están buscando nuevos sonidos, y recientemente un número creciente de artistas ha estado usando programas para crear experiencias que los instrumentos no pueden producir. Aquí hay dos ejemplos de canciones que fueron creadas con sonidos generados por computadora: </p><p><center><iframe allowfullscreen="" frameborder="0" height="315" src="//www.youtube.com/embed/mehLx_Fjv_c" width="400"></iframe><iframe allowfullscreen="" frameborder="0" height="315" src="//www.youtube.com/embed/Sk9XYQMRiLY" width="400"></iframe></center></p><p> Escriba un programa que lea las notas de un archivo y reproduzca la composición para el usuario. </p><!--<p>
+					<center>
+						<img style="width:450px" src="{{pathToRoot}}img/projects/music/mary.png">
+
+					</center>
+				</p>
+				<p>Just for fun: Can you figure out what the above song plays?</p>--></div></div><div class="row"><div class="col-md-12"><h2> Audio </h2><p> Hay tres métodos de audio que te permitirán generar y reproducir notas. </p><div class="well"><code>ListaDeArreglo&lt;Doble&gt; <i>muestras</i>= Audio.obtenerMuestrasDeNota( <i>frecuencia</i>, <i>longitud</i>)</code></div><div class="well"><code>Audio.jugar( <i>matrizListaDeDobles</i>)</code></div><p><b>obtenerMuestrasDeNota</b> es un método que toma dos números, una frecuencia y una longitud en muestras (hay 44.100 muestras por segundo en sonido con calidad de CD). La frecuencia define la nota que se toca. Por ejemplo, una nota C tiene una frecuencia de 130.81 Hz y una nota G tiene una frecuencia de 196.00 Hz. Debes usar los contantes definidos. Este método devuelve un ListaDeArreglo de Dobles, que representa las muestras de la onda que hace el sonido. </p><p> Tomemos la ola de abajo como ejemplo. Tiene una frecuencia de 130.81 Hz que es una nota C. El método muestreará la onda y devolverá los dobles recogidos de la muestra, en el rango (-1, 1): </p><p><center><img src="{{pathToRoot}}img/projects/music/sound2.png" style="width:450px"/><br/><i style="text-align:center">Imagen cortesía de Keith</i></center><p></p><p><b>play</b> es un método que toma una lista de muestras (que debe ser del tipo ListaDeArreglo &lt;Double&gt;) y lo reproduce para el usuario. </p><p><b>getNotes</b> es un método que toma el nombre de una canción y devuelve una ListaDeArreglo &lt;String&gt; con todas las notas de la canción. Las letras en ListaDeArreglo pueden ser notas en mayúsculas o minúsculas (ag y p para pausa). Aquí hay un ejemplo ListaDeArreglo: {a, a, G, f, p, B}. </p></p></div></div><div class="row"><div class="col-md-12"><h2> 1) tocar una nota </h2><p> Para comenzar, intente generar una única nota en C de longitud <i>LONGITUD_DE_LA_NOTA</i> y reprodúzcala al usuario. Luego trata de tocar algunas notas diferentes. Intente tocar las notas E, C, C. Finalmente, toque una nota una octava hacia arriba y asegúrese de que pueda notar la diferencia. </p></div></div><div class="row"><div class="col-md-12"><h2> 2) Haz un programa musical </h2><p> Este proyecto está abierto. En este punto puedes programar lo que quieras. ¿Te gustaría crear un piano gráfico? ¿Qué tal generar sonidos más complejos? Vea las extensiones e intente e implemente todas las que desee. </p></div></div><div class="row"><div class="col-md-12"><h2> Consejos y trucos </h2><p><b>Jugando una octava <br/></b> Para jugar una octava, todo lo que tienes que hacer es duplicar la frecuencia. Por ejemplo, si el C original es 130.81, entonces, una octava más alta en C es 2 * 130.81 = 261.62 </p><p><b>Métodos de uso <br/></b> Puede que le resulte más fácil escribir un método para tocar cada nota: <div class="well"><code>private void jugarG() { <br/>&nbsp;&nbsp;&nbsp;ListaDeArreglo&lt;Doble&gt; ejemplo = Audio.obtenerMuestrasDeNota(G, LONGITUD_DE_LA_NOTA); <br/>&nbsp;&nbsp;&nbsp;Audio.jugar(ejemplo); <br/>}</code></div></p><b>Comparar cuerdas <br/></b><p> Para comparar cadenas, no use el operador ==. En su lugar, debe utilizar: </p><div class="well"><code><i>s1</i>.es_igual_a( <i>s2</i>)</code></div><p>¡Eso es todo! Bienvenido al mundo de ArrayLists y música de computadora. Si terminas temprano intenta una extensión. </p></div></div><hr/><div class="row"><div class="col-md-12"><h2> Extensión 1: Escribe tu propia música </h2><p> Intenta componer una melodía a partir de diferentes notas. Añadir frases de nivel superior a las canciones. Usa bucles y métodos para hacer sonidos complejos. </p></div></div><div class="row"><div class="col-md-12"><h2> Extensión 2: Acordes </h2><p> Dos tocan dos (o más) notas simultáneamente, simplemente sumas cada valor en la muestra. Luego, para hacer que el volumen sea normal, divida la muestra resultante por su valor máximo. </p><p> Puede hacer sonidos más ricos, más cercanos a los utilizados por Tycho y Pretty Lights (en los ejemplos al principio). </p></div></div><div class="row"><div class="col-md-12"><h2> Extensión 3: Interfaz gráfica </h2><p> Haga una interfaz gráfica utilizando una cuadrícula de GRectos donde cada fila representa una nota (C, D, G, E, A) y cada columna representa un punto en el tiempo. Si un GRect está activado (es de color azul), debe tocar esa nota en ese momento. </p><p> Pregúntenos acerca de los botones </p><p></p><center><img src="{{pathToRoot}}img/projects/music/gcomposer.png" style="width:100%"/></center><p></p></div></div><!--<div class="row">
+			<div class="col-md-12">
+				<h2>Audio</h2>
+				<p>
+					There are two Audio methods that will allow you to generate and play notes.
+				</p>
+				<div class="well"><code>ListaDeArreglo&lt;Double&gt; <i>samples</i>= Audio.obtenerMuestrasDeNota(<i>frequency</i>, <i>length</i>)</code></div>
+				<div class="well"><code>Audio.play(<i>matrizListaDeDobles</i>)</code></div>
+				<p><b>obtenerMuestrasDeNota</b> is a method that takes in two numbers, a frequency and a length in samples (there are 44,100 samples per second in CD quality sound). The frequency defines the note being played. For example a C note has frequency 130.81 Hz and a G note has frequency 196.00 Hz. You should use the contants defined. The method returns an ListaDeArreglo of Doubles, which represents the samples of the wave that makes the sound. </p>
+
+				<p>Say the wave below has a frequency of 130.81 Hz (and is thus a C note). The method will sample the wave, and return the doubles collected from the sample, in the range (-1, 1):</p>
+
+				<p>
+					<center>
+					<img style="width:450px" src="{{pathToRoot}}img/projects/music/sound2.png">
+					<br/><i style="text-align:center">Image courtesy of Keith</i>
+				</center>
+				</p>
+
+				<p><b>play</b> is a method that takes in a list of samples (which must be of type ListaDeArreglo&lt;Double&gt;) and plays it to the users.</p>
+				
+				<p>To get started try and generate a single C note of length <i>LONGITUD_DE_LA_NOTA</i> and play it back to the user.</p>
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>User Composition</h2>
+				<p>
+					Write code that continually collects notes from the user (until they type "play") and puts them together into a single song. If the user enters one of the notes in the pentatonic scale (C, D, G, E or A) add the samples for that note to the song. If the user enters "pause", add <i>LONGITUD_DE_LA_NOTA</i> number of samples with value 0. 
+				</p>
+
+				<p>To compare strings, don't use the == operator. Instead you should use:</p>
+				<div class="well"><code><i>s1</i>.equals(<i>s2</i>)</code></div>
+				<p>That's all! Welcome to the world of ArrayLists and computer music. If you finish early try an extension.</p>
+			</div>
+		</div>
+
+		<hr>
+
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Extension 1: Chords</h2>
+				<p>
+					If you want to play two notes at the same time the solution is simple, you just add the waves together (in other words you add each value in the list of doubles together).
+				</p>
+
+				<p>
+					<center>
+					<img style="width:450px" src="{{pathToRoot}}img/projects/music/sumofwaves.png">
+				</center>
+				</p>
+
+				<p>
+					When you add two waves together, some points may become larger than 1 or smaller than -1 (the bounds for a sound wave). After you add your samples together you should normalize the wave. In plainer words, find the maximum value in your ListaDeArreglo and divide all values by the max.
+				</p>
+
+				<p>Add "c-chord" to the list of commands the user can enter. C chords are made up of the notes C, E and G played at the same time.</p>
+
+				
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Extension 2: Algorithmic Song</h2>
+				<p>
+					Add higher level phrases that the user can enter. Use loops and methods to make complex sounds. For example, maybe you want to let the user enter the text "chorus" and then you can algorithmically create a series of notes that make up the chorus of a song.
+				</p>
+
+				<p>You can make richer sounds, that are closer to the ones used by Tycho and Pretty Lights (in the examples at the beggining).</p>
+
+				<p>Please share any songs you create with us.</p>
+				
+				
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Extension 3: Graphical Interface</h2>
+				<p>
+					Make a graphical interface using a grid of GRects where each row represents a note (C, D, G, E, A) and each column represents a point in time. If a GRect is turned on (is colored blue) you should play that note at that time.
+				</p>
+
+				<p>Ask us about buttons</p>
+
+				<p>
+					<center>
+					<img style="width:100%" src="{{pathToRoot}}img/projects/music/gcomposer.png">
+				</center>
+				</p>
+
+
+				
+			</div>
+		</div>-->
+
+		
+		%include templates/parts/footer.html
+</div></body>

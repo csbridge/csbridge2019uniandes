@@ -1,0 +1,124 @@
+<head>
+
+
+	%include templates/parts/head.html
+
+</head>
+<body>
+<!-- Navigation Bar -->
+
+	%include templates/parts/navBar.html
+
+<!-- Main Content -->
+<div class="container">
+<!-- Header -->
+<div id="pageHeader">
+<h1>
+				Rockets
+			</h1>
+<p>
+				Written by Chris Piech
+			</p>
+<p>
+				Handouts:
+				<a href="{{pathToRoot}}en/handouts/arrayLists.html">ArrayLists</a>
+</p>
+</div>
+<hr/>
+<div class="row">
+<div class="col-md-12">
+<p>
+					On mouseclick fire a rocket! There is no limit to the number of rockets you can fire.	
+				</p>
+<p>
+<center>
+<img src="{{pathToRoot}}img/projects/rockets/demo.png" style="width:100%"/>
+</center>
+</p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<h2>Solution</h2>
+<pre id="editor" style="height:1000px">public class RocketPaddle extends ProgramaDeGraficos {
+	
+	// constantes
+	public static final int ALTURA_DE_APLICACION = 600;
+	private static final double TAMAÑO_DE_LA_BOLA = 10;
+	private static final int PADLE_Y = ALTURA_DE_APLICACION - 50;
+	private static final int PODER_ANCHO = 100;
+	private static final int ALTURA_DE_PADDLE = 20;
+	
+	// la lista de cohetes
+	private ListaDeArreglo<goval> listaDeCohetes;
+	private GRect paleta;
+	
+	public void run() {
+		listaDeCohetes = new ListaDeArreglo<goval>();
+		paleta = new GRect(0, PADLE_Y, PODER_ANCHO, ALTURA_DE_PADDLE);
+		paleta.conjuntoLleno(true);
+		añadir(paleta);
+		añadirMouseListeners();
+		while(true) {
+			cohetesAnimados();
+			pausa(10);
+		}
+	}
+	
+	public void ratónMovido(EventoDelRatón e){
+		double x = e.obtenerX() - PODER_ANCHO/2;
+		paleta.escogerLocalización(x, PADLE_Y);
+	}
+	
+	public void ratónPresionado(EventoDelRatón e) {
+		double x = e.obtenerX();
+		double y = PADLE_Y;
+		GOval r = new GOval(x, y, TAMAÑO_DE_LA_BOLA, TAMAÑO_DE_LA_BOLA);
+		r.conjuntoLleno(true);
+		r.establecerColor(Color.AZUL);
+		
+		// agrega el cohete a la pantalla
+		añadir(r);
+		
+		// agrega el cohete a la lista
+		listaDeCohetes.añadir(r);
+	}
+
+	private void cohetesAnimados() {
+		// bucle sobre la lista hacia atrás para que podamos eliminar de forma segura
+		// de la lista.
+		for(int i = listaDeCohetes.tamaño() - 1; i &gt;= 0; i--) {
+			GOval oval = listaDeCohetes.obtener(i);
+			
+			// mover el cohete
+			oval.moverse(0, -5);
+			
+			// removerse el cohete?
+			if(oval.obtenerY() &lt; 0) {
+				retirar(listaDeCohetes.obtener(i));
+				listaDeCohetes.retirar(i);
+			}
+		}
+	}
+}</goval></goval></pre>
+<script charset="utf-8" src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.renderer.setShowGutter(false); 
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+</div>
+</div>
+
+
+		
+
+		
+		%include templates/parts/footer.html
+
+</div>
+</body>

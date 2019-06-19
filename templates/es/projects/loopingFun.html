@@ -1,0 +1,40 @@
+<head>
+
+	%include templates/parts/head.html
+</head><body><!-- Navigation Bar -->
+	%include templates/parts/navBar.html
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Diversión en bucle </h1><p> Escrito por Lisa Yan </p></div><hr/><div class="row"><div class="col-md-12"><p> Estos son programas de práctica para ayudarlo a familiarizarse con los bucles en Java. Se ordenan de lo más fácil a lo más difícil. </p><h2> Actualización de bucle </h2><p> Recordemos la estructura general de un ciclo for: <pre>
+para (int i = 0; i &lt;15; i ++) {
+    // algun codigo ...
+}
+</pre><p> El bucle anterior se ejecuta durante 15 iteraciones. Puedes analizar el significado de un bucle desde la primera línea: </p><ul><li> Crea un contador <code>i</code> que comienza en 0. </li><li> En cada iteración del bucle, verifique si <code>i &lt; 15</code>. </li><li> Si <code>i &lt; 15</code>, ejecute el código dentro del bucle. Mientras ejecuta el código de bucle, puede utilizar el valor de <code>i</code>. Así, por ejemplo, la primera vez que se ejecuta el bucle, el valor de <code>i</code> es cero. <li> Al final de la ejecución del código de bucle, aumente <code>i++</code>. </li><li> Si <code>!(i &lt; 15)</code>, salga del bucle. Por lo tanto, la última vez que se ejecuta el código de bucle, el valor de <code>i</code> es 14, e <code>i</code> se incrementa a 15. Luego falla la verificación de <code>i &lt; 15</code> y el código de bucle no se ejecuta. </li></li></ul><br/><p><u><b>¡Precaución!</b></u>¡Es muy difícil detectar errores de programación en la condición de bucle! Por lo tanto, siempre sugerimos que diseñe el bucle más básico e incremente el contador del bucle en uno (es decir, <code>i++</code>). ¡Y luego no cambie el valor del contador de bucles dentro del propio bucle! </p><ul><li> El siguiente código solo se ejecutará cuatro veces !!! ¿Ves por qué? </li><pre>
+// ¡No hagas esto! ¡Esto es difícil de depurar!
+para (int i = 0; i &lt;10; i ++) {
+    i + = 2; // ¡¡¡malo !!!
+    imprimir (i);
+}
+</pre><li> Una mejor manera de hacer el código anterior: </li><pre>
+// Utiliza otra variable para mantener seguro el contador de bucles.
+para (int i = 0; i &lt;10; i ++) {
+    int j = i + 2; // no cambia el valor de i
+    imprimir (j);
+}
+</pre></ul><br/><p> Los siguientes ejercicios tratan sobre el uso del contador de bucle for <code>i</code>. </p><h2> Diversión en bucle 1 </h2><p> Trate de producir la siguiente salida con un bucle. Imprime los primeros diez números impares, comenzando desde 1. </p><center><img src="{{pathToRoot}}img/projects/loopingFun/loopingfun1.png" style="width:500px;border:2px solid grey"/></center><p> Extensión: ahora intente imprimir los primeros diez números pares, comenzando desde 0. </p><h2> Diversión en bucle 2 </h2><p> Trate de producir la siguiente salida con un bucle. Imprima los primeros diez números pares en orden decreciente. </p><center><img src="{{pathToRoot}}img/projects/loopingFun/loopingfun2.png" style="width:700px;border:2px solid grey"/></center><p>¿Puede resolver este problema sin cambiar la condición de bucle del problema anterior? Es decir, comience desde el siguiente ciclo for el código: </p><pre>
+para (int i = 0; i &lt;10; i ++) {
+    // algun codigo ...
+}
+</pre><p>¿Cómo resolvería el problema utilizando la siguiente condición de bucle? </p><pre>
+para (int i = 0; i &lt;20; i ++) {
+    // algun codigo ...
+}
+</pre></p><h2> Diversión en bucle 3 </h2><p> Use un bucle, pero imprima todo en una sola línea. Recuerde que <code>imprimir()</code> agrega un salto de línea / nueva línea, mientras que <code>impresión()</code> no lo hace. </p><p> Imprime los cuadrados, comenzando desde 1. </p><center><img src="{{pathToRoot}}img/projects/loopingFun/loopingfun3.png" style="width:700px;border:2px solid grey"/></center><p>¡Intenta evitar una coma al final de la última casilla! </p><h2> Diversión en bucle 4 </h2><p> Tiempo para ciclos for! Imprime las coordenadas de una cuadrícula de 5x5. </p><center><img src="{{pathToRoot}}img/projects/loopingFun/loopingfun4.png" style="width:500px;border:2px solid grey"/></center><p> Sugerencia: pruebe la siguiente estructura de código: </p><pre>
+para (int i = 0; i &lt;5; i ++) {
+    para (int j = 0; j &lt;5; j ++) {
+        // algun codigo ...
+    }
+}
+</pre><h2> Práctica adicional: Ciclos while </h2><p>¿Quieres más práctica con ciclos while? Haga todos los ejercicios anteriores con un ciclo while que en lugar de un ciclo for. ¡Buena suerte! </p></div></div>
+
+		
+		%include templates/parts/footer.html
+</div></body>

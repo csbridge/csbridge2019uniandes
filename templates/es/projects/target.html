@@ -1,0 +1,47 @@
+<head>
+
+	%include templates/parts/head.html
+</head><body><!-- Navigation Bar -->
+	%include templates/parts/navBar.html
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Objetivo </h1><p> Escrito por Eric Roberts y Mehran Sahami </p><p> Folletos: <a href="{{pathToRoot}}en/handouts/graphics.html">Referencia Gráfica</a></p><p> Ejemplos: <a href="{{pathToRoot}}en/project/drawPeople.html">dibujar personas</a></p></div><hr/><div class="row"><div class="col-md-12"><p> Supongamos que ha sido contratado para producir un programa que dibuja una imagen de un objetivo de tiro con arco que se parece a esto: </p><p><center><img src="{{pathToRoot}}img/projects/target/target.png" style="width:500px"/></center></p><p> Esta figura es simplemente tres objetos GOval, dos rojos y uno blanco, dibujados en el orden correcto. El círculo exterior debe tener un radio de 150 píxeles, el círculo blanco tiene un radio de 100 píxeles y el círculo rojo interno tiene un radio de 50 píxeles. La figura debe estar centrada en la ventana. </p></div></div><!--<div class="row">
+			<div class="col-md-12">
+				<h2>Solution</h2>
+
+
+<pre id="editor" style="height:300px">public class Target extends ProgramaDeGraficos {
+
+	public void run() {
+		drawCenteredCircle(150, Color.RED);
+		drawCenteredCircle(100, Color.WHITE);
+		drawCenteredCircle(50, Color.RED);
+	}
+
+	private void drawCenteredCircle(int radius, Color color) {
+		GOval oval = new GOval(radius * 2, radius * 2);
+		double x = (obtenerAncho() - oval.obtenerAncho()) / 2;
+		double y = (obtenerAltura() - oval.obtenerAltura()) / 2;
+		oval.conjuntoLleno(true);
+		oval.establecerColor(color);
+		add(oval, x, y);
+	}
+
+}</pre>
+    
+<script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.renderer.setShowGutter(false); 
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+
+			</div>
+
+		</div>-->
+
+		
+		%include templates/parts/footer.html
+</div></body>

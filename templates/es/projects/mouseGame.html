@@ -1,0 +1,10 @@
+<head>
+
+	%include templates/parts/head.html
+</head><body><!-- Navigation Bar -->
+	%include templates/parts/navBar.html
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> La línea </h1><p> Escrito por Chris </p><p> Folletos: <a href="{{pathToRoot}}en/handouts/arrayLists.html">ArrayLists</a><br/> Ejemplos: <a href="{{pathToRoot}}en/projects/rocketShip.html">cohetes</a></p></div><hr/><div class="row"><div class="col-md-12"><p> Escribe un juego donde el usuario pueda usar el mouse para mover una bola en la parte inferior de la pantalla. Se anima un camino que baja por la pantalla y si la pelota golpea una barrera, el juego termina. </p><p><center><img src="{{pathToRoot}}img/projects/mouseGame/path.png" style="float:left; width:400px"/><img src="{{pathToRoot}}img/projects/mouseGame/loops.png" style="float:left; width:400px"/></center></p><p> Una idea que encontramos muy útil fue que es más fácil: <ul><li> hacer el fondo negro, <li> Añadir rectángulos blancos (el camino) <li> Asegúrate de que todas las esquinas de la bola de los usuarios siempre colisionen con algo :). </li></li></li></ul></p><p> En los ejemplos anteriores creamos GRects muy por encima de la pantalla, colocamos todos los rectángulos en un ListaDeArreglo y luego cada cuadro movía todos los GRects en la lista de matrices hacia abajo. </p><p> Hay muchas otras versiones de un concepto similar. En el ejemplo de la izquierda creamos aleatoriamente una ruta. En el ejemplo de la derecha, el usuario debe esquivar los bloques que se crean al azar. </p><p><center><img src="{{pathToRoot}}img/projects/mouseGame/random.png" style="float:left; width:400px"/><img src="{{pathToRoot}}img/projects/mouseGame/demo1.png" style="float:left; width:400px"/></center></p></div></div>
+
+		
+		%include templates/parts/footer.html
+</div></body>

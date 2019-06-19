@@ -1,0 +1,12 @@
+<head>
+
+	%include templates/parts/head.html
+</head><body><!-- Navigation Bar -->
+	%include templates/parts/navBar.html
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Hoja de Sintaxis de JavaScript </h1><p> Escrito por Brian Lam </p></div><hr/><h2 id="toc_1"> Declarar y usar variables </h2><h1 id="toc_0"> Hoja de Sintaxis de JavaScript </h1><h2 id="toc_1"> Declarar y usar variables </h2><p> Las variables en JavaScript no tienen un tipo fijo como en Java. Debido a esto, no tiene que especificar el tipo al crear una variable. En su lugar, utilizará la palabra clave <strong>var</strong>. </p><pre><code>var a = 10; var b = 20; var c = a + b;</code></pre><h2 id="toc_2"> Si las declaraciones </h2><p> Si las declaraciones son exactamente las mismas que en Java. </p><pre><code>if (algunaFunciónBooleana()) { return 1; }</code></pre><h2 id="toc_3"> Ciclos while </h2><p> Ciclos while que son los mismos también. </p><pre><code>while (algunaCondicion()) { suma += 1; }</code></pre><h2 id="toc_4"> Ciclos for </h2><p> Los ciclos for son casi exactamente iguales, excepto la variable del contador. </p><pre><code>// Encuentra la suma de los números del 0 al 10, ambos inclusive. var suma = 0; for (var i = 0; i &lt;= 10; i++) { suma += i; }</code></pre><h2 id="toc_5"> Funciones </h2><p> Observe dónde está acostumbrado a ver <strong>el vacío privado</strong>, utilizará la <strong>función de</strong> palabra clave. Observe que los parámetros no tienen el tipo especificado. </p><pre><code>función algunaFunción (a, b) { return a === b; }</code></pre><h2 id="toc_6"> Los operadores </h2><p> Todos los operadores son iguales, excepto la comparación (==). El operador de comparación en Java es == (dos signos iguales), mientras que la comparación en JavaScript es ===. </p><pre><code>a === b; // a es igual ab a !== b; // a no es igual ab</code></pre><h2 id="toc_7"> Oyentes del evento </h2><pre><code>objeto.evento = función(e) { // tu codigo }</code></pre><h3 id="toc_8"> Eventos comunes </h3><ul><li> al hacer clic </li><li> Onmousedown </li><li> onmouseup </li><li> onkeypress </li><li> onkeydown </li><li> onkeyup </li></ul>
+
+
+
+		
+		%include templates/parts/footer.html
+</div></body>

@@ -1,0 +1,332 @@
+<head>
+
+<title>Intro to CS</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF8">
+
+<!-- Fonts -->
+<!--<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,600,700,900,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900,600italic,700italic,900italic' rel='stylesheet' type='text/css'>-->
+
+<!-- Styles -->
+
+<link href="../../plugins/bootstrap-3.1/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../../style.css">
+
+<!-- Java Script -->
+<script src="../../plugins/jquery.min.js"></script>
+<script src="../../plugins/bootstrap-3.1/js/bootstrap.min.js"></script>
+
+<script src="../../karel/ace/ace.js" type="text/javascript"></script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});
+  </script>-->
+</head><body><!-- Navigation Bar -->
+<nav class="navbar-inverse navbar-default" role="navigation">
+  <div class="container-fluid">
+  	<div class="container">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="/">CS Bridge</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <!--<li ><a href="#">Link</a></li>-->
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Handouts <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<!--<li><a href="../../en/handouts/sections.html">Sections</a></li>-->
+	          	<li><a href="../../en/handouts/karel.html">Karel Reference</a></li>
+							<!--<li><a href="../../en/handouts/submission.html">How to Submit Your Work</a></li>-->
+	          	
+	          	<li><a href="../../en/handouts/console.html">Console Reference</a></li>
+	          	<li><a href="../../en/handouts/random.html">Random Generator Reference</a></li>
+	          	<li><a href="../../en/handouts/graphics.html">Graphics Reference</a></li>
+	          	<li><a href="../../en/handouts/events.html">Events Reference</a></li>
+
+	          	
+	            <li><a href="../../en/handouts/arrayLists.html">Array Lists</a></li>
+	          	<!--
+	          	<li><a href="../../handouts/events.html">Events Reference</a></li>
+                <li><a href="../../projects/jsJSSyntax.html">JavaScript Syntax Reference</a></li>
+                <li><a href="../../handouts/htmlReference.html">HTML Reference</a></li>
+                <li><a href="../../handouts/uploadWebsite.html">Uploading a Website Reference</a></li>
+
+	          	<li><a href="../../handouts/whatsNext.html">Whats Next</a></li>
+	          	
+	          	
+	            <li><a href="../../handouts/operations.html">Operations</a></li>
+	            <li><a href="../../handouts/graphics.html">Graphics</a></li>
+	            <li><a href="../../handouts/passingData.html">Passing Data</a></li>-->
+	            
+	          </ul>
+	        </li>
+
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="../../en/projects/collectNewspaper.html">Collect Newspaper</a></li>
+	          	<li><a href="../../en/projects/efes.html">Build Efes</a></li>
+	          	<li><a href="../../en/projects/mountain.html">Mountain Karel</a></li>
+	          	<li><a href="../../en/projects/randomPainter.html">Random Painter</a></li>
+	          	
+	          	<li class="divider"></li>
+	          	<li><a href="../../en/projects/sandcastles.html">Sandcastles</a></li>
+	          	<li><a href="../../en/projects/favoriteNumber.html">Favorite Number</a></li>
+	          	<li><a href="../../en/projects/medicine.html">Medicine</a></li>
+	          	<li><a href="../../en/projects/someSum.html">Some Sum</a></li>
+	          	<li><a href="../../en/projects/gameOfStones.html">Nimm</a></li>
+	          	
+
+	          	<li class="divider"></li>
+
+	          	<li><a href="../../en/projects/awesome.html">Programming is Awesome</a></li>
+	          	<li><a href="../../en/projects/stringArt.html">String Art</a></li>
+	          	<li><a href="../../en/projects/randomCircles.html">Random Circles</a></li>
+	          	<li><a href="../../en/projects/hailstone.html">Hailstone</a></li>
+
+	            <li class="divider"></li>
+	            <li><a href="../../en/projects/bouncingBall.html">Bouncing Ball</a></li>
+	          	<li><a href="../../en/projects/madMethods.html">Mad Methods</a></li>
+	          	<li><a href="../../en/projects/target.html">Target</a></li>
+	          	<li><a href="../../en/projects/illusion.html">Optical Illusion</a></li>
+	          	<li><a href="../../en/projects/sunset.html">Short Film</a></li>
+
+	          	<li class="divider"></li>
+
+	          	<li><a href="../../en/projects/makingTracks.html">Making Tracks</a></li>
+	             <li><a href="../../en/projects/stampTool.html">Stamp Tool</a></li>
+	          	<li><a href="../../en/projects/catchMeIfYouCan.html">Catch Me If You Can</a></li>
+	          	<li><a href="../../en/projects/breakout.html">Breakout</a></li>
+
+							<!--
+	          	<li class="divider"></li>
+
+	          	<li><a href="../../en/projects/sortedNumbers.html">Sorted Numbers</a></li>
+	          	<li><a href="../../en/projects/snow.html">Snow</a></li>
+	          	<li><a href="../../en/projects/mouseGame.html">The Line</a></li>
+	          	<li><a href="../../en/projects/music.html">Music</a></li>
+							-->
+	          	<!--
+	            <li><a href="../../projects/drawPeople.html">Three's a Crowd</a></li>
+	            
+	            <li><a href="../../projects/madLibs.html">Mad Libs</a></li>
+	            <li><a href="../../projects/secret.html">Secret</a></li>
+
+	     
+
+                <li class="divider"></li>
+	            
+	            <li><a href="../../projects/breakout.html">Breakout</a></li>
+	            
+	            
+	            <li><a href="../../projects/music.html">Waves of Sound</a></li>
+	        	
+	        	
+	            <li><a href="../../projects/project.html">Final Project</a></li>-->
+
+	            
+              
+	            
+	          </ul>
+	        </li>
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../en/projects/stepUp.html">Step Up</a></li>
+	          	<li><a href="../../en/projects/place100.html">Place 100</a></li>
+	          	<li><a href="../../en/projects/beeperLine.html">Beeper Line</a></li>
+	          	<li><a href="../../en/projects/invert.html">Invert</a></li>
+	          	<li><a href="../../en/projects/unKarel.html">UN Karel</a></li>
+	          	<li class="divider"></li>
+	            <li><a href="../../en/projects/emc2.html">E=MC2</a></li>
+	            <li><a href="../../en/projects/fibb.html">Fibonacci</a></li>
+	           <li><a href="../../en/projects/favoriteNumber.html">Favorite Number</a></li>
+	           <li><a href="../../en/projects/findPi.html">Find Pi</a></li>
+	           <li><a href="../../en/projects/8Ball.html">8-Ball</a></li>
+	           <li class="divider"></li>
+	           
+	            
+	            <li><a href="../../en/projects/robotFace.html">Robot Face</a></li>
+
+	            
+	          	<li class="divider"></li>
+	            <li><a href="../../en/projects/mysterySquare.html">Mystery Square</a></li>
+
+	            <li><a href="../../en/projects/goCenter.html">Go To Center</a></li>
+
+	            <li><a href="../../en/projects/gravityBall.html">Gravity Ball</a></li>
+
+	          	<li><a href="../../en/projects/averageMethod.html">Average Method</a></li>	
+	          	<li><a href="../../en/projects/drawPeople.html">Draw People</a></li>	
+
+	          	<li><a href="../../en/projects/halfGreen.html">Half Green</a></li>
+
+							<!--
+	          	<li class="divider"></li>
+							<li><a href="../../en/projects/rocketShip.html">Rockets</a></li>
+
+	          	<li><a href="../../en/projects/debrisSweeper.html">Debris Sweeper</a></li>	
+	          	<li><a href="../../en/projects/suchADrag.html">Such a Drag</a></li>
+	              
+	             
+	             <li><a href="../../projects/stampTool.html">Stamp Tool</a></li>
+	            <li><a href="../../projects/snow.html">Snow</a></li>
+
+              <li class="divider"></li>
+	            <li><a href="../../projects/breakoutOnline.html">Breakout Online</a></li>
+							-->
+	          </ul>
+	        </li>
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Slides <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../slides/Welcome.pdf">Karel</a></li>
+	          	<li><a href="../../slides/ControlFlow.pdf">ControlFlow</a></li>
+	          	<li><a href="../../slides/Variables.pdf">Variables</a></li>
+	          	<li><a href="../../slides/Graphics.pdf">Graphics</a></li>
+	          	<li><a href="../../slides/Animation.pdf">Animation</a></li>
+	          	<li><a href="../../slides/Methods.pdf">Methods</a></li>
+	          	<li><a href="../../slides/Review.pdf">Review</a></li>
+	          	<li><a href="../../slides/Events.pdf">Events</a></li>
+	          	<li><a href="../../slides/Internet.pdf">Internet</a></li>
+	          	<li><a href="../../slides/Arrays.pdf">Arrays</a></li>
+	          	<li><a href="../../slides/ArrayLists.pdf">Array Lists</a></li>
+	          	<li><a href="../../slides/Strings.pdf">Strings</a></li>
+							<!--
+	          	<li><a href="../../slides/AI.pdf">Artificial Intelligence</a></li>
+	          	<li><a href="../../slides/loopVariableReview.pdf">Loop/Variable Review</a></li>
+	          	<li><a href="../../slides/Interactors.pdf">Interactors</a></li>
+	          	<li><a href="../../slides/AI.pdf">AI</a></li>
+	          	<li><a href="../../slides/Classes.zip">Classes</a></li>
+	          	<li><a href="../../slides/TheEnd.pdf">The End</a></li>
+	          	
+							-->
+	          </ul>
+	        </li>
+
+	        <!-- <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Extra Challenges <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../en/projects/isOdd.html">Is Odd</a></li>	
+	          	
+	          </ul>
+	        </li>-->
+
+
+	        <!--<li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Internet <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="https://www.dropbox.com/s/1jtjo9hde8in0xn/1-How%20the%20internet%20works.pptx">How the Internet Works</a></li>
+	          	<li><a href="https://www.dropbox.com/s/1t7pwltugsy4pxg/2-day-in-the-life-of-packet.pptx">Day in the Life of a Packet</a></li>
+	          	<li><a href="https://www.dropbox.com/s/1n0lzrl32urfsnr/3-How%20packets%20routed.pptx">How packets are routed in the Internet</a></li>
+	          	<li class="divider"></li>
+	          	<li><a href="http://yuba.stanford.edu/~huangty/dacka/lab1.html">Lab 1</a></li>
+	          	<li><a href="http://yuba.stanford.edu/~huangty/dacka/lab2.html">Lab 2</a></li>
+	          	<li class="divider"></li>
+	          	<li><a href="../../internet/echo.zip">Echo Client Code</a></li>
+	          	<li><a href="../../internet/2person-breakout.zip">2Person Breakout Code</a></li>
+
+	          	
+	          </ul>
+	        </li>-->
+
+	        <!--<li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Section<b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../projects/stepUp.html">Newspaper Karel</a></li>
+	          	<li><a href="../../projects/place100.html">Counterfit Drugs</a></li>
+	          	<li><a href="../../projects/beeperLine.html">Target</a></li>
+	          </ul>
+	        </li>-->
+
+	        <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bonus <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+                <li><a href="../../en/bonus-index.html">Bonus overview</a></li>
+	          </ul>
+	        </li>
+
+	        <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forms <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+                <li><a href="../../en/handouts/submission.html">Submit Your Work</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSffsKTNU3mu-21-ZjZFJ3d-fPdvw6uQcvhAjbpXhux43_3gpg/viewform?usp=sf_link">Sign in To Lab</a></li>
+	          </ul>
+	        </li>
+
+
+
+	      </ul>
+
+	      
+	      <ul class="nav navbar-nav navbar-right">
+	      	<li><a onclick="changeToEnglish()" style="cursor: pointer;"><img class="languageIcon" src="../../img/english_flag.png"></img></a></li>
+<!-- 	      	<li><a onclick="changeToTurkish()" style="cursor: pointer;"><img class="languageIcon" src="../../img/turkish_flag.png"></img></a></li> -->
+	        
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	</div>
+  </div><!-- /.container-fluid -->
+</nav>
+
+<script>
+
+	function changeToTurkish() {
+		var url = window.location.href;
+		url = url.replace("/en/", "/tk/");
+		window.location.href = url;
+	}
+
+	function changeToEnglish() {
+		var url = window.location.href;
+		url = url.replace("/tk/", "/en/");
+		window.location.href = url;
+	}
+
+</script>
+
+
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Insecto de lluvia </h1><p> Creado por Nick Troccoli y Bryce Cronkite-Ratcliff </p></div><hr/><div class="row"><div class="col-md-12"><p> Si alguna vez usaste weather.com u otro sitio meteorológico para buscar el clima, sabes cuán útil (¡y genial!) Es poder buscar el clima en línea tanto en tu ubicación actual como en cualquier otro lugar del mundo . Y, como resultado, también es una excelente manera de aprender y practicar las devoluciones de llamada de JavaScript. En esta asignación, completará un sitio web que, utilizando JavaScript, obtiene y muestra el clima de cualquier lugar que el usuario ingrese, o la ubicación actual del usuario. </p><p><center><img src="../../img/projects/weatherbug/demo.png" style="width:450px"/></center></p><p> Sabemos que todos ustedes son ninjas GRect y EtiquetaG, por lo tanto, ¡hemos hecho todo el código de gráficos para usted! Lo que queremos que haga es escribir todas las devoluciones de llamada para que el sitio web funcione correctamente. Le sugerimos que divida esto en hitos y haga que cada uno de ellos funcione antes de continuar. </p></div></div><div class="row"><div class="col-md-12"><h2> Hito 1: Botones </h2><p> La primera tarea que debe abordar es lograr que las devoluciones de llamada de su sitio web funcionen correctamente. Su página debe tener dos botones: &quot;Mostrar clima&quot; y &quot;Mostrar clima local&quot;. </p><p><center><img src="../../img/projects/weatherbug/buttons.png" style="width:450px"/></center></p><p> Para agregar botones a la pantalla, use el método <b>addButton ()</b> de <b>AplicaciónDeGráficos</b>. <b>addButton ()</b> toma 2 parámetros: el texto que debe mostrar el botón y la función de devolución de llamada que debe ejecutarse cuando se hace clic en el botón. </p><p> Recuerde que cuando desea pasar una función como devolución de llamada, debe escribir el nombre de la función <i>sin paréntesis</i>. </p></div></div><div class="row"><div class="col-md-12"><h2> Hito 2: El botón &quot;Mostrar clima&quot; </h2><p> Ahora que ya tiene configurados sus botones, es el momento de abordar el primero de los dos botones: buscar el clima para el lugar que el usuario ingresa. Puede obtener el texto que el usuario escribió en el campo de texto de la propiedad de valor de su campo de texto. variable. De lo contrario, solo hay 2 funciones AplicaciónDeGráficos que necesitarás para este hito: <b>fetchWeatherForQuery ()</b> y <b>displayErrorMessage ()</b>. Su sitio web debe obtener el pronóstico de 7 días para el lugar que escribió el usuario. Si la búsqueda es exitosa, debe mostrar los datos meteorológicos que recupera. Tenga en cuenta que la función de devolución de llamada exitosa debe tomar un parámetro: los datos meteorológicos. </p><p> Recuerde, al obtener datos de la web, la solicitud podría fallar por varios motivos. Es por eso que debe pasar una devolución de llamada de error al obtener datos meteorológicos. Si la recuperación falla, debe mostrar un mensaje de error al usuario utilizando <b>displayStatusMessage ()</b>. </p></div></div><div class="row"><div class="col-md-12"><h2> Hito 3: El botón &quot;Mostrar clima local&quot; </h2><p> Ahora abordemos el segundo botón: buscar el clima para la ubicación actual del usuario. En lugar de obtener el texto que ingresó el usuario, debe buscar las coordenadas de la ubicación actual del usuario (latitud y longitud). Obtener la ubicación actual requiere una devolución de llamada, ¡ya que lleva mucho tiempo localizar al usuario! Esa función de devolución de llamada debe tomar 2 parámetros: la latitud y la longitud. </p><p> Una vez que obtenga la ubicación del usuario, su sitio web debería obtener nuevamente el pronóstico de 7 días para el lugar que el usuario escribió, pero esta vez usando <b>fetchWeatherForCoodinates ()</b>. Si la recuperación es exitosa, debe mostrar los datos meteorológicos que recupera. Tenga en cuenta que la función de devolución de llamada exitosa debe tomar un parámetro: los datos meteorológicos. </p><p> Nuevamente, recuerde que, al obtener datos de la web, la solicitud siempre puede fallar por varios motivos. Es por eso que necesita pasar una segunda devolución de llamada al obtener datos meteorológicos. Si la recuperación falla, debe mostrar un mensaje de error al usuario utilizando <b>displayStatusMessage ()</b>. </p></div></div><div class="row"><div class="col-md-12"><h2> Extensiones </h2><p> Ahora que ha terminado la parte de las devoluciones de llamada, ¡intente extender los gráficos de WeatherBug! Por ejemplo, intente agregar nombres de días a la pantalla cuando se muestre el clima. Los datos meteorológicos que recuperas tienen una propiedad dayName que es el día para el que está el clima. Intente mostrar otra etiqueta para cada día que muestre el nombre del día. </p><p><center><img src="../../img/projects/weatherbug/extended.png" style="width:450px"/></center></p></div></div>
+		
+
+		
+<hr>
+
+<div class="footer">
+	<p class="pull-left">
+		&#169; Stanford 2019 &#124; Created by 
+		<a href="http://stanford.edu/~cpiech">Chris</a> with help from the entire team.
+		Based on the wonderful CS106A class which was developed by many talented teachers. Special thanks to <a href="http://cs.stanford.edu/people/eroberts/">Eric Roberts</a> and <a href="http://robotics.stanford.edu/~sahami/bio.html">Mehran Sahami</a>.
+	</p>
+	<!--<p class="pull-right">
+		<a href="../../fall12">Fall 2012</a>
+	</p>-->
+</div>
+<!--<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-35433298-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
+</script>-->
+</div></body>

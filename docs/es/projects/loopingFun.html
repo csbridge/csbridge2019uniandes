@@ -1,0 +1,361 @@
+<head>
+
+<title>Intro to CS</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF8">
+
+<!-- Fonts -->
+<!--<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,600,700,900,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900,600italic,700italic,900italic' rel='stylesheet' type='text/css'>-->
+
+<!-- Styles -->
+
+<link href="../../plugins/bootstrap-3.1/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../../style.css">
+
+<!-- Java Script -->
+<script src="../../plugins/jquery.min.js"></script>
+<script src="../../plugins/bootstrap-3.1/js/bootstrap.min.js"></script>
+
+<script src="../../karel/ace/ace.js" type="text/javascript"></script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});
+  </script>-->
+</head><body><!-- Navigation Bar -->
+<nav class="navbar-inverse navbar-default" role="navigation">
+  <div class="container-fluid">
+  	<div class="container">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="/">CS Bridge</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <!--<li ><a href="#">Link</a></li>-->
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Handouts <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<!--<li><a href="../../en/handouts/sections.html">Sections</a></li>-->
+	          	<li><a href="../../en/handouts/karel.html">Karel Reference</a></li>
+							<!--<li><a href="../../en/handouts/submission.html">How to Submit Your Work</a></li>-->
+	          	
+	          	<li><a href="../../en/handouts/console.html">Console Reference</a></li>
+	          	<li><a href="../../en/handouts/random.html">Random Generator Reference</a></li>
+	          	<li><a href="../../en/handouts/graphics.html">Graphics Reference</a></li>
+	          	<li><a href="../../en/handouts/events.html">Events Reference</a></li>
+
+	          	
+	            <li><a href="../../en/handouts/arrayLists.html">Array Lists</a></li>
+	          	<!--
+	          	<li><a href="../../handouts/events.html">Events Reference</a></li>
+                <li><a href="../../projects/jsJSSyntax.html">JavaScript Syntax Reference</a></li>
+                <li><a href="../../handouts/htmlReference.html">HTML Reference</a></li>
+                <li><a href="../../handouts/uploadWebsite.html">Uploading a Website Reference</a></li>
+
+	          	<li><a href="../../handouts/whatsNext.html">Whats Next</a></li>
+	          	
+	          	
+	            <li><a href="../../handouts/operations.html">Operations</a></li>
+	            <li><a href="../../handouts/graphics.html">Graphics</a></li>
+	            <li><a href="../../handouts/passingData.html">Passing Data</a></li>-->
+	            
+	          </ul>
+	        </li>
+
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="../../en/projects/collectNewspaper.html">Collect Newspaper</a></li>
+	          	<li><a href="../../en/projects/efes.html">Build Efes</a></li>
+	          	<li><a href="../../en/projects/mountain.html">Mountain Karel</a></li>
+	          	<li><a href="../../en/projects/randomPainter.html">Random Painter</a></li>
+	          	
+	          	<li class="divider"></li>
+	          	<li><a href="../../en/projects/sandcastles.html">Sandcastles</a></li>
+	          	<li><a href="../../en/projects/favoriteNumber.html">Favorite Number</a></li>
+	          	<li><a href="../../en/projects/medicine.html">Medicine</a></li>
+	          	<li><a href="../../en/projects/someSum.html">Some Sum</a></li>
+	          	<li><a href="../../en/projects/gameOfStones.html">Nimm</a></li>
+	          	
+
+	          	<li class="divider"></li>
+
+	          	<li><a href="../../en/projects/awesome.html">Programming is Awesome</a></li>
+	          	<li><a href="../../en/projects/stringArt.html">String Art</a></li>
+	          	<li><a href="../../en/projects/randomCircles.html">Random Circles</a></li>
+	          	<li><a href="../../en/projects/hailstone.html">Hailstone</a></li>
+
+	            <li class="divider"></li>
+	            <li><a href="../../en/projects/bouncingBall.html">Bouncing Ball</a></li>
+	          	<li><a href="../../en/projects/madMethods.html">Mad Methods</a></li>
+	          	<li><a href="../../en/projects/target.html">Target</a></li>
+	          	<li><a href="../../en/projects/illusion.html">Optical Illusion</a></li>
+	          	<li><a href="../../en/projects/sunset.html">Short Film</a></li>
+
+	          	<li class="divider"></li>
+
+	          	<li><a href="../../en/projects/makingTracks.html">Making Tracks</a></li>
+	             <li><a href="../../en/projects/stampTool.html">Stamp Tool</a></li>
+	          	<li><a href="../../en/projects/catchMeIfYouCan.html">Catch Me If You Can</a></li>
+	          	<li><a href="../../en/projects/breakout.html">Breakout</a></li>
+
+							<!--
+	          	<li class="divider"></li>
+
+	          	<li><a href="../../en/projects/sortedNumbers.html">Sorted Numbers</a></li>
+	          	<li><a href="../../en/projects/snow.html">Snow</a></li>
+	          	<li><a href="../../en/projects/mouseGame.html">The Line</a></li>
+	          	<li><a href="../../en/projects/music.html">Music</a></li>
+							-->
+	          	<!--
+	            <li><a href="../../projects/drawPeople.html">Three's a Crowd</a></li>
+	            
+	            <li><a href="../../projects/madLibs.html">Mad Libs</a></li>
+	            <li><a href="../../projects/secret.html">Secret</a></li>
+
+	     
+
+                <li class="divider"></li>
+	            
+	            <li><a href="../../projects/breakout.html">Breakout</a></li>
+	            
+	            
+	            <li><a href="../../projects/music.html">Waves of Sound</a></li>
+	        	
+	        	
+	            <li><a href="../../projects/project.html">Final Project</a></li>-->
+
+	            
+              
+	            
+	          </ul>
+	        </li>
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../en/projects/stepUp.html">Step Up</a></li>
+	          	<li><a href="../../en/projects/place100.html">Place 100</a></li>
+	          	<li><a href="../../en/projects/beeperLine.html">Beeper Line</a></li>
+	          	<li><a href="../../en/projects/invert.html">Invert</a></li>
+	          	<li><a href="../../en/projects/unKarel.html">UN Karel</a></li>
+	          	<li class="divider"></li>
+	            <li><a href="../../en/projects/emc2.html">E=MC2</a></li>
+	            <li><a href="../../en/projects/fibb.html">Fibonacci</a></li>
+	           <li><a href="../../en/projects/favoriteNumber.html">Favorite Number</a></li>
+	           <li><a href="../../en/projects/findPi.html">Find Pi</a></li>
+	           <li><a href="../../en/projects/8Ball.html">8-Ball</a></li>
+	           <li class="divider"></li>
+	           
+	            
+	            <li><a href="../../en/projects/robotFace.html">Robot Face</a></li>
+
+	            
+	          	<li class="divider"></li>
+	            <li><a href="../../en/projects/mysterySquare.html">Mystery Square</a></li>
+
+	            <li><a href="../../en/projects/goCenter.html">Go To Center</a></li>
+
+	            <li><a href="../../en/projects/gravityBall.html">Gravity Ball</a></li>
+
+	          	<li><a href="../../en/projects/averageMethod.html">Average Method</a></li>	
+	          	<li><a href="../../en/projects/drawPeople.html">Draw People</a></li>	
+
+	          	<li><a href="../../en/projects/halfGreen.html">Half Green</a></li>
+
+							<!--
+	          	<li class="divider"></li>
+							<li><a href="../../en/projects/rocketShip.html">Rockets</a></li>
+
+	          	<li><a href="../../en/projects/debrisSweeper.html">Debris Sweeper</a></li>	
+	          	<li><a href="../../en/projects/suchADrag.html">Such a Drag</a></li>
+	              
+	             
+	             <li><a href="../../projects/stampTool.html">Stamp Tool</a></li>
+	            <li><a href="../../projects/snow.html">Snow</a></li>
+
+              <li class="divider"></li>
+	            <li><a href="../../projects/breakoutOnline.html">Breakout Online</a></li>
+							-->
+	          </ul>
+	        </li>
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Slides <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../slides/Welcome.pdf">Karel</a></li>
+	          	<li><a href="../../slides/ControlFlow.pdf">ControlFlow</a></li>
+	          	<li><a href="../../slides/Variables.pdf">Variables</a></li>
+	          	<li><a href="../../slides/Graphics.pdf">Graphics</a></li>
+	          	<li><a href="../../slides/Animation.pdf">Animation</a></li>
+	          	<li><a href="../../slides/Methods.pdf">Methods</a></li>
+	          	<li><a href="../../slides/Review.pdf">Review</a></li>
+	          	<li><a href="../../slides/Events.pdf">Events</a></li>
+	          	<li><a href="../../slides/Internet.pdf">Internet</a></li>
+	          	<li><a href="../../slides/Arrays.pdf">Arrays</a></li>
+	          	<li><a href="../../slides/ArrayLists.pdf">Array Lists</a></li>
+	          	<li><a href="../../slides/Strings.pdf">Strings</a></li>
+							<!--
+	          	<li><a href="../../slides/AI.pdf">Artificial Intelligence</a></li>
+	          	<li><a href="../../slides/loopVariableReview.pdf">Loop/Variable Review</a></li>
+	          	<li><a href="../../slides/Interactors.pdf">Interactors</a></li>
+	          	<li><a href="../../slides/AI.pdf">AI</a></li>
+	          	<li><a href="../../slides/Classes.zip">Classes</a></li>
+	          	<li><a href="../../slides/TheEnd.pdf">The End</a></li>
+	          	
+							-->
+	          </ul>
+	        </li>
+
+	        <!-- <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Extra Challenges <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../en/projects/isOdd.html">Is Odd</a></li>	
+	          	
+	          </ul>
+	        </li>-->
+
+
+	        <!--<li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Internet <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="https://www.dropbox.com/s/1jtjo9hde8in0xn/1-How%20the%20internet%20works.pptx">How the Internet Works</a></li>
+	          	<li><a href="https://www.dropbox.com/s/1t7pwltugsy4pxg/2-day-in-the-life-of-packet.pptx">Day in the Life of a Packet</a></li>
+	          	<li><a href="https://www.dropbox.com/s/1n0lzrl32urfsnr/3-How%20packets%20routed.pptx">How packets are routed in the Internet</a></li>
+	          	<li class="divider"></li>
+	          	<li><a href="http://yuba.stanford.edu/~huangty/dacka/lab1.html">Lab 1</a></li>
+	          	<li><a href="http://yuba.stanford.edu/~huangty/dacka/lab2.html">Lab 2</a></li>
+	          	<li class="divider"></li>
+	          	<li><a href="../../internet/echo.zip">Echo Client Code</a></li>
+	          	<li><a href="../../internet/2person-breakout.zip">2Person Breakout Code</a></li>
+
+	          	
+	          </ul>
+	        </li>-->
+
+	        <!--<li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Section<b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../projects/stepUp.html">Newspaper Karel</a></li>
+	          	<li><a href="../../projects/place100.html">Counterfit Drugs</a></li>
+	          	<li><a href="../../projects/beeperLine.html">Target</a></li>
+	          </ul>
+	        </li>-->
+
+	        <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bonus <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+                <li><a href="../../en/bonus-index.html">Bonus overview</a></li>
+	          </ul>
+	        </li>
+
+	        <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forms <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+                <li><a href="../../en/handouts/submission.html">Submit Your Work</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSffsKTNU3mu-21-ZjZFJ3d-fPdvw6uQcvhAjbpXhux43_3gpg/viewform?usp=sf_link">Sign in To Lab</a></li>
+	          </ul>
+	        </li>
+
+
+
+	      </ul>
+
+	      
+	      <ul class="nav navbar-nav navbar-right">
+	      	<li><a onclick="changeToEnglish()" style="cursor: pointer;"><img class="languageIcon" src="../../img/english_flag.png"></img></a></li>
+<!-- 	      	<li><a onclick="changeToTurkish()" style="cursor: pointer;"><img class="languageIcon" src="../../img/turkish_flag.png"></img></a></li> -->
+	        
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	</div>
+  </div><!-- /.container-fluid -->
+</nav>
+
+<script>
+
+	function changeToTurkish() {
+		var url = window.location.href;
+		url = url.replace("/en/", "/tk/");
+		window.location.href = url;
+	}
+
+	function changeToEnglish() {
+		var url = window.location.href;
+		url = url.replace("/tk/", "/en/");
+		window.location.href = url;
+	}
+
+</script>
+
+
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Diversión en bucle </h1><p> Escrito por Lisa Yan </p></div><hr/><div class="row"><div class="col-md-12"><p> Estos son programas de práctica para ayudarlo a familiarizarse con los bucles en Java. Se ordenan de lo más fácil a lo más difícil. </p><h2> Actualización de bucle </h2><p> Recordemos la estructura general de un ciclo for: <pre>
+para (int i = 0; i &lt;15; i ++) {
+    // algun codigo ...
+}
+</pre><p> El bucle anterior se ejecuta durante 15 iteraciones. Puedes analizar el significado de un bucle desde la primera línea: </p><ul><li> Crea un contador <code>i</code> que comienza en 0. </li><li> En cada iteración del bucle, verifique si <code>i &lt; 15</code>. </li><li> Si <code>i &lt; 15</code>, ejecute el código dentro del bucle. Mientras ejecuta el código de bucle, puede utilizar el valor de <code>i</code>. Así, por ejemplo, la primera vez que se ejecuta el bucle, el valor de <code>i</code> es cero. <li> Al final de la ejecución del código de bucle, aumente <code>i++</code>. </li><li> Si <code>!(i &lt; 15)</code>, salga del bucle. Por lo tanto, la última vez que se ejecuta el código de bucle, el valor de <code>i</code> es 14, e <code>i</code> se incrementa a 15. Luego falla la verificación de <code>i &lt; 15</code> y el código de bucle no se ejecuta. </li></li></ul><br/><p><u><b>¡Precaución!</b></u>¡Es muy difícil detectar errores de programación en la condición de bucle! Por lo tanto, siempre sugerimos que diseñe el bucle más básico e incremente el contador del bucle en uno (es decir, <code>i++</code>). ¡Y luego no cambie el valor del contador de bucles dentro del propio bucle! </p><ul><li> El siguiente código solo se ejecutará cuatro veces !!! ¿Ves por qué? </li><pre>
+// ¡No hagas esto! ¡Esto es difícil de depurar!
+para (int i = 0; i &lt;10; i ++) {
+    i + = 2; // ¡¡¡malo !!!
+    imprimir (i);
+}
+</pre><li> Una mejor manera de hacer el código anterior: </li><pre>
+// Utiliza otra variable para mantener seguro el contador de bucles.
+para (int i = 0; i &lt;10; i ++) {
+    int j = i + 2; // no cambia el valor de i
+    imprimir (j);
+}
+</pre></ul><br/><p> Los siguientes ejercicios tratan sobre el uso del contador de bucle for <code>i</code>. </p><h2> Diversión en bucle 1 </h2><p> Trate de producir la siguiente salida con un bucle. Imprime los primeros diez números impares, comenzando desde 1. </p><center><img src="../../img/projects/loopingFun/loopingfun1.png" style="width:500px;border:2px solid grey"/></center><p> Extensión: ahora intente imprimir los primeros diez números pares, comenzando desde 0. </p><h2> Diversión en bucle 2 </h2><p> Trate de producir la siguiente salida con un bucle. Imprima los primeros diez números pares en orden decreciente. </p><center><img src="../../img/projects/loopingFun/loopingfun2.png" style="width:700px;border:2px solid grey"/></center><p>¿Puede resolver este problema sin cambiar la condición de bucle del problema anterior? Es decir, comience desde el siguiente ciclo for el código: </p><pre>
+para (int i = 0; i &lt;10; i ++) {
+    // algun codigo ...
+}
+</pre><p>¿Cómo resolvería el problema utilizando la siguiente condición de bucle? </p><pre>
+para (int i = 0; i &lt;20; i ++) {
+    // algun codigo ...
+}
+</pre></p><h2> Diversión en bucle 3 </h2><p> Use un bucle, pero imprima todo en una sola línea. Recuerde que <code>imprimir()</code> agrega un salto de línea / nueva línea, mientras que <code>impresión()</code> no lo hace. </p><p> Imprime los cuadrados, comenzando desde 1. </p><center><img src="../../img/projects/loopingFun/loopingfun3.png" style="width:700px;border:2px solid grey"/></center><p>¡Intenta evitar una coma al final de la última casilla! </p><h2> Diversión en bucle 4 </h2><p> Tiempo para ciclos for! Imprime las coordenadas de una cuadrícula de 5x5. </p><center><img src="../../img/projects/loopingFun/loopingfun4.png" style="width:500px;border:2px solid grey"/></center><p> Sugerencia: pruebe la siguiente estructura de código: </p><pre>
+para (int i = 0; i &lt;5; i ++) {
+    para (int j = 0; j &lt;5; j ++) {
+        // algun codigo ...
+    }
+}
+</pre><h2> Práctica adicional: Ciclos while </h2><p>¿Quieres más práctica con ciclos while? Haga todos los ejercicios anteriores con un ciclo while que en lugar de un ciclo for. ¡Buena suerte! </p></div></div>
+
+		
+<hr>
+
+<div class="footer">
+	<p class="pull-left">
+		&#169; Stanford 2019 &#124; Created by 
+		<a href="http://stanford.edu/~cpiech">Chris</a> with help from the entire team.
+		Based on the wonderful CS106A class which was developed by many talented teachers. Special thanks to <a href="http://cs.stanford.edu/people/eroberts/">Eric Roberts</a> and <a href="http://robotics.stanford.edu/~sahami/bio.html">Mehran Sahami</a>.
+	</p>
+	<!--<p class="pull-right">
+		<a href="../../fall12">Fall 2012</a>
+	</p>-->
+</div>
+<!--<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-35433298-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
+</script>-->
+</div></body>

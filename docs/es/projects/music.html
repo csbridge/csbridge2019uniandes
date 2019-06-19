@@ -1,0 +1,437 @@
+<head>
+
+<title>Intro to CS</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF8">
+
+<!-- Fonts -->
+<!--<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,600,700,900,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900,600italic,700italic,900italic' rel='stylesheet' type='text/css'>-->
+
+<!-- Styles -->
+
+<link href="../../plugins/bootstrap-3.1/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../../style.css">
+
+<!-- Java Script -->
+<script src="../../plugins/jquery.min.js"></script>
+<script src="../../plugins/bootstrap-3.1/js/bootstrap.min.js"></script>
+
+<script src="../../karel/ace/ace.js" type="text/javascript"></script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});
+  </script>-->
+</head><body><!-- Navigation Bar -->
+<nav class="navbar-inverse navbar-default" role="navigation">
+  <div class="container-fluid">
+  	<div class="container">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="/">CS Bridge</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <!--<li ><a href="#">Link</a></li>-->
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Handouts <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<!--<li><a href="../../en/handouts/sections.html">Sections</a></li>-->
+	          	<li><a href="../../en/handouts/karel.html">Karel Reference</a></li>
+							<!--<li><a href="../../en/handouts/submission.html">How to Submit Your Work</a></li>-->
+	          	
+	          	<li><a href="../../en/handouts/console.html">Console Reference</a></li>
+	          	<li><a href="../../en/handouts/random.html">Random Generator Reference</a></li>
+	          	<li><a href="../../en/handouts/graphics.html">Graphics Reference</a></li>
+	          	<li><a href="../../en/handouts/events.html">Events Reference</a></li>
+
+	          	
+	            <li><a href="../../en/handouts/arrayLists.html">Array Lists</a></li>
+	          	<!--
+	          	<li><a href="../../handouts/events.html">Events Reference</a></li>
+                <li><a href="../../projects/jsJSSyntax.html">JavaScript Syntax Reference</a></li>
+                <li><a href="../../handouts/htmlReference.html">HTML Reference</a></li>
+                <li><a href="../../handouts/uploadWebsite.html">Uploading a Website Reference</a></li>
+
+	          	<li><a href="../../handouts/whatsNext.html">Whats Next</a></li>
+	          	
+	          	
+	            <li><a href="../../handouts/operations.html">Operations</a></li>
+	            <li><a href="../../handouts/graphics.html">Graphics</a></li>
+	            <li><a href="../../handouts/passingData.html">Passing Data</a></li>-->
+	            
+	          </ul>
+	        </li>
+
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="../../en/projects/collectNewspaper.html">Collect Newspaper</a></li>
+	          	<li><a href="../../en/projects/efes.html">Build Efes</a></li>
+	          	<li><a href="../../en/projects/mountain.html">Mountain Karel</a></li>
+	          	<li><a href="../../en/projects/randomPainter.html">Random Painter</a></li>
+	          	
+	          	<li class="divider"></li>
+	          	<li><a href="../../en/projects/sandcastles.html">Sandcastles</a></li>
+	          	<li><a href="../../en/projects/favoriteNumber.html">Favorite Number</a></li>
+	          	<li><a href="../../en/projects/medicine.html">Medicine</a></li>
+	          	<li><a href="../../en/projects/someSum.html">Some Sum</a></li>
+	          	<li><a href="../../en/projects/gameOfStones.html">Nimm</a></li>
+	          	
+
+	          	<li class="divider"></li>
+
+	          	<li><a href="../../en/projects/awesome.html">Programming is Awesome</a></li>
+	          	<li><a href="../../en/projects/stringArt.html">String Art</a></li>
+	          	<li><a href="../../en/projects/randomCircles.html">Random Circles</a></li>
+	          	<li><a href="../../en/projects/hailstone.html">Hailstone</a></li>
+
+	            <li class="divider"></li>
+	            <li><a href="../../en/projects/bouncingBall.html">Bouncing Ball</a></li>
+	          	<li><a href="../../en/projects/madMethods.html">Mad Methods</a></li>
+	          	<li><a href="../../en/projects/target.html">Target</a></li>
+	          	<li><a href="../../en/projects/illusion.html">Optical Illusion</a></li>
+	          	<li><a href="../../en/projects/sunset.html">Short Film</a></li>
+
+	          	<li class="divider"></li>
+
+	          	<li><a href="../../en/projects/makingTracks.html">Making Tracks</a></li>
+	             <li><a href="../../en/projects/stampTool.html">Stamp Tool</a></li>
+	          	<li><a href="../../en/projects/catchMeIfYouCan.html">Catch Me If You Can</a></li>
+	          	<li><a href="../../en/projects/breakout.html">Breakout</a></li>
+
+							<!--
+	          	<li class="divider"></li>
+
+	          	<li><a href="../../en/projects/sortedNumbers.html">Sorted Numbers</a></li>
+	          	<li><a href="../../en/projects/snow.html">Snow</a></li>
+	          	<li><a href="../../en/projects/mouseGame.html">The Line</a></li>
+	          	<li><a href="../../en/projects/music.html">Music</a></li>
+							-->
+	          	<!--
+	            <li><a href="../../projects/drawPeople.html">Three's a Crowd</a></li>
+	            
+	            <li><a href="../../projects/madLibs.html">Mad Libs</a></li>
+	            <li><a href="../../projects/secret.html">Secret</a></li>
+
+	     
+
+                <li class="divider"></li>
+	            
+	            <li><a href="../../projects/breakout.html">Breakout</a></li>
+	            
+	            
+	            <li><a href="../../projects/music.html">Waves of Sound</a></li>
+	        	
+	        	
+	            <li><a href="../../projects/project.html">Final Project</a></li>-->
+
+	            
+              
+	            
+	          </ul>
+	        </li>
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../en/projects/stepUp.html">Step Up</a></li>
+	          	<li><a href="../../en/projects/place100.html">Place 100</a></li>
+	          	<li><a href="../../en/projects/beeperLine.html">Beeper Line</a></li>
+	          	<li><a href="../../en/projects/invert.html">Invert</a></li>
+	          	<li><a href="../../en/projects/unKarel.html">UN Karel</a></li>
+	          	<li class="divider"></li>
+	            <li><a href="../../en/projects/emc2.html">E=MC2</a></li>
+	            <li><a href="../../en/projects/fibb.html">Fibonacci</a></li>
+	           <li><a href="../../en/projects/favoriteNumber.html">Favorite Number</a></li>
+	           <li><a href="../../en/projects/findPi.html">Find Pi</a></li>
+	           <li><a href="../../en/projects/8Ball.html">8-Ball</a></li>
+	           <li class="divider"></li>
+	           
+	            
+	            <li><a href="../../en/projects/robotFace.html">Robot Face</a></li>
+
+	            
+	          	<li class="divider"></li>
+	            <li><a href="../../en/projects/mysterySquare.html">Mystery Square</a></li>
+
+	            <li><a href="../../en/projects/goCenter.html">Go To Center</a></li>
+
+	            <li><a href="../../en/projects/gravityBall.html">Gravity Ball</a></li>
+
+	          	<li><a href="../../en/projects/averageMethod.html">Average Method</a></li>	
+	          	<li><a href="../../en/projects/drawPeople.html">Draw People</a></li>	
+
+	          	<li><a href="../../en/projects/halfGreen.html">Half Green</a></li>
+
+							<!--
+	          	<li class="divider"></li>
+							<li><a href="../../en/projects/rocketShip.html">Rockets</a></li>
+
+	          	<li><a href="../../en/projects/debrisSweeper.html">Debris Sweeper</a></li>	
+	          	<li><a href="../../en/projects/suchADrag.html">Such a Drag</a></li>
+	              
+	             
+	             <li><a href="../../projects/stampTool.html">Stamp Tool</a></li>
+	            <li><a href="../../projects/snow.html">Snow</a></li>
+
+              <li class="divider"></li>
+	            <li><a href="../../projects/breakoutOnline.html">Breakout Online</a></li>
+							-->
+	          </ul>
+	        </li>
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Slides <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../slides/Welcome.pdf">Karel</a></li>
+	          	<li><a href="../../slides/ControlFlow.pdf">ControlFlow</a></li>
+	          	<li><a href="../../slides/Variables.pdf">Variables</a></li>
+	          	<li><a href="../../slides/Graphics.pdf">Graphics</a></li>
+	          	<li><a href="../../slides/Animation.pdf">Animation</a></li>
+	          	<li><a href="../../slides/Methods.pdf">Methods</a></li>
+	          	<li><a href="../../slides/Review.pdf">Review</a></li>
+	          	<li><a href="../../slides/Events.pdf">Events</a></li>
+	          	<li><a href="../../slides/Internet.pdf">Internet</a></li>
+	          	<li><a href="../../slides/Arrays.pdf">Arrays</a></li>
+	          	<li><a href="../../slides/ArrayLists.pdf">Array Lists</a></li>
+	          	<li><a href="../../slides/Strings.pdf">Strings</a></li>
+							<!--
+	          	<li><a href="../../slides/AI.pdf">Artificial Intelligence</a></li>
+	          	<li><a href="../../slides/loopVariableReview.pdf">Loop/Variable Review</a></li>
+	          	<li><a href="../../slides/Interactors.pdf">Interactors</a></li>
+	          	<li><a href="../../slides/AI.pdf">AI</a></li>
+	          	<li><a href="../../slides/Classes.zip">Classes</a></li>
+	          	<li><a href="../../slides/TheEnd.pdf">The End</a></li>
+	          	
+							-->
+	          </ul>
+	        </li>
+
+	        <!-- <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Extra Challenges <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../en/projects/isOdd.html">Is Odd</a></li>	
+	          	
+	          </ul>
+	        </li>-->
+
+
+	        <!--<li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Internet <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="https://www.dropbox.com/s/1jtjo9hde8in0xn/1-How%20the%20internet%20works.pptx">How the Internet Works</a></li>
+	          	<li><a href="https://www.dropbox.com/s/1t7pwltugsy4pxg/2-day-in-the-life-of-packet.pptx">Day in the Life of a Packet</a></li>
+	          	<li><a href="https://www.dropbox.com/s/1n0lzrl32urfsnr/3-How%20packets%20routed.pptx">How packets are routed in the Internet</a></li>
+	          	<li class="divider"></li>
+	          	<li><a href="http://yuba.stanford.edu/~huangty/dacka/lab1.html">Lab 1</a></li>
+	          	<li><a href="http://yuba.stanford.edu/~huangty/dacka/lab2.html">Lab 2</a></li>
+	          	<li class="divider"></li>
+	          	<li><a href="../../internet/echo.zip">Echo Client Code</a></li>
+	          	<li><a href="../../internet/2person-breakout.zip">2Person Breakout Code</a></li>
+
+	          	
+	          </ul>
+	        </li>-->
+
+	        <!--<li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Section<b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../projects/stepUp.html">Newspaper Karel</a></li>
+	          	<li><a href="../../projects/place100.html">Counterfit Drugs</a></li>
+	          	<li><a href="../../projects/beeperLine.html">Target</a></li>
+	          </ul>
+	        </li>-->
+
+	        <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bonus <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+                <li><a href="../../en/bonus-index.html">Bonus overview</a></li>
+	          </ul>
+	        </li>
+
+	        <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forms <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+                <li><a href="../../en/handouts/submission.html">Submit Your Work</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSffsKTNU3mu-21-ZjZFJ3d-fPdvw6uQcvhAjbpXhux43_3gpg/viewform?usp=sf_link">Sign in To Lab</a></li>
+	          </ul>
+	        </li>
+
+
+
+	      </ul>
+
+	      
+	      <ul class="nav navbar-nav navbar-right">
+	      	<li><a onclick="changeToEnglish()" style="cursor: pointer;"><img class="languageIcon" src="../../img/english_flag.png"></img></a></li>
+<!-- 	      	<li><a onclick="changeToTurkish()" style="cursor: pointer;"><img class="languageIcon" src="../../img/turkish_flag.png"></img></a></li> -->
+	        
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	</div>
+  </div><!-- /.container-fluid -->
+</nav>
+
+<script>
+
+	function changeToTurkish() {
+		var url = window.location.href;
+		url = url.replace("/en/", "/tk/");
+		window.location.href = url;
+	}
+
+	function changeToEnglish() {
+		var url = window.location.href;
+		url = url.replace("/tk/", "/en/");
+		window.location.href = url;
+	}
+
+</script>
+
+
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Ondas de sonido </h1><p> Inspirado por, y construido a partir de una asignación por Keith Schwarz. Creado por Chris Piech Kevin Miller y Bryce Cronkite-Ratcliff </p><p> Folletos: <a href="../../en/handouts/arrayLists.html">ArrayLists</a></p></div><hr/><div class="row"><div class="col-md-12"><p> Los seres humanos siempre están buscando nuevos sonidos, y recientemente un número creciente de artistas ha estado usando programas para crear experiencias que los instrumentos no pueden producir. Aquí hay dos ejemplos de canciones que fueron creadas con sonidos generados por computadora: </p><p><center><iframe allowfullscreen="" frameborder="0" height="315" src="//www.youtube.com/embed/mehLx_Fjv_c" width="400"></iframe><iframe allowfullscreen="" frameborder="0" height="315" src="//www.youtube.com/embed/Sk9XYQMRiLY" width="400"></iframe></center></p><p> Escriba un programa que lea las notas de un archivo y reproduzca la composición para el usuario. </p><!--<p>
+					<center>
+						<img style="width:450px" src="../../img/projects/music/mary.png">
+
+					</center>
+				</p>
+				<p>Just for fun: Can you figure out what the above song plays?</p>--></div></div><div class="row"><div class="col-md-12"><h2> Audio </h2><p> Hay tres métodos de audio que te permitirán generar y reproducir notas. </p><div class="well"><code>ListaDeArreglo&lt;Doble&gt; <i>muestras</i>= Audio.obtenerMuestrasDeNota( <i>frecuencia</i>, <i>longitud</i>)</code></div><div class="well"><code>Audio.jugar( <i>matrizListaDeDobles</i>)</code></div><p><b>obtenerMuestrasDeNota</b> es un método que toma dos números, una frecuencia y una longitud en muestras (hay 44.100 muestras por segundo en sonido con calidad de CD). La frecuencia define la nota que se toca. Por ejemplo, una nota C tiene una frecuencia de 130.81 Hz y una nota G tiene una frecuencia de 196.00 Hz. Debes usar los contantes definidos. Este método devuelve un ListaDeArreglo de Dobles, que representa las muestras de la onda que hace el sonido. </p><p> Tomemos la ola de abajo como ejemplo. Tiene una frecuencia de 130.81 Hz que es una nota C. El método muestreará la onda y devolverá los dobles recogidos de la muestra, en el rango (-1, 1): </p><p><center><img src="../../img/projects/music/sound2.png" style="width:450px"/><br/><i style="text-align:center">Imagen cortesía de Keith</i></center><p></p><p><b>play</b> es un método que toma una lista de muestras (que debe ser del tipo ListaDeArreglo &lt;Double&gt;) y lo reproduce para el usuario. </p><p><b>getNotes</b> es un método que toma el nombre de una canción y devuelve una ListaDeArreglo &lt;String&gt; con todas las notas de la canción. Las letras en ListaDeArreglo pueden ser notas en mayúsculas o minúsculas (ag y p para pausa). Aquí hay un ejemplo ListaDeArreglo: {a, a, G, f, p, B}. </p></p></div></div><div class="row"><div class="col-md-12"><h2> 1) tocar una nota </h2><p> Para comenzar, intente generar una única nota en C de longitud <i>LONGITUD_DE_LA_NOTA</i> y reprodúzcala al usuario. Luego trata de tocar algunas notas diferentes. Intente tocar las notas E, C, C. Finalmente, toque una nota una octava hacia arriba y asegúrese de que pueda notar la diferencia. </p></div></div><div class="row"><div class="col-md-12"><h2> 2) Haz un programa musical </h2><p> Este proyecto está abierto. En este punto puedes programar lo que quieras. ¿Te gustaría crear un piano gráfico? ¿Qué tal generar sonidos más complejos? Vea las extensiones e intente e implemente todas las que desee. </p></div></div><div class="row"><div class="col-md-12"><h2> Consejos y trucos </h2><p><b>Jugando una octava <br/></b> Para jugar una octava, todo lo que tienes que hacer es duplicar la frecuencia. Por ejemplo, si el C original es 130.81, entonces, una octava más alta en C es 2 * 130.81 = 261.62 </p><p><b>Métodos de uso <br/></b> Puede que le resulte más fácil escribir un método para tocar cada nota: <div class="well"><code>private void jugarG() { <br/>&nbsp;&nbsp;&nbsp;ListaDeArreglo&lt;Doble&gt; ejemplo = Audio.obtenerMuestrasDeNota(G, LONGITUD_DE_LA_NOTA); <br/>&nbsp;&nbsp;&nbsp;Audio.jugar(ejemplo); <br/>}</code></div></p><b>Comparar cuerdas <br/></b><p> Para comparar cadenas, no use el operador ==. En su lugar, debe utilizar: </p><div class="well"><code><i>s1</i>.es_igual_a( <i>s2</i>)</code></div><p>¡Eso es todo! Bienvenido al mundo de ArrayLists y música de computadora. Si terminas temprano intenta una extensión. </p></div></div><hr/><div class="row"><div class="col-md-12"><h2> Extensión 1: Escribe tu propia música </h2><p> Intenta componer una melodía a partir de diferentes notas. Añadir frases de nivel superior a las canciones. Usa bucles y métodos para hacer sonidos complejos. </p></div></div><div class="row"><div class="col-md-12"><h2> Extensión 2: Acordes </h2><p> Dos tocan dos (o más) notas simultáneamente, simplemente sumas cada valor en la muestra. Luego, para hacer que el volumen sea normal, divida la muestra resultante por su valor máximo. </p><p> Puede hacer sonidos más ricos, más cercanos a los utilizados por Tycho y Pretty Lights (en los ejemplos al principio). </p></div></div><div class="row"><div class="col-md-12"><h2> Extensión 3: Interfaz gráfica </h2><p> Haga una interfaz gráfica utilizando una cuadrícula de GRectos donde cada fila representa una nota (C, D, G, E, A) y cada columna representa un punto en el tiempo. Si un GRect está activado (es de color azul), debe tocar esa nota en ese momento. </p><p> Pregúntenos acerca de los botones </p><p></p><center><img src="../../img/projects/music/gcomposer.png" style="width:100%"/></center><p></p></div></div><!--<div class="row">
+			<div class="col-md-12">
+				<h2>Audio</h2>
+				<p>
+					There are two Audio methods that will allow you to generate and play notes.
+				</p>
+				<div class="well"><code>ListaDeArreglo&lt;Double&gt; <i>samples</i>= Audio.obtenerMuestrasDeNota(<i>frequency</i>, <i>length</i>)</code></div>
+				<div class="well"><code>Audio.play(<i>matrizListaDeDobles</i>)</code></div>
+				<p><b>obtenerMuestrasDeNota</b> is a method that takes in two numbers, a frequency and a length in samples (there are 44,100 samples per second in CD quality sound). The frequency defines the note being played. For example a C note has frequency 130.81 Hz and a G note has frequency 196.00 Hz. You should use the contants defined. The method returns an ListaDeArreglo of Doubles, which represents the samples of the wave that makes the sound. </p>
+
+				<p>Say the wave below has a frequency of 130.81 Hz (and is thus a C note). The method will sample the wave, and return the doubles collected from the sample, in the range (-1, 1):</p>
+
+				<p>
+					<center>
+					<img style="width:450px" src="../../img/projects/music/sound2.png">
+					<br/><i style="text-align:center">Image courtesy of Keith</i>
+				</center>
+				</p>
+
+				<p><b>play</b> is a method that takes in a list of samples (which must be of type ListaDeArreglo&lt;Double&gt;) and plays it to the users.</p>
+				
+				<p>To get started try and generate a single C note of length <i>LONGITUD_DE_LA_NOTA</i> and play it back to the user.</p>
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>User Composition</h2>
+				<p>
+					Write code that continually collects notes from the user (until they type "play") and puts them together into a single song. If the user enters one of the notes in the pentatonic scale (C, D, G, E or A) add the samples for that note to the song. If the user enters "pause", add <i>LONGITUD_DE_LA_NOTA</i> number of samples with value 0. 
+				</p>
+
+				<p>To compare strings, don't use the == operator. Instead you should use:</p>
+				<div class="well"><code><i>s1</i>.equals(<i>s2</i>)</code></div>
+				<p>That's all! Welcome to the world of ArrayLists and computer music. If you finish early try an extension.</p>
+			</div>
+		</div>
+
+		<hr>
+
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Extension 1: Chords</h2>
+				<p>
+					If you want to play two notes at the same time the solution is simple, you just add the waves together (in other words you add each value in the list of doubles together).
+				</p>
+
+				<p>
+					<center>
+					<img style="width:450px" src="../../img/projects/music/sumofwaves.png">
+				</center>
+				</p>
+
+				<p>
+					When you add two waves together, some points may become larger than 1 or smaller than -1 (the bounds for a sound wave). After you add your samples together you should normalize the wave. In plainer words, find the maximum value in your ListaDeArreglo and divide all values by the max.
+				</p>
+
+				<p>Add "c-chord" to the list of commands the user can enter. C chords are made up of the notes C, E and G played at the same time.</p>
+
+				
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Extension 2: Algorithmic Song</h2>
+				<p>
+					Add higher level phrases that the user can enter. Use loops and methods to make complex sounds. For example, maybe you want to let the user enter the text "chorus" and then you can algorithmically create a series of notes that make up the chorus of a song.
+				</p>
+
+				<p>You can make richer sounds, that are closer to the ones used by Tycho and Pretty Lights (in the examples at the beggining).</p>
+
+				<p>Please share any songs you create with us.</p>
+				
+				
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Extension 3: Graphical Interface</h2>
+				<p>
+					Make a graphical interface using a grid of GRects where each row represents a note (C, D, G, E, A) and each column represents a point in time. If a GRect is turned on (is colored blue) you should play that note at that time.
+				</p>
+
+				<p>Ask us about buttons</p>
+
+				<p>
+					<center>
+					<img style="width:100%" src="../../img/projects/music/gcomposer.png">
+				</center>
+				</p>
+
+
+				
+			</div>
+		</div>-->
+
+		
+<hr>
+
+<div class="footer">
+	<p class="pull-left">
+		&#169; Stanford 2019 &#124; Created by 
+		<a href="http://stanford.edu/~cpiech">Chris</a> with help from the entire team.
+		Based on the wonderful CS106A class which was developed by many talented teachers. Special thanks to <a href="http://cs.stanford.edu/people/eroberts/">Eric Roberts</a> and <a href="http://robotics.stanford.edu/~sahami/bio.html">Mehran Sahami</a>.
+	</p>
+	<!--<p class="pull-right">
+		<a href="../../fall12">Fall 2012</a>
+	</p>-->
+</div>
+<!--<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-35433298-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
+</script>-->
+</div></body>

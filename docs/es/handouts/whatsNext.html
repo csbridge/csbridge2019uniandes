@@ -1,0 +1,338 @@
+<head>
+
+<title>Intro to CS</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF8">
+
+<!-- Fonts -->
+<!--<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,600,700,900,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900,600italic,700italic,900italic' rel='stylesheet' type='text/css'>-->
+
+<!-- Styles -->
+
+<link href="../../plugins/bootstrap-3.1/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../../style.css">
+
+<!-- Java Script -->
+<script src="../../plugins/jquery.min.js"></script>
+<script src="../../plugins/bootstrap-3.1/js/bootstrap.min.js"></script>
+
+<script src="../../karel/ace/ace.js" type="text/javascript"></script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});
+  </script>-->
+</head><body><!-- Navigation Bar -->
+<nav class="navbar-inverse navbar-default" role="navigation">
+  <div class="container-fluid">
+  	<div class="container">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="/">CS Bridge</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <!--<li ><a href="#">Link</a></li>-->
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Handouts <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<!--<li><a href="../../en/handouts/sections.html">Sections</a></li>-->
+	          	<li><a href="../../en/handouts/karel.html">Karel Reference</a></li>
+							<!--<li><a href="../../en/handouts/submission.html">How to Submit Your Work</a></li>-->
+	          	
+	          	<li><a href="../../en/handouts/console.html">Console Reference</a></li>
+	          	<li><a href="../../en/handouts/random.html">Random Generator Reference</a></li>
+	          	<li><a href="../../en/handouts/graphics.html">Graphics Reference</a></li>
+	          	<li><a href="../../en/handouts/events.html">Events Reference</a></li>
+
+	          	
+	            <li><a href="../../en/handouts/arrayLists.html">Array Lists</a></li>
+	          	<!--
+	          	<li><a href="../../handouts/events.html">Events Reference</a></li>
+                <li><a href="../../projects/jsJSSyntax.html">JavaScript Syntax Reference</a></li>
+                <li><a href="../../handouts/htmlReference.html">HTML Reference</a></li>
+                <li><a href="../../handouts/uploadWebsite.html">Uploading a Website Reference</a></li>
+
+	          	<li><a href="../../handouts/whatsNext.html">Whats Next</a></li>
+	          	
+	          	
+	            <li><a href="../../handouts/operations.html">Operations</a></li>
+	            <li><a href="../../handouts/graphics.html">Graphics</a></li>
+	            <li><a href="../../handouts/passingData.html">Passing Data</a></li>-->
+	            
+	          </ul>
+	        </li>
+
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="../../en/projects/collectNewspaper.html">Collect Newspaper</a></li>
+	          	<li><a href="../../en/projects/efes.html">Build Efes</a></li>
+	          	<li><a href="../../en/projects/mountain.html">Mountain Karel</a></li>
+	          	<li><a href="../../en/projects/randomPainter.html">Random Painter</a></li>
+	          	
+	          	<li class="divider"></li>
+	          	<li><a href="../../en/projects/sandcastles.html">Sandcastles</a></li>
+	          	<li><a href="../../en/projects/favoriteNumber.html">Favorite Number</a></li>
+	          	<li><a href="../../en/projects/medicine.html">Medicine</a></li>
+	          	<li><a href="../../en/projects/someSum.html">Some Sum</a></li>
+	          	<li><a href="../../en/projects/gameOfStones.html">Nimm</a></li>
+	          	
+
+	          	<li class="divider"></li>
+
+	          	<li><a href="../../en/projects/awesome.html">Programming is Awesome</a></li>
+	          	<li><a href="../../en/projects/stringArt.html">String Art</a></li>
+	          	<li><a href="../../en/projects/randomCircles.html">Random Circles</a></li>
+	          	<li><a href="../../en/projects/hailstone.html">Hailstone</a></li>
+
+	            <li class="divider"></li>
+	            <li><a href="../../en/projects/bouncingBall.html">Bouncing Ball</a></li>
+	          	<li><a href="../../en/projects/madMethods.html">Mad Methods</a></li>
+	          	<li><a href="../../en/projects/target.html">Target</a></li>
+	          	<li><a href="../../en/projects/illusion.html">Optical Illusion</a></li>
+	          	<li><a href="../../en/projects/sunset.html">Short Film</a></li>
+
+	          	<li class="divider"></li>
+
+	          	<li><a href="../../en/projects/makingTracks.html">Making Tracks</a></li>
+	             <li><a href="../../en/projects/stampTool.html">Stamp Tool</a></li>
+	          	<li><a href="../../en/projects/catchMeIfYouCan.html">Catch Me If You Can</a></li>
+	          	<li><a href="../../en/projects/breakout.html">Breakout</a></li>
+
+							<!--
+	          	<li class="divider"></li>
+
+	          	<li><a href="../../en/projects/sortedNumbers.html">Sorted Numbers</a></li>
+	          	<li><a href="../../en/projects/snow.html">Snow</a></li>
+	          	<li><a href="../../en/projects/mouseGame.html">The Line</a></li>
+	          	<li><a href="../../en/projects/music.html">Music</a></li>
+							-->
+	          	<!--
+	            <li><a href="../../projects/drawPeople.html">Three's a Crowd</a></li>
+	            
+	            <li><a href="../../projects/madLibs.html">Mad Libs</a></li>
+	            <li><a href="../../projects/secret.html">Secret</a></li>
+
+	     
+
+                <li class="divider"></li>
+	            
+	            <li><a href="../../projects/breakout.html">Breakout</a></li>
+	            
+	            
+	            <li><a href="../../projects/music.html">Waves of Sound</a></li>
+	        	
+	        	
+	            <li><a href="../../projects/project.html">Final Project</a></li>-->
+
+	            
+              
+	            
+	          </ul>
+	        </li>
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../en/projects/stepUp.html">Step Up</a></li>
+	          	<li><a href="../../en/projects/place100.html">Place 100</a></li>
+	          	<li><a href="../../en/projects/beeperLine.html">Beeper Line</a></li>
+	          	<li><a href="../../en/projects/invert.html">Invert</a></li>
+	          	<li><a href="../../en/projects/unKarel.html">UN Karel</a></li>
+	          	<li class="divider"></li>
+	            <li><a href="../../en/projects/emc2.html">E=MC2</a></li>
+	            <li><a href="../../en/projects/fibb.html">Fibonacci</a></li>
+	           <li><a href="../../en/projects/favoriteNumber.html">Favorite Number</a></li>
+	           <li><a href="../../en/projects/findPi.html">Find Pi</a></li>
+	           <li><a href="../../en/projects/8Ball.html">8-Ball</a></li>
+	           <li class="divider"></li>
+	           
+	            
+	            <li><a href="../../en/projects/robotFace.html">Robot Face</a></li>
+
+	            
+	          	<li class="divider"></li>
+	            <li><a href="../../en/projects/mysterySquare.html">Mystery Square</a></li>
+
+	            <li><a href="../../en/projects/goCenter.html">Go To Center</a></li>
+
+	            <li><a href="../../en/projects/gravityBall.html">Gravity Ball</a></li>
+
+	          	<li><a href="../../en/projects/averageMethod.html">Average Method</a></li>	
+	          	<li><a href="../../en/projects/drawPeople.html">Draw People</a></li>	
+
+	          	<li><a href="../../en/projects/halfGreen.html">Half Green</a></li>
+
+							<!--
+	          	<li class="divider"></li>
+							<li><a href="../../en/projects/rocketShip.html">Rockets</a></li>
+
+	          	<li><a href="../../en/projects/debrisSweeper.html">Debris Sweeper</a></li>	
+	          	<li><a href="../../en/projects/suchADrag.html">Such a Drag</a></li>
+	              
+	             
+	             <li><a href="../../projects/stampTool.html">Stamp Tool</a></li>
+	            <li><a href="../../projects/snow.html">Snow</a></li>
+
+              <li class="divider"></li>
+	            <li><a href="../../projects/breakoutOnline.html">Breakout Online</a></li>
+							-->
+	          </ul>
+	        </li>
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Slides <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../slides/Welcome.pdf">Karel</a></li>
+	          	<li><a href="../../slides/ControlFlow.pdf">ControlFlow</a></li>
+	          	<li><a href="../../slides/Variables.pdf">Variables</a></li>
+	          	<li><a href="../../slides/Graphics.pdf">Graphics</a></li>
+	          	<li><a href="../../slides/Animation.pdf">Animation</a></li>
+	          	<li><a href="../../slides/Methods.pdf">Methods</a></li>
+	          	<li><a href="../../slides/Review.pdf">Review</a></li>
+	          	<li><a href="../../slides/Events.pdf">Events</a></li>
+	          	<li><a href="../../slides/Internet.pdf">Internet</a></li>
+	          	<li><a href="../../slides/Arrays.pdf">Arrays</a></li>
+	          	<li><a href="../../slides/ArrayLists.pdf">Array Lists</a></li>
+	          	<li><a href="../../slides/Strings.pdf">Strings</a></li>
+							<!--
+	          	<li><a href="../../slides/AI.pdf">Artificial Intelligence</a></li>
+	          	<li><a href="../../slides/loopVariableReview.pdf">Loop/Variable Review</a></li>
+	          	<li><a href="../../slides/Interactors.pdf">Interactors</a></li>
+	          	<li><a href="../../slides/AI.pdf">AI</a></li>
+	          	<li><a href="../../slides/Classes.zip">Classes</a></li>
+	          	<li><a href="../../slides/TheEnd.pdf">The End</a></li>
+	          	
+							-->
+	          </ul>
+	        </li>
+
+	        <!-- <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Extra Challenges <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../en/projects/isOdd.html">Is Odd</a></li>	
+	          	
+	          </ul>
+	        </li>-->
+
+
+	        <!--<li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Internet <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="https://www.dropbox.com/s/1jtjo9hde8in0xn/1-How%20the%20internet%20works.pptx">How the Internet Works</a></li>
+	          	<li><a href="https://www.dropbox.com/s/1t7pwltugsy4pxg/2-day-in-the-life-of-packet.pptx">Day in the Life of a Packet</a></li>
+	          	<li><a href="https://www.dropbox.com/s/1n0lzrl32urfsnr/3-How%20packets%20routed.pptx">How packets are routed in the Internet</a></li>
+	          	<li class="divider"></li>
+	          	<li><a href="http://yuba.stanford.edu/~huangty/dacka/lab1.html">Lab 1</a></li>
+	          	<li><a href="http://yuba.stanford.edu/~huangty/dacka/lab2.html">Lab 2</a></li>
+	          	<li class="divider"></li>
+	          	<li><a href="../../internet/echo.zip">Echo Client Code</a></li>
+	          	<li><a href="../../internet/2person-breakout.zip">2Person Breakout Code</a></li>
+
+	          	
+	          </ul>
+	        </li>-->
+
+	        <!--<li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Section<b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../projects/stepUp.html">Newspaper Karel</a></li>
+	          	<li><a href="../../projects/place100.html">Counterfit Drugs</a></li>
+	          	<li><a href="../../projects/beeperLine.html">Target</a></li>
+	          </ul>
+	        </li>-->
+
+	        <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bonus <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+                <li><a href="../../en/bonus-index.html">Bonus overview</a></li>
+	          </ul>
+	        </li>
+
+	        <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forms <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+                <li><a href="../../en/handouts/submission.html">Submit Your Work</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSffsKTNU3mu-21-ZjZFJ3d-fPdvw6uQcvhAjbpXhux43_3gpg/viewform?usp=sf_link">Sign in To Lab</a></li>
+	          </ul>
+	        </li>
+
+
+
+	      </ul>
+
+	      
+	      <ul class="nav navbar-nav navbar-right">
+	      	<li><a onclick="changeToEnglish()" style="cursor: pointer;"><img class="languageIcon" src="../../img/english_flag.png"></img></a></li>
+<!-- 	      	<li><a onclick="changeToTurkish()" style="cursor: pointer;"><img class="languageIcon" src="../../img/turkish_flag.png"></img></a></li> -->
+	        
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	</div>
+  </div><!-- /.container-fluid -->
+</nav>
+
+<script>
+
+	function changeToTurkish() {
+		var url = window.location.href;
+		url = url.replace("/en/", "/tk/");
+		window.location.href = url;
+	}
+
+	function changeToEnglish() {
+		var url = window.location.href;
+		url = url.replace("/tk/", "/en/");
+		window.location.href = url;
+	}
+
+</script>
+
+
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Que sigue </h1><p> Creado por Kerem Goksel y Chris Piech </p></div><hr/><p><center><img src="../../img/handouts/whatsNext/next.png" style="width:500px"/></center></p><div class="row"><div class="col-md-12"><p> A pesar de que tuvimos un intenso período de dos semanas en el que cubrimos muchos temas fundamentales en Informática, esta es una clase, pero es solo una pequeña parte de lo que hay que aprender en este apasionante campo. El primer escalón que tiene después de sentirse cómodo con el material de este curso es terminar los temas de CS 106A, la clase introductoria original en la Universidad de Stanford en la que se basa esta clase. </p></div></div><div class="row"><div class="col-md-12"><h2> Acabado CS 106A </h2><p> CS 106A es una clase intensa de 10 semanas en Stanford, cubre algunos temas más que nosotros y tiene otros proyectos que no tuvimos tiempo de cubrir en este curso. Sin embargo, hicimos evaluaciones que cubren los conceptos que omitimos para que pueda aprender los conceptos restantes. Para comenzar, debe instalar la versión de Eclipse de Stanford en sus propias computadoras, como se describe en <a href="../../handouts/DownloadingEclipse.pdf">este folleto de instalación de Eclipse</a>. </p></div></div><div class="row"><div class="col-md-12"><h3> La Línea (Revisión) </h3><p> Primero, hicimos una tarea que revisa los conceptos que cubrimos en clase. Descargue el código de inicio de la página de inicio y complete <a href="../../projects/mouseGame.html">la línea</a>. Esta tarea solo revisa los temas que ya hemos cubierto en clase, por lo que no necesita aprender ningún tema nuevo para hacerlo. </p></div></div><div class="row"><div class="col-md-12"><h3> Ahorcado (cuerdas) </h3><p> Como saben, las cadenas son un tipo de variable que usamos para almacenar secuencias de caracteres en la memoria de la computadora, y generalmente las usamos a lo largo del curso para realizar un seguimiento de cosas como mensajes informativos o puntuaciones que se muestran en los juegos. Sin embargo, hay mucho más que cuerdas que eso! De hecho, muchos problemas interesantes en Informática implican trabajar con Cuerdas. Si bien no hemos aprendido mucho acerca de lo que puede hacer con las cadenas en este curso, una excelente manera de comenzar a aprender es crear un proyecto que requiera que trabaje con cadenas. La tarea que hacen todos los estudiantes de Stanford para aprender Cuerdas es construir el juego de Hangman (&quot;Adam asmaca&quot;, como lo llaman los turcos). Continuamos y escribimos un <a href="../../projects/hangman.html">folleto</a> especial para el <a href="../../projects/hangman.html">ahorcado</a> para usted y agregamos el código de inicio en el sitio web del curso. Puede ir allí, leer el folleto, descargar el código a su computadora, importar el proyecto a Eclipse y comenzar a trabajar en él inmediatamente. </p></div></div><div class="row"><div class="col-md-12"><h3> Instakilo (HashMaps) </h3><p> Un último concepto que tienes que aprender es HashMaps. Vea si puede revisar el concepto de HashMaps, luego intente la asignación de <a href="../../projects/instakilo.html">Instakilo</a>. </p></div></div><hr/><!--<div class="row">
+			<div class="col-md-12">
+				<h3>
+					Rest of CS 106A
+				</h3>
+				<p>
+					After you've built Hangman, you will probably have a good grasp of how Strings work. There are a few other topics covered in CS106A that you won't have learned yet, and we strongly suggest looking at those before moving on. While we don't have specific assignments and handouts for you after this moment, you can find past CS106A lecture videos, lecture notes and assignment handouts and  here</a>. At this point, you have the necessary ability and experience to tackle these projects on your own and master the programming fundamentals.
+				</p>
+			</div>
+		</div>--><div class="row"><div class="col-md-12"><h2> Despues de 106a </h2><p> Una vez que haya terminado con el material CS 106A, puede continuar y explorar cualquier campo de CS que desee. Puede acceder al material en <a href="https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1138/">CS106B, el segundo curso de introducción al plan de estudios de Stanford</a>, pero hay una gran cantidad de recursos en línea que enseñan diferentes conceptos de CS de forma gratuita, por lo que puede elegir lo que desea aprender y aprender a su propio ritmo. desde sus propias computadoras. Hemos creado esta guía práctica para algunos de los buenos cursos en línea que son apropiados para su nivel, pero sitios web como Khan Academy, Codecademy, Udemy y Coursera tienen muchos otros cursos que también puede seguir, si decide profundizar aún más. . </p></div></div><div class="row"><div class="col-md-12"><h3> Cursos de Programación Web </h3><h4> Refrescantes: </h4><p> Cubrió parte del material en estos cursos, pero tomarlos puede ser una buena idea si desea actualizar y aplicar sus conocimientos antes de continuar. </p><ul><li><a href="http://www.codecademy.com/en/tracks/web">Codecademy HTML y CSS</a>: este curso enseña los conceptos básicos de HTML y CSS desde cero. Puede ser una buena actualización para el desarrollo web. </li><li><a href="http://www.codecademy.com/en/tracks/javascript">Codecademy JavaScript</a>: este curso enseña la sintaxis básica de JavaScript y va un poco más lejos de lo que lo hicimos. Buen punto de partida si quieres hacer más con JavaScript. </li></ul><h4> Sobre la base de JS básico, HTML, CSS </h4><ul><li><a href="http://www.codecademy.com/en/tracks/jquery">Codecademy jQuery</a>: enseña a usar jQuery (un práctico marco de JavaScript) para crear páginas web interactivas. </li><li><a href="https://www.coursera.org/learn/internet-history">Coursera: Internet, Historia, Tecnología y Seguridad</a>: No es un curso de programación, pero enseña sobre la historia de Internet y, en general, cómo funciona. Tiene alguna información interesante sobre tecnologías de internet y seguridad web. </li><li><a href="http://www.codecademy.com/en/learn/make-a-rails-app">La aplicación Codecademy Make a Rails</a>: lleva a construir una aplicación web básica desde cero utilizando Ruby on Rails, un marco web popular (asume HTML básico, CSS, JS). Bueno para aquellos que desean un gran desafío después de JavaScript y para aquellos que desean crear aplicaciones web más complejas. </li></ul><h3> Gráficos </h3><ul><li><a href="https://www.khanacademy.org/computing/computer-programming/programming-games-visualizations">Khan Academy Advanced Javascript - Juegos y visualizaciones</a>: puede combinar su conocimiento de JavaScript con su conocimiento gráfico para hacer juegos y otras aplicaciones gráficas geniales que se ejecutan en el navegador en este curso. </li><li><a href="https://www.udacity.com/course/cs291">Gráficos 3D interactivos de Udacity</a>: un curso de gráficos JS un poco más avanzado, puede ir después de KhanAcademy (el sitio web del curso no requiere experiencia previa, pero es útil tener conocimientos de JavaScript). Tiene aproximadamente 48 horas de material. </li></ul><h3> Programación Java </h3><ul><li><a href="https://www.udacity.com/course/cs046">Introducción a la programación en Java de Udacity</a>: aproximadamente 96 horas de material. Enseña Java desde cero (sin necesidad de programación previa), pero probablemente va más allá de lo que enseñamos. Puede usar este curso si desea profundizar en Java y aprender a programar Java fuera de las bibliotecas de Stanford. </li><li><a href="https://www.udacity.com/course/ud853">Udacity Cómo hacer aplicaciones de Android</a>: aproximadamente 60 horas de material. Enseña Android asumiendo una experiencia Java decente. Esto puede ser bastante desafiante y complicado, por lo que es posible que desee tomar primero el otro curso de Java. </li></ul><h3> Otros temas interesantes de informática </h3><ul><li><a href="https://www.khanacademy.org/computing/computer-programming/programming-natural-simulations">Khan Academy Advanced JavaScript - Simulaciones naturales</a>: aplicación de JS y programación básica para hacer simulaciones geniales + introducción a conceptos como la aleatoriedad. </li><li><a href="https://www.khanacademy.org/computing/computer-science/algorithms">Khan Academy Algorithms</a>: Enseña implementaciones de algoritmos básicos en JS. Puede ser bueno después de todas las otras cosas de JS. </li></ul></div></div><hr/><div class="row"><div class="col-md-12"><h2> Recursos útiles </h2><p> De ahora en adelante, continuará su viaje de aprendizaje de Ciencias de la Computación por su cuenta, ¡pero eso no significa que no haya recursos para ayudar! Si bien no podemos estar allí para revisar su código y enseñarle nuevos conceptos, puede usar el foro de clase que creamos en Piazza para ayudarse mutuamente. Si necesita una referencia completa de todos los métodos que utilizamos, puede encontrar la <a href="https://cs.stanford.edu/people/eroberts/jtf/javadoc/student/index.html">documentación de ACM aquí</a> y la <a href="https://docs.oracle.com/en/java/">documentación general de Java aquí</a>. Más adelante, una vez que haya terminado con los temas restantes en CS106A y desee moverse a nuevos temas, un sitio web llamado Stack Overflow será su mejor amigo. Es un sitio web de preguntas y respuestas utilizado por muchos programadores de todo el mundo. Si tiene un problema, es probable que alguien más haya tenido ese problema antes y probablemente haya formulado esa pregunta en el Desbordamiento de pila. Simplemente, al buscar su problema en este sitio web probablemente le dará ideas sobre cómo abordar un problema, ¡al igual que las sugerencias de los Líderes de la Sección! </p></div></div><div class="row"><div class="col-md-12"><h3> Una nota sobre la copia del código de otros </h3><p> Ver el código de calidad escrito por programadores experimentados puede ser muy útil para aprender, ya que le mostrará formas elegantes e inteligentes de resolver problemas y formas adecuadas de formatear su código, por lo que no hay nada de malo en mirar el código de otras personas cuando está aprendiendo en su propio. Sin embargo, como la programación de aprendizaje se convierte en su viaje personal, tenga en cuenta que esto es algo que está haciendo por sí mismo, ¡porque lo ama! Copiar el código de otra persona puede proporcionarle una gratificación instantánea al permitirle resolver un problema rápidamente, pero perjudicará su aprendizaje y no obtendrá la satisfacción de crear una solución a un problema, que es uno de los momentos más bellos de la programación. No hay nadie por ahí para comprobar si copia el código de otros como en la escuela, pero recuerde que hacerlo mata toda la diversión de la programación. </p></div></div>
+<hr>
+
+<div class="footer">
+	<p class="pull-left">
+		&#169; Stanford 2019 &#124; Created by 
+		<a href="http://stanford.edu/~cpiech">Chris</a> with help from the entire team.
+		Based on the wonderful CS106A class which was developed by many talented teachers. Special thanks to <a href="http://cs.stanford.edu/people/eroberts/">Eric Roberts</a> and <a href="http://robotics.stanford.edu/~sahami/bio.html">Mehran Sahami</a>.
+	</p>
+	<!--<p class="pull-right">
+		<a href="../../fall12">Fall 2012</a>
+	</p>-->
+</div>
+<!--<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-35433298-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
+</script>-->
+</div></body>

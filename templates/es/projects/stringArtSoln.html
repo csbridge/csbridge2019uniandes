@@ -2,7 +2,7 @@
 
 	%include templates/parts/head.html
 </head><body><!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarEs.html
 <!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Arte de cuerdas </h1><p> Basado en una demostración de Eric Roberts. </p></div><hr/><div class="row"><div class="col-md-12"><p> Al dibujar repetidamente líneas, podemos hacer una forma de aspecto curvo. Considere el siguiente ejemplo donde imaginamos que los puntos se espacian uniformemente a lo largo de la parte inferior e izquierda de un lienzo. Si conectamos el punto superior en el borde izquierdo al punto más a la izquierda en el borde derecho, seríamos una línea como la imagen del extremo izquierdo. Si luego conectamos los próximos 10 puntos, obtendremos una imagen en el medio y si conectamos todos los puntos, obtendremos la imagen de la derecha. </p><p><center><img src="{{pathToRoot}}img/projects/stringArt/startToEnd.png" style="width:700px"/></center></p><p> Escriba un programa que cree la &quot;curva&quot; en la imagen de arriba a la derecha usando líneas rectas. </p></div></div><div class="row"><div class="col-md-12"><h2> Solución </h2><pre id="editor" style="height:500px"> Clase pública ArteDeCuerdas extiende ProgramaDeGraficos {
 
 	/ ** El tamaño de la pantalla ** /

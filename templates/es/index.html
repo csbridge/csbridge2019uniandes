@@ -2,14 +2,21 @@
 
 	%include templates/parts/head.html
 <script src="../karel/js/html/websiteImports.js"></script><script>importCss();</script><script>importJs();</script></head><body><!-- Navigation Bar -->
-	%include templates/parts/navBar.html
-<div class="page-header" style="backgroud-color:#cdbfe3"><div class="container"><div><div id="logo"><img id="logoImg" src="{{pathToRoot}}img/logo.jpg"/></div><div id="headerText" style="padding-bottom:15px;"><div class="h1" style="margin-top:0px;font-size:40px;"> Introducción a la informática </div><div> Verano 2019 </div><div> Del 25 de junio al 5 de julio en la Universidad de los Andes, Bogotá. </div></div></div></div></div><!-- Main Content --><div class="container"><div class="section" id="information"><br/><div class="alert alert-success"> Todos los enlaces necesarios (para iniciar sesión en el laboratorio, para enviar su trabajo) ahora se pueden encontrar en la pestaña &#39;Formularios&#39; en la barra de herramientas superior. </div><!--
+	%include templates/parts/navBarEs.html
+<div class="page-header" style="backgroud-color:#cdbfe3"><div class="container"><div><div id="logo"><img id="logoImg" src="{{pathToRoot}}img/logo.jpg"/></div><div id="headerText" style="padding-bottom:15px;"><div class="h1" style="margin-top:0px;font-size:40px;"> Introducción a la informática </div><div> Verano 2019 </div><div> Del 25 de junio al 5 de julio en la Universidad de los Andes, Bogotá. </div></div></div></div></div><!-- Main Content -->
+
+
+<div class="container"><div class="section" id="information"><br/>
+
+<!--<div class="alert alert-success"> Todos los enlaces necesarios (para iniciar sesión en el laboratorio, para enviar su trabajo) ahora se pueden encontrar en la pestaña &#39;Formularios&#39; en la barra de herramientas superior. </div>-->
+
+<!--
 		<div class="alert alert-success">
 			<b> We want your feedback</b>. Fill in the class survey here: <a href="https://www.surveymonkey.com/r/VCVVD8N">https://www.surveymonkey.com/r/VCVVD8N</a>.
 		</div>
 
 		<div class="alert alert-success">
-			<b> Submit your work</b>. Use the submission process: <a href="{{pathToRoot}}en/handouts/submission.html">submission handout</a>.
+			<b> Submit your work</b>. Use the submission process: <a href="{{pathToRoot}}es/handouts/submission.html">submission handout</a>.
 		</div>
 
 		<div class="alert alert-info">
@@ -24,16 +31,19 @@
 		<div class="alert alert-info">
 			Add to the class playlist here: <a href="https://open.spotify.com/user/1251835474/playlist/2E1ccnzfMTqDv2D1JEoFF3">Spotify Playlist</a>
 		</div>
-		--><div><h2> La idea del curso </h2><p> El objetivo de este curso de dos semanas es enseñarte los fundamentos de la programación de computadoras hasta el punto en que puedas ir y aprender por tu cuenta. Es enseñado por una colaboración de instructores de Stanford, Boğaziçi y la Universidad de Koç. Aprenderá a programar usando material para el curso de Introducción a la Informática de Stanford (que es muy similar al curso de introducción de Koç). </p><hr/></div><div><div class="section" id="schedule"><h2> Los programas </h2>
-			%include templates/parts/programTable.html
+		--><div><h2> La idea del curso </h2><p> El objetivo de este curso de dos semanas es enseñarte los fundamentos de la programación de computadoras hasta el punto en que puedas ir y aprender por tu cuenta. Es enseñado por una colaboración de instructores de Stanford, y la Universidad de los Andes. Aprenderá a programar usando material para el curso de Introducción a la Informática de Stanford (que es muy similar al curso de introducción de UniAndes). </p><hr/></div><div><div class="section" id="schedule"><h2> Los programas </h2>
+			%include templates/parts/programTableEs.html
 <hr/></div><div class="section" id="staff"><h2> Maestros </h2>
 
 			%include templates/parts/peeps.html
 <hr/></div><div class="section" id="getStarted"><h2> Configure su computadora </h2><h3> Descargar Eclipse </h3><p> Tu primer paso es instalar eclipse. <a href="https://web.stanford.edu/dept/cs_edu/eclipse/">Aquí</a> hay instrucciones. Si solo quieres el plugin de Stanford, puedes encontrarlo <a href="{{pathToRoot}}starter/edu.stanford.cs106_1.0.0.jar">aquí</a>. </p><h3> Importar un proyecto </h3><p> Una vez que haya instalado Eclipse, puede importar un proyecto (Menú Stanford -&gt; Importar proyecto). Para descargar nuevos programas e importar <a href="{{pathToRoot}}starter/BlankJavaProject.zip">este</a> proyecto en blanco. </p> Un video útil se puede encontrar <a href="https://www.youtube.com/watch?v=D8w54kAOsqM">aquí</a>. Otro video que muestra cómo ejecutar su código se puede encontrar <a href="https://www.youtube.com/watch?v=vgGXPMhKp9o">aquí</a>. <!--<h3>Create an executable</h3>
-			<p>If you want to turn a project into a stand-alone executable, read <a href="{{pathToRoot}}handouts/CreatingJarFiles.pdf">this</a> handout.</p>--><hr/></div><div class="section" id="playWithKarel"><h2> Plan de estudios </h2><img src="{{pathToRoot}}img/icons/curriculum.jpg" style="width:100%"/><hr/></div><div class="section" id="playWithKarel"><h2> Jugar con karel </h2><p> Conoce a Karel, el robot de Java que utiliza Stanford para introducir a los estudiantes universitarios en la programación. </p><p> Usa los comandos de Karel para hacer que mueva el beeper a la parte superior de la cornisa. Normalmente escribirá sus programas en una aplicación llamada Eclipse, pero para comenzar, hicimos un mini-eclipse para nuestro sitio web: </p>
+			<p>If you want to turn a project into a stand-alone executable, read <a href="{{pathToRoot}}handouts/CreatingJarFiles.pdf">this</a> handout.</p>--><hr/></div><div class="section" id="playWithKarel"><h2> Plan de estudios </h2><img src="{{pathToRoot}}img/icons/curriculum.jpg" style="width:100%"/><hr/></div>
+
+
+			<!--<div class="section" id="playWithKarel"><h2> Jugar con karel </h2><p> Conoce a Karel, el robot de Java que utiliza Stanford para introducir a los estudiantes universitarios en la programación. </p><p> Usa los comandos de Karel para hacer que mueva el beeper a la parte superior de la cornisa. Normalmente escribirá sus programas en una aplicación llamada Eclipse, pero para comenzar, hicimos un mini-eclipse para nuestro sitio web: </p>
 
 			%include templates/parts/playWithKarel.html
-</div>
+</div>-->
 
 		
 

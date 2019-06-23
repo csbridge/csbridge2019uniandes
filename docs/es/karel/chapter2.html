@@ -1,0 +1,335 @@
+<html><head>
+<title> Lector de karel </title><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><script src="../plugins/jquery.min.js"></script><link href="../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/><script src="../plugins/bootstrap/js/bootstrap.min.js"></script><link href="../style.css" rel="stylesheet"/><script src="..//karel/js/html/websiteImports.js"></script><script>importCss();</script><script>importJs();</script></head><body><!-- container --><div class="bookContainer">
+<!-- side bar --><div class="bookSideBar"><div class="homeLink"><a href="../es/intro.html"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Karel</a></div><hr/>
+
+
+<div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter1.html">1 - Conoce a Karel</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter2.html">2 - Programación</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter3.html">3 - Nuevos métodos</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter4.html">4 - Descomposición</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter5.html">5 - Ciclos for</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter6.html">6 - Ciclos while</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter7.html">7 - Condicionales</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter8.html">8 - Refinamiento</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter10.html">9 - SuperKarel</a></div>
+<div class="chapterTab"><a class="bookLink btn btn-link" href="../es/reference.html">10 - Referencia</a></div><!-- <center>
+    <img style ="width:75px;" src="../images/stanford.png"/>
+    </center>--></div><!-- content --><div class="bookContent" style="display: flex;"><!-- right gutter --><div style="flex-grow:1; flex-basis:50px; max-width:50px"></div><!-- main stuff --><div class="" style="flex-basis:740px; max-width:740px; margin-left:20px; margin-right:20px; "><div class="row"><div class="col-md-12 col-xs-12">
+
+<h1> Capítulo 2: Programación Karel </h1><hr/><p> El estilo más simple de programa de Karel utiliza texto para especificar una secuencia de comandos internos que deben ser ejecutadas cuando se <b>ejecuta</b> el programa. Considere el sencillo programa de Karel a continuación. El texto a la izquierda es el programa. El estado del mundo de Karel se muestra a la derecha: </p>
+
+
+
+<div class="section embeddedIde" id="beeperPicking"><div class="ide getStarted" id="beeperPickingIde" style="height:299.20000000000005px"><div class="ideCenter" id="beeperPickingIdeCenter"><div class="ideEditorDiv" id="beeperPickingEditorDiv" style="width:200px"></div><div class="ideCanvasDiv" id="beeperPickingCanvasDiv"><canvas class="ideCanvas" id="beeperPickingCanvas"></canvas></div></div></div><div style="width:100%;"><div class="buttonBar"><button class="btn btn-default" id="beeperPickingRunButton"><span class="glyphicon glyphicon-play"></span> Ejecute el programa</button></div></div><script>
+
+        
+
+function examplebeeperPicking() {
+STARTER_CODE = `
+
+/*
+ * Archivo: ConoRecogiendoKarel.java
+ * ---------------------------------
+ * El programa ConoRecogiendoKarel define un método
+ * de "ejecución" con tres comandos. Estos comandos
+ * hacen que Karel avance un bloque, levante un cono
+ * y luego avance hacia la siguiente esquina.
+ */
+import stanford.karel.*;
+public class ConoRecogiendoKarel extends Karel {
+   /* el programa comienza a ejecutarse aquí */
+   public void run() {
+      moverse();
+      recogerCono();
+      moverse();
+   } 
+}
+`
+// because of that extra endline at the start of the string
+STARTER_CODE = STARTER_CODE.trim();
+
+ var karelIde = null;
+ var karelEditor = null;
+ var buttonState = 'play';
+
+ function main() {
+   karelEditor = importEditorCode('beeperPickingEditor','beeperPickingEditorDiv', STARTER_CODE, false);
+     //importRunButtonBar('example1ButtonBar');
+    
+    $("[title]").tooltip({ position: "bottom center", opacity: 0.9});
+    
+    initTabs();
+    var canvas = document.getElementById('beeperPickingCanvas');
+    karelIde = KarelIde(karelEditor, canvas, 'stepUp', 0.0);
+    $('#beeperPickingRunButton').click(function(){playClicked()});
+    onresize();
+    
+ }
+
+ function playClicked() {
+  if(buttonState == 'play') {
+    karelIde.playButton();
+      
+      var resetText = '<span class="glyphicon glyphicon-repeat"></span> Reset Program';
+      $('#beeperPickingRunButton').html(resetText);
+      buttonState = 'reset';
+     } else if (buttonState == 'reset') {
+      karelIde.stopButton();
+      var playText = '<span class="glyphicon glyphicon-play"></span> Run Program';
+      $('#beeperPickingRunButton').html(playText);
+      buttonState = 'play';
+     }
+  
+  }
+
+ function onresize() { 
+    var parentHeight = 299.20000000000005;
+    var canvasWidth = 300
+    var parentWidth = $("#beeperPicking").width();
+    console.log('pw: ' + parentWidth);
+
+    var ide = document.getElementById('beeperPickingIde');
+    var editorDiv = document.getElementById('beeperPickingEditorDiv');
+    var canvas = document.getElementById('beeperPickingCanvasDiv');
+    
+    var ideHeight = parentHeight
+    var centerHeight = ideHeight;
+
+    var availibleWidth = parentWidth;
+    var elementSpacing = 12;
+
+    var editorWidth = availibleWidth - canvasWidth - elementSpacing; 
+
+    canvas.style.width = canvasWidth + 'px';
+    canvas.style.height = canvasWidth + 'px';
+    canvas.style.left = (editorWidth + elementSpacing) + 'px';
+
+
+
+    editorDiv.style.left = 0 + 'px'
+    editorDiv.style.width = editorWidth + 'px';
+    editorDiv.style.height = parentHeight + 'px';
+    console.log('editor width: ' + editorWidth)
+
+    if (karelEditor) {
+       karelEditor.renderer.onResize();
+    }
+ }
+ main()
+ 
+}
+examplebeeperPicking();
+    </script></div>
+<p> Presiona el botón &quot;Ejecutar&quot; para ejecutar el programa. Los programas normalmente se escriben en una aplicación especial llamada <b>Entorno de desarrollo integrado</b>(IDE) y la mayoría de los programas de Karel se escriben en un IDE llamado Eclipse. Al igual que un IDE, este lector tiene la capacidad de ejecutar programas para ayudarte a <i>ver</i> cómo funcionan las cosas a medida que aprendes. </p><p> El programa se compone de varias partes. La primera parte consta de las siguientes líneas: </p><p><p class="demoCode" style="margin-left:10px"><pre class="comment" translate="no">/*
+&nbsp;*&nbsp;Archivo: ConoRecogiendoKarel.java
+&nbsp;* ---------------------------------
+&nbsp;*&nbsp;El programa ConoRecogiendoKarel define un método
+&nbsp;* de "ejecución" con tres comandos. Estos comandos
+&nbsp;* hacen que Karel avance un bloque, levante un cono
+&nbsp;* y luego avance hacia la siguiente esquina.
+&nbsp;*/</pre></p><p> Estas líneas son un ejemplo de un <b>comentario</b>, que es simplemente un texto diseñado para explicar el funcionamiento del programa a los lectores humanos. Los comentarios tanto en Karel como en Java comienzan con los caracteres <code class="comment">/*</code> y terminan con los caracteres <code class="comment">*/</code>. Aquí, el comentario comienza en la primera línea y termina varias líneas más tarde. Las estrellas en las líneas individuales que forman el texto del comentario no son necesarias, pero hacen que sea más fácil para los lectores humanos ver el alcance del comentario. En un programa simple, los comentarios extensos pueden parecer tontos porque el efecto del programa es obvio, pero son extremadamente importantes como medio para documentar el diseño de programas más grandes y complejos.</p><p> La parte final del programa Karel consiste en la siguiente definición del programa: </p><p class="demoCode" style="margin-left:10px"><code><span class="keyword">public class</span> ConoRecogiendoKarel <span class="keyword">extends</span> EsKarel {</code><br/><code>&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> run() {</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moverse();</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recogerCono();</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moverse();</code><br/><code>&nbsp;&nbsp;&nbsp;}</code><br/><code>}</code><br/></p><p> Para entender esta definición, es útil mirar más detenidamente su estructura. La definición del programa ConoRecogiendoKarel consiste en la línea que comienza con <code class="keyword">public class</code> y abarca todo entre la llave al final de esa línea y la llave de cierre correspondiente en la última línea del programa. La línea única que introduce la nueva clase se llama el <b>encabezado</b> de la definición; El código entre las llaves se llama el <b>cuerpo</b>. </p><p> En programación, a menudo es muy útil pensar en una definición particular y su cuerpo como ideas separables. En este ejemplo, la definición de ConoRecogiendoKarel tiene la siguiente forma, donde todo el cuerpo de la definición se puede quitar de tu mente por el momento: </p><p class="demoCode" style="margin-left:10px"><code><span class="keyword">public class</span> ConoRecogiendoKarel <span class="keyword">extends</span> EsKarel {</code><br/><i class="demoText" style="margin-left:2em">cuerpo de la definición del programa</i><br/><code>}</code><br/></p><p> La línea de encabezado en la parte superior le dice bastante sobre el programa ConoRecogiendoKarel, incluso antes de que haya visto para ver qué contiene el cuerpo. La frase <code class="keyword">public class</code> comienza la definición de un programa. La frase se <code><span class="keyword">extends</span> EsKarel</code> se utiliza para indicar que <code>ConoRecogiendoKarel</code> es un programa de EsKarel. </p><p> Ahora veamos el cuerpo del programa ConoRecogiendoKarel. Ese cuerpo consta de las siguientes líneas: </p><p class="demoCode" style="margin-left:10px"><code>&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> run() {</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moverse();</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recogerCono();</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moverse();</code><br/><code>&nbsp;&nbsp;&nbsp;}</code><br/></p><p> Estas líneas representan la definición de un nuevo <b>método</b>, que especifica la secuencia de pasos necesarios para responder a un comando. Como en el caso del programa ConoRecogiendoKarel, la definición del método consta de dos partes que pueden considerarse por separado: la primera línea constituye el encabezado del método y el código entre las llaves es el cuerpo del método. Si ignora el cuerpo por ahora, la definición del método se ve así: </p><p class="demoCode" style="margin-left:10px"><code>&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> run() {</code><br/><i class="demoText" style="margin-left:3.5em">cuerpo de la definición del método</i><br/><code>&nbsp;&nbsp;&nbsp;}</code><br/></p><p> Las dos primeras palabras en el encabezado del método, <code class="keyword">public</code> y <code class="keyword">void</code>, son parte de la estructura sintáctica de Java, y debería sentirse libre de ignorarlas en este momento. La siguiente palabra en la línea del encabezado especifica el nombre del nuevo método, que en este caso es el método <b>ejecutado</b>. Definir un método significa que Karel ahora puede responder a un nuevo comando con ese nombre. El comando de <code>run</code> juega un papel especial en un programa de Karel. Cuando inicia un programa Karel, crea una nueva instancia de Karel, agrega ese Karel a un mundo que usted especifique y luego ejecuta el comando de ejecución. El efecto de ejecutar el programa está definido por el cuerpo del método de ejecución, que es una secuencia de comandos que el robot ejecutará en orden. Por ejemplo, el cuerpo del método de ejecución para el programa ConoRecogiendoKarel es: </p><p class="demoCode" style="margin-left:10px"><code>&nbsp;&nbsp;&nbsp;moverse();</code><br/><code>&nbsp;&nbsp;&nbsp;recogerCono();</code><br/><code>&nbsp;&nbsp;&nbsp;moverse();</code><br/></p><p> Por lo tanto, si el estado inicial del mundo coincide con el ejemplo dado en el Capítulo 1, Karel primero avanza hacia la esquina que contiene el cono, toma ese cono y finalmente avanza hacia la esquina justo antes de la pared, como se muestra a continuación Diagrama de antes y después: </p>
+
+
+<div class="section" id="ba2"><div class="ide getStarted" id="ba2Ide"><div class="commandCanvasDiv" id="ba2CanvasDiv"><div><div class="commandCanvasTitle"> Antes de: </div><div class="commandCanvasOuter"><canvas id="ba2CanvasBefore" style="width:300px;"></canvas></div></div><div style="width:50px"></div><div><div class="commandCanvasTitle"> Después: </div><div class="commandCanvasOuter"><canvas id="ba2CanvasAfter" style="width:300px;"></canvas></div></div></div></div><script>
+
+        
+
+function exampleba2() {
+ var karelIde = null;
+ var buttonState = 'play';
+ var canvas = null;
+
+ function main() {
+    canvas = document.getElementById('ba2CanvasBefore');
+    karelIde = KarelIde(null, canvas, 'stepUp', 0.0, 1000, 0.7 * 1000);
+
+    let canvasGoal = document.getElementById('ba2CanvasAfter');
+    let goalIde = KarelIde(null, canvasGoal, 'stepUpM1',0.0,  1000, 0.7 * 1000)
+ }
+
+ 
+ main()
+ 
+}
+exampleba2();
+    </script></div><h2> Resolviendo un problema más interesante. </h2><p> El programa ConoRecogiendoKarel definido anteriormente todavía no hace mucho. Tratemos de hacerlo un poco más interesante. Supongamos que el objetivo no es simplemente lograr que Karel recoja el cono, sino que se mueva el cono desde su posición inicial en la segunda columna y la primera fila hasta el centro de una repisa. Por lo tanto, su próxima tarea es definir un nuevo programa Karel que cumpla con la tarea ilustrada en este diagrama: </p>
+
+
+<div class="section" id="ba3"><div class="ide getStarted" id="ba3Ide"><div class="commandCanvasDiv" id="ba3CanvasDiv"><div><div class="commandCanvasTitle"> Antes de: </div><div class="commandCanvasOuter"><canvas id="ba3CanvasBefore" style="width:300px;"></canvas></div></div><div style="width:50px"></div><div><div class="commandCanvasTitle"> Después: </div><div class="commandCanvasOuter"><canvas id="ba3CanvasAfter" style="width:300px;"></canvas></div></div></div></div><script>
+
+        
+
+function exampleba3() {
+ var karelIde = null;
+ var buttonState = 'play';
+ var canvas = null;
+
+ function main() {
+    canvas = document.getElementById('ba3CanvasBefore');
+    karelIde = KarelIde(null, canvas, 'stepUp', 0.0, 1000, 0.7 * 1000);
+
+    let canvasGoal = document.getElementById('ba3CanvasAfter');
+    let goalIde = KarelIde(null, canvasGoal, 'stepUpGoal',0.0,  1000, 0.7 * 1000)
+ }
+
+ 
+ main()
+ 
+}
+exampleba3();
+    </script></div><p> Los primeros tres comandos en el nuevo programa, los que se mueven hacia adelante, recogen el cono y luego se mueven hacia el borde, son los mismos que antes: </p></p><p class="demoCode" style="margin-left:10px"><code>&nbsp;&nbsp;&nbsp;moverse();</code><br/><code>&nbsp;&nbsp;&nbsp;recogerCono();</code><br/><code>&nbsp;&nbsp;&nbsp;moverse();</code><br/></p><p> Desde aquí, el siguiente paso es girar a la izquierda para comenzar a subir la cornisa. Esa operación es fácil, porque Karel tiene un comando girarIzquierda en su repertorio estándar. La ejecución de un comando de girarIzquierda al final de la secuencia de comandos anterior deja a Karel mirando hacia el norte en la esquina de la primera fila y la tercera columna. Si Karel ejecuta un comando de movimiento, se moverá hacia el norte para alcanzar la siguiente posición: </p>
+
+
+
+<div class="section" id="ba3">
+<div class="ide getStarted" id="ba3Ide">
+<div class="commandCanvasDiv" id="ba3CanvasDiv">
+<div>
+<div class="commandCanvasOuter">
+<canvas id="ba3Canvas" style="width:300px;"></canvas>
+</div>
+</div>
+</div>
+</div>
+<script>
+
+        
+
+function exampleba3() {
+ var karelIde = null;
+ var buttonState = 'play';
+ var canvas = null;
+
+ function main() {
+    canvas = document.getElementById('ba3Canvas');
+    karelIde = KarelIde(null, canvas, 'stepUpM2', 0,1000, 0.7 * 1000);
+ }
+
+ 
+ main()
+ 
+}
+exampleba3();
+    </script>
+</div><p> A partir de aquí, lo siguiente que debe hacer es lograr que Karel gire a la derecha para que vuelva a mirar hacia el este. Si bien esta operación es conceptualmente tan fácil como hacer que Karel gire a la izquierda, hay un pequeño problema: el lenguaje de Karel incluye un comando <code>girarIzquierda</code>, pero no <code>girarDerecha</code> comando <code>girarDerecha</code>. Es como si comprara el modelo económico y ahora descubriera que le faltan algunas características importantes. </p><p> En este punto, tiene su primera oportunidad de comenzar a pensar como un programador. Tiene un conjunto de comandos, pero no exactamente el conjunto que necesita. ¿Qué puedes hacer? ¿Puedes lograr el efecto de un comando girarDerecha usando solo las capacidades que tienes? La respuesta, por supuesto, es sí. Puede lograr el efecto de girar a la derecha girando a la izquierda tres veces. Después de tres giros a la izquierda, Karel estará orientado en la dirección deseada. Desde aquí, todo lo que necesita hacer es programar a Karel para que se desplace hacia el centro de la repisa, suelte el cono y luego avance hacia la posición final. Aquí hay una implementación completa de un programa <code>Aumentar</code> que realiza la tarea completa: </p>
+
+
+
+<div class="section embeddedIde" id="stepUp"><div class="ide getStarted" id="stepUpIde" style="height:422.40000000000003px"><div class="ideCenter" id="stepUpIdeCenter"><div class="ideEditorDiv" id="stepUpEditorDiv" style="width:200px"></div><div class="ideCanvasDiv" id="stepUpCanvasDiv"><canvas class="ideCanvas" id="stepUpCanvas"></canvas></div></div></div><div style="width:100%;"><div class="buttonBar"><button class="btn btn-default" id="stepUpRunButton"><span class="glyphicon glyphicon-play"></span> Ejecute el programa</button></div></div><script>
+
+        
+
+function examplestepUp() {
+STARTER_CODE = `
+
+/*
+ * Archivo: ConoRecogiendoKarel.java
+ * ---------------------------------
+ * El programa ConoRecogiendoKarel define un método
+ * de "ejecución" con comandos que hacen que Karel
+ * tome un cono y lo coloque en una repisa.
+ */
+import stanford.karel.*;
+public class ConoRecogiendoKarel extends Karel {
+   public void run() {
+      moverse();
+      recogerCono();
+      moverse();
+      girarIzquierda();
+      moverse();
+      girarIzquierda();
+      girarIzquierda();
+      girarIzquierda();
+      moverse();
+      moverse();
+      ponerCono();
+      moverse();
+   } 
+}
+`
+// because of that extra endline at the start of the string
+STARTER_CODE = STARTER_CODE.trim();
+
+ var karelIde = null;
+ var karelEditor = null;
+ var buttonState = 'play';
+
+ function main() {
+   karelEditor = importEditorCode('stepUpEditor','stepUpEditorDiv', STARTER_CODE, false);
+     //importRunButtonBar('example1ButtonBar');
+    
+    $("[title]").tooltip({ position: "bottom center", opacity: 0.9});
+    
+    initTabs();
+    var canvas = document.getElementById('stepUpCanvas');
+    karelIde = KarelIde(karelEditor, canvas, 'stepUp', 0.5);
+    $('#stepUpRunButton').click(function(){playClicked()});
+    onresize();
+    
+ }
+
+ function playClicked() {
+  if(buttonState == 'play') {
+    karelIde.playButton();
+      
+      var resetText = '<span class="glyphicon glyphicon-repeat"></span> Reset Program';
+      $('#stepUpRunButton').html(resetText);
+      buttonState = 'reset';
+     } else if (buttonState == 'reset') {
+      karelIde.stopButton();
+      var playText = '<span class="glyphicon glyphicon-play"></span> Run Program';
+      $('#stepUpRunButton').html(playText);
+      buttonState = 'play';
+     }
+  
+  }
+
+ function onresize() { 
+    var parentHeight = 422.40000000000003;
+    var canvasWidth = 300
+    var parentWidth = $("#stepUp").width();
+    console.log('pw: ' + parentWidth);
+
+    var ide = document.getElementById('stepUpIde');
+    var editorDiv = document.getElementById('stepUpEditorDiv');
+    var canvas = document.getElementById('stepUpCanvasDiv');
+    
+    var ideHeight = parentHeight
+    var centerHeight = ideHeight;
+
+    var availibleWidth = parentWidth;
+    var elementSpacing = 12;
+
+    var editorWidth = availibleWidth - canvasWidth - elementSpacing; 
+
+    canvas.style.width = canvasWidth + 'px';
+    canvas.style.height = canvasWidth + 'px';
+    canvas.style.left = (editorWidth + elementSpacing) + 'px';
+
+
+
+    editorDiv.style.left = 0 + 'px'
+    editorDiv.style.width = editorWidth + 'px';
+    editorDiv.style.height = parentHeight + 'px';
+    console.log('editor width: ' + editorWidth)
+
+    if (karelEditor) {
+       karelEditor.renderer.onResize();
+    }
+ }
+ main()
+ 
+}
+examplestepUp();
+    </script></div><hr/><center><a class="btn btn-primary btn-lg" href="chapter3.html" role="button">Siguiente capítulo</a></center>
+
+
+
+<div style="height:60px"></div>
+<!-- <div class="footer">
+	<p class="pull-left">
+		&#169; Stanford 2018 &#124; Made by Chris Piech. Built off "Karel the Robot Learns Java" by Eric Roberts. 
+	</p>
+</div>-->
+<!-- <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74362126-1', 'auto');
+  ga('send', 'pageview');
+
+</script>--></div></div></div><!-- right gutter --><div style="flex-grow:4"></div></div></div></body></html>

@@ -256,12 +256,12 @@
 	          </ul>
 	        </li>-->
 
-	        <li class="dropdown">
+	        <!--<li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bonus <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
                 <li><a href="../../en/bonus-index.html">Bonus overview</a></li>
 	          </ul>
-	        </li>
+	        </li>-->
 
 	        <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forms <b class="caret"></b></a>
@@ -277,8 +277,10 @@
 
 	      
 	      <ul class="nav navbar-nav navbar-right">
+	      	<li><a onclick="changeToSpanish()" style="cursor: pointer;"><img class="languageIcon" src="../../img/colombian_flag.png"></img></a></li> 
+
 	      	<li><a onclick="changeToEnglish()" style="cursor: pointer;"><img class="languageIcon" src="../../img/english_flag.png"></img></a></li>
-<!-- 	      	<li><a onclick="changeToTurkish()" style="cursor: pointer;"><img class="languageIcon" src="../../img/turkish_flag.png"></img></a></li> -->
+ 	      	
 	        
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
@@ -288,15 +290,15 @@
 
 <script>
 
-	function changeToTurkish() {
+	function changeToSpanish() {
 		var url = window.location.href;
-		url = url.replace("/en/", "/tk/");
+		url = url.replace("/en/", "/es/");
 		window.location.href = url;
 	}
 
 	function changeToEnglish() {
 		var url = window.location.href;
-		url = url.replace("/tk/", "/en/");
+		url = url.replace("/es/", "/en/");
 		window.location.href = url;
 	}
 

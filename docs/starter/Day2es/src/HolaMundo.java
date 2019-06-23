@@ -1,8 +1,8 @@
 
 /**
- * Hello World
+ * Hola Mundo
  * -----
- * The classic
+ * Un clásico
  */
 public class HolaMundo extends EsConsole {
 

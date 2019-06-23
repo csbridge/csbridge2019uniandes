@@ -11,6 +11,10 @@ public class EsConsole extends ConsoleProgram{
 		println(s);
 	}
 	
+	public void imprimir(double d) {
+		println(d);
+	}
+	
 	public int leerInt(String prompt) {
 		return readInt(prompt);
 	}

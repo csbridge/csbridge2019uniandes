@@ -1,16 +1,16 @@
 
 /**
- * Favorite Number
+ * Numero Favorito
  * -----
- * A user tries to guess your favorite number
+ * Un usuario intenta adivinar tu numero favorito.
  */
 public class NumeroFavorito extends EsConsole {
 
-	// change this to be your favorite number
-	private static final int FAVORITE_NUMBER = 0;
+	// cambia esto para que sea tu número favorito
+	private static final int NUMERO_FAVORITO = 0;
 	
 	public void run() {
-		// your code here..
+		// tu codigo va aca...	
 	}
 
 }

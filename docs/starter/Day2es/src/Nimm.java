@@ -2,13 +2,13 @@
 /**
  * Nimm
  * -----
- * Runs a two player version of the ancient game of Nimm.
+ * Ejecuta una version para dos jugadores del 
+ * antiguo juego de Nimm.
  */
 public class Nimm extends EsConsole {
 
 	public void run() {
-		// your code here...
-		
+		// tu codigo va aca...	
 	}
 
 }

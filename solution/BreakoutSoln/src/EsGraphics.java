@@ -13,6 +13,10 @@ public class EsGraphics extends GraphicsProgram{
 		add((GObject)obj);
 	}
 	
+	public void agregar(GObject obj, double x, double y) {
+		add(obj, x, y);
+	}
+	
 	public void quitar(SObjeto obj) {
 		remove((GObject)obj);
 	}
@@ -22,16 +26,13 @@ public class EsGraphics extends GraphicsProgram{
 	}
 	
 	public void mouseMoved(MouseEvent e) {
-		ratonMovido(e);
+		mouseMovido(e);
 	}
 	
-	public void ratonMovido(MouseEvent e) {
+	public void mouseMovido(MouseEvent e) {
 		// to overload
 	}
 	
-	public void agregar(GObject obj, double x, double y) {
-		add(obj, x, y);
-	}
 	
 	public void esperarClic() {
 		waitForClick();
@@ -49,7 +50,7 @@ public class EsGraphics extends GraphicsProgram{
 		return getHeight();
 	}
 	
-	public SObjeto darObjectoA(double x, double y) {
+	public SObjeto darObjetoA(double x, double y) {
 		return (SObjeto)getElementAt(x, y);
 	}
 	
@@ -63,14 +64,6 @@ public class EsGraphics extends GraphicsProgram{
 
 	public void imprimir(double d) {
 		println(d);
-	}
-
-	public int leerInt(String prompt) {
-		return readInt(prompt);
-	}
-
-	public double leerDouble(String prompt) {
-		return readDouble(prompt);
 	}
 
 	public int intAleatorio() {

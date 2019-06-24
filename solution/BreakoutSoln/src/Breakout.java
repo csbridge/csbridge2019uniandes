@@ -18,8 +18,8 @@ import java.awt.event.*;
 public class Breakout extends EsGraphics {
 	
 	/** Width and height of application window in pixels */
-	public static final int ANCHO_APLICACION = 400;
-	public static final int ALTURA_APLICACION = 600;
+	public static final int APPLICATION_WIDTH = 400;
+	public static final int APPLICATION_HEIGHT = 600;
 
 	/** Dimensions of the paddle */
 	private static final int PADDLE_WIDTH = 60;
@@ -103,11 +103,10 @@ public class Breakout extends EsGraphics {
 	private void drawBricks() {	
 		double cx = getWidth() / 2;
 		double cy = getHeight() / 2;
-		for( int row = 0; row < NBRICK_ROWS; row++ ) {
-			for (int column = 0; column < NBRICKS_PER_ROW; column++) {
-				double	x = cx - (NBRICKS_PER_ROW*BRICK_WIDTH)/2 - ((NBRICKS_PER_ROW-1)*BRICK_SEP)/2 + column*BRICK_WIDTH + column*BRICK_SEP;
-				double	y = cy + row * BRICK_HEIGHT + row*BRICK_SEP;
-
+		for(int row = 0; row < NBRICK_ROWS; row++ ) {
+			for(int column = 0; column < NBRICKS_PER_ROW; column++) {
+				double x = cx - (NBRICKS_PER_ROW*BRICK_WIDTH)/2 - ((NBRICKS_PER_ROW-1)*BRICK_SEP)/2 + column*BRICK_WIDTH + column*BRICK_SEP;
+				double y = cy + row * BRICK_HEIGHT + row*BRICK_SEP;
 				SRect brick = new SRect( x , y , BRICK_WIDTH , BRICK_HEIGHT );
 				agregar(brick);
 				brick.darRelleno(true);

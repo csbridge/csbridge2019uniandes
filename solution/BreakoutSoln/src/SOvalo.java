@@ -28,12 +28,13 @@ public class SOvalo extends GOval implements SObjeto{
 		setFilled(b);
 	}
 	
-	public void darColor(Color brickColor) {
+	public void cambiarColor(Color brickColor) {
 		setColor(brickColor);
 	}
 	
-	public void darUbicacion(double i, double j) {
+	public void cambiarUbicacion(double i, double j) {
 		setLocation(i, j);
 	}
+
 
 }

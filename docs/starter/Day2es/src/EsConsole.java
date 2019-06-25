@@ -8,7 +8,7 @@ import acm.util.RandomGenerator;
  * leer/modificar este archivo. Este archivo nos permite 
  * traducir las librerias a nombres de metodos en Español
  */
-public class EsConsole extends ConsoleProgram{
+public abstract class EsConsole extends ConsoleProgram{
 
 	private RandomGenerator rg = new RandomGenerator();
 	

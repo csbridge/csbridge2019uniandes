@@ -20,20 +20,35 @@ public class SRect extends GRect implements SObjeto{
 		return getY();
 	}
 
-	public void moverse(int dx, int dy) {
+	public void moverse(double dx, double dy) {
 		move(dx, dy);
 	}
 
-	public void darRelleno(boolean b) {
+	public void cambiarRelleno(boolean b) {
 		setFilled(b);
 	}
 
-	public void darUbicacion(double i, double j) {
+	public void cambiarUbicacion(double i, double j) {
 		setLocation(i, j);
 	}
 
-	public void darColor(Color brickColor) {
-		setColor(brickColor);
+	public void cambiarColor(Color c) {
+		setColor(c);
+	}
+	
+	public double darAncho() {
+		return getWidth();
+	}
+	
+	public double darAltura() {
+		return getHeight();
 	}
 
+	public void cambiarVisible(boolean visible) {
+		setVisible(visible);
+	}
+	public boolean esVisible() {
+		return isVisible();
+	}
+	
 }

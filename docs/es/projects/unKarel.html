@@ -48,7 +48,7 @@
 	      <ul class="nav navbar-nav">
 	        <!--<li ><a href="#">Link</a></li>-->
 	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guras <b class="caret"></b></a>
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guías <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
 	          	<li><a href="http://karel.csbridge.org/es/intro.html">Lector de Karel</a></li>
 	          	<li><a href="../../es/handouts/karel.html">Karel Referencia</a></li>
@@ -153,7 +153,7 @@
 	          	<li><a href="../../es/projects/place100.html">Poner 100</a></li>
 	          	<li><a href="../../es/projects/beeperLine.html">Fila De Conos</a></li>
 	          	<li><a href="../../es/projects/invert.html">Invertir Conos</a></li>
-	          	<li><a href="../../es/projects/unKarel.html">UN Karel</a></li>
+	          	<li><a href="../../es/projects/unKarel.html">Karel Nu</a></li>
 	          	<!--<li class="divider"></li>
 	            <li><a href="../../es/projects/emc2.html">E=MC2</a></li>
 	            <li><a href="../../es/projects/fibb.html">Fibonacci</a></li>
@@ -319,14 +319,14 @@
 			</p>
 <p>
 				Guras: 
-				<a href="../../es/handouts/karel.html">KarelReference</a>
+				<a href="../../es/handouts/karel.html">Referencia de karel</a>
 </p>
 </div>
 <hr/>
 <div class="row">
 <div class="col-md-12">
 <p>
-					Karel has been hired by the UN to come and help build houses. The day needs saving and Karel is clearly the best robot for the job. Your goal is to have Karel walk along the bottom row and build a house like the following:
+					Karel ha sido contratada por la ONU para venir a ayudar a construir casas. El día necesita ser salvado y Karel es claramente el mejor robot para el trabajo. Su objetivo es hacer que Karel camine por la fila inferior y construir una casa como la siguiente:
 				</p>
 <p>
 <center>
@@ -334,7 +334,7 @@
 </center>
 </p>
 <p>
-					Every time Karel finds a beeper. The bellow images show what Karel should do for two example worlds. You can assume that no houses will overlap and that all houses will fit inside the world. You can't assume the size of the world or the number of houses!
+					Cada vez que Karel encuentra un cono. Las siguientes imágenes muestran lo que Karel debería hacer por dos mundos de ejemplo. Puede suponer que ninguna casa se superpondrá y que todas las casas encajarán dentro del mundo. ¡No puedes asumir el tamaño del mundo o el número de casas!
 				</p>
 <p>
 <center>
@@ -352,17 +352,17 @@
 <div class="col-md-12">
 <h2>Solution</h2>
 <pre id="editor" style="height:1100px">/**
- *&nbsp;Programa: ONU Karel
+ *&nbsp;Programa: Karel NU
  * -------------------
  *&nbsp;Este programa hace que Karel construya casas,
  * como trabajo para la ONU.
  */
-public class UNKarel extends SuperKarel {
+public class KarelNU extends EsKarel {
 	
 	public void run() {
-		while(elFrenteEsClaro()) {
+		while(frenteDespejado()) {
 			moverse();
-			if(beepersPresente()) {
+			if(conosPresentes()) {
 				construirUnaCasa();
 			}
 		}
@@ -373,28 +373,28 @@ public class UNKarel extends SuperKarel {
 	 * ----------------------
 	 *&nbsp;Construye una sola casa centrada alrededor de la
 	 * posición actual de Karel. Puede suponer que hay
-	 * una señal acústica presente en el estado de
+	 * un cono presente en el estado de
 	 * inicio. Al final del método, Karel estará mirando
 	 * hacia el este en la esquina inferior derecha de
 	 * la casa.
 	 */
 	private void construirUnaCasa() {
-		recogerBeeper();
-		giroDeVuelta();
+		recogerCono();
+		mediaVuelta();
 		moverse();
-		girarALaDerecha();
-		lugarTres();
-		girarALaDerecha();
+		girarDerecha();
+		ponerTres();
+		girarDerecha();
 		moverse();
-		girarALaDerecha();
-		lugarTres();
-		girarALaIzquierda();
+		girarDerecha();
+		ponerTres();
+		girarIzquierda();
 		moverse();
-		girarALaIzquierda();
-		lugarTres();
-		giroDeVuelta();
-		moverALaPared();
-		girarALaIzquierda();
+		girarIzquierda();
+		ponerTres();
+		mediaVuelta();
+		moverseALaPared();
+		girarIzquierda();
 	}
 
 	/**
@@ -402,22 +402,29 @@ public class UNKarel extends SuperKarel {
 	 * ------------------------
 	 *&nbsp;Avanza hasta que Karel golpee una pared.
 	 */
-	private void moverALaPared() {
-		while(elFrenteEsClaro()) {
+	private void moverseALaPared() {
+		while(frenteDespejado()) {
 			moverse();
 		}
 	}
 
 	/**
-	 *&nbsp;Método: Coloque tres
+	 *&nbsp;Método: Poner tres
 	 * --------------------
-	 *&nbsp;¡Coloca tres beepers seguidos y mueve tres veces!
+	 *&nbsp;Poner tres beepers seguidos y moverse tres veces
 	 */
-	private void lugarTres() {
+	private void ponerTres() {
 		for(int i = 0; i &lt; 3; i++) {
-			ponerBeeper();
+			ponerCono();
 			moverse();
 		}
+	}
+
+	/* el clasico */
+	private void girarDerecha() {
+		girarIzquierda();
+		girarIzquierda();
+		girarIzquierda();
 	}
 
 }</pre>

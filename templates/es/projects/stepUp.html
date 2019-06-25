@@ -3,7 +3,7 @@
 	%include templates/parts/head.html
 </head><body><!-- Navigation Bar -->
 	%include templates/parts/navBarEs.html
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Escalar </h1><p> Basado en un folleto de Eric Roberts </p><p><!--Topics:
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Escalar (con solucion)</h1><p> Basado en un folleto de Eric Roberts </p><p><!--Topics:
 				KarelCommands,
 				Methods
 			<br/>--> Folletos: <a href="{{pathToRoot}}es/handouts/karel.html">Referencia de Karel</a></p></div><hr/><div class="row"><div class="col-md-12"><p> Karel comienza en el mundo a la izquierda. ¿Cómo programaría a Karel para que recoja el cono y lo transporte hasta la parte superior de la cornisa? Karel debería dejar caer el cono en la esquina de 2nd Street y 4th Avenue y luego continuar una esquina más hacia el este, terminando en 5th Avenue. Al final de tu programa, el mundo de Karel debería verse como la imagen de la derecha. </p><center><img class="psetImg" src="{{pathToRoot}}img/projects/stepUp/stepUp.png" style="width:700px"/></center><br/><p> Si Karel solo conoce los comandos: <div class="well"><code>moverse() <br/> recogerCono() <br/> ponerCono() <br/> girarIzquierda()</code></div>¿Cómo puedes hacer que Karel gire a la derecha? </p><div class="row"><div class="col-md-12"><h2> Solución </h2><p> Se proporciona una solución para este ejemplo, ¡para que pueda ver cómo se ve un programa completo! </p><pre id="editor" style="height:460px">/**

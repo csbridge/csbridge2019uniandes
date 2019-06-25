@@ -3,6 +3,11 @@ import java.awt.Color;
 import acm.program.ConsoleProgram;
 import acm.util.RandomGenerator;
 
+/**
+ * CUIDADO: Por favor no cambiar este codigo.  No necesitas 
+ * leer/modificar este archivo. Este archivo nos permite 
+ * traducir las librerias a nombres de metodos en Español
+ */
 public class EsConsole extends ConsoleProgram{
 
 	private RandomGenerator rg = new RandomGenerator();

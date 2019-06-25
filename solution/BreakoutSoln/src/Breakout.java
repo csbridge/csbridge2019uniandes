@@ -39,7 +39,7 @@ public class Breakout extends EsGraphics {
 
 	/** Width of a brick */
 	private static final int BRICK_WIDTH =
-			(WIDTH - (NBRICKS_PER_ROW - 1) * BRICK_SEP) / NBRICKS_PER_ROW;
+			(APPLICATION_WIDTH - (NBRICKS_PER_ROW - 1) * BRICK_SEP) / NBRICKS_PER_ROW;
 
 	/** Height of a brick */
 	private static final int BRICK_HEIGHT = 8;
@@ -63,110 +63,108 @@ public class Breakout extends EsGraphics {
 
 	/**Ball velocity*/	
 	private double vx, vy;
-
-
 	private int contadorLadrillos = 100;
 
 	//adding an individual ball object
-	private SOvalo bola;
+	private SOvalo pelota;
 
 	//adding individual paddle object
-	private SRect paleta;
+	private SRect pala;
 
 	public void run() {
 		for(int i=0; i < NTURNS; i++) {
-			setUpGame();
-			playGame();
+			iniciarJuego();
+			hacerJuego();
 			if(contadorLadrillos == 0) {
 				break;
 			}
 		}
-		displayEndGame();
+		mostrarFin();
 	}
 
-	private void displayEndGame() {
+	private void mostrarFin() {
 		quitarTodo();
-		bola.setVisible(false);
+		pelota.cambiarVisible(false);
 		if(contadorLadrillos > 0) {
-			printGameOver();
+			imprimirPerdida();
 		} else {
-			printWinner();
+			imprimirGana();
 		}
 	}
 
-	private void setUpGame() {
-		drawBricks();
-		drawPaddle();
-		drawBall();
+	private void iniciarJuego() {
+		dibujarLadrillos();
+		dibujarPala();
+		dibujarPelota();
 	}
 
-	private void drawBricks() {	
-		double cx = getWidth() / 2;
-		double cy = getHeight() / 2;
-		for(int row = 0; row < NBRICK_ROWS; row++ ) {
-			for(int column = 0; column < NBRICKS_PER_ROW; column++) {
-				double x = cx - (NBRICKS_PER_ROW*BRICK_WIDTH)/2 - ((NBRICKS_PER_ROW-1)*BRICK_SEP)/2 + column*BRICK_WIDTH + column*BRICK_SEP;
-				double y = cy + row * BRICK_HEIGHT + row*BRICK_SEP;
-				SRect brick = new SRect( x , y , BRICK_WIDTH , BRICK_HEIGHT );
-				agregar(brick);
-				brick.darRelleno(true);
-				brick.darColor(getBrickColor(row));
+	private void dibujarLadrillos() {	
+		double cx = darAncho() / 2;
+		double cy = BRICK_Y_OFFSET;
+		for(int fila = 0; fila < NBRICK_ROWS; fila++ ) {
+			for(int columna = 0; columna < NBRICKS_PER_ROW; columna++) {
+				double x = cx - (NBRICKS_PER_ROW*BRICK_WIDTH)/2 - ((NBRICKS_PER_ROW-1)*BRICK_SEP)/2 + columna*BRICK_WIDTH + columna*BRICK_SEP;
+				double y = cy + fila * BRICK_HEIGHT + fila*BRICK_SEP;
+				SRect ladrillo = new SRect( x , y , BRICK_WIDTH , BRICK_HEIGHT );
+				ladrillo.cambiarRelleno(true);
+				ladrillo.cambiarColor(darLadrilloColor(fila));
+				agregar(ladrillo);
 			}
 		}
 	}
 
-	private Color getBrickColor(int row) {
-		if (row < 2) {
+	private Color darLadrilloColor(int fila) {
+		if (fila < 2) {
 			return Color.RED;
 		}
-		if (row == 2 || row == 3) {
+		if (fila == 2 || fila == 3) {
 			return Color.ORANGE;
 		}
-		if (row == 4 || row == 5) {
+		if (fila == 4 || fila == 5) {
 			return Color.YELLOW;
 		}
-		if (row == 6 || row == 7) {
+		if (fila == 6 || fila == 7) {
 			return Color.GREEN;
 		}
-		if (row == 8 || row == 9) {
+		if (fila == 8 || fila == 9) {
 			return Color.CYAN;
 		}
 		return Color.BLACK;
 	}
 
 	//paddle set-up
-	private void drawPaddle() {
-		double x = getWidth()/2 - PADDLE_WIDTH/2; 
-		double y = getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
-		paleta = new SRect (x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
-		paleta.setFilled(true);
-		add (paleta);
+	private void dibujarPala() {
+		double x = darAncho()/2 - PADDLE_WIDTH/2; 
+		double y = darAltura() - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
+		pala = new SRect (x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
+		pala.cambiarRelleno(true);
+		agregar(pala);
 		agregarMouseListeners();
 	}
 
 	//making the mouse track the paddle
-	public void ratonMovido(MouseEvent e) {
-		if ((e.getX() < getWidth() - PADDLE_WIDTH/2) && (e.getX() > PADDLE_WIDTH/2)) {
-			paleta.darUbicacion(e.getX() - PADDLE_WIDTH/2, getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
+	public void mouseMovido(MouseEvent e) {
+		if ((e.getX() < darAncho() - PADDLE_WIDTH/2) && (e.getX() > PADDLE_WIDTH/2)) {
+			pala.cambiarUbicacion(e.getX() - PADDLE_WIDTH/2, darAltura() - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
 		}
 	}
 
 
 	//ball set-up
-	private void drawBall() {
+	private void dibujarPelota() {
 		double x = darAncho()/2 - BALL_RADIUS;
 		double y = darAltura()/2 - BALL_RADIUS;
-		bola = new SOvalo(x, y, BALL_RADIUS, BALL_RADIUS);
-		bola.cambiarRelleno(true);
-		add(bola);
+		pelota = new SOvalo(x, y, BALL_RADIUS, BALL_RADIUS);
+		pelota.cambiarRelleno(true);
+		agregar(pelota);
 	}
 
-	private void playGame() {
+	private void hacerJuego() {
 		esperarClic();
-		getBallVelocity();
+		darPelotaVelocidad();
 		while (true) {
-			moveBall();
-			if (bola.darY() >= darAltura()) {
+			moverPelota();
+			if (pelota.darY() >= darAltura()) {
 				break;
 			}
 			if(contadorLadrillos == 0) {
@@ -177,7 +175,7 @@ public class Breakout extends EsGraphics {
 
 
 
-	private void getBallVelocity() {
+	private void darPelotaVelocidad() {
 		vy = 4.0;
 		vx = doubleAleatorio(1.0, 3.0);
 		if (booleanAleatorio(0.5)) {
@@ -186,25 +184,25 @@ public class Breakout extends EsGraphics {
 
 	}
 
-	private void moveBall() {
-		bola.move(vx, vy);
+	private void moverPelota() {
+		pelota.moverse(vx, vy);
 		//check for walls
 		//need to get vx and vy at the point closest to 0 or the other edge
-		if ((bola.getX() - vx <= 0 && vx < 0 )|| (bola.getX() + vx >= (getWidth() - BALL_RADIUS*2) && vx>0)) {
+		if ((pelota.darX() - vx <= 0 && vx < 0 )|| (pelota.darX() + vx >= (darAncho() - BALL_RADIUS*2) && vx>0)) {
 			vx = -vx;
 		}
 		//We don't need to check for the bottom wall, since the ball can fall through the wall at that point
-		if ((bola.getY() - vy <= 0 && vy < 0 )) {
+		if ((pelota.darY() - vy <= 0 && vy < 0 )) {
 			vy = -vy;
 		}
 
 		//check for other objects
-		SObjeto collider = getCollidingObject();
-		if (collider == paleta) {
+		SObjeto objetoChocando = darObjetoChocando();
+		if (objetoChocando == pala) {
 			vy = -Math.abs(vy);
 		}
-		else if (collider != null) {
-			quitar(collider); 
+		else if (objetoChocando != null) {
+			quitar(objetoChocando); 
 			contadorLadrillos--;
 			vy = -vy;
 		}
@@ -212,19 +210,19 @@ public class Breakout extends EsGraphics {
 	}
 
 
-	private SObjeto getCollidingObject() {
+	private SObjeto darObjetoChocando() {
 
-		if((darObjectoA(bola.getX(), bola.getY())) != null) {
-			return darObjectoA(bola.getX(), bola.getY());
+		if((darObjetoA(pelota.darX(), pelota.darY())) != null) {
+			return darObjetoA(pelota.darX(), pelota.darY());
 		}
-		else if (darObjectoA( (bola.getX() + BALL_RADIUS*2), bola.getY()) != null ){
-			return darObjectoA(bola.getX() + BALL_RADIUS*2, bola.getY());
+		else if (darObjetoA( (pelota.darX() + BALL_RADIUS*2), pelota.darY()) != null ){
+			return darObjetoA(pelota.darX() + BALL_RADIUS*2, pelota.darY());
 		}
-		else if(darObjectoA(bola.getX(), (bola.getY() + BALL_RADIUS*2)) != null ){
-			return darObjectoA(bola.getX(), bola.getY() + BALL_RADIUS*2);
+		else if(darObjetoA(pelota.darX(), (pelota.darY() + BALL_RADIUS*2)) != null ){
+			return darObjetoA(pelota.darX(), pelota.darY() + BALL_RADIUS*2);
 		}
-		else if(darObjectoA((bola.getX() + BALL_RADIUS*2), (bola.getY() + BALL_RADIUS*2)) != null ){
-			return darObjectoA(bola.getX() + BALL_RADIUS*2, bola.getY() + BALL_RADIUS*2);
+		else if(darObjetoA((pelota.darX() + BALL_RADIUS*2), (pelota.darY() + BALL_RADIUS*2)) != null ){
+			return darObjetoA(pelota.darX() + BALL_RADIUS*2, pelota.darY() + BALL_RADIUS*2);
 		}
 		//need to return null if there are no objects present
 		else{
@@ -233,18 +231,18 @@ public class Breakout extends EsGraphics {
 
 	}
 
-	private void printGameOver() {
-		GLabel gameOver = new GLabel ("Game Over", getWidth()/2, getHeight()/2);
-		gameOver.move(-gameOver.getWidth()/2, -gameOver.getHeight());
-		gameOver.setColor(Color.RED);
-		add (gameOver);
+	private void imprimirPerdida() {
+		SLabel finPartido = new SLabel ("FIN", darAncho()/2, darAltura()/2);
+		finPartido.moverse(-finPartido.darAncho()/2, -finPartido.darAltura());
+		finPartido.cambiarColor(Color.RED);
+		add (finPartido);
 	}
 
 
-	private void printWinner() {
-		GLabel Winner = new GLabel ("Winner!!", getWidth()/2, getHeight()/2);
-		Winner.move(-Winner.getWidth()/2, -Winner.getHeight());
-		Winner.setColor(Color.RED);
-		add (Winner);
+	private void imprimirGana() {
+		SLabel ganador = new SLabel ("Ganador!!", darAncho()/2, darAltura()/2);
+		ganador.moverse(-ganador.darAncho()/2, -ganador.darAltura());
+		ganador.cambiarColor(Color.RED);
+		add (ganador);
 	}
 }

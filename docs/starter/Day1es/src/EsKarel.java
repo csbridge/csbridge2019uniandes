@@ -3,11 +3,19 @@ import java.awt.Color;
 import stanford.karel.SuperKarel;
 
 /**
- * CUIDADO: Por favor no cambiar este codigo.  No necesitas leer/modificar este archivo.
- * Este archivo nos permite traducir las librerias de Karel a nombres de metodos en Español
+ * CUIDADO: Por favor no cambiar este codigo.  No necesitas 
+ * leer/modificar este archivo. Este archivo nos permite 
+ * traducir las librerias de Karel a nombres de metodos en Español
  */
 public class EsKarel extends SuperKarel{
 
+	
+	/********************************************** 
+	 *          código privado                    *
+	 **********************************************/
+	
+	
+	
 	public void moverse() {
 		move();
 	}

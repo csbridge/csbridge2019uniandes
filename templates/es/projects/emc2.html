@@ -2,7 +2,7 @@
 
 	%include templates/parts/head.html
 </head><body><!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarEs.html
 <!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> E = MC2 (con solución) </h1><p> Problema escrito por Chris, descubierto por Einstein </p></div><hr/><div class="row"><div class="col-md-12"><p> Uno de los descubrimientos humanos emocionantes es que la masa y la energía son intercambiables y están relacionadas por la ecuación E = M × C <sup>2</sup>. Albert Einstein descubrió esta relación hace casi 100 años y ahora sabemos que el sol produce su calor al transformar pequeñas cantidades de masa en grandes cantidades de energía. </p><p> Escriba un programa que continuamente lea en masa del usuario y luego produzca la cantidad de energía. Muestra tu trabajo de la siguiente manera: </p><p><center><img src="{{pathToRoot}}img/projects/emc2/demo.png" style="width:400px"/></center></p><p> Si le pide al usuario que ingrese kilogramos y utiliza una velocidad de luz igual a 299792458 (que está en metros por segundo), el resultado del cálculo de E = M × C <sup>2</sup> estará en Jouls. </p><p> Tenga en cuenta que 3.0E8 es una notación científica para 3.0 × 10 <sup>8</sup>... que es 300,000,000. No necesita hacer nada para que Java imprima dobles en notación científica. Lo hará automáticamente cuando los números sean lo suficientemente grandes. </p><p> Dado que la velocidad de la luz nunca cambiará, tiene sentido declararla como una constante. </p></div></div><div class="row"><div class="col-md-12"><h2> Solución </h2><pre id="editor" style="height:480px">/ **
  * Programa&nbsp;: EMC2
  * --------------

@@ -2,22 +2,22 @@
 
 	%include templates/parts/head.html
 </head><body><!-- Navigation Bar -->
-	%include templates/parts/navBar.html
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Coloque 100 (con solución) </h1><p> Problema escrito por Chris </p><p> Folletos: <a href="{{pathToRoot}}en/handouts/karel.html">KarelReferencia</a></p></div><hr/><div class="row"><div class="col-md-12"><p> Tu objetivo es hacer que Karel cree una pila de 100 beepers en la plaza enfrente de donde comienza. ¡¡¡Por favor!!! ¡No escribas ponerBeeper 100 veces seguidas! (pista: usar un ciclo for.) </p><p><center><img src="{{pathToRoot}}img/projects/place100/place100.png" style="width:700px"/></center></p></div></div><div class="row"><div class="col-md-12"><h2> Solución </h2><pre id="editor" style="height:280px">/ **
- * Programa&nbsp;: Place100
+	%include templates/parts/navBarEs.html
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Poner 100 (con solución) </h1><p> Problema escrito por Chris </p><p> Folletos: <a href="{{pathToRoot}}es/handouts/karel.html">KarelReferencia</a></p></div><hr/><div class="row"><div class="col-md-12"><p> Tu objetivo es, hacer que Karel cree una pila de 100 conos en la plaza enfrente de donde comienza. ¡¡¡Por favor!!! ¡No escribas ponerBeeper 100 veces seguidas! (psst: usar un ciclo for.) </p><p><center><img src="{{pathToRoot}}img/projects/place100/place100.png" style="width:700px"/></center></p></div></div><div class="row"><div class="col-md-12"><h2> Solución </h2><pre id="editor" style="height:280px">/**
+ * Programa&nbsp;: Poner100
  * ------------------
  *&nbsp;Este programa hace que karel coloque un montón de
- * 100 beepers. Buenos tiempos
- * /
-La clase pública Place100 extiende SuperKarel {
+ * 100 conos. Buenos tiempos
+ */
+public class Poner100 extends EsKarel {
 	
-	public void run () {
-		moverse ();
-		// Este for-loop repetirá el código dentro de 100 veces.
-		para (int i = 0; i &lt;100; i ++) {
-			ponerBeeper ();
+	public void run() {
+		moverse();
+		// Este for-loop repetirá el código dentro 100 veces.
+		for(int i = 0; i &lt; 100; i++) {
+			ponerCono();
 		}
-		moverse ();
+		moverse();
 	}
 } </pre><script charset="utf-8" src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript"></script><script>
     var editor = ace.edit("editor");

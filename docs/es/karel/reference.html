@@ -1,0 +1,204 @@
+<html><head>
+<title> Lector de karel </title><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><script src="../plugins/jquery.min.js"></script><link href="../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/><script src="../plugins/bootstrap/js/bootstrap.min.js"></script><link href="../style.css" rel="stylesheet"/><script src="..//karel/js/html/websiteImports.js"></script><script>importCss();</script><script>importJs();</script></head><body><!-- container --><div class="bookContainer">
+<!-- side bar --><div class="bookSideBar"><div class="homeLink"><a href="../es/intro.html"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Karel</a></div><hr/>
+
+
+<div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter1.html">1 - Conoce a Karel</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter2.html">2 - Programación</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter3.html">3 - Nuevos métodos</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter4.html">4 - Descomposición</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter5.html">5 - Ciclos for</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter6.html">6 - Ciclos while</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter7.html">7 - Condicionales</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter8.html">8 - Refinamiento</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter10.html">9 - SuperKarel</a></div>
+<div class="chapterTab"><a class="bookLink btn btn-link" href="../es/reference.html">10 - Referencia</a></div><!-- <center>
+    <img style ="width:75px;" src="../images/stanford.png"/>
+    </center>--></div><!-- content --><div class="bookContent" style="display: flex;"><!-- right gutter --><div style="flex-grow:1;max-width:50px;"></div><!-- main stuff --><div class="" style="flex-basis:740px; max-width:740px; margin-left:20px; margin-right:20px"><div class="row"><div class="col-md-12 col-xs-12">
+
+<h1> Referencia </h1><hr/>
+
+<style type="text/css">
+	.refCard {
+		display: flex;
+		align-items: stretch;
+		width:100%;
+	}
+
+	.refCol {
+		flex-grow:1;
+		width:370px;
+	}
+
+	.bordered {
+		border: 1px solid black
+	}
+
+	.refCel {
+		padding-left: 5px;
+	}
+
+	.refCode {
+		margin-left:5px;
+		margin-top:7px;
+	}
+
+	.refComment {
+		color:#729683;
+  font-family: monaco;
+  font-weight:400;
+  font-size:13px;
+	}
+
+</style>
+
+<p>
+	Este apéndice define la estructura del lenguaje de programación Karel en una sola página.
+</p>
+
+<div class="refCard bordered">
+	<div class="refCol">
+		<div class="refCel bordered">
+			<b>Comandos de Karel incorporados:</b>
+			
+			<p class="refCode">
+				<code>moverse();</code><br/>
+				<code>girarIzquierda();</code></br/>
+				<code>ponerCono();</code></br/>
+				<code>recogerCono();</code></br/>
+			</p>
+		</div>
+
+		<div class="refCel bordered">
+			<b>Estructura de un programa Karel:</b>
+			
+			<p class="refCode">
+				<code class="comment">/*</code></br/>
+<code class="comment">&nbsp;* Los comentarios pueden incluirse en</code><br/>
+<code class="comment">&nbsp;* cualquier parte del programa entre</code><br/>
+<code class="comment">&nbsp;* una barra-estrella y una estrella-barra</code><br/>
+<code class="comment">&nbsp;*/</code><br/>
+
+				<code><span class="keyword">public class</span> <i class="demoText">nombre</i> <span class="keyword">extends</span> EsKarel {</code><br/>
+
+				<br/>
+				<code>&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> run() {</code><br/>
+				<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><i class="demoText">declaraciones a repetir</i><br/>
+				<code>&nbsp;&nbsp;&nbsp;}</code><br/>
+				<br/>
+				<code>&nbsp;&nbsp;&nbsp;</code><i class="demoText">definiciones de métodos privados</i><br/>
+				<code>}</code><br/></p>
+		</div>
+
+<!--
+"frontIsClear":"frenteDespejado",
+  "frontIsBlocked":"frenteBloqueado",
+  "leftIsClear":"izquierdaDespejada",
+  "leftIsBlocked":"izquierdaBloqueado",
+  "rightIsClear":"derechaDespejada",
+  "rightIsBlocked":"derechaBloqueado",
+  "beepersPresent":"conosPresentes",
+  "noBeepersPresent":"conosAusentes",
+  "beepersInBag":"bolsaConConos",
+  "noBeepersInBag":"bolsaSinConos",
+  "facingNorth":"rumboNorte",
+  "notFacingNorth":"sinRumboNorte",
+  "facingSouth":"rumboSur",
+  "notFacingSouth":"sinRumboSur",
+  "facingEast":"rumboEste",
+  "notFacingEast":"sinRumboEste",
+  "facingWest":"rumboOeste",
+  "notFacingWest":"sinRumboOeste",
+  "random":"aleatorio",
+  "cornerColorIs":"colorEsquinaEs"
+-->
+
+		<div class="refCel bordered">
+			<b>Nombres de los condiciónes:</b>
+			
+			<div class="refCard" style="margin-top:7px">
+				<div class="refCol">
+					<code>frenteDespejado()</code><br/>
+					<code>izquierdaDespejada()</code><br/>
+					<code>derechaDespejada()</code><br/>
+					<code>conosPresentes()</code><br/>
+					<code>rumboNorte()</code><br/>
+					<code>rumboSur()</code><br/>
+					<code>rumboEste()</code><br/>
+					<code>rumboOeste()</code><br/>
+					<code>bolsaConConos()</code><br/>
+				</div>
+				<div class="refCol">
+					<code>frenteBloqueado()</code>
+					<code>izquierdaBloqueada()</code><br/>
+					<code>derechaBloqueada()</code><br/>
+					<code>conosAusentes()</code><br/>
+					<code>sinRumboNorte()</code><br/>
+					<code>sinRumboSur()</code><br/>
+					<code>sinRumboEste()</code><br/>
+					<code>sinRumboOeste()</code><br/>
+					<code>bolsaSinConos()</code><br/>
+				</div>
+			</div>
+
+			<!-- for balance -->
+			<div style="height:8px"> </div>
+		</div>
+
+
+		
+	</div>
+
+	<div class="refCol">
+		<div class="refCel bordered">
+			<b>Conditionales:</b>
+			<p class="refCode"><code><span class="keyword">if</span>(</code><i class="demoText">prueba</i><code>){</code><br/><i class="demoText" style="margin-left:2em">el código de bloqueo</i><br/><code>}</code></p>
+
+			<p class="refCode" style="margin-top:15px"><code><span class="keyword">if</span>(</code><i class="demoText">prueba</i><code>){</code><br/><i class="demoText" style="margin-left:2em">bloque de código por "si"</i><br/><code>} <span class="keyword">else</span> {</code><br/><i class="demoText" style="margin-left:2em">bloque de código por "no"</i><br/><code>}</code></p>
+		</div>
+		<div class="refCel bordered">
+			<b>Cyclos:</b>
+			<p class="refCode"><code><span class="keyword">for</span>(int i = 0; i &lt;</code>&nbsp;<i class="demoText" >count</i><code>; i++){</code><br/><i class="demoText" style="margin-left:2em">declaraciones a repetir</i><br/><code>}</code></p>
+
+			<p class="refCode" style="margin-top:15px"><code><span class="keyword">while</span>(</code><i class="demoText">prueba</i><code>){</code><br/><i class="demoText" style="margin-left:2em">declaraciones a repetir</i><br/><code>}</code></p>
+		</div>
+
+		<div class="refCel bordered">
+			<b>Method Declaration:</b>
+			<p class="refCode"><code><span class="keyword">private void</span></code><i class="demoText" style="margin-left:10px">nombre</i><code>() {</code><br/><i class="demoText" style="margin-left:2em">comandos en el cuerpo del método.</i><br/><code>}</code><br/></p>
+		</div>
+		
+
+		<div class="refCel bordered">
+			<b>Comandos de Karel adicionales:</b>
+			
+			<p class="refCode">
+				<code>girarDerecha();</code></br/>
+				<code>medioVuelta();</code></br/>
+				<code>random(</code><i class="demoText">p</i><code>);</code></br/>
+				<code>paintCorner(</code><i class="demoText">color</i><code>);</code></br/>
+			</p>
+		</div>
+	</div>
+
+
+</div>
+
+
+
+<!--
+
+	-->
+<hr/>
+
+
+
+
+<div style="height:60px"></div>
+<!-- <div class="footer">
+	<p class="pull-left">
+		&#169; Stanford 2018 &#124; Made by Chris Piech. Built off "Karel the Robot Learns Java" by Eric Roberts. 
+	</p>
+</div>-->
+<!-- <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74362126-1', 'auto');
+  ga('send', 'pageview');
+
+</script>--></div></div></div><!-- right gutter --><div style="flex-grow:4"></div></div></div></body></html>

@@ -1,0 +1,439 @@
+<html><head>
+<title> Lector de karel </title><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><script src="../plugins/jquery.min.js"></script><link href="../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/><script src="../plugins/bootstrap/js/bootstrap.min.js"></script><link href="../style.css" rel="stylesheet"/><script src="..//karel/js/html/websiteImports.js"></script><script>importCss();</script><script>importJs();</script></head><body><!-- container --><div class="bookContainer">
+<!-- side bar --><div class="bookSideBar"><div class="homeLink"><a href="../es/intro.html"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Karel</a></div><hr/>
+
+
+<div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter1.html">1 - Conoce a Karel</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter2.html">2 - Programación</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter3.html">3 - Nuevos métodos</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter4.html">4 - Descomposición</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter5.html">5 - Ciclos for</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter6.html">6 - Ciclos while</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter7.html">7 - Condicionales</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter8.html">8 - Refinamiento</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter10.html">9 - SuperKarel</a></div>
+<div class="chapterTab"><a class="bookLink btn btn-link" href="../es/reference.html">10 - Referencia</a></div><!-- <center>
+    <img style ="width:75px;" src="../images/stanford.png"/>
+    </center>--></div><!-- content --><div class="bookContent" style="display: flex;"><!-- right gutter --><div style="flex-grow:1;max-width:50px;"></div><!-- main stuff --><div class="" style="flex-basis:740px; max-width:740px; margin-left:20px; margin-right:20px"><div class="row"><div class="col-md-12 col-xs-12">
+
+<h1> Capítulo 6: Ciclos "while" </h1><hr/><p> La técnica de definir nuevos métodos y definir los cyclos, por más útiles que sean, en realidad no permite que Karel resuelva ningún problema nuevo. Cada vez que ejecutas un programa, siempre hace exactamente lo mismo. Los programas se vuelven mucho más útiles cuando pueden responder de manera diferente a diferentes entradas. </p><p> Como ejemplo. Digamos que querías escribir un programa para tener a Karel moverse en una pared. Pero no solo desea que este programa funcione en un mundo con un tamaño fijo. Te gustaría escribir un solo programa que podría funcionar en cualquier mundo. </p>
+
+
+
+<div class="section embeddedIde" id="moveToWall"><div class="ide getStarted" id="moveToWallIde" style="height:352.0px"><div class="ideCenter" id="moveToWallIdeCenter"><div class="ideEditorDiv" id="moveToWallEditorDiv" style="width:200px"></div><div class="ideCanvasDiv" id="moveToWallCanvasDiv"><div class="worldDropdown"><div class="dropdown"><button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1" type="button">Cambiar el mundo <span class="caret"></span></button><ul aria-labelledby="dropdownMenu1" class="dropdown-menu" id="moveToWallWorlds"><li><a>1x1</a></li><li><a>4x4</a></li><li><a>3x6</a></li><li><a>7x7</a></li><li><a>8x8</a></li></ul></div></div><canvas class="ideCanvas" id="moveToWallCanvas"></canvas></div></div></div><div style="width:100%;"><div class="buttonBar"><button class="btn btn-default" id="moveToWallRunButton"><span class="glyphicon glyphicon-play"></span> Ejecute el programa</button></div></div><script>
+
+        
+
+function examplemoveToWall() {
+STARTER_CODE = `
+
+/*
+ * Archivo: MoverALaPared.java
+ * ---------------------------
+ * Utiliza un bucle "while" para moverser a Karel hasta
+ * que toque una pared. Funciona en cualquier mundo
+ * del tamaño.
+ */
+import stanford.karel.*;
+public class MoverALaPared extends Karel {
+   public void run() {
+      moverALaPared();
+   }
+
+   /* Este es un método muy útil. */
+   private void moverALaPared() {
+      while(frenteDespejado()) {
+         moverse();
+      }
+   } 
+}
+`
+// because of that extra endline at the start of the string
+STARTER_CODE = STARTER_CODE.trim();
+
+ var karelIde = null;
+ var karelEditor = null;
+ var buttonState = 'play';
+
+ function main() {
+   karelEditor = importEditorCode('moveToWallEditor','moveToWallEditorDiv', STARTER_CODE, false);
+    setupWorldDropdown();
+    
+    
+    var canvas = document.getElementById('moveToWallCanvas');
+    karelIde = KarelIde(karelEditor, canvas, '7x7', 0.0);
+    $('#moveToWallRunButton').click(function(){playClicked()});
+    onresize();
+    
+ }
+
+ function setupWorldDropdown() {
+    console.log('setup world dropdown')
+    let ul = document.getElementById('moveToWallWorlds')
+    
+    if (!ul.childNodes || ul.childNodes.length == 0) return;
+
+    // Iterate LIs
+    for (var itemi=0;itemi<ul.childNodes.length;itemi++) {
+        var li = ul.childNodes[itemi];
+        if(li.nodeName == "LI") {
+          var a = li.childNodes[0]
+          let worldName = a.innerHTML;
+          console.log(worldName)
+          a.onclick = () => setWorld(worldName);
+
+        }
+    }
+ }
+
+ function setWorld(worldName){
+    console.log('here we go', worldName)
+    karelIde.changeWorld(worldName)
+    changeToPlayButton()
+ }
+
+ function playClicked() {
+  if(buttonState == 'play') {
+    karelIde.playButton();
+    changeToResetButton();
+   } else if (buttonState == 'reset') {
+    karelIde.stopButton();
+    changeToPlayButton();
+   }
+  }
+
+  function changeToPlayButton() {
+    var playText = '<span class="glyphicon glyphicon-play"></span> Run Program';
+    $('#moveToWallRunButton').html(playText);
+    buttonState = 'play';
+  }
+
+  function changeToResetButton() {
+    var resetText = '<span class="glyphicon glyphicon-repeat"></span> Reset Program';
+    $('#moveToWallRunButton').html(resetText);
+    buttonState = 'reset';  
+  }
+
+ function onresize() { 
+    var parentHeight = 352.0;
+    var canvasWidth = 300
+    var parentWidth = $("#moveToWall").width();
+    console.log('pw: ' + parentWidth);
+
+    var ide = document.getElementById('moveToWallIde');
+    var editorDiv = document.getElementById('moveToWallEditorDiv');
+    var canvas = document.getElementById('moveToWallCanvasDiv');
+    
+    var ideHeight = parentHeight
+    var centerHeight = ideHeight;
+
+    var availibleWidth = parentWidth;
+    var elementSpacing = 12;
+
+    var editorWidth = availibleWidth - canvasWidth - elementSpacing; 
+
+    canvas.style.width = canvasWidth + 'px';
+    canvas.style.height = canvasWidth + 'px';
+    canvas.style.left = (editorWidth + elementSpacing) + 'px';
+
+
+
+    editorDiv.style.left = 0 + 'px'
+    editorDiv.style.width = editorWidth + 'px';
+    editorDiv.style.height = parentHeight + 'px';
+    console.log('editor width: ' + editorWidth)
+
+    if (karelEditor) {
+       karelEditor.renderer.onResize();
+    }
+ }
+ main()
+ 
+}
+examplemoveToWall();
+    </script></div>
+<p> Intenta cambiar el mundo haciendo clic en el menú desplegable &quot;Cambiar mundo&quot; que se encuentra sobre el mundo. Para cualquier mundo de tamaño, Karel se moverá hasta que toque una pared. Tenga en cuenta que esta hazaña no se puede lograr utilizando un cyclo <code class="keyword">for</code>. Eso nos obligaría a saber el tamaño del mundo en el momento de la programación. </p><h3> Cyclo "while" basico </h3><p> En Karel, un <code class="keyword">while</code> de cyclo se utiliza para repetir un cuerpo de código <i>como-largo como</i> una condición dada se mantiene. El cyclo while tiene la siguiente forma general: </p><p class="demoCode"><code><span class="keyword">while</span>(</code><i class="demoText">prueba</i><code>){</code><br/><i class="demoText" style="margin-left:2em">declaraciones a repetir</i><br/><code>}</code></p><p> El flujo de control de un cyclo while es el siguiente. Cuando el programa llega a un cyclo while, comienza a repetir un proceso en el que primero <i>verifica</i> si la prueba pasa y, si es así, <i>ejecuta</i> el código en el cuerpo. </p> <p>Cuando el programa <i>verifica</i> si la prueba pasa, decide si la <i class="demoText">prueba</i> es verdadera para el estado actual del mundo. Si es así, el cyclo ejecutará el código en el cuerpo. Si la prueba falla, el cyclo termina y el programa continúa.</p> <p> Cuando el programa <i>ejecuta</i> el cuerpo del cyclo, el programa ejecuta las líneas en el cuerpo una a la vez. Cuando el programa llega al final del cyclo while, salta de nuevo a la parte superior del cyclo. A continuación, vuelve a comprobar la prueba, continuando en cyclo si pasa. El programa no sale del cyclo hasta que llega a una comprobación y la prueba falla. </p><p> Karel tiene muchas declaraciones de <i class="demoText">prueba</i>, y las analizaremos todas en el siguiente capítulo. Por ahora vamos a usar una sola declaración de prueba: <code>frenteDespejado()</code> que es verdadera si no hay un muro directamente enfrente de Karel. </p><h3> Fencepost Bug </h3><p> Modifiquemos nuestro programa de arriba para hacerlo más interesante. En lugar de solo moverte a una pared, haz que Karel coloque una línea de bocinas, una en cada casilla. Una vez más queremos que este programa funcione para un mundo de cualquier tamaño: </p>
+
+
+
+<div class="section embeddedIde" id="beeperLineBug1"><div class="ide getStarted" id="beeperLineBug1Ide" style="height:369.6px"><div class="ideCenter" id="beeperLineBug1IdeCenter"><div class="ideEditorDiv" id="beeperLineBug1EditorDiv" style="width:200px"></div><div class="ideCanvasDiv" id="beeperLineBug1CanvasDiv"><div class="worldDropdown"><div class="dropdown"><button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1" type="button">Cambiar el mundo <span class="caret"></span></button><ul aria-labelledby="dropdownMenu1" class="dropdown-menu" id="beeperLineBug1Worlds"><li><a>1x1</a></li><li><a>4x4</a></li><li><a>3x6</a></li><li><a>7x7</a></li><li><a>8x8</a></li></ul></div></div><canvas class="ideCanvas" id="beeperLineBug1Canvas"></canvas></div></div></div><div style="width:100%;"><div class="buttonBar"><button class="btn btn-default" id="beeperLineBug1RunButton"><span class="glyphicon glyphicon-play"></span> Ejecute el programa</button></div></div><script>
+
+        
+
+function examplebeeperLineBug1() {
+STARTER_CODE = `
+
+/*
+ * Archivo: ErrorEnLaLíneaDeSonido.java
+ * ------------------------------------
+ * Utiliza un bucle "while" para colocar una línea
+ * de señales acústicas. Este programa funciona para
+ * un mundo de cualquier tamaño. Sin embargo, dado
+ * que cada mundo requiere uno menos movimientos que
+ * los ponerConos, siempre pierde un cono.
+ */
+import stanford.karel.*;
+public class ErrorEnLaLíneaDeSonido extends Karel {
+   public void run() {
+   	  /* Se repite hasta que Karel se enfrenta a una pared. */
+      while(frenteDespejado()) {
+      	 /* colocar un cono en la plaza actual */ 
+         ponerCono();
+      	 /* moverse a la siguiente plaza */
+         moverse();
+      }
+   }
+}
+`
+// because of that extra endline at the start of the string
+STARTER_CODE = STARTER_CODE.trim();
+
+ var karelIde = null;
+ var karelEditor = null;
+ var buttonState = 'play';
+
+ function main() {
+   karelEditor = importEditorCode('beeperLineBug1Editor','beeperLineBug1EditorDiv', STARTER_CODE, true);
+    setupWorldDropdown();
+    
+    
+    var canvas = document.getElementById('beeperLineBug1Canvas');
+    karelIde = KarelIde(karelEditor, canvas, '7x7', 0.0);
+    $('#beeperLineBug1RunButton').click(function(){playClicked()});
+    onresize();
+    
+ }
+
+ function setupWorldDropdown() {
+    console.log('setup world dropdown')
+    let ul = document.getElementById('beeperLineBug1Worlds')
+    
+    if (!ul.childNodes || ul.childNodes.length == 0) return;
+
+    // Iterate LIs
+    for (var itemi=0;itemi<ul.childNodes.length;itemi++) {
+        var li = ul.childNodes[itemi];
+        if(li.nodeName == "LI") {
+          var a = li.childNodes[0]
+          let worldName = a.innerHTML;
+          console.log(worldName)
+          a.onclick = () => setWorld(worldName);
+
+        }
+    }
+ }
+
+ function setWorld(worldName){
+    console.log('here we go', worldName)
+    karelIde.changeWorld(worldName)
+    changeToPlayButton()
+ }
+
+ function playClicked() {
+  if(buttonState == 'play') {
+    karelIde.playButton();
+    changeToResetButton();
+   } else if (buttonState == 'reset') {
+    karelIde.stopButton();
+    changeToPlayButton();
+   }
+  }
+
+  function changeToPlayButton() {
+    var playText = '<span class="glyphicon glyphicon-play"></span> Run Program';
+    $('#beeperLineBug1RunButton').html(playText);
+    buttonState = 'play';
+  }
+
+  function changeToResetButton() {
+    var resetText = '<span class="glyphicon glyphicon-repeat"></span> Reset Program';
+    $('#beeperLineBug1RunButton').html(resetText);
+    buttonState = 'reset';  
+  }
+
+ function onresize() { 
+    var parentHeight = 369.6;
+    var canvasWidth = 300
+    var parentWidth = $("#beeperLineBug1").width();
+    console.log('pw: ' + parentWidth);
+
+    var ide = document.getElementById('beeperLineBug1Ide');
+    var editorDiv = document.getElementById('beeperLineBug1EditorDiv');
+    var canvas = document.getElementById('beeperLineBug1CanvasDiv');
+    
+    var ideHeight = parentHeight
+    var centerHeight = ideHeight;
+
+    var availibleWidth = parentWidth;
+    var elementSpacing = 12;
+
+    var editorWidth = availibleWidth - canvasWidth - elementSpacing; 
+
+    canvas.style.width = canvasWidth + 'px';
+    canvas.style.height = canvasWidth + 'px';
+    canvas.style.left = (editorWidth + elementSpacing) + 'px';
+
+
+
+    editorDiv.style.left = 0 + 'px'
+    editorDiv.style.width = editorWidth + 'px';
+    editorDiv.style.height = parentHeight + 'px';
+    console.log('editor width: ' + editorWidth)
+
+    if (karelEditor) {
+       karelEditor.renderer.onResize();
+    }
+ }
+ main()
+ 
+}
+examplebeeperLineBug1();
+    </script></div>
+<p> Eso se ve genial. Excepto por un problema. En todos los mundos, Karel no coloca un cono en la última casilla de la línea (mira detenidamente). Cuando Karel está en la última casilla, el programa no ejecuta el cuerpo del cyclo porque la prueba ya no pasa, Karel se enfrenta a una pared. Puede sentirse tentado de intentar cambiar el orden del cuerpo para que Karel se mueva antes de colocar un cono. El código es editable así que ¡pruébalo! </p><p> Hay un problema más profundo que ninguna reorganización del cuerpo puede resolver. Para el mundo con 7 columnas, Karel necesita poner 7 conos, pero solo debe moverse 6 veces. Dado que el cyclo while ejecuta ambas líneas cuando pasa una prueba, ¿cómo puede hacer que el programa ejecute un comando una vez más que el otro? </p><p> El error en este programa es un ejemplo de un problema de programación llamado <b>error de poste de valla</b>. El nombre proviene del hecho de que si desea construir una cerca hecha de paneles que tengan un poste de cerca en cualquiera de los tamaños, el número de mensajes de cerca siempre es uno mayor que el número de paneles. ¿Cuántos postes de la cerca, por ejemplo, necesitas construir una cerca con 10 paneles? La respuesta es 11, como se ilustra en el siguiente diagrama: </p><center><img src="../images/ch6/fencepost.png" style="width:500px;margin-bottom:10px"/></center><p> Una vez que lo descubres, arreglar este error es bastante fácil. Antes de que Karel se detenga en el fin del mundo, todo lo que el programa debe hacer es colocar un cono final: </p>
+
+
+
+<div class="section embeddedIde" id="beeperLine"><div class="ide getStarted" id="beeperLineIde" style="height:369.6px"><div class="ideCenter" id="beeperLineIdeCenter"><div class="ideEditorDiv" id="beeperLineEditorDiv" style="width:200px"></div><div class="ideCanvasDiv" id="beeperLineCanvasDiv"><div class="worldDropdown"><div class="dropdown"><button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1" type="button">Cambiar el mundo <span class="caret"></span></button><ul aria-labelledby="dropdownMenu1" class="dropdown-menu" id="beeperLineWorlds"><li><a>1x1</a></li><li><a>4x4</a></li><li><a>3x6</a></li><li><a>7x7</a></li><li><a>8x8</a></li></ul></div></div><canvas class="ideCanvas" id="beeperLineCanvas"></canvas></div></div></div><div style="width:100%;"><div class="buttonBar"><button class="btn btn-default" id="beeperLineRunButton"><span class="glyphicon glyphicon-play"></span> Ejecute el programa</button></div></div><script>
+
+        
+
+function examplebeeperLine() {
+STARTER_CODE = `
+
+/*
+ * Archivo: LíneaDeSonido.java
+ * ---------------------------
+ * Utiliza un bucle "while" para colocar una línea
+ * de señales acústicas. Este programa funciona para
+ * un mundo de cualquier tamaño.
+ */
+import stanford.karel.*;
+public class LíneaDeSonido extends Karel {
+   public void run() {
+      /* Se repite hasta que Karel se enfrenta a una pared. */
+      while(frenteDespejado()) {
+         /* colocar un cono en la plaza actual */ 
+         ponerCono();
+         /* moverse a la siguiente plaza */
+         moverse();
+      }
+      /* resuelve el error del poste de la cerca */
+      ponerCono();
+   }
+}
+`
+// because of that extra endline at the start of the string
+STARTER_CODE = STARTER_CODE.trim();
+
+ var karelIde = null;
+ var karelEditor = null;
+ var buttonState = 'play';
+
+ function main() {
+   karelEditor = importEditorCode('beeperLineEditor','beeperLineEditorDiv', STARTER_CODE, true);
+    setupWorldDropdown();
+    
+    
+    var canvas = document.getElementById('beeperLineCanvas');
+    karelIde = KarelIde(karelEditor, canvas, '7x7', 0.8);
+    $('#beeperLineRunButton').click(function(){playClicked()});
+    onresize();
+    
+ }
+
+ function setupWorldDropdown() {
+    console.log('setup world dropdown')
+    let ul = document.getElementById('beeperLineWorlds')
+    
+    if (!ul.childNodes || ul.childNodes.length == 0) return;
+
+    // Iterate LIs
+    for (var itemi=0;itemi<ul.childNodes.length;itemi++) {
+        var li = ul.childNodes[itemi];
+        if(li.nodeName == "LI") {
+          var a = li.childNodes[0]
+          let worldName = a.innerHTML;
+          console.log(worldName)
+          a.onclick = () => setWorld(worldName);
+
+        }
+    }
+ }
+
+ function setWorld(worldName){
+    console.log('here we go', worldName)
+    karelIde.changeWorld(worldName)
+    changeToPlayButton()
+ }
+
+ function playClicked() {
+  if(buttonState == 'play') {
+    karelIde.playButton();
+    changeToResetButton();
+   } else if (buttonState == 'reset') {
+    karelIde.stopButton();
+    changeToPlayButton();
+   }
+  }
+
+  function changeToPlayButton() {
+    var playText = '<span class="glyphicon glyphicon-play"></span> Run Program';
+    $('#beeperLineRunButton').html(playText);
+    buttonState = 'play';
+  }
+
+  function changeToResetButton() {
+    var resetText = '<span class="glyphicon glyphicon-repeat"></span> Reset Program';
+    $('#beeperLineRunButton').html(resetText);
+    buttonState = 'reset';  
+  }
+
+ function onresize() { 
+    var parentHeight = 369.6;
+    var canvasWidth = 300
+    var parentWidth = $("#beeperLine").width();
+    console.log('pw: ' + parentWidth);
+
+    var ide = document.getElementById('beeperLineIde');
+    var editorDiv = document.getElementById('beeperLineEditorDiv');
+    var canvas = document.getElementById('beeperLineCanvasDiv');
+    
+    var ideHeight = parentHeight
+    var centerHeight = ideHeight;
+
+    var availibleWidth = parentWidth;
+    var elementSpacing = 12;
+
+    var editorWidth = availibleWidth - canvasWidth - elementSpacing; 
+
+    canvas.style.width = canvasWidth + 'px';
+    canvas.style.height = canvasWidth + 'px';
+    canvas.style.left = (editorWidth + elementSpacing) + 'px';
+
+
+
+    editorDiv.style.left = 0 + 'px'
+    editorDiv.style.width = editorWidth + 'px';
+    editorDiv.style.height = parentHeight + 'px';
+    console.log('editor width: ' + editorWidth)
+
+    if (karelEditor) {
+       karelEditor.renderer.onResize();
+    }
+ }
+ main()
+ 
+}
+examplebeeperLine();
+    </script></div><hr/><center><a class="btn btn-primary btn-lg" href="chapter7.html" role="button">Siguiente capítulo</a></center>
+
+
+
+<div style="height:60px"></div>
+<!-- <div class="footer">
+	<p class="pull-left">
+		&#169; Stanford 2018 &#124; Made by Chris Piech. Built off "Karel the Robot Learns Java" by Eric Roberts. 
+	</p>
+</div>-->
+<!-- <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74362126-1', 'auto');
+  ga('send', 'pageview');
+
+</script>--></div></div></div><!-- right gutter --><div style="flex-grow:4"></div></div></div></body></html>

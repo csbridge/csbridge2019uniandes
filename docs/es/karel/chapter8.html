@@ -1,0 +1,283 @@
+<html><head>
+<title> Lector de karel </title><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><script src="../plugins/jquery.min.js"></script><link href="../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/><script src="../plugins/bootstrap/js/bootstrap.min.js"></script><link href="../style.css" rel="stylesheet"/><script src="..//karel/js/html/websiteImports.js"></script><script>importCss();</script><script>importJs();</script></head><body><!-- container --><div class="bookContainer">
+<!-- side bar --><div class="bookSideBar"><div class="homeLink"><a href="../es/intro.html"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Karel</a></div><hr/>
+
+
+<div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter1.html">1 - Conoce a Karel</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter2.html">2 - Programación</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter3.html">3 - Nuevos métodos</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter4.html">4 - Descomposición</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter5.html">5 - Ciclos for</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter6.html">6 - Ciclos while</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter7.html">7 - Condicionales</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter8.html">8 - Refinamiento</a></div><div class="chapterTab"><a class="bookLink btn btn-link" href="../es/chapter10.html">9 - SuperKarel</a></div>
+<div class="chapterTab"><a class="bookLink btn btn-link" href="../es/reference.html">10 - Referencia</a></div><!-- <center>
+    <img style ="width:75px;" src="../images/stanford.png"/>
+    </center>--></div><!-- content --><div class="bookContent" style="display: flex;"><!-- right gutter --><div style="flex-grow:1;max-width:50px;"></div><!-- main stuff --><div class="" style="flex-basis:740px; max-width:740px; margin-left:20px; margin-right:20px"><div class="row"><div class="col-md-12 col-xs-12">
+
+<h1> Capítulo 8: Refinamiento paso a paso </h1><hr/><p> En gran medida, la programación es la ciencia de resolver problemas por computadora. Debido a que los problemas suelen ser difíciles, las soluciones y los programas que implementan esas soluciones también pueden ser difíciles. Para facilitar el desarrollo de esas soluciones, debe adoptar una metodología y disciplina que reduzca el nivel de esa complejidad a una escala manejable. </p><p> En los primeros años de la programación, el concepto de la computación como ciencia era más o menos un experimento de ilusiones. Nadie sabía mucho acerca de la programación en esos días, y pocos pensaban en ello como una disciplina de ingeniería en el sentido convencional. Sin embargo, a medida que la programación maduraba, tal disciplina comenzó a emerger. La piedra angular de esa disciplina es comprender que la programación se realiza en un entorno social en el que los programadores deben trabajar juntos. Si ingresa en la industria, seguramente será uno de los muchos programadores que trabajan para desarrollar un gran programa. Además, es casi seguro que ese programa viva y requiera mantenimiento más allá de su aplicación original. Alguien querrá que el programa incluya alguna nueva característica o trabajo de alguna manera diferente. Cuando eso ocurre, un nuevo equipo de programadores debe ingresar y hacer los cambios necesarios en los programas. Si los programas están escritos en un estilo individual con poca o ninguna coincidencia, lograr que todos trabajen juntos de manera productiva es extremadamente difícil. </p><p> Para combatir este problema, los programadores comenzaron a desarrollar un conjunto de metodologías de programación que se denominan colectivamente <b>ingeniería de software</b>. El uso de buenas habilidades de ingeniería de software no solo facilita la lectura y comprensión de sus programas por parte de otros programadores, sino que también facilita la escritura de dichos programas en primer lugar. Uno de los avances metodológicos más importantes que se desprenden de la ingeniería de software es la estrategia de <b>diseño descendente</b> o <b>refinamiento gradual</b>, que consiste en resolver problemas comenzando con el problema en su totalidad. Rompe todo el problema en partes y luego resuelve cada pieza, desglosándolas aún más si es necesario. Esta estrategia de arriba abajo se complementa con <b>pruebas iterativas</b> en las que se asegura de que las partes más pequeñas de la solución estén funcionando antes de continuar. </p><h3> Un ejercicio de refinamiento escalonado. </h3><p> Para ilustrar el concepto de refinamiento por pasos, enseñemos a Karel a resolver un nuevo problema. Imagina que Karel ahora vive en un mundo que se parece a esto: </p>
+
+
+
+
+<div class="section" id="world1">
+<div class="ide getStarted" id="world1Ide">
+<div class="commandCanvasDiv" id="world1CanvasDiv">
+<div>
+<div class="commandCanvasOuter">
+<canvas id="world1Canvas" style="width:400px;"></canvas>
+</div>
+</div>
+</div>
+</div>
+<script>
+
+        
+
+function exampleworld1() {
+ var karelIde = null;
+ var buttonState = 'play';
+ var canvas = null;
+
+ function main() {
+    canvas = document.getElementById('world1Canvas');
+    karelIde = KarelIde(null, canvas, 'beeperTowers', 0,1000, 0.8 * 1000);
+ }
+
+ 
+ main()
+ 
+}
+exampleworld1();
+    </script>
+</div>
+<p> En cada una de las columnas, hay una torre de beepers de una altura desconocida, aunque algunas columnas (como la 7 y la 9 en el mundo de la muestra) pueden estar vacías. El trabajo de Karel es recolectar todas las señales acústicas en cada una de estas torres, colocarlas de nuevo en la esquina oriental de la 1ra fila y luego regresar a su posición inicial. Por lo tanto, cuando Karel termina su trabajo en el ejemplo anterior, los 25 beepers que se encuentran actualmente en las torres deben apilarse en la esquina de la 9ª columna y la 1ª fila, de la siguiente manera: </p>
+
+
+
+
+<div class="section" id="world2">
+<div class="ide getStarted" id="world2Ide">
+<div class="commandCanvasDiv" id="world2CanvasDiv">
+<div>
+<div class="commandCanvasOuter">
+<canvas id="world2Canvas" style="width:400px;"></canvas>
+</div>
+</div>
+</div>
+</div>
+<script>
+
+        
+
+function exampleworld2() {
+ var karelIde = null;
+ var buttonState = 'play';
+ var canvas = null;
+
+ function main() {
+    canvas = document.getElementById('world2Canvas');
+    karelIde = KarelIde(null, canvas, 'beeperTowersGoal', 0,1000, 0.8 * 1000);
+ }
+
+ 
+ main()
+ 
+}
+exampleworld2();
+    </script>
+</div>
+<p> Es importante destacar que puede suponer que la inicial de Karel <i>comienza</i> con cero beepers en su bolsa. Cada cono recogido se añade a su bolsa. Al poner beepers en la esquina, karel puede usar la prueba de <code>bolsaConConos()</code>. </p><p> La clave para resolver este problema es descomponer el programa de la manera correcta, al mismo tiempo que se puede probar a medida que avanza. Esta tarea es más compleja que las otras que ha visto, lo que hace que la elección de los subproblemas apropiados sea más importante para obtener una solución exitosa. </p><h3> El principio del diseño de arriba hacia abajo. </h3><p> La idea clave en el refinamiento paso a paso es que debe comenzar el diseño de su programa desde la parte superior, que se refiere al nivel del programa que es conceptualmente más alto y más abstracto. En este nivel, el problema de la torre de cono está claramente dividido en tres fases independientes. Primero, Karel tiene que recoger todos los beepers. Segundo, Karel tiene que depositarlos en la última intersección. En tercer lugar, Karel tiene que volver a su posición inicial. Esta descomposición conceptual del problema sugiere que el método de ejecución para este programa tendrá la siguiente estructura: </p><p class="demoCode" style="margin-left:10px"><code>&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> run() {</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recogerTodosLosConos();</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;soltarTodosLosConos();</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volverACasa();</code><br/><code>&nbsp;&nbsp;&nbsp;}</code><br/></p><p> En este nivel, el problema es fácil de entender. Por supuesto, hay algunos detalles que quedan en la forma de métodos que aún no ha escrito. Aun así, es importante mirar cada nivel de la descomposición y convencerse de que, mientras crea que los métodos que está a punto de escribir resolverán los subproblemas correctamente, tendrá una solución al problema en su totalidad. . </p><h3> Pruebas iterativas sobre la marcha </h3><p> Ahora que ha definido la estructura del programa en su totalidad, es hora de pasar al primer subproblema, que consiste en recopilar todos los avisadores. Esta tarea es en sí misma más complicada que los problemas simples de los capítulos anteriores. Recoger todos los buscapersonas significa que debes recogerlos en cada torre hasta que llegues a la última esquina. El hecho de que necesite repetir una operación para cada torre sugiere que necesita un bucle while aquí. El bucle while repite el proceso de <code>recogerUnaTorre</code> y luego se mueve. </p><p><b>Precaución:</b> es peligroso tratar de escribir todo el programa sin <b>probarlo</b> a medida que avanza. Si comete un error será difícil encontrar el error. Sabemos que vamos a repetir el proceso de recogida de una torre. Vamos a escribir y la <b>prueba de</b> la recogida de una sola torre antes de poner el <code>RecogerUnaTorre</code> proceso en un bucle. Por lo tanto, <i>temporalmente</i> podemos comenzar con la siguiente definición de recogerTodosLosConos: <p class="demoCode" style="margin-left:10px"><code>&nbsp;&nbsp;&nbsp;<span class="keyword">private void</span> recogerTodosLosConos() {</code><br/><code class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* Implementación temporal para propósitos de prueba. */</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recogerUnaTorre();</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moverse();</code><br/><code>&nbsp;&nbsp;&nbsp;}</code><br/></p><p> Como principio guía, si tiene un bucle complejo, pruebe el <i>cuerpo</i> del bucle antes de escribir todo el bucle. </p><h3> Torre de recogida de refinamiento </h3><p> Cuando se llama recogerUnaTorre, Karel se encuentra en la base de una torre de buscadores o en una esquina vacía. En el primer caso, necesitas recolectar los beepers en la torre. En este último, simplemente puede moverse. Esta situación suena como una aplicación para la sentencia if, en la que escribirías algo como esto: </p><p class="demoCode" style="margin-left:10px"><code>&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(conosPresentes()){</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recogerLaTorreReal();</code><br/><code>&nbsp;&nbsp;&nbsp;}</code><br/></p><p> Antes de agregar dicha declaración al código, debe pensar si necesita realizar esta prueba. A menudo, los programas pueden hacerse mucho más simples observando que los casos que al principio parecen ser especiales pueden tratarse exactamente de la misma manera que la situación más general. En el problema actual, ¿qué sucede si decides que hay una torre de beepers en cada avenida pero que algunas de esas torres tienen cero beepers? Hacer uso de esta información simplifica el programa porque ya no tiene que probar si hay una torre en una avenida particular. </p><p> El método recogerUnaTorre todavía es lo suficientemente complejo como para que un nivel adicional de descomposición esté en orden. Para reunir todos los buscapersonas en una torre, Karel debe realizar los siguientes pasos: </p><ol><li> Gira a la izquierda para enfrentar a los beepers en la torre. <li> Recoge todos los beepers en la torre, deteniéndote cuando no encuentres más beepers. <li> Date la vuelta para mirar hacia la parte inferior del mundo. <li> Regresa a la pared que representa el suelo. <li> Gire a la izquierda para estar listo para moverse a la siguiente esquina. </li></li></li></li></li></ol><p> Una vez más, este esquema proporciona un modelo para el método recogerUnaTorre, que se ve así: </p><p class="demoCode" style="margin-left:10px"><code>&nbsp;&nbsp;&nbsp;<span class="keyword">private void</span> recogerUnaTorre(){</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;girarIzquierda();</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coleccioneLineaDeConos();</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mediaVeulta();</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moverALaPared();</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;girarIzquierda();</code><br/><code>&nbsp;&nbsp;&nbsp;}</code><br/></p><h3> Método precondiciones y postcondiciones. </h3><p> Los comandos de girarIzquierda al principio y al final del método recogerUnaTorre son críticos para la corrección de este programa. Cuando se llama recogerUnaTorre, Karel siempre está en algún lugar de la primera fila mirando hacia el este. Cuando complete su operación, el programa en su totalidad funcionará correctamente solo si Karel está nuevamente orientado al este en esa misma esquina. Las condiciones que deben cumplirse antes de llamar a un método se conocen como <b>condiciones previas</b>; Las condiciones que deben aplicarse después de que finaliza el método se conocen como <b>postcondiciones</b>. </p><p> Cuando defina un método, tendrá muchos menos problemas si anota exactamente cuáles son las condiciones previas y posteriores. Una vez que lo haya hecho, debe asegurarse de que el código que escribe siempre deje las condiciones posteriores satisfechas, asumiendo que las condiciones previas se cumplieron para comenzar. Por ejemplo, piense en lo que sucede si llama a recogerUnaTorre cuando Karel está en la primera fila mirando hacia el este. El primer comando girarIzquierda deja a Karel mirando hacia el norte, lo que significa que Karel está correctamente alineado con la columna de beepers que representan la torre. El método coleccioneLineaDeConos, que aún no se ha escrito, pero aún así realiza una tarea que usted comprende conceptualmente, simplemente se mueve sin girar. Así, al final de la llamada a coleccioneLineaDeConos, Karel seguirá mirando hacia el norte. La llamada mediaveulta por lo tanto deja a Karel mirando hacia el sur. Como coleccioneLineaDeConos, el método moverALaPared no implica ningún giro, sino que simplemente se mueve hasta que golpea el muro del límite. Debido a que Karel está orientada hacia el sur, este muro delimitador será el que se encuentra en la parte inferior de la pantalla, justo debajo de la primera fila. El último comando de girar Izquierda, por lo tanto, deja a Karel en la 1ª fila mirando hacia el este, lo que satisface la postcondición. </p><h3> Repitiendo el proceso </h3><p> Usted ejecuta su programa y borra con éxito una torre y deja a Karel en la postcondición prometida. ¡Wahoo! ¡Acabas de alcanzar un hito en la resolución de esta difícil tarea! Ahora tenemos que repetir el proceso de limpiar una torre usando un bucle while. </p><p> Pero, ¿cómo se ve este bucle while? En primer lugar, debes pensar en la prueba condicional. Quieres que Karel se detenga cuando golpee la pared al final de la fila. Por lo tanto, quieres que Karel siga avanzando siempre que el espacio en el frente esté despejado. Por lo tanto, sabes que el método recogerTodosLosConos incluirá un bucle while que usa la prueba de frenteDespejado. En cada posición, quieres que Karel recoja todos los beepers en la torre que comienzan en esa esquina. Si le da a esa operación un nombre, que podría ser algo como recogerUnaTorre, puede seguir adelante y escribir una definición para el método recogerTodosLosConos aunque todavía no haya completado los detalles. </p><p> Usted, sin embargo, tiene que tener cuidado. El código para recogerTodosLosConos no se ve así: </p><p class="demoCode" style="margin-left:10px"><code>&nbsp;&nbsp;&nbsp;<span class="keyword">private void</span> recogerTodosLosConos(){</code><br/><code class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* bucle de buggy! */</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(frenteDespejado()) {</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recogerUnaTorre();</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moverse();</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/><code>&nbsp;&nbsp;&nbsp;}</code><br/></p><p> Esta implementación está defectuosa por la misma razón por la que la primera versión del PlaceLíneaDeSonido general del capítulo 6 no pudo hacer su trabajo. Hay un error de poste en esta versión del código, porque Karel necesita probar la presencia de una torre de cono en la última avenida. La implementación correcta es: </p><p class="demoCode" style="margin-left:10px"><code>&nbsp;&nbsp;&nbsp;<span class="keyword">private void</span> recogerTodosLosConos(){</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(frenteDespejado()) {</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recogerUnaTorre();</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moverse();</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recogerUnaTorre();</code><br/><code>&nbsp;&nbsp;&nbsp;}</code><br/></p><p> Tenga en cuenta que este método tiene precisamente la misma estructura que el programa principal del programa PlaceLíneaDeSonido que se presenta en el capítulo 6. La única diferencia es que este programa se llama recogerUnaTorre donde el otro se llama ponerCono. Estos dos programas son ejemplos de una estrategia general que se ve así: </p><p class="demoCode" style="margin-left:10px"><code>&nbsp;&nbsp;&nbsp;<span class="keyword">private void</span> recogerTodosLosConos(){</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(frenteDespejado()) {</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><i class="demoText">realiza alguna operación.</i><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moverse();</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><i class="demoText">realiza la misma operación para la esquina final.</i><br/><code>&nbsp;&nbsp;&nbsp;}</code><br/></p><p> Puede usar esta estrategia siempre que necesite realizar una operación en cada esquina mientras se desplaza por un camino que termina en una pared. Si recuerda la estructura general de esta estrategia, puede usarla siempre que encuentre un problema que requiera dicha operación. Las estrategias reutilizables de este tipo aparecen frecuentemente en la programación y se conocen como <b>expresiones idiomáticas</b> o <b>patrones de programación</b>. Cuantos más patrones sepa, más fácil le resultará encontrar uno que se adapte a un tipo particular de problema. </p><h3> Terminando </h3><p> A pesar de que el trabajo duro se ha realizado, todavía hay varios cabos sueltos que deben resolverse. El programa principal llama a dos métodos, soltarTodosLosConos y volverACasa, que aún no están escritos. Del mismo modo, recogerUnaTorre llama a coleccioneLineaDeConos y moverALaPared. Afortunadamente, los cuatro de estos métodos son lo suficientemente simples como para codificarlos sin más descomposición, especialmente si usa moverALaPared en la definición de volverACasa. Aquí está la implementación completa: </p>
+
+
+
+
+<div class="section embeddedIde" id="beeperTowers"><div class="ide getStarted" id="beeperTowersIde" style="height:1790.1000000000001px"><div class="ideCenter" id="beeperTowersIdeCenter" style="height:inherit;"><div id="beeperTowersEditorDiv" style="width:600px;height:inherit;"></div></div></div><div id="beeperTowersCanvasDiv" style="width:500px;height:360px"><canvas class="ideCanvas" id="beeperTowersCanvas"></canvas></div><div style="width:100%;"><div class="buttonBar"><button class="btn btn-default" id="beeperTowersRunButton"><span class="glyphicon glyphicon-play"></span> Ejecute el programa</button></div></div><script>
+
+        
+
+function examplebeeperTowers() {
+STARTER_CODE = `
+
+/*
+ * Archivo: ConoColeccionandoKarel.java
+ * ------------------------------------
+ * La clase ConoColeccionandoKarel recopila todos
+ * los beepers en una serie de torres verticales y
+ * las deposita en la esquina este de la primera
+ * fila.
+ */
+import stanford.karel.*;
+public class ConoColeccionandoKarel extends Karel {
+
+   /**
+    * Especifica el punto de entrada del programa.
+    */
+   public void run() {
+      recogerTodosLosConos();
+      soltarTodosLosConos();
+      volverACasa();
+   }
+
+   /**
+    * Recoge los beepers de cada torre moviéndose a lo
+    * largo de la primera fila, llamando a
+    * recogerUnaTorre en cada esquina. La condición
+    * posterior para este método es que Karel se
+    * encuentra en la esquina más oriental de la
+    * primera fila mirando hacia el este.
+    */
+   private void recogerTodosLosConos() {
+      while (frenteDespejado()) {
+         recogerUnaTorre();
+         moverse(); 
+      }
+      recogerUnaTorre();
+   }
+
+   /**
+    * Recoge los beepers en una sola torre. Cuando se
+    * llama recogerUnaTorre, Karel debe estar en la
+    * primera fila mirando hacia el este. La
+    * postcondición para recogerUnaTorre es que Karel
+    * debe estar nuevamente orientada al este en esa
+    * misma esquina.
+    */
+   private void recogerUnaTorre() {
+      girarIzquierda();
+      coleccioneLineaDeConos();
+      mediaVeulta();
+      moverALaPared();
+      girarIzquierda();
+   }
+
+   /**
+    * Recoge una línea consecutiva de beepers. El final
+    * de la línea de cono se indica mediante una
+    * esquina que no contiene señales acústicas.
+    */
+   private void coleccioneLineaDeConos() {
+      while (conosPresentes()) {
+         recogerCono();
+         if (frenteDespejado()) {
+            moverse(); 
+         }
+      } 
+   }
+
+   /**
+    * Deja caer todos los beepers en la esquina actual.
+    */
+   private void soltarTodosLosConos() {
+      while (bolsaConConos()) {
+         ponerCono();
+      }
+   }
+
+   /**
+    * Devuelve a Karel a su posición inicial en la
+    * esquina de 1st Avenue y 1st row, mirando hacia el
+    * este. La condición previa para este método es que
+    * Karel debe estar orientado hacia el este en algún
+    * lugar de la primera fila, lo cual es cierto al
+    * final de recogerTodosLosConos.
+    */
+   private void volverACasa() {
+      mediaVeulta();
+      moverALaPared();
+      mediaVeulta();
+   }
+
+   /** Mueve a Karel hacia adelante hasta que es bloqueada por un muro. */
+   private void moverALaPared(){
+      while (frenteDespejado()) {
+         moverse();
+      } 
+   }
+
+   /** Gira a Karel 180 grados alrededor */
+   private void mediaVeulta(){
+      girarIzquierda();
+      girarIzquierda();
+   }
+}
+`
+// because of that extra endline at the start of the string
+STARTER_CODE = STARTER_CODE.trim();
+
+ var karelIde = null;
+ var karelEditor = null;
+ var buttonState = 'play';
+
+ function main() {
+   karelEditor = importEditorCode('beeperTowersEditor','beeperTowersEditorDiv', STARTER_CODE, false);
+     //importRunButtonBar('example1ButtonBar');
+    
+    $("[title]").tooltip({ position: "bottom center", opacity: 0.9});
+    
+    initTabs();
+    var canvas = document.getElementById('beeperTowersCanvas');
+    karelIde = KarelIde(karelEditor, canvas, 'beeperTowers', 0.9, 1000, 
+      0.8 * 1000);
+    $('#beeperTowersRunButton').click(function(){playClicked()});
+    onresize();
+ }
+
+ function playClicked() {
+  if(buttonState == 'play') {
+    karelIde.playButton();
+      
+      var resetText = '<span class="glyphicon glyphicon-repeat"></span> Reset Program';
+      $('#beeperTowersRunButton').html(resetText);
+      buttonState = 'reset';
+     } else if (buttonState == 'reset') {
+      karelIde.stopButton();
+      var playText = '<span class="glyphicon glyphicon-play"></span> Run Program';
+      $('#beeperTowersRunButton').html(playText);
+      buttonState = 'play';
+     }
+    
+  }
+
+  function onresize() { 
+
+    // var parentHeight = 1790.1000000000001;
+    // var canvasWidth = 300
+    // var parentWidth = $("#beeperTowers").width();
+    // console.log('pw: ' + parentWidth);
+
+    // var editorDiv = document.getElementById('beeperTowersCanvasDiv');
+    // var canvas = document.getElementById('beeperTowersCanvas');
+    
+
+
+    // var availibleWidth = parentWidth;
+    // var elementSpacing = 12;
+
+    // var editorWidth = availibleWidth - canvasWidth - elementSpacing; 
+
+    // canvas.style.width = canvasWidth + 'px';
+    // canvas.style.height = canvasWidth + 'px';
+    // canvas.style.left = (editorWidth + elementSpacing) + 'px';
+ }
+
+ 
+ main()
+ 
+}
+examplebeeperTowers();
+    </script></div>
+
+</p><hr/><center><a class="btn btn-primary btn-lg" href="chapter9.html" role="button">Siguiente capítulo</a></center>
+
+
+
+<div style="height:60px"></div>
+<!-- <div class="footer">
+	<p class="pull-left">
+		&#169; Stanford 2018 &#124; Made by Chris Piech. Built off "Karel the Robot Learns Java" by Eric Roberts. 
+	</p>
+</div>-->
+<!-- <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74362126-1', 'auto');
+  ga('send', 'pageview');
+
+</script>--></div></div></div><!-- right gutter --><div style="flex-grow:4"></div></div></div></body></html>

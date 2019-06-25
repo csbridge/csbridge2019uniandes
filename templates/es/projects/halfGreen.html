@@ -2,8 +2,8 @@
 
 	%include templates/parts/head.html
 </head><body><!-- Navigation Bar -->
-	%include templates/parts/navBar.html
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Mitad verde </h1><p> Escrito por Chris Piech </p><p> Folletos: <a href="{{pathToRoot}}en/handouts/graphics.html">Referencia Gráfica</a></p></div><hr/><div class="row"><div class="col-md-12"><p> Vamos a crear 1000 círculos en posiciones aleatorias en la pantalla. Los círculos más cercanos a la esquina inferior izquierda serán azules y los círculos más cercanos a la esquina superior derecha serán verdes. Este es un ejemplo de valores de retorno. </p><p><center><img src="{{pathToRoot}}img/projects/halfGreen/halfGreen.png" style="width:500px"/></center></p><p> Cada círculo es de 20 píxeles por 20 píxeles. </p></div></div><div class="row"><div class="col-md-12"><h2> Solución </h2><pre id="editor" style="height:500px"> Clase pública CirculoAlAzar2 extiende ProgramaDeGraficos {
+	%include templates/parts/navBarEs.html
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Mitad verde </h1><p> Escrito por Chris Piech </p><p> Folletos: <a href="{{pathToRoot}}es/handouts/graphics.html">Referencia Gráfica</a></p></div><hr/><div class="row"><div class="col-md-12"><p> Vamos a crear 1000 círculos en posiciones aleatorias en la pantalla. Los círculos más cercanos a la esquina inferior izquierda serán azules y los círculos más cercanos a la esquina superior derecha serán verdes. Este es un ejemplo de valores de retorno. </p><p><center><img src="{{pathToRoot}}img/projects/halfGrees/halfGreen.png" style="width:500px"/></center></p><p> Cada círculo es de 20 píxeles por 20 píxeles. </p></div></div><div class="row"><div class="col-md-12"><h2> Solución </h2><pre id="editor" style="height:500px"> Clase pública CirculoAlAzar2 extiende ProgramaDeGraficos {
 
 	GeneradorAleatorio privado = nuevo GeneradorAleatorio ();
 	public static final int ANCHO_DE_APLICACIÓN = 500;

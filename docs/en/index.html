@@ -90,7 +90,7 @@
 	          	<li><a href="../en/projects/mountain.html">Mountain Karel</a></li>
 	          	<li><a href="../en/projects/randomPainter.html">Random Painter</a></li>
 	          	
-	          	<li class="divider"></li>
+	          	<!--<li class="divider"></li>
 	          	<li><a href="../en/projects/sandcastles.html">Sandcastles</a></li>
 	          	<li><a href="../en/projects/favoriteNumber.html">Favorite Number</a></li>
 	          	<li><a href="../en/projects/medicine.html">Medicine</a></li>
@@ -119,15 +119,14 @@
 	          	<li><a href="../en/projects/catchMeIfYouCan.html">Catch Me If You Can</a></li>
 	          	<li><a href="../en/projects/breakout.html">Breakout</a></li>
 
-							<!--
 	          	<li class="divider"></li>
 
 	          	<li><a href="../en/projects/sortedNumbers.html">Sorted Numbers</a></li>
 	          	<li><a href="../en/projects/snow.html">Snow</a></li>
 	          	<li><a href="../en/projects/mouseGame.html">The Line</a></li>
 	          	<li><a href="../en/projects/music.html">Music</a></li>
-							-->
-	          	<!--
+							
+							
 	            <li><a href="../projects/drawPeople.html">Three's a Crowd</a></li>
 	            
 	            <li><a href="../projects/madLibs.html">Mad Libs</a></li>
@@ -262,12 +261,12 @@
 	          </ul>
 	        </li>-->
 
-	        <li class="dropdown">
+	        <!--<li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bonus <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
                 <li><a href="../en/bonus-index.html">Bonus overview</a></li>
 	          </ul>
-	        </li>
+	        </li>-->
 
 	        <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forms <b class="caret"></b></a>
@@ -283,8 +282,10 @@
 
 	      
 	      <ul class="nav navbar-nav navbar-right">
+	      	<li><a onclick="changeToSpanish()" style="cursor: pointer;"><img class="languageIcon" src="../img/colombian_flag.png"></img></a></li> 
+
 	      	<li><a onclick="changeToEnglish()" style="cursor: pointer;"><img class="languageIcon" src="../img/english_flag.png"></img></a></li>
-<!-- 	      	<li><a onclick="changeToTurkish()" style="cursor: pointer;"><img class="languageIcon" src="../img/turkish_flag.png"></img></a></li> -->
+ 	      	
 	        
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
@@ -294,15 +295,15 @@
 
 <script>
 
-	function changeToTurkish() {
+	function changeToSpanish() {
 		var url = window.location.href;
-		url = url.replace("/en/", "/tk/");
+		url = url.replace("/en/", "/es/");
 		window.location.href = url;
 	}
 
 	function changeToEnglish() {
 		var url = window.location.href;
-		url = url.replace("/tk/", "/en/");
+		url = url.replace("/es/", "/en/");
 		window.location.href = url;
 	}
 
@@ -340,9 +341,7 @@
 		<div class="section" id="information">
 		<br/>
 
-		<div class="alert alert-success">
-			All necessary links (to sign into lab, to submit your work) can now be found under the 'Forms' tab in the top toolbar.	
-		</div>
+
 
 		<!--
 		<div class="alert alert-success">
@@ -802,53 +801,53 @@
 		<div class="row">
 			<div class="col-xs-2">
 				<div class="thumbnail">
-					<img class = "thumbnailImg" src="../img/peeps/tyler.jpg" alt="Generic placeholder thumbnail">
+					<img class = "thumbnailImg" src="../img/peeps/Colin.jpg" alt="Generic placeholder thumbnail">
 					<div class="caption">
-						<b>Tyler</b>
+						<b>Colin</b>
 					</div>
 				</div>
 			</div>
 			<div class="col-xs-2">
 				<div class="thumbnail">
-					<img src="../img/peeps/baris.jpg" alt="Generic placeholder thumbnail">
+					<img src="../img/peeps/Mario.jpg" alt="Generic placeholder thumbnail">
 					<div class="caption">
-						<b>Baris</b>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-xs-2">
-				<div class="thumbnail">
-					<img src="../img/peeps/default.jpg" alt="Generic placeholder thumbnail">
-					<div class="caption">
-						<b>Kaan</b>
+						<b>Mario</b>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-xs-2">
 				<div class="thumbnail">
-					<img src="../img/peeps/Ipek.jpeg" alt="Generic placeholder thumbnail">
+					<img src="../img/peeps/Ana.jpg" alt="Generic placeholder thumbnail">
 					<div class="caption">
-						<b>İpek</b>
+						<b>Ana</b>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-xs-2">
 				<div class="thumbnail">
-					<img src="../img/peeps/Yusa.jpg" alt="Generic placeholder thumbnail">
+					<img src="../img/peeps/Evani.jpg" alt="Generic placeholder thumbnail">
 					<div class="caption">
-						<b>Yüşa</b>
+						<b>Evani</b>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-xs-2">
 				<div class="thumbnail">
-					<img src="../img/peeps/Muharrem.jpg" alt="Generic placeholder thumbnail">
+					<img src="../img/peeps/Jorge.jpg" alt="Generic placeholder thumbnail">
 					<div class="caption">
-						<b>Muharrem</b>
+						<b>Jorge</b>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-2">
+				<div class="thumbnail">
+					<img src="../img/peeps/Juliana.jpg" alt="Generic placeholder thumbnail">
+					<div class="caption">
+						<b>Juliana</b>
 					</div>
 				</div>
 			</div>
@@ -860,141 +859,89 @@
 
 			<div class="col-xs-2">
 				<div class="thumbnail">
-					<img src="../img/peeps/Seher.jpg" alt="Generic placeholder thumbnail">
+					<img src="../img/peeps/Sierra.jpg" alt="Generic placeholder thumbnail">
 					<div class="caption">
-						<b>Seher</b>
+						<b>Sierra</b>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-xs-2">
 				<div class="thumbnail">
-					<img src="../img/peeps/Merve.JPG" alt="Generic placeholder thumbnail">
+					<img src="../img/peeps/Michael.jpg" alt="Generic placeholder thumbnail">
 					<div class="caption">
-						<b>Merve</b>
+						<b>Michael</b>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-xs-2">
 				<div class="thumbnail">
-					<img src="../img/peeps/Ceren.JPG" alt="Generic placeholder thumbnail">
+					<img src="../img/peeps/nathan.png" alt="Generic placeholder thumbnail">
 					<div class="caption">
-						<b>Ceren</b>
+						<b>Nathan</b>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-xs-2">
 				<div class="thumbnail">
-					<img src="../img/peeps/Bulut.jpg" alt="Generic placeholder thumbnail">
+					<img src="../img/peeps/Nicolas.jpg" alt="Generic placeholder thumbnail">
 					<div class="caption">
-						<b>Bulut</b>
+						<b>Nicolás</b>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-xs-2">
 				<div class="thumbnail">
-					<img src="../img/peeps/Eren.jpg" alt="Generic placeholder thumbnail">
+					<img src="../img/peeps/Pietro.jpg" alt="Generic placeholder thumbnail">
 					<div class="caption">
-						<b>Eren</b>
+						<b>Pietro</b>
 					</div>
 				</div>
 			</div>
 
+
 			<div class="col-xs-2">
 				<div class="thumbnail">
-					<img src="../img/peeps/Ezgi.jpg" alt="Generic placeholder thumbnail">
+					<img src="../img/peeps/Eddie.jpg" alt="Generic placeholder thumbnail">
 					<div class="caption">
-						<b>Ezgi</b>
+						<b>Eddie</b>
 					</div>
 				</div>
 			</div>
+
+
 
 		</div>
 		<div class="row">
-
-			<div class="col-xs-2">
-				<div class="thumbnail">
-					<img src="../img/peeps/Caner.jpg" alt="Generic placeholder thumbnail">
-					<div class="caption">
-						<b>Caner</b>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-xs-2">
-				<div class="thumbnail">
-					<img src="../img/peeps/CerenA.jpg" alt="Generic placeholder thumbnail">
-					<div class="caption">
-						<b>Ceren</b>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-xs-2">
-				<div class="thumbnail">
-					<img src="../img/peeps/melike.JPG" alt="Generic placeholder thumbnail">
-					<div class="caption">
-						<b>Melike</b>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-xs-2">
-				<div class="thumbnail">
-					<img src="../img/peeps/Ahmet.jpg" alt="Generic placeholder thumbnail">
-					<div class="caption">
-						<b>Ahmet</b>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-xs-2">
-				<div class="thumbnail">
-					<img src="../img/peeps/Emre.jpg" alt="Generic placeholder thumbnail">
-					<div class="caption">
-						<b>Emre</b>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-xs-2">
-				<div class="thumbnail">
-					<img src="../img/peeps/Ozan.png" alt="Generic placeholder thumbnail">
-					<div class="caption">
-						<b>Ozan</b>
-					</div>
-				</div>
-			</div>
-
-		</div>
-		<div class="row">
-
-			<div class="col-xs-2">
-				<div class="thumbnail">
-					<img src="../img/peeps/KaanU.jpg" alt="Generic placeholder thumbnail">
-					<div class="caption">
-						<b>Kaan</b>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-xs-2">
-				<div class="thumbnail">
-					<img src="../img/peeps/Berkay.JPG" alt="Generic placeholder thumbnail">
-					<div class="caption">
-						<b>Berkay</b>
-					</div>
-				</div>
-			</div>
 
 			<div class="col-xs-2">
 				<div class="thumbnail">
 					<img class = "thumbnailImg" src="../img/peeps/chris.jpg" alt="Generic placeholder thumbnail">
 					<div class="caption">
 						<b>Chris</b>
+					</div>
+				</div>
+			</div>
+
+			
+
+			<div class="col-xs-2">
+				<div class="thumbnail">
+					<img src="../img/peeps/Santiago.jpg" alt="Generic placeholder thumbnail">
+					<div class="caption">
+						<b>Santiago</b>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-2">
+				<div class="thumbnail">
+					<img class = "thumbnailImg" src="../img/peeps/Dario.jpg" alt="Generic placeholder thumbnail">
+					<div class="caption">
+						<b>Darío</b>
 					</div>
 				</div>
 			</div>
@@ -1016,6 +963,8 @@
 					</div>
 				</div>
 			</div>
+
+			
 		</div>
 </div>
 			<hr/>

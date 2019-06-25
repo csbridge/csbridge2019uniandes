@@ -2,7 +2,7 @@
 
 	%include templates/parts/head.html
 </head><body><!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarEs.html
 <!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Alcance variable </h1><p> Escrito por Chris Piech y Mehran Sahami. </p></div><hr/><div class="row"><div class="col-md-12"><h3> Variables locales </h3><p> Las variables locales se crean localmente al método (o al bloque ... consulte la sección &quot;Alcance del bloque&quot; más abajo) en el que están definidas. Se destruyen cuando se ha completado la ejecución del método. Solo se puede acceder a las variables locales desde el método en el que se declaran. Debido a su naturaleza transitoria, las variables locales no pueden almacenar información persistente sobre un objeto entre llamadas de método. </p></div></div><div class="row"><div class="col-md-12"><h3> Ejemplo de variables locales </h3><p> Considere, por ejemplo, el siguiente fragmento de código. </p><pre id="editor" style="height:200px"> clase pública UnEjemplo extiende ProgramaDeConsola {
 
 	método de vacío públicoUno

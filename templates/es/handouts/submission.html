@@ -2,8 +2,40 @@
 
 	%include templates/parts/head.html
 </head><body><!-- Navigation Bar -->
-	%include templates/parts/navBar.html
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Envío de tareas </h1></div><hr/><div class="row"><div class="col-md-12"> Al final de cada día, antes de ir a casa, ¡envíe su trabajo! </div></div><div class="row"><div class="col-md-12"><h2> Cómo presentar </h2><p> Para enviar siga estos tres pasos: </p><ol><li> Zip la carpeta que contiene su proyecto. Un video tutorial útil se puede encontrar <a href="https://www.youtube.com/watch?v=pQiv-nu-2CY">aquí</a>. </li><li> Nombre el código postal con su <b>nombre completo</b> y el <b>nombre del proyecto</b>. Por ejemplo, llamaría a mi zip: <code>Tyler_Conklin_Random_Pintor.cremallera</code> si estuviera enviando el proyecto &#39;Random Painter&#39;. </li><li> Suba el archivo utilizando el enlace que le proporcionaron los líderes de su sección en el laboratorio. </li></ol></div></div>
+	%include templates/parts/navBarEs.html
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Envío de tareas </h1></div><hr/><div class="row">
+	
+
+	<div class="col-md-12">
+				<p> Para enviar siga estos dos pasos: </p>
+<ol>
+          <li> <p> Para comprimir la carpeta que contiene su proyecto, ejecute <b> zipper.jar </b> desde su carpeta de proyecto. </p>
+            <p> Encuentre la carpeta con su proyecto en ella <b> fuera de Eclipse </b>. Si no sabe dónde se encuentra su proyecto en su computadora, comience desde Eclipse y haga clic con el botón derecho en el nombre de su proyecto (la carpeta azul en la barra lateral izquierda). Luego haga clic en 'Propiedades', y navegue hasta / haga clic en la ruta 'Ubicación' de su proyecto. </p>
+            <ol>
+              <li> <p> Haga doble clic en <b> zipper.jar </b>. Debería ver la siguiente ventana 'Envío de asignación de puente CS': </p>
+<p>
+</p> <center>
+                      <img style = "width: 400px; border: 1px solid # 000000" src = "{{pathToRoot}}img/handouts/submission/zipper.png">
+</center>
+<p> </p>
+              </li>
+              <li> Si estás en Mac OS X, puedes ver un error que dice "zipper.jar no se puede abrir porque es de un desarrollador no identificado". Debes hacer clic derecho en zipper.jar y seleccionar "Abrir". Luego verifique que desea abrir el archivo. </li>
+<p>
+</p> <center>
+                  <img style = "width: 700px; border: 1px solid # 000000" src = "{{pathToRoot}}img/handouts/submission/zipperdebug.png">
+</center>
+<p> </p>
+              <li> En la ventana 'Envío de asignación de puente CS' que aparece, complete su información: su <b> nombre completo </b> y su <b> identificación de estudiante </b>. Su identificación de estudiante debe ser una letra seguida de 4 números (por ejemplo, K0012) y se puede encontrar en la etiqueta de identificación de su estudiante. </li>
+              <li> Si no recuerda su identificación de estudiante y perdió su etiqueta de identificación, comuníquese con el líder de su sección. </li>
+              <li> Presiona 'Enviar'. La carpeta comprimida se ubicará en la ubicación que especificó. </li>
+              <li> Cierre la ventana 'Envío de asignación de puente CS'.
+        </li> </ol>
+</li> <li> Suba el archivo zip usando el enlace provisto por los líderes de su sección en el laboratorio. </li>
+</ol>
+			</div>
+
+
+</div>
 		
 		
 		%include templates/parts/footer.html

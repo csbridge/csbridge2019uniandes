@@ -16,10 +16,6 @@ public class EsKarel extends SuperKarel{
 		turnLeft();
 	}
 	
-	public void girarDerecha() {
-		turnRight();
-	}
-	
 	public void mediaVuelta() {
 		turnAround();
 	}

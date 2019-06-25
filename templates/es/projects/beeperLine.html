@@ -3,10 +3,10 @@
 	%include templates/parts/head.html
 </head><body><!-- Navigation Bar -->
 	%include templates/parts/navBarEs.html
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Línea de sonido </h1><p> Escrito por Chris Piech </p></div><hr/><div class="row"><div class="col-md-12"><p> Tu objetivo es llenar la primera fila del mundo de Karel con beepers. Puede suponer que Karel comienza en la esquina inferior izquierda, mirando hacia el este. Por ejemplo, si ejecuta su programa en el mundo de la izquierda, debería producir el mundo de la derecha. <p><center><img src="{{pathToRoot}}img/projects/beeperLine/beeperLine1.png" style="width:600px"/></center></p> Tu programa también debería funcionar para mundos de diferentes tamaños. Por ejemplo, si ejecutamos el mismo programa EXACTO en este mundo un poco más grande, Karel debería poder colocar una línea completa de avisadores sin fallar. Esto significa que no podemos usar un ciclo for ¡No sabemos de antemano cuán grande será el mundo! <p><center><img src="{{pathToRoot}}img/projects/beeperLine/beeperLine2.png" style="width:700px"/></center></p></p></div></div><div class="row"><div class="col-md-12"><h2> Solución </h2><pre id="editor" style="height:320px">/ **
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Fila de Conos </h1><p> Escrito por Chris Piech </p></div><hr/><div class="row"><div class="col-md-12"><p> Tu objetivo es llenar la primera fila del mundo de Karel con beepers. Puede suponer que Karel comienza en la esquina inferior izquierda, mirando hacia el este. Por ejemplo, si ejecuta su programa en el mundo de la izquierda, debería producir el mundo de la derecha. <p><center><img src="{{pathToRoot}}img/projects/beeperLine/beeperLine1.png" style="width:600px"/></center></p> Tu programa también debería funcionar para mundos de diferentes tamaños. Por ejemplo, si ejecutamos el mismo programa EXACTO en este mundo un poco más grande, Karel debería poder colocar una línea completa de avisadores sin fallar. Esto significa que no podemos usar un ciclo for ¡No sabemos de antemano cuán grande será el mundo! <p><center><img src="{{pathToRoot}}img/projects/beeperLine/beeperLine2.png" style="width:700px"/></center></p></p></div></div><div class="row"><div class="col-md-12"><h2> Solución </h2><pre id="editor" style="height:320px">/ **
  * Programa&nbsp;: LíneaDeSonido.
  * -----------------------
- *&nbsp;Llene la primera fila con beepers. Supone que
+ *&nbsp;Llene la primera fila con conos. Supone que
  * Karel comienza en la esquina inferior izquierda.
  * De la pantalla, mirando hacia el este.
  * /
@@ -17,10 +17,10 @@ La clase pública LíneaDeSonido extiende SuperKarel {
 			ponerBeeper ();
 			moverse ();
 		}
-		// Esta línea es necesaria para colocar la señal acústica final. El numero
-		// Las veces que Karel se mueve es menos que la cantidad de veces Karel.
-		// coloca un beeper (si el mundo tiene cinco cuadrados de ancho, colocamos
-		// 5 beepers pero solo se mueven 4 veces
+		// Esta línea es necesaria para colocar el cono final. El numero
+		// Las veces que Karel se mueve es menos que la cantidad de veces Karel
+		// pone un beeper (si el mundo tiene cinco cuadrados de ancho, colocamos
+		// 5 cono pero solo se mueven 4 veces)
 		ponerBeeper ();
 	}
 } </pre><script charset="utf-8" src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript"></script><script>

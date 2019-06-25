@@ -149,10 +149,10 @@
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ejemplos <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
-	          	<li><a href="../../es/projects/stepUp.html">Step Up</a></li>
-	          	<li><a href="../../es/projects/place100.html">Place 100</a></li>
-	          	<li><a href="../../es/projects/beeperLine.html">Beeper Line</a></li>
-	          	<li><a href="../../es/projects/invert.html">Invert</a></li>
+	          	<li><a href="../../es/projects/stepUp.html">Escalar</a></li>
+	          	<li><a href="../../es/projects/place100.html">Poner 100</a></li>
+	          	<li><a href="../../es/projects/beeperLine.html">Fila De Conos</a></li>
+	          	<li><a href="../../es/projects/invert.html">Invertir Conos</a></li>
 	          	<li><a href="../../es/projects/unKarel.html">UN Karel</a></li>
 	          	<!--<li class="divider"></li>
 	            <li><a href="../../es/projects/emc2.html">E=MC2</a></li>
@@ -312,13 +312,13 @@
 <!-- Header -->
 <div id="pageHeader">
 <h1>
-				Invert (with solution)
+				Invertir Conos (con solución)
 			</h1>
 <p>
-				Problem written by Eric Roberts
+Problema escrito por Eric Roberts
 			</p>
 <p>
-			Handouts: 
+			Guras: 
 				<a href="../../es/handouts/karel.html">KarelReference</a>
 </p>
 </div>
@@ -326,7 +326,7 @@
 <div class="row">
 <div class="col-md-12">
 <p>
-					For a world of any size, with any configuration of beepers (no square will have more than one), invert all the beepers so that, where there was a beeper previously there is no beeper... and where there was no beeper previously, there is a beeper. Consider the following example.
+					Para un mundo de cualquier tamaño, con cualquier configuración de conos (ningún cuadrado tendrá más de uno), invierta todos los conos para que, donde había un cono anteriormente, no haya cono ... y donde no haya ningún cono anteriormente, hay un cono. Considere el siguiente ejemplo.
 				</p>
 <p>
 <center>
@@ -338,31 +338,30 @@
 <div class="row">
 <div class="col-md-12">
 <h2>Solution</h2>
-<pre id="editor" style="height:1010px">/**
- *&nbsp;Programa: Invertir
+<pre id="editor" style="height:1350px">/**
+ *&nbsp;Programa: Invertir Conos
  * ------------------
- *&nbsp;Invierta todas las señales acústicas de manera
- * que, donde antes había una señal acústica, no
- * haya ninguna señal acústica ... y donde no haya
- * una señal acústica anteriormente, haya una señal
- * acústica.
+ *&nbsp;Invierta todas los conos de manera
+ * que, donde antes había un cono, no
+ * haya ninguna cono... y donde no haya
+ * un cono anteriormente, haya un cono
  */
-public class InvertirBeepers extends SuperKarel {
+public class InvertirConos extends EsKarel {
 	
 	public void run() {
-		filaInvertida();
+		invertirFila();
 		volverAlOeste();
-		while(izquierdaEsClara()) {
-			girarALaIzquierda();
+		while(izquierdaDespejada()) {
+			girarIzquierda();
 			moverse();
-			girarALaDerecha();
-			filaInvertida();
+			girarDerecha();
+			invertirFila();
 			volverAlOeste();
 		}
 	}
 
 	/**
-	 *&nbsp;Método: Invertir fila
+	 *&nbsp;Método: InvertirFila
 	 * ---------------------
 	 *&nbsp;Invertir una sola fila. Al comienzo, Karel debe
 	 * estar orientada hacia el este desde el lado oeste
@@ -370,27 +369,27 @@ public class InvertirBeepers extends SuperKarel {
 	 * hacia el este desde el lado este de la misma
 	 * fila, se invertirán todos los beepers de la fila.
 	 */
-	private void filaInvertida() {
-		while(elFrenteEsClaro()) {
-			invertirBeeper();
+	private void invertirFila() {
+		while(frenteDespejado()) {
+			invertirCono();
 			moverse();
 		}
-		invertirBeeper();
+		invertirCono();
 	}
 
 	/**
-	 *&nbsp;Método: Invertir Beeper
+	 *&nbsp;Método: Invertir Cono
 	 * -----------------------
-	 *&nbsp;Invierte la configuración de la señal acústica en
-	 * un cuadrado. Si previamente había un beeper, se
-	 * recoge. Si anteriormente no había beeper, se
-	 * coloca un beeper.
+	 *&nbsp;Invierte la configuración de el cono en
+	 * un cuadrado. Si previamente había un cono, se
+	 * recoge. Si anteriormente no había cono, se
+	 * coloca un cono.
 	 */
-	private void invertirBeeper() {
-		if(beepersPresente()) {
-			recogerBeeper();
+	private void invertirCono() {
+		if(conosPresentes()) {
+			recogerCono();
 		} else {
-			ponerBeeper();
+			ponerCono();
 		}
 	}
 
@@ -401,11 +400,18 @@ public class InvertirBeepers extends SuperKarel {
 	 * vienes!
 	 */
 	private void volverAlOeste() {
-		giroDeVuelta();
-		while(elFrenteEsClaro()) {
+		mediaVuelta();
+		while(frenteDespejado()) {
 			moverse();
 		}
-		giroDeVuelta();
+		mediaVuelta();
+	}
+
+	/** el clásico */
+	private void girarDerecha() {
+		girarIzquierda();
+		girarIzquierda();
+		girarIzquierda();
 	}
 }</pre>
 <script charset="utf-8" src="../../plugins/ace/ace.js" type="text/javascript"></script>

@@ -45,5 +45,11 @@ public class RepararArboles extends EsKarel {
 		}
 		moverse();
 	}
+	
+	private void girarDerecha() {
+		girarIzquierda();
+		girarIzquierda();
+		girarIzquierda();
+	}
 
 }

@@ -7,7 +7,7 @@ import stanford.karel.SuperKarel;
  * leer/modificar este archivo. Este archivo nos permite 
  * traducir las librerias de Karel a nombres de metodos en Español
  */
-public class EsKarel extends SuperKarel{
+public abstract class EsKarel extends SuperKarel{
 
 	
 	/********************************************** 

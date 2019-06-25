@@ -20,21 +20,35 @@ public class SOvalo extends GOval implements SObjeto{
 		return getY();
 	}
 
-	public void moverse(int dx, int dy) {
+	public void moverse(double dx, double dy) {
 		move(dx, dy);
 	}
 
 	public void cambiarRelleno(boolean b) {
 		setFilled(b);
 	}
-	
-	public void cambiarColor(Color brickColor) {
-		setColor(brickColor);
-	}
-	
+
 	public void cambiarUbicacion(double i, double j) {
 		setLocation(i, j);
 	}
 
+	public void cambiarColor(Color c) {
+		setColor(c);
+	}
+	
+	public double darAncho() {
+		return getWidth();
+	}
+	
+	public double darAltura() {
+		return getHeight();
+	}
+
+	public void cambiarVisible(boolean visible) {
+		setVisible(visible);
+	}
+	public boolean esVisible() {
+		return isVisible();
+	}
 
 }

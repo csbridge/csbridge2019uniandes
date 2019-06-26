@@ -54,7 +54,7 @@ public class SLabel extends GLabel implements SObjeto{
 		return getWidth();
 	}
 	
-	public double darAltura() {
+	public double darAlto() {
 		return getHeight();
 	}
 	

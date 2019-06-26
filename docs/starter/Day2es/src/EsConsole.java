@@ -19,6 +19,26 @@ public abstract class EsConsole extends ConsoleProgram{
 	public void imprimir(double d) {
 		println(d);
 	}
+
+	public void imprimir(int i) {
+		println(i);
+	}
+
+	public void imprimirEnLinea(String s) {
+		print(s);
+	}
+	
+	public void imprimirEnLinea(double d) {
+		print(d);
+	}
+
+	public void imprimirEnLinea(int i) {
+		print(i);
+	}
+
+	public int leerBoolean(String prompt) {
+		return readBoolean(prompt);
+	}
 	
 	public int leerInt(String prompt) {
 		return readInt(prompt);
@@ -26,6 +46,10 @@ public abstract class EsConsole extends ConsoleProgram{
 	
 	public double leerDouble(String prompt) {
 		return readDouble(prompt);
+	}
+
+	public String leerLinea(String prompt) {
+		return readLine(prompt);
 	}
 	
 	public int intAleatorio() {
@@ -62,3 +86,4 @@ public abstract class EsConsole extends ConsoleProgram{
 	
 	
 }
+

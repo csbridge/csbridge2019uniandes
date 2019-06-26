@@ -22,7 +22,7 @@ public class GameShow extends EsConsole {
 			premio = premio + 1;
 		}
 
-		println("You win " + premio + ",000 pesos");
+		imprimir("You win " + premio + ",000 pesos");
 	}
 
 }

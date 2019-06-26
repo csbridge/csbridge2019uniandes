@@ -1,36 +1,33 @@
 <head>
 
-  %include templates/parts/head.html
-</head><body><!-- Navigation Bar -->
-  %include templates/parts/navBarEs.html
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Eso es algo de suma! </h1><p> Problema escrito por Bryce CR, Julia Lee, Chris Piech y TY Huang </p></div><hr/><div class="row"><div class="col-md-12"><p> Escriba un programa que lea 10 enteros del usuario e imprima la suma de los valores ingresados. </p><p><center><img src="{{pathToRoot}}img/projects/someSum/demo.png" style="width:600px"/></center></p><p> A menudo, en los programas de consola es necesario imprimir los valores al usuario como una cadena. El ejemplo de arriba imprime: </p> <p>&quot;La suma es: 55&quot;</p> <p>Si ejecuta su programa con la entrada anterior, 55 será el valor almacenado en la variable que guarda la suma. Si esa variable se llama &#39;ejemploSuma&#39;, para escribir la respuesta, escriba:</p> <p>imprimir (&quot;La suma es:&quot; + ejemploSuma);</p>Una forma más general es: <p>&quot;Mensaje de cadena&quot; + variableName + &quot;Mensaje de cadena más&quot;</p>
-</div></div></div></body> <!--pre id="editor" style="height:400px">/**
- * Program: That's Some Sum
- * -------------
- * This program reads in 10 integers from the user and then prints their sum.
- */
+    %include templates/parts/head.html
+</head>
 
-public class SomeSum extends ProgramaDeConsola {
-  
-  public void run() {
-    println("Enter 10 nums. I will show you the sum!");
-    int sum = 0;
-      
-    for(int i=0; i<10; i++) {
-      sum = sum + leerInt("Please enter an integer: ");
-    }
+<body>
+    <!-- Navigation Bar -->
+    %include templates/parts/navBarEs.html
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Header -->
+        <div id="pageHeader">
+            <h1> Eso es algo de suma! </h1>
+            <p> Problema escrito por Bryce CR, Julia Lee, Chris Piech y TY Huang </p>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-12">
+                <p> Escriba un programa que lea 10 enteros del usuario e imprima la suma de los valores ingresados. </p>
+                <p>
+                    <center><img src="{{pathToRoot}}img/projects/someSum/demo.png" style="width:600px" /></center>
+                </p>
+                <p> A menudo, en los programas de consola es necesario imprimir los valores al usuario como una cadena. El ejemplo de arriba imprime: </p>
+                <p>&quot;La suma es: 55&quot;</p>
+                <p>Si ejecuta su programa con la entrada anterior, 55 será el valor almacenado en la variable que guarda la suma. Si esa variable se llama &#39;ejemploSuma&#39;, para escribir la respuesta, escriba:</p>
+                <p><code>imprimir(&quot;La suma es:&quot; + ejemploSuma);</code></p>Una forma más general es:
+                <p><code>&quot;Mensaje de cadena&quot; + variableName + &quot;Mensaje de cadena más&quot;</code></p>
+            </div>
+        </div>
 
-    println("");
-    println("The sum is: " + sum);
-  }
-}</pre--><script charset="utf-8" src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript"></script><script>
-    var editor = ace.edit("editor");
-   editor.setTheme('ace/theme/eclipse');
-   editor.getSession().setMode("ace/mode/java");
-   editor.setReadOnly(true);
-   editor.renderer.setShowGutter(false); 
-    /*editor.setTheme("ace/theme/eclipse");
-    editor.getSession().setMode("ace/mode/java");*/
-</script>
-    
-    %include templates/parts/footer.html
+        %include templates/parts/footer.html
+    </div>
+</body>

@@ -83,7 +83,7 @@
 	          	<li class="divider"></li>
 	          	<li><a href="../../es/projects/sandcastles.html">Sandcastles</a></li>
 	          	<li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li>
-	          	<li><a href="../../es/projects/medicine.html">Medicine</a></li>
+	          	<!-- <li><a href="../../es/projects/medicine.html">Medicine</a></li> -->
 	          	<li><a href="../../es/projects/someSum.html">Some Sum</a></li>
 	          	<li><a href="../../es/projects/gameOfStones.html">Nimm</a></li>
 	          	
@@ -152,10 +152,10 @@
 	          	<li class="divider"></li>
 	            <li><a href="../../es/projects/emc2.html">E=MC2</a></li>
 	            <li><a href="../../es/projects/fibb.html">Fibonacci</a></li>
-	           <li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li>
+	           <!-- <li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li> -->
 	           <li><a href="../../es/projects/findPi.html">Find Pi</a></li>
 	           <li><a href="../../es/projects/8Ball.html">8-Ball</a></li>
-	           <li class="divider"></li>
+	           <!-- <li class="divider"></li> -->
 	           <!--
 	            
 	            <li><a href="../../es/projects/robotFace.html">Robot Face</a></li>
@@ -301,32 +301,32 @@
 </script>
 
 
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> E = MC2 (con solución) </h1><p> Problema escrito por Chris, descubierto por Einstein </p></div><hr/><div class="row"><div class="col-md-12"><p> Uno de los descubrimientos humanos emocionantes es que la masa y la energía son intercambiables y están relacionadas por la ecuación E = M × C <sup>2</sup>. Albert Einstein descubrió esta relación hace casi 100 años y ahora sabemos que el sol produce su calor al transformar pequeñas cantidades de masa en grandes cantidades de energía. </p><p> Escriba un programa que continuamente lea en masa del usuario y luego produzca la cantidad de energía. Muestra tu trabajo de la siguiente manera: </p><p><center><img src="../../img/projects/emc2/demo.png" style="width:400px"/></center></p><p> Si le pide al usuario que ingrese kilogramos y utiliza una velocidad de luz igual a 299792458 (que está en metros por segundo), el resultado del cálculo de E = M × C <sup>2</sup> estará en Jouls. </p><p> Tenga en cuenta que 3.0E8 es una notación científica para 3.0 × 10 <sup>8</sup>... que es 300,000,000. No necesita hacer nada para que Java imprima dobles en notación científica. Lo hará automáticamente cuando los números sean lo suficientemente grandes. </p><p> Dado que la velocidad de la luz nunca cambiará, tiene sentido declararla como una constante. </p></div></div><div class="row"><div class="col-md-12"><h2> Solución </h2><pre id="editor" style="height:480px">/ **
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> E = MC2 (con solución) </h1><p> Problema escrito por Chris, descubierto por Einstein </p></div><hr/><div class="row"><div class="col-md-12"><p> Uno de los descubrimientos humanos más emocionantes es que la masa y la energía son intercambiables y están relacionadas por la ecuación E = M × C <sup>2</sup>. Albert Einstein descubrió esta relación hace casi 100 años y ahora sabemos que el sol produce su calor al transformar pequeñas cantidades de masa en grandes cantidades de energía. </p><p> Escribe un programa que continuamente lea masa del usuario y luego imprima la cantidad de energía. Muestra tu trabajo de la siguiente manera: </p><p><center><img src="../../img/projects/emc2/demo.png" style="width:400px"/></center></p><p> Si le pides al usuario que ingrese kilogramos y utilizas una velocidad de luz igual a 299792458 (que está en metros por segundo), el resultado del cálculo de E = M × C <sup>2</sup> estará en Jouls. </p><p> Tenga en cuenta que 3.0E8 es notación científica para el número 3.0 × 10 <sup>8</sup>... que es 300,000,000. No necesitas hacer nada para que Java imprima dobles en notación científica. Lo hará automáticamente cuando los números sean lo suficientemente grandes. </p><p> Dado que la velocidad de la luz nunca cambiará, tiene sentido declararla como una constante. </p></div></div><div class="row"><div class="col-md-12"><h2> Solución </h2><pre id="editor" style="height:480px">/ **
  * Programa&nbsp;: EMC2
  * --------------
  *&nbsp;Este programa ayuda a los usuarios a calcular la
  * cantidad de energía que podrían obtener si
- * Transformar su masa. Gracias Einstein!
+ * Transforman su masa. Gracias Einstein!
  * /
-clase pública EMC2 extiende ProgramaDeConsola {
+public class EMC2 extends EsConsole {
 	
 	// Esto declara una constante ... nunca puede cambiar valor.
 	// Velocidad de la luz en m / s
-	final estático privado doble C = 299792458;
+	private static final double C = 299792458;
 	
 	public void run () {
-		while (verdadero) {
-			// Lea la masa en el usuario.
-			doble masaEnKg = leerDoble (&quot;Introducir kilos de masa:&quot;);
+		while (true) {
+			// Lea la masa del usuario.
+			double masaEnKg = leerDouble (&quot;Introduce masa en kilos:&quot;);
 			
-			// Calcula energia
-			doble energíaEnJulios = masaEnKg * C * C;
+			// Calcula la energía
+			double energiaEnJulios = masaEnKg * C * C;
 			
 			// Mostrar el trabajo al usuario.
 			imprimir (&quot;e = m * C ^ 2 ...&quot;);
 			imprimir (&quot;m =&quot; + masaEnKg + &quot;kg&quot;);
 			imprimir (&quot;C =&quot; + C + &quot;Sra&quot;);
-			imprimir (energíaEnJulios + &quot;julios de energía!&quot;);
+			imprimir (energiaEnJulios + &quot;julios de energía!&quot;);
 			imprimir (&quot;&quot;);
 		}
 	}

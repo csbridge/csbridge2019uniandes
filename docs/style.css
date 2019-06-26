@@ -146,8 +146,16 @@ margin-top: 3px;
     color:black;
 }
 
+.keyword {
+  color:#7e0855;
+}
+
 #logoImg {
   width: 180px;
+}
+
+.codeText {
+  color:blue;
 }
 
 #logo {

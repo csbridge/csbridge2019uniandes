@@ -6,6 +6,7 @@
  */
 public class NumeroFavorito extends EsConsole {
 
+	// esta es una constante en Java
 	// cambia esto para que sea tu número favorito
 	private static final int NUMERO_FAVORITO = 0;
 	

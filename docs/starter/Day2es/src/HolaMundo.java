@@ -7,7 +7,7 @@
 public class HolaMundo extends EsConsole {
 
 	public void run() {
-		imprimir("Hola mundo");
+		// tu codigo va aca
 	}
 
 }

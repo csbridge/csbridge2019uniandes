@@ -3,35 +3,34 @@
 	%include templates/parts/head.html
 </head><body><!-- Navigation Bar -->
 	%include templates/parts/navBarEs.html
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Encontrar pi </h1><p> Problema escrito por Eric Roberts. </p></div><hr/><div class="row"><div class="col-md-12"><p> Pi (π) es una cosa matemática de verdadera belleza. Aparece en muchas ecuaciones, sobre todo en la ecuación para el área de un círculo, el pdf de una distribución normal y, finalmente, y oh, tan maravillosamente, en <a href="http://en.wikipedia.org/wiki/Euler's_identity">la Identidad de Euler</a>. </p><p> Pero, ¿cómo sabemos que el valor de π es 3.14159265359 ...? Hay varias formas de calcular pi. En este problema mostramos cómo hacerlo con dardos. </p><p><center><img src="{{pathToRoot}}img/projects/findPi/lifeOfPi.jpg" style="width:500px"/><p style="text-align:center"><i>El nombre de este niño también es Pi. Este problema no está relacionado (aparte del nombre) con él.</i></p></center></p><p> Imagínate arrojando dardos al círculo amarillo de abajo a la izquierda. Si lanzas al azar una serie de dardos en el tablero de dardos, algunos caerán dentro del círculo amarillo y otros en el área gris que está afuera. Si cuenta el número de dardos que caen dentro del círculo y el número que cae dentro del cuadrado, la proporción de esos números debe ser proporcional al área relativa de las dos figuras. </p><p><center><img src="{{pathToRoot}}img/projects/findPi/darts.png" style="width:700px"/></center></p><p> Debido a que el área del círculo es π y la del cuadrado es 4, la fracción que cae dentro del círculo debe aproximarse a π / 4. </p></div></div><div class="row"><div class="col-md-12"><h2> Solución </h2><pre id="editor" style="height:580px">/ **
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Encontrar pi </h1><p> Problema escrito por Eric Roberts. </p></div><hr/><div class="row"><div class="col-md-12"><p> Pi (π) es una cosa matemática de verdadera belleza. Aparece en muchas ecuaciones, sobre todo en la ecuación para el área de un círculo, el pdf de una distribución normal y, finalmente, y oh, tan maravillosamente, en <a href="http://en.wikipedia.org/wiki/Euler's_identity">la Identidad de Euler</a>. </p><p> Pero, ¿cómo sabemos que el valor de π es 3.14159265359 ...? Hay varias formas de calcular pi. En este problema mostramos cómo hacerlo con dardos. </p><p><center><img src="{{pathToRoot}}img/projects/findPi/lifeOfPi.jpg" style="width:500px"/><p style="text-align:center"><i>El nombre de este niño también es Pi. Este problema no está relacionado (aparte del nombre) con él.</i></p></center></p><p> Imagínate arrojando dardos al círculo amarillo de abajo a la izquierda. Si lanzas al azar una serie de dardos en el tablero de dardos, algunos caerán dentro del círculo amarillo y otros en el área gris que está afuera. Si cuenta el número de dardos que caen dentro del círculo y el número que cae dentro del cuadrado, la proporción de esos números debe ser proporcional al área relativa de las dos figuras. </p><p><center><img src="{{pathToRoot}}img/projects/findPi/darts.png" style="width:700px"/></center></p><p> Debido a que el área del círculo es π y la del cuadrado es 4, la fracción que cae dentro del círculo debe aproximarse a π / 4. </p></div></div><div class="row"><div class="col-md-12"><h2> Solución </h2><pre id="editor" style="height:580px">/**
  *&nbsp;Encontrar pi
  * ------------
  *&nbsp;Encuentra el valor de pi lanzando dardos
  * aleatorios a un círculo unitario inscrito en un
  * cuadrado. La fracción que aterriza en el círculo.
  * Debe ser igual a pi / 4.
- * /
+ */
 La clase pública LocalPi extiende el ProgramaDeConsola {
-	
-	GeneradorAleatorio privado = nuevo GeneradorAleatorio ();
 	
 	public void run () {
 		int numEnCirculo = 0;
 		int numDardos = 50000000;
 		para (int i = 0; i &lt;numDardos; i ++) {
 			// obtener un x aleatorio, y en un 2x2
-			doble x = rd.siguienteDoble (-1, 1);
-			doble y = rd.siguienteDoble (-1, 1);
+			double x = doubleAleatorio (-1, 1);
+			double y = doubleAleatorio (-1, 1);
 			// prueba si el dardo aterrizo en el circulo
-			doble dist = Mates.sqrt (x * x + y * y);
-			si (dist &lt;= 1) {
+			double dist = Math.sqrt(x * x + y * y);
+			if (dist &lt;= 1) {
 				numEnCirculo ++;
 			}
 		}
 		// Si no lanzamos al doble, esto siempre será 0.
-		doble fracción = (doble) numEnCirculo / numDardos;
-		doble pi = fracción * 4;
-		impresión (pi);
+		double fracción = (doble) numEnCirculo / numDardos;
+		// fraccion = pi / 4;
+		double pi = fracción * 4;
+		imprimir(pi);
 	}
 }
 </pre><script charset="utf-8" src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript"></script><script>

@@ -330,14 +330,14 @@
 		<h2> Booleanos </h2>
 		<p> A diferencia de los enteros y los doubles, hay un solo parámetro <code>p</code> que define el comportamiento
 			de <code>booleanAleatorio()</code>. El número que se ingresa al método afecta la probabilidad con la que el boolean adquiera
-			un valor de <code>true</code> o <code>false</code>.<ul>
-				<li> Devuelve <code>true</code> con probabilidad <code>p</code>. </li>
-				<li> Devuelve <code>false</code> con probabilidad <code>1-p</code>. </li>
+			un valor de <code>verdadero</code> o <code>falso</code>.<ul>
+				<li> Devuelve <code>verdadero</code> con probabilidad <code>p</code>. </li>
+				<li> Devuelve <code>falso</code> con probabilidad <code>1-p</code>. </li>
 				<li><code>p</code> debe ser un doble entre 0 y 1.0. </li>
 				<li> El valor predeterminado de <code>p</code> es 0.5. </li>
 			</ul>
 			<div class="well">
-				<code>boolean probabilidadIgual = booleanAleatorio(); <br/> boolean probabilidadDesigual = rgen.siguienteBooleano(0.75); // devuelve verdad 3/4 del tiempo <br/></code>
+				<code>boolean probabilidadIgual = booleanAleatorio(); <br/> boolean probabilidadDesigual = booleanAleatorio(0.75); // Es verdadero 3/4 del tiempo <br/></code>
 			</div>
 
 <hr>

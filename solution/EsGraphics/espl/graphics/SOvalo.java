@@ -5,12 +5,12 @@ import acm.graphics.GOval;
 
 public class SOvalo extends GOval implements SObjeto{
 
-	public SOvalo(double w, double h) {
-		super(w, h);
+	public SOvalo(double ancho, double alto) {
+		super(ancho, alto);
 	}
 	
-	public SOvalo(double x, double y, double w, double h) {
-		super(x, y, w, h);
+	public SOvalo(double x, double y, double ancho, double alto) {
+		super(x, y, ancho, alto);
 	}
 
 	public double darX() {
@@ -27,6 +27,14 @@ public class SOvalo extends GOval implements SObjeto{
 
 	public void cambiarRelleno(boolean b) {
 		setFilled(b);
+	}
+
+	public boolean estaRelleno() {
+		return isFilled();
+	}
+
+	public void cambiarColorRelleno(Color c) {
+		setFillColor(c);
 	}
 
 	public void cambiarUbicacion(double i, double j) {
@@ -60,7 +68,7 @@ public class SOvalo extends GOval implements SObjeto{
 	public void cambiarVisible(boolean visible) {
 		setVisible(visible);
 	}
-	public boolean esVisible() {
+	public boolean estaVisible() {
 		return isVisible();
 	}
 

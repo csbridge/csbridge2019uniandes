@@ -61,7 +61,7 @@ public class SLabel extends GLabel implements SObjeto{
 	public void cambiarVisible(boolean visible) {
 		setVisible(visible);
 	}
-	public boolean esVisible() {
+	public boolean estaVisible() {
 		return isVisible();
 	}
 

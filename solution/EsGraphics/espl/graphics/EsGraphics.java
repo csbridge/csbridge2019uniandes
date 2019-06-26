@@ -34,9 +34,9 @@ public abstract class EsGraphics extends GraphicsProgram{
 	public void mouseDragged(MouseEvent e) { mouseArrastrado(e); }
 	public void mouseArrastrado(MouseEvent e) { /* overload */ }
 	public void mouseEntered(MouseEvent e) { mouseEntrado(e); }
-	public void mouseEntrado(MouseEvent e) { /* overload */ }
+	public void mouseEntra(MouseEvent e) { /* overload */ }
 	public void mouseExited(MouseEvent e) { mouseSalido(e); }
-	public void mouseSalido(MouseEvent e) { /* overload */ }
+	public void mouseSale(MouseEvent e) { /* overload */ }
 	public void mousePressed(MouseEvent e) { mousePulsado(e); }
 	public void mousePulsado(MouseEvent e) { /* overload */ }
 	public void mouseReleased(MouseEvent e) { mouseSoltado(e); }

@@ -23,7 +23,9 @@
 <!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});
   </script>-->
-</head><body><!-- Navigation Bar -->
+</head>
+
+<body><!-- Navigation Bar -->
 <nav class="navbar-inverse navbar-default" role="navigation">
   <div class="container-fluid">
   	<div class="container">
@@ -301,11 +303,102 @@
 </script>
 
 
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Referencia Gráfica </h1><p> Escrito por Eric Roberts y Lisa Yan </p></div><hr/><div class="row"><div class="col-md-12"><p> Aquí están los comandos gráficos más comunes: </p><center><img src="../../img/handouts/graphics/graphicsHandout.png" style="width:700px;"/></center><br/><p> Algunos otros comandos gráficos útiles: </p><div class="well"><code>obtenerAncho(); // Devuelve el ancho de la pantalla. <br/> obtenerAltura(); // Devuelve la altura de la pantalla. <br/> añadir( <i>objeto</i>); // agrega un objeto a la pantalla. <br/> añadir( <i>objeto</i>, <i>x</i>, <i>y</i>); // agrega un objeto a la pantalla en las coordenadas (x, y). <br/> retirar( <i>objeto</i>); // elimina un objeto de la pantalla. <br/> obtenerElementoEn( <i>x</i>, <i>y</i>); // devuelve el elemento en (x, y).</code></div></div></div></div></body><p> Documentación completa: <br><a href="http://cs.stanford.edu/people/eroberts/jtf/javadoc/student/index.html">http://cs.stanford.edu/people/eroberts/jtf/javadoc/student/index.html</a></br></p><h3> EtiquetaG </h3><p> Recuerde que escogerLocalización (x, y) establece el <i>origen</i> de un GRect, GOval o LíneaG en las coordenadas (x, y), donde el origen se define como la esquina superior izquierda. EtiquetaG tiene la misma definición de origen, pero la altura se define un poco más alta que la altura del texto real. Aquí hay una vista detallada de todas las diferentes definiciones de altura para EtiquetaG: </p><center><img src="../../img/handouts/graphics/GLabelGeometry.png" style="width:700px;"/></center><br><p> Nota al margen: el origen se encuentra en la parte central izquierda de la imagen de arriba, porque estamos tratando con una etiquetaG multilínea. Para GLabels con líneas simples, el origen es la parte superior izquierda. </p><p> Entonces, para centrar verticalmente una EtiquetaG, usaríamos el <i>ascenso</i> de una EtiquetaG: </p><div class="well"><code>double y = obtenerAltura()/2 + etiqueta.obtenerAscenso()/2;</code></div><h3> GImagen </h3><p>¡También puedes subir tus propias imágenes y agregarlas a tu programa de gráficos! </p><p> Algunos consejos: </p><ul><li> Guarde su imagen en la misma carpeta &quot;fuente&quot; que contiene su archivo java. </li><li> Encuentre la ubicación de su archivo java en Eclipse, haga clic con el botón derecho en el archivo java en el Explorador de proyectos (el menú de la izquierda) y vaya a &quot;Propiedades&quot;. </li><li> Si aún tiene errores, asegúrese de poder ver el archivo de imagen en Eclipse. Actualice el proyecto (haga clic con el botón derecho en la carpeta del proyecto en Eclipse y seleccione &quot;Actualizar&quot;). </li></ul></br>
+<!-- Main Content --><div class="container">
 
+	<!-- Header --><div id="pageHeader">
 
+		<h1> Referencia Gráfica </h1>
+		<p> Escrito por Eric Roberts y Lisa Yan </p>
+	</div>
 
-		
+	<hr/>
+
+	<h1>Usos Comunes de Libería Gráfica</h1>
+
+	<h2>Agregar a y quitar de la ventana</h2>
+	Cuando creas objetos de tipo SObjeto, necesitas agregarlos a la ventana. Despues de crear los objetos con sus constructores, necesitas agregarlos para que se aparezcan en la ventana. Para eso, se usa estos métodos, sin ubicación o con ubicación respectivamente.
+	<div class="well"><code>
+agregar(<i class="codeText">objeto</i>) // en la ubicación que indica el objeto <br/>
+agregar(<i class="codeText">objeto</i>, <i class="codeText">x</i>, <i class="codeText">y</i>) // en la ubicación pasado
+	</code></div>
+
+	También puedes quitar un objeto o quitar todo de la pantalla.
+	<div class="well"><code>
+quitar(<i class="codeText">objeto</i>) // quita este objeto<br/>
+quitarTodo() // quita todos los objetos que ya agregaste
+	</code></div>
+
+	<h2>Constructores</h2>
+	<div>
+		Todos los objetos de la librería gráfica son tipos de SObjeto, y los constructores están mostrado aquí.
+		Los objetos se puede construir sin ubicación o con ubicación respectivamente.
+		En el constructor o cuando lo agregues, necesitas dar una ubicación. Si no haya ubicación, el punto por defecto seria (0, 0).
+
+		<h3>SOvalo</h3>
+		Crea un ovalo en la ventana, con ancho y alto.
+		<div class="well"><code>
+new SOvalo(<i class="codeText">ancho</i>, <i class="codeText">alto</i>)<br/>
+new SOvalo(<i class="codeText">x</i>, <i class="codeText">y</i>, <i class="codeText">ancho</i>, <i class="codeText">alto</i>)
+		</code></div>
+
+		<h3>SRect</h3>
+		Crea un rectángulo en la ventana, con ancho y alto.
+		<div class="well"><code>
+new SRect(<i class="codeText">ancho</i>, <i class="codeText">alto</i>)<br/>
+new SRect(<i class="codeText">x</i>, <i class="codeText">y</i>, <i class="codeText">ancho</i>, <i class="codeText">alto</i>)<br/>
+		</code></div>
+
+		<h3>SLabel</h3>
+		Crea una etiqueta en la ventana.
+		<div class="well"><code>
+new SLabel(<i class="codeText">etiqueta</i>)<br/>
+new SLabel(<i class="codeText">etiqueta</i>, <i class="codeText">x</i>, <i class="codeText">y</i>)
+		</code></div>
+
+<!-- 		<h3>SImagen</h3>
+		Crea una imágen en la ventana, puedes cargar el imagen de un archivo o tambien puedes pasar un arreglo de pixeles que representa los colores de un imagen.
+		<div class="well"><code>
+new SImagen(<i class="codeText">archivo</i>)<br/>
+new SImagen(<i class="codeText">archivo</i>, <i class="codeText">x</i>, <i class="codeText">y</i>)<br/>
+new SImagen(<i class="codeText">arregloDePixeles</i>)<br/>
+new SImagen(<i class="codeText">arregloDePixeles</i>, <i class="codeText">x</i>, <i class="codeText">y</i>)
+		</code></div> -->
+
+		<h3>SLinea</h3>
+		Crea una linea en la ventana, pasando el punto inicio y el punto final.
+		<div class="well"><code>
+new SLinea(<i class="codeText">x0</i>, <i class="codeText">y0</i>, <i class="codeText">x1</i>, <i class="codeText">y1</i>)
+		</code></div>
+
+	</div>
+
+	<h2>Métodos de tipo SObjeto</h2>
+
+	Estos métodos se puede usar con todos los objetos gráficos.
+	<div class="well"><code>
+void moverse(<i class="codeText">dx</i>, <i class="codeText">dy</i>) // mueve el objeto en los axises x-y respectivamente</br/><br/>
+
+double darAncho()<br/>
+double darAlto() 
+</br/><br/>
+
+void cambiarUbicacion(<i class="codeText">i</i>, <i class="codeText">j</i>) // cambia la ubicacion para estar en punto i-j<br/>
+void cambiarColor(<i class="codeText">color</i>)</br/><br/>
+
+void cambiarVisible(<i class="codeText">visibleSiNo</i>)<br/>
+boolean esVisible()<br/>
+	</code></div>
+
+	Estos métodos se puede usar con GOval y GRect.
+	<div class="well"><code>
+void cambiarRelleno(<i class="codeText">rellenoSiNo</i>)</br/><br/>
+boolean estaRelleno()<br/>
+void cambiarColorRelleno(<i class="codeText">color</i>)<br/>
+	</code></div>
+
+	<div>Instrucciones de usar mouse viene pronto.</div>
+<!-- </div></body><p> Documentación completa: <br><a href="http://cs.stanford.edu/people/eroberts/jtf/javadoc/student/index.html">http://cs.stanford.edu/people/eroberts/jtf/javadoc/student/index.html</a></br></p><h3> EtiquetaG </h3><p> Recuerde que escogerLocalización (x, y) establece el <i>origen</i> de un GRect, GOval o LíneaG en las coordenadas (x, y), donde el origen se define como la esquina superior izquierda. EtiquetaG tiene la misma definición de origen, pero la altura se define un poco más alta que la altura del texto real. Aquí hay una vista detallada de todas las diferentes definiciones de altura para EtiquetaG: </p><center><img src="../../img/handouts/graphics/GLabelGeometry.png" style="width:700px;"/></center><br><p> Nota al margen: el origen se encuentra en la parte central izquierda de la imagen de arriba, porque estamos tratando con una etiquetaG multilínea. Para GLabels con líneas simples, el origen es la parte superior izquierda. </p><p> Entonces, para centrar verticalmente una EtiquetaG, usaríamos el <i>ascenso</i> de una EtiquetaG: </p><div class="well"><code>double y = obtenerAltura()/2 + etiqueta.obtenerAscenso()/2;</code></div><h3> GImagen </h3><p>¡También puedes subir tus propias imágenes y agregarlas a tu programa de gráficos! </p><p> Algunos consejos: </p><ul><li> Guarde su imagen en la misma carpeta &quot;fuente&quot; que contiene su archivo java. </li><li> Encuentre la ubicación de su archivo java en Eclipse, haga clic con el botón derecho en el archivo java en el Explorador de proyectos (el menú de la izquierda) y vaya a &quot;Propiedades&quot;. </li><li> Si aún tiene errores, asegúrese de poder ver el archivo de imagen en Eclipse. Actualice el proyecto (haga clic con el botón derecho en la carpeta del proyecto en Eclipse y seleccione &quot;Actualizar&quot;). </li></ul></br> -->
+
 		
 <hr>
 
@@ -332,3 +425,6 @@
 		s.parentNode.insertBefore(ga, s);
 	})();
 </script>-->
+
+</div>
+</body>

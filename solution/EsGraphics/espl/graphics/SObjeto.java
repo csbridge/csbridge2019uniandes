@@ -1,3 +1,4 @@
+package graphics;
 import java.awt.Color;
 
 public interface SObjeto {

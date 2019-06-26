@@ -17,9 +17,9 @@ public class NumeroFavorito extends EsConsole {
 		while(guess != NUMERO_FAVORITO) {
 			guess = leerInt("Adivinar: ");
 			if(guess < NUMERO_FAVORITO) {
-				imprimir("Demasiado pequena... ");
+				imprimir("Muy pequeno... ");
 			} else if(guess > NUMERO_FAVORITO) {
-				imprimir("Demasiado grande... ");
+				imprimir("Muy grande... ");
 			} else {
 				imprimir("Bien hecho");
 			}

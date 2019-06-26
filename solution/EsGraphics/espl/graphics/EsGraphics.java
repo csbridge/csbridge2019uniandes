@@ -1,3 +1,4 @@
+package graphics;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 
@@ -33,12 +34,12 @@ public abstract class EsGraphics extends GraphicsProgram{
 	public void mouseMovido(MouseEvent e) { /* overload */ }
 	public void mouseDragged(MouseEvent e) { mouseArrastrado(e); }
 	public void mouseArrastrado(MouseEvent e) { /* overload */ }
-	public void mouseEntered(MouseEvent e) { mouseEntrado(e); }
-	public void mouseEntrado(MouseEvent e) { /* overload */ }
-	public void mouseExited(MouseEvent e) { mouseSalido(e); }
-	public void mouseSalido(MouseEvent e) { /* overload */ }
-	public void mousePressed(MouseEvent e) { mousePulsado(e); }
-	public void mousePulsado(MouseEvent e) { /* overload */ }
+	public void mouseEntered(MouseEvent e) { mouseEntraEnVentana(e); }
+	public void mouseEntraEnVentana(MouseEvent e) { /* overload */ }
+	public void mouseExited(MouseEvent e) { mouseSaleDeVentana(e); }
+	public void mouseSaleDeVentana(MouseEvent e) { /* overload */ }
+	public void mousePressed(MouseEvent e) { mousePresionado(e); }
+	public void mousePresionado(MouseEvent e) { /* overload */ }
 	public void mouseReleased(MouseEvent e) { mouseSoltado(e); }
 	public void mouseSoltado(MouseEvent e) { /* overload */ }
 
@@ -54,7 +55,7 @@ public abstract class EsGraphics extends GraphicsProgram{
 	public double darAncho() { return getWidth(); }
 	public double darAltura() { return getHeight(); }
 	
-	public SObjeto darObjetoA(double x, double y) {
+	public SObjeto darObjetoEn(double x, double y) {
 		return (SObjeto)getElementAt(x, y);
 	}
 	

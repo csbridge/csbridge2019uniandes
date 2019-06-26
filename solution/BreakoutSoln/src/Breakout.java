@@ -7,61 +7,14 @@
  * This file will eventually implement the game of Breakout.
  */
 
-import acm.graphics.*;
-import acm.program.*;
-import acm.util.*;
-
-import java.applet.*;
-import java.awt.*;
-import java.awt.event.*;
+import graphics.EsGraphics;
+import java.awt.Color;
+import java.awt.event.MouseEvent;
+import graphics.*;
 
 public class Breakout extends EsGraphics {
-	
-	/** Width and height of application window in pixels */
-	public static final int APPLICATION_WIDTH = 400;
-	public static final int APPLICATION_HEIGHT = 600;
 
-	/** Dimensions of the paddle */
-	private static final int PADDLE_WIDTH = 60;
-	private static final int PADDLE_HEIGHT = 10;
-
-	/** Offset of the paddle up from the bottom */
-	private static final int PADDLE_Y_OFFSET = 30;
-
-	/** Number of bricks per row */
-	private static final int NBRICKS_PER_ROW = 10;
-
-	/** Number of rows of bricks */
-	private static final int NBRICK_ROWS = 10;
-
-	/** Separation between bricks */
-	private static final int BRICK_SEP = 4;
-
-	/** Width of a brick */
-	private static final int BRICK_WIDTH =
-			(APPLICATION_WIDTH - (NBRICKS_PER_ROW - 1) * BRICK_SEP) / NBRICKS_PER_ROW;
-
-	/** Height of a brick */
-	private static final int BRICK_HEIGHT = 8;
-
-	/** Radius of the ball in pixels */
-	private static final int BALL_RADIUS = 10;
-
-	/** Offset of the top brick row from the top */
-	private static final int BRICK_Y_OFFSET = 70;
-
-	/** Number of turns */
-	private static final int NTURNS = 3;
-	
-	/** Animation delay or paust time between ball moves */	
-	private static final int DELAY = 10;
-	
-	
-	
-	
-	
-
-	/**Ball velocity*/	
+	/* variables */	
 	private double vx, vy;
 	private int contadorLadrillos = 100;
 
@@ -72,7 +25,7 @@ public class Breakout extends EsGraphics {
 	private SRect pala;
 
 	public void run() {
-		for(int i=0; i < NTURNS; i++) {
+		for(int i=0; i < NTURNOS; i++) {
 			iniciarJuego();
 			hacerJuego();
 			if(contadorLadrillos == 0) {
@@ -100,12 +53,12 @@ public class Breakout extends EsGraphics {
 
 	private void dibujarLadrillos() {	
 		double cx = darAncho() / 2;
-		double cy = BRICK_Y_OFFSET;
-		for(int fila = 0; fila < NBRICK_ROWS; fila++ ) {
-			for(int columna = 0; columna < NBRICKS_PER_ROW; columna++) {
-				double x = cx - (NBRICKS_PER_ROW*BRICK_WIDTH)/2 - ((NBRICKS_PER_ROW-1)*BRICK_SEP)/2 + columna*BRICK_WIDTH + columna*BRICK_SEP;
-				double y = cy + fila * BRICK_HEIGHT + fila*BRICK_SEP;
-				SRect ladrillo = new SRect( x , y , BRICK_WIDTH , BRICK_HEIGHT );
+		double cy = LADRILLO_Y_OFFSET;
+		for(int fila = 0; fila < NFILAS; fila++ ) {
+			for(int columna = 0; columna < NLADRILLOS_POR_FILA; columna++) {
+				double x = cx - (NLADRILLOS_POR_FILA*LADRILLO_ANCHO)/2 - ((NLADRILLOS_POR_FILA-1)*LADRILLO_SEP)/2 + columna*LADRILLO_ANCHO + columna*LADRILLO_SEP;
+				double y = cy + fila * LADRILLO_ALTURA + fila*LADRILLO_SEP;
+				SRect ladrillo = new SRect(x, y, LADRILLO_ANCHO, LADRILLO_ALTURA);
 				ladrillo.cambiarRelleno(true);
 				ladrillo.cambiarColor(darLadrilloColor(fila));
 				agregar(ladrillo);
@@ -134,9 +87,9 @@ public class Breakout extends EsGraphics {
 
 	//paddle set-up
 	private void dibujarPala() {
-		double x = darAncho()/2 - PADDLE_WIDTH/2; 
-		double y = darAltura() - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
-		pala = new SRect (x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
+		double x = darAncho()/2 - PALETA_ANCHO/2; 
+		double y = darAltura() - PALETA_Y_OFFSET - PALETA_ALTURA;
+		pala = new SRect (x, y, PALETA_ANCHO, PALETA_ALTURA);
 		pala.cambiarRelleno(true);
 		agregar(pala);
 		agregarMouseListeners();
@@ -144,17 +97,18 @@ public class Breakout extends EsGraphics {
 
 	//making the mouse track the paddle
 	public void mouseMovido(MouseEvent e) {
-		if ((e.getX() < darAncho() - PADDLE_WIDTH/2) && (e.getX() > PADDLE_WIDTH/2)) {
-			pala.cambiarUbicacion(e.getX() - PADDLE_WIDTH/2, darAltura() - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
+		if ((e.getX() < darAncho() - PALETA_ANCHO/2) && (e.getX() > PALETA_ANCHO/2)) {
+			double newX = e.getX() - PALETA_ANCHO/2;
+			double newY = darAltura() - PALETA_Y_OFFSET - PALETA_ALTURA;
+			pala.cambiarUbicacion(newX, newY);
 		}
 	}
 
-
 	//ball set-up
 	private void dibujarPelota() {
-		double x = darAncho()/2 - BALL_RADIUS;
-		double y = darAltura()/2 - BALL_RADIUS;
-		pelota = new SOvalo(x, y, BALL_RADIUS, BALL_RADIUS);
+		double x = darAncho()/2 - PELOTA_RADIO;
+		double y = darAltura()/2 - PELOTA_RADIO;
+		pelota = new SOvalo(x, y, PELOTA_RADIO, PELOTA_RADIO);
 		pelota.cambiarRelleno(true);
 		agregar(pelota);
 	}
@@ -173,8 +127,6 @@ public class Breakout extends EsGraphics {
 		}
 	}
 
-
-
 	private void darPelotaVelocidad() {
 		vy = 4.0;
 		vx = doubleAleatorio(1.0, 3.0);
@@ -188,7 +140,7 @@ public class Breakout extends EsGraphics {
 		pelota.moverse(vx, vy);
 		//check for walls
 		//need to get vx and vy at the point closest to 0 or the other edge
-		if ((pelota.darX() - vx <= 0 && vx < 0 )|| (pelota.darX() + vx >= (darAncho() - BALL_RADIUS*2) && vx>0)) {
+		if ((pelota.darX() - vx <= 0 && vx < 0 )|| (pelota.darX() + vx >= (darAncho() - PELOTA_RADIO*2) && vx>0)) {
 			vx = -vx;
 		}
 		//We don't need to check for the bottom wall, since the ball can fall through the wall at that point
@@ -206,7 +158,7 @@ public class Breakout extends EsGraphics {
 			contadorLadrillos--;
 			vy = -vy;
 		}
-		pausa (DELAY);
+		pausa (RETRASO);
 	}
 
 
@@ -215,14 +167,14 @@ public class Breakout extends EsGraphics {
 		if((darObjetoA(pelota.darX(), pelota.darY())) != null) {
 			return darObjetoA(pelota.darX(), pelota.darY());
 		}
-		else if (darObjetoA( (pelota.darX() + BALL_RADIUS*2), pelota.darY()) != null ){
-			return darObjetoA(pelota.darX() + BALL_RADIUS*2, pelota.darY());
+		else if (darObjetoA( (pelota.darX() + PELOTA_RADIO*2), pelota.darY()) != null ){
+			return darObjetoA(pelota.darX() + PELOTA_RADIO*2, pelota.darY());
 		}
-		else if(darObjetoA(pelota.darX(), (pelota.darY() + BALL_RADIUS*2)) != null ){
-			return darObjetoA(pelota.darX(), pelota.darY() + BALL_RADIUS*2);
+		else if(darObjetoA(pelota.darX(), (pelota.darY() + PELOTA_RADIO*2)) != null ){
+			return darObjetoA(pelota.darX(), pelota.darY() + PELOTA_RADIO*2);
 		}
-		else if(darObjetoA((pelota.darX() + BALL_RADIUS*2), (pelota.darY() + BALL_RADIUS*2)) != null ){
-			return darObjetoA(pelota.darX() + BALL_RADIUS*2, pelota.darY() + BALL_RADIUS*2);
+		else if(darObjetoA((pelota.darX() + PELOTA_RADIO*2), (pelota.darY() + PELOTA_RADIO*2)) != null ){
+			return darObjetoA(pelota.darX() + PELOTA_RADIO*2, pelota.darY() + PELOTA_RADIO*2);
 		}
 		//need to return null if there are no objects present
 		else{
@@ -245,4 +197,35 @@ public class Breakout extends EsGraphics {
 		ganador.cambiarColor(Color.RED);
 		add (ganador);
 	}
+
+	/** Width and height of application window in pixels */
+	public static final int APPLICATION_WIDTH = 400;
+	public static final int APPLICATION_HEIGHT = 600;
+
+	/** Constantes para la paleta */
+	private static final int PALETA_ANCHO = 60;
+	private static final int PALETA_ALTURA = 10;
+	private static final int PALETA_Y_OFFSET = 30;
+
+	/** Constantes para las filas */
+	private static final int NLADRILLOS_POR_FILA = 10;
+	private static final int NFILAS = 10;
+
+	/** Constantes para las ladrillos */
+	private static final int LADRILLO_SEP = 4;
+	private static final int LADRILLO_ANCHO =
+			(APPLICATION_WIDTH - (NLADRILLOS_POR_FILA - 1) * LADRILLO_SEP) / NLADRILLOS_POR_FILA;
+	private static final int LADRILLO_ALTURA = 8;
+	private static final int LADRILLO_Y_OFFSET = 70;
+	
+	/** Constantes para la pelota */
+	private static final int PELOTA_RADIO = 10;
+
+	/** Numero de turnos */
+	private static final int NTURNOS = 3;
+	
+	/** Retraso de la animación o tiempo de pausa entre movimientos de la pelota. */	
+	private static final int RETRASO = 10;
+	
+	
 }

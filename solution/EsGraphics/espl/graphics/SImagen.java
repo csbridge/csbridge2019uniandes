@@ -1,35 +1,17 @@
 package graphics;
 import java.awt.Color;
 
-import acm.graphics.GLabel;
+import acm.graphics.GImage;
 
-public class SLabel extends GLabel implements SObjeto{
+public class SImagen extends GImage implements SObjeto{
 
-	public SLabel(String str) {
-		super(str);
+	public SImagen(String name) {
+		super(name);
 	}
-	
-	public SLabel(String str, double x, double y) {
-		super(str, x, y);
+
+	public SImagen(String name, double x, double y) {
+		super(name, x, y);
 	}
-	
-	public double darAscension() {
-		return getAscent();
-	}
-	public double darDescenso() {
-		return getDescent();
-	}
-	
-	/* change text label */
-	public void cambiarTexto(String texto) {
-		setLabel(texto);
-	}
-	
-	/* fonts */
-	public void cambiarFont(String str) {
-		setFont(str);
-	}
-	
 	
 
 	public void moverse(double dx, double dy) {
@@ -56,6 +38,18 @@ public class SLabel extends GLabel implements SObjeto{
 	
 	public double darAlto() {
 		return getHeight();
+	}
+
+	public void cambiarTamano(double ancho, double alto) {
+		setSize(ancho, alto);
+	}
+
+	public double cambiarAncho(double ancho) {
+		cambiarTamano(ancho, darAlto())
+	}
+	
+	public double cambiarAlto(double alto) {
+		cambiarAlto(darAncho(), alto);
 	}
 	
 	public void cambiarVisible(boolean visible) {

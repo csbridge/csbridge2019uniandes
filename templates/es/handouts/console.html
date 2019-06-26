@@ -32,7 +32,6 @@ imprimir(<i class="codeText">mensaje</i>); //Imprime un mensaje a la consola.
 <h2>Leer</h2>
 		Una cosa interesante que los Programas de la Consola te permiten hacer es obtener información del usuario. A continuación se presentan algunos ejemplos:
 		<div class="well"><code>
-leerLinea(<i class="codeText">aviso</i>); //Lee texto de usuarios y devuelve<br/>
 leerInt(<i class="codeText">aviso</i>); //Lee un entero y lo devuelve.<br/>
 leerDouble(<i class="codeText">aviso</i>); //Lee un double del usuario y lo devuelve.<br/>
 		</code></div>
@@ -47,6 +46,21 @@ leerDouble(<i class="codeText">aviso</i>); //Lee un double del usuario y lo devu
 &nbsp;&nbsp;&nbsp;}<br/>
 }<br/>
 		</code></div>
+
+		<h2>Otras Cosas Útiles</h2>
+		Puedes controllar como imprimir el texto, si quieres completar la linea o mantener el cursor en la misma linea. Se usa como así:
+		<div class="well"><code>
+imprimir(<i class="codeText">mensaje</i>); //Imprime y mueve el cursor a la proxima linea.<br/>
+imprimirEnLinea(<i class="codeText">mensaje</i>); //Imprime y mantiene el cursor en la misma linea.<br/>
+		</code></div>
+
+		Puedes obtener más información de los usuarios que sólo números. Aquí son otros ejemplos:
+		<div class="well"><code>
+leerLinea(<i class="codeText">aviso</i>); //Lee una linea como texto y la devuelve en tipo String.<br/>
+leerBoolean(<i class="codeText">aviso</i>); //Lee un texto de boolean (true/false) y lo devuelve.<br/>
+		</code></div>
+
+		También hay una manera de tener números y colores aleatorios en EsConsole, <a href="{{pathToRoot}}es/handouts/random.html">que se puede ver aquí</a>.
 
 		%include templates/parts/footer.html
 

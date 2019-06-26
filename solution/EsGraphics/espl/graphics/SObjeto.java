@@ -8,7 +8,7 @@ public interface SObjeto {
 	public void cambiarUbicacion(double i, double j);
 	public void moverse(double dx, double dy);
 	public double darAncho();
-	public double darAltura();
+	public double darAlto();
 	public void cambiarVisible(boolean visible);
 	public boolean esVisible();
 }

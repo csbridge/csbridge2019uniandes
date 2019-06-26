@@ -41,8 +41,20 @@ public class SOvalo extends GOval implements SObjeto{
 		return getWidth();
 	}
 	
-	public double darAltura() {
+	public double darAlto() {
 		return getHeight();
+	}
+
+	public void cambiarTamano(double ancho, double alto) {
+		setSize(ancho, alto);
+	}
+
+	public double cambiarAncho(double ancho) {
+		cambiarTamano(ancho, darAlto())
+	}
+	
+	public double cambiarAlto(double alto) {
+		cambiarAlto(darAncho(), alto);
 	}
 
 	public void cambiarVisible(boolean visible) {

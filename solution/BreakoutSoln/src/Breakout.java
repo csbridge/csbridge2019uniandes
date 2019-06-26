@@ -98,10 +98,11 @@ public class Breakout extends EsGraphics {
 	//making the mouse track the paddle
 	public void mouseMovido(MouseEvent e) {
 		if ((e.getX() < darAncho() - PALETA_ANCHO/2) && (e.getX() > PALETA_ANCHO/2)) {
-			pala.cambiarUbicacion(e.getX() - PALETA_ANCHO/2, darAltura() - PALETA_Y_OFFSET - PALETA_ALTURA);
+			double newX = e.getX() - PALETA_ANCHO/2;
+			double newY = darAltura() - PALETA_Y_OFFSET - PALETA_ALTURA;
+			pala.cambiarUbicacion(newX, newY);
 		}
 	}
-
 
 	//ball set-up
 	private void dibujarPelota() {

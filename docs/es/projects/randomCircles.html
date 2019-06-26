@@ -23,7 +23,10 @@
 <!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});
   </script>-->
-</head><body><!-- Navigation Bar -->
+</head>
+
+<body>
+    <!-- Navigation Bar -->
 <nav class="navbar-inverse navbar-default" role="navigation">
   <div class="container-fluid">
   	<div class="container">
@@ -48,9 +51,9 @@
 	          	<li><a href="http://karel.csbridge.org/es/intro.html">Lector de Karel</a></li>
 	          	<li><a href="../../es/handouts/karel.html">Karel Referencia</a></li>
 	          	
-	          	<!--<li><a href="../../es/handouts/console.html">Console Reference</a></li>
-	          	<li><a href="../../es/handouts/random.html">Random Generator Reference</a></li>
-	          	<li><a href="../../es/handouts/graphics.html">Graphics Reference</a></li>
+	          	<li><a href="../../es/handouts/console.html">Consola Referencia</a></li>
+	          	<li><a href="../../es/handouts/random.html">Generador Aleatorio Referencia</a></li>
+	          	<!--<li><a href="../../es/handouts/graphics.html">Graphics Reference</a></li>
 	          	<li><a href="../../es/handouts/events.html">Events Reference</a></li>
 
 	          	
@@ -80,14 +83,14 @@
 	          	<li><a href="../../es/projects/mountain.html">Montaña  Karel</a></li>
 	          	<li><a href="../../es/projects/randomPainter.html">Pintor  Aleatorio</a></li>
 	          	
-	          	<!--<li class="divider"></li>
-	          	<li><a href="../../es/projects/sandcastles.html">Sandcastles</a></li>
-	          	<li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li>
-	          	<li><a href="../../es/projects/medicine.html">Medicine</a></li>
-	          	<li><a href="../../es/projects/someSum.html">Some Sum</a></li>
+	          	<li class="divider"></li>
+	          	<li><a href="../../es/projects/sandcastles.html">Castillos de arena</a></li>
+	          	<li><a href="../../es/projects/favoriteNumber.html">Número favorito</a></li>
+	          	<!-- <li><a href="../../es/projects/medicine.html">Medicine</a></li> -->
+	          	<li><a href="../../es/projects/someSum.html">Sumar Numeros</a></li>
 	          	<li><a href="../../es/projects/gameOfStones.html">Nimm</a></li>
 	          	
-
+	          	<!--
 	          	<li class="divider"></li>
 
 	          	<li><a href="../../es/projects/awesome.html">Programming is Awesome</a></li>
@@ -149,14 +152,14 @@
 	          	<li><a href="../../es/projects/beeperLine.html">Fila De Conos</a></li>
 	          	<li><a href="../../es/projects/invert.html">Invertir Conos</a></li>
 	          	<li><a href="../../es/projects/unKarel.html">Karel Nu</a></li>
-	          	<!--<li class="divider"></li>
+	          	<li class="divider"></li>
 	            <li><a href="../../es/projects/emc2.html">E=MC2</a></li>
 	            <li><a href="../../es/projects/fibb.html">Fibonacci</a></li>
-	           <li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li>
-	           <li><a href="../../es/projects/findPi.html">Find Pi</a></li>
+	           <!-- <li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li> -->
+	           <li><a href="../../es/projects/findPi.html">Encontrar Pi</a></li>
 	           <li><a href="../../es/projects/8Ball.html">8-Ball</a></li>
-	           <li class="divider"></li>
-	           
+	           <!-- <li class="divider"></li> -->
+	           <!--
 	            
 	            <li><a href="../../es/projects/robotFace.html">Robot Face</a></li>
 
@@ -186,7 +189,7 @@
 
               <li class="divider"></li>
 	            <li><a href="../../projects/breakoutOnline.html">Breakout Online</a></li>
-							-->
+							
 	          </ul>
 	        </li>
 
@@ -251,12 +254,12 @@
 	          </ul>
 	        </li>-->
 
-	       <!-- <li class="dropdown">
+	        <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bonus <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
                 <li><a href="../../es/bonus-index.html">Bonus overview</a></li>
 	          </ul>
-	        </li>-->
+	        </li>
 
 	        <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formularios<b class="caret"></b></a>
@@ -301,9 +304,30 @@
 </script>
 
 
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Círculos al azar </h1><p> Basado en un folleto de Eric Roberts </p><p> Folletos: <a href="../../es/handouts/graphics.html">Referencia Gráfica</a><br/> Ejemplo trabajado: <a href="../../es/projects/8Ball.html">8Ball</a>, <a href="../../es/projects/mysterySquare.html">Mystery Square</a></p></div><hr/><div class="row"><div class="col-md-12"><p> Escriba un ProgramaDeGraficos que dibuje un conjunto de diez círculos con diferentes tamaños, posiciones y colores. Cada círculo debe tener un color elegido al azar, un radio elegido al azar entre 70 y 200 píxeles y una posición elegida al azar en el lienzo, sujeto a la condición de que todo el círculo debe encajar dentro del lienzo sin extenderse más allá del borde. La siguiente ejecución de muestra muestra un posible resultado: </p><p><center><img src="../../img/projects/randomCircles/demo1.png" style="width:500px"/></center></p><p> En algunas ejecuciones de este programa es posible que no veas diez círculos. ¿Por qué? </p><p> Para generar números aleatorios, cree una variable de instancia GeneradorAleatorio (una variable declarada fuera de todos los métodos) así: <div class="well"><code>private GeneradorAleatorio rgen = new GeneradorAleatorio();</code></div></p><p> A continuación, puede utilizar la variable para generar números aleatorios. <div class="well"><code>rgen.siguienteInt( <i>min</i>, <i>max</i>) //genera un int aleatorio en el rango (min, max) <br/> rgen.siguienteColor() //genera un color al azar</code></div></p><p> Si terminas temprano, considera hacer donas al azar. </p></div></div>
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Header -->
+        <div id="pageHeader">
+            <h1> Círculos al azar </h1>
+            <p> Basado en un folleto de Eric Roberts </p>
+            <p> Folletos: <a href="../../es/handouts/graphics.html">Referencia Gráfica</a>
+                <br/> Ejemplo trabajado: <a href="../../es/projects/8Ball.html">8Ball</a>, <a href="../../es/projects/mysterySquare.html">Mystery Square</a></p>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-12">
+                <p> Escriba un ProgramaDeGraficos que dibuje un conjunto de diez círculos con diferentes tamaños, posiciones y colores. Cada círculo debe tener un color elegido al azar, un radio elegido al azar entre 70 y 200 píxeles y una posición elegida al azar en el lienzo, sujeto a la condición de que todo el círculo debe encajar dentro del lienzo sin extenderse más allá del borde. La siguiente ejecución de muestra muestra un posible resultado: </p>
+                <p>
+                    <center><img src="../../img/projects/randomCircles/demo1.png" style="width:500px" /></center>
+                </p>
+                <p> En algunas ejecuciones de este programa es posible que no veas diez círculos. ¿Por qué? </p>
+                <p> puede utilizar methodos para generar números aleatorios.
+                    <div class="well"><code>intAleatorio( <i>min</i>, <i>max</i>); //genera un int aleatorio en el rango (min, max) <br/> colorAleatorio(); //genera un color al azar</code></div>
+                </p>
+                <p> Si terminas temprano, considera hacer donas al azar. </p>
+            </div>
+        </div>
 
-		
 <hr>
 
 <div class="footer">
@@ -329,4 +353,5 @@
 		s.parentNode.insertBefore(ga, s);
 	})();
 </script>-->
-</div></body>
+    </div>
+</body>

@@ -23,7 +23,10 @@
 <!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});
   </script>-->
-</head><body><!-- Navigation Bar -->
+</head>
+
+<body>
+    <!-- Navigation Bar -->
 <nav class="navbar-inverse navbar-default" role="navigation">
   <div class="container-fluid">
   	<div class="container">
@@ -48,9 +51,9 @@
 	          	<li><a href="http://karel.csbridge.org/es/intro.html">Lector de Karel</a></li>
 	          	<li><a href="../../es/handouts/karel.html">Karel Referencia</a></li>
 	          	
-	          	<!--<li><a href="../../es/handouts/console.html">Console Reference</a></li>
-	          	<li><a href="../../es/handouts/random.html">Random Generator Reference</a></li>
-	          	<li><a href="../../es/handouts/graphics.html">Graphics Reference</a></li>
+	          	<li><a href="../../es/handouts/console.html">Consola Referencia</a></li>
+	          	<li><a href="../../es/handouts/random.html">Generador Aleatorio Referencia</a></li>
+	          	<!--<li><a href="../../es/handouts/graphics.html">Graphics Reference</a></li>
 	          	<li><a href="../../es/handouts/events.html">Events Reference</a></li>
 
 	          	
@@ -80,14 +83,14 @@
 	          	<li><a href="../../es/projects/mountain.html">Montaña  Karel</a></li>
 	          	<li><a href="../../es/projects/randomPainter.html">Pintor  Aleatorio</a></li>
 	          	
-	          	<!--<li class="divider"></li>
-	          	<li><a href="../../es/projects/sandcastles.html">Sandcastles</a></li>
-	          	<li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li>
-	          	<li><a href="../../es/projects/medicine.html">Medicine</a></li>
-	          	<li><a href="../../es/projects/someSum.html">Some Sum</a></li>
+	          	<li class="divider"></li>
+	          	<li><a href="../../es/projects/sandcastles.html">Castillos de arena</a></li>
+	          	<li><a href="../../es/projects/favoriteNumber.html">Número favorito</a></li>
+	          	<!-- <li><a href="../../es/projects/medicine.html">Medicine</a></li> -->
+	          	<li><a href="../../es/projects/someSum.html">Sumar Numeros</a></li>
 	          	<li><a href="../../es/projects/gameOfStones.html">Nimm</a></li>
 	          	
-
+	          	<!--
 	          	<li class="divider"></li>
 
 	          	<li><a href="../../es/projects/awesome.html">Programming is Awesome</a></li>
@@ -149,14 +152,14 @@
 	          	<li><a href="../../es/projects/beeperLine.html">Fila De Conos</a></li>
 	          	<li><a href="../../es/projects/invert.html">Invertir Conos</a></li>
 	          	<li><a href="../../es/projects/unKarel.html">Karel Nu</a></li>
-	          	<!--<li class="divider"></li>
+	          	<li class="divider"></li>
 	            <li><a href="../../es/projects/emc2.html">E=MC2</a></li>
 	            <li><a href="../../es/projects/fibb.html">Fibonacci</a></li>
-	           <li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li>
-	           <li><a href="../../es/projects/findPi.html">Find Pi</a></li>
+	           <!-- <li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li> -->
+	           <li><a href="../../es/projects/findPi.html">Encontrar Pi</a></li>
 	           <li><a href="../../es/projects/8Ball.html">8-Ball</a></li>
-	           <li class="divider"></li>
-	           
+	           <!-- <li class="divider"></li> -->
+	           <!--
 	            
 	            <li><a href="../../es/projects/robotFace.html">Robot Face</a></li>
 
@@ -186,7 +189,7 @@
 
               <li class="divider"></li>
 	            <li><a href="../../projects/breakoutOnline.html">Breakout Online</a></li>
-							-->
+							
 	          </ul>
 	        </li>
 
@@ -251,12 +254,12 @@
 	          </ul>
 	        </li>-->
 
-	       <!-- <li class="dropdown">
+	        <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bonus <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
                 <li><a href="../../es/bonus-index.html">Bonus overview</a></li>
 	          </ul>
-	        </li>-->
+	        </li>
 
 	        <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formularios<b class="caret"></b></a>
@@ -301,35 +304,28 @@
 </script>
 
 
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Eso es algo de suma! </h1><p> Problema escrito por Bryce CR, Julia Lee, Chris Piech y TY Huang </p></div><hr/><div class="row"><div class="col-md-12"><p> Escriba un programa que lea en 10 enteros del usuario y luego genere la suma de los valores ingresados. </p><p><center><img src="../../img/projects/someSum/demo.png" style="width:600px"/></center></p><p> A menudo, en los programas de consola es necesario imprimir los valores al usuario en una cadena. El ejemplo de arriba es: </p></div></div></div></body>&quot;La suma es: 55&quot; Si ejecuta su programa con la entrada anterior, 55 será el valor almacenado en la variable que rastrea la suma. Si esa variable se llama &#39;exampleSum&#39;, para escribir la salida, escriba: println (&quot;La suma es:&quot; + exampleSum); Una forma más general es: &quot;Mensaje de cadena&quot; + variableName + &quot;Mensaje de cadena más&quot; <!--pre id="editor" style="height:400px">/**
- * Program: That's Some Sum
- * -------------
- * This program reads in 10 integers from the user and then prints their sum.
- */
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Header -->
+        <div id="pageHeader">
+            <h1> Eso es algo de suma! </h1>
+            <p> Problema escrito por Bryce CR, Julia Lee, Chris Piech y TY Huang </p>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-12">
+                <p> Escriba un programa que lea 10 enteros del usuario e imprima la suma de los valores ingresados. </p>
+                <p>
+                    <center><img src="../../img/projects/someSum/demo.png" style="width:600px" /></center>
+                </p>
+                <p> A menudo, en los programas de consola es necesario imprimir los valores al usuario como una cadena. El ejemplo de arriba imprime: </p>
+                <p>&quot;La suma es: 55&quot;</p>
+                <p>Si ejecuta su programa con la entrada anterior, 55 será el valor almacenado en la variable que guarda la suma. Si esa variable se llama &#39;ejemploSuma&#39;, para escribir la respuesta, escriba:</p>
+                <p><code>imprimir(&quot;La suma es:&quot; + ejemploSuma);</code></p>Una forma más general es:
+                <p><code>&quot;Mensaje de cadena&quot; + variableName + &quot;Mensaje de cadena más&quot;</code></p>
+            </div>
+        </div>
 
-public class SomeSum extends ProgramaDeConsola {
-  
-  public void run() {
-    println("Enter 10 nums. I will show you the sum!");
-    int sum = 0;
-      
-    for(int i=0; i<10; i++) {
-      sum = sum + leerInt("Please enter an integer: ");
-    }
-
-    println("");
-    println("The sum is: " + sum);
-  }
-}</pre--><script charset="utf-8" src="../../plugins/ace/ace.js" type="text/javascript"></script><script>
-    var editor = ace.edit("editor");
-   editor.setTheme('ace/theme/eclipse');
-   editor.getSession().setMode("ace/mode/java");
-   editor.setReadOnly(true);
-   editor.renderer.setShowGutter(false); 
-    /*editor.setTheme("ace/theme/eclipse");
-    editor.getSession().setMode("ace/mode/java");*/
-</script>
-    
 <hr>
 
 <div class="footer">
@@ -355,3 +351,5 @@ public class SomeSum extends ProgramaDeConsola {
 		s.parentNode.insertBefore(ga, s);
 	})();
 </script>-->
+    </div>
+</body>

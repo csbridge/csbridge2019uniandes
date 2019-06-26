@@ -23,7 +23,10 @@
 <!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});
   </script>-->
-</head><body><!-- Navigation Bar -->
+</head>
+
+<body>
+    <!-- Navigation Bar -->
 <nav class="navbar-inverse navbar-default" role="navigation">
   <div class="container-fluid">
   	<div class="container">
@@ -48,9 +51,9 @@
 	          	<li><a href="http://karel.csbridge.org/es/intro.html">Lector de Karel</a></li>
 	          	<li><a href="../../es/handouts/karel.html">Karel Referencia</a></li>
 	          	
-	          	<!--<li><a href="../../es/handouts/console.html">Console Reference</a></li>
-	          	<li><a href="../../es/handouts/random.html">Random Generator Reference</a></li>
-	          	<li><a href="../../es/handouts/graphics.html">Graphics Reference</a></li>
+	          	<li><a href="../../es/handouts/console.html">Consola Referencia</a></li>
+	          	<li><a href="../../es/handouts/random.html">Generador Aleatorio Referencia</a></li>
+	          	<!--<li><a href="../../es/handouts/graphics.html">Graphics Reference</a></li>
 	          	<li><a href="../../es/handouts/events.html">Events Reference</a></li>
 
 	          	
@@ -80,14 +83,14 @@
 	          	<li><a href="../../es/projects/mountain.html">Montaña  Karel</a></li>
 	          	<li><a href="../../es/projects/randomPainter.html">Pintor  Aleatorio</a></li>
 	          	
-	          	<!--<li class="divider"></li>
-	          	<li><a href="../../es/projects/sandcastles.html">Sandcastles</a></li>
-	          	<li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li>
-	          	<li><a href="../../es/projects/medicine.html">Medicine</a></li>
-	          	<li><a href="../../es/projects/someSum.html">Some Sum</a></li>
+	          	<li class="divider"></li>
+	          	<li><a href="../../es/projects/sandcastles.html">Castillos de arena</a></li>
+	          	<li><a href="../../es/projects/favoriteNumber.html">Número favorito</a></li>
+	          	<!-- <li><a href="../../es/projects/medicine.html">Medicine</a></li> -->
+	          	<li><a href="../../es/projects/someSum.html">Sumar Numeros</a></li>
 	          	<li><a href="../../es/projects/gameOfStones.html">Nimm</a></li>
 	          	
-
+	          	<!--
 	          	<li class="divider"></li>
 
 	          	<li><a href="../../es/projects/awesome.html">Programming is Awesome</a></li>
@@ -149,14 +152,14 @@
 	          	<li><a href="../../es/projects/beeperLine.html">Fila De Conos</a></li>
 	          	<li><a href="../../es/projects/invert.html">Invertir Conos</a></li>
 	          	<li><a href="../../es/projects/unKarel.html">Karel Nu</a></li>
-	          	<!--<li class="divider"></li>
+	          	<li class="divider"></li>
 	            <li><a href="../../es/projects/emc2.html">E=MC2</a></li>
 	            <li><a href="../../es/projects/fibb.html">Fibonacci</a></li>
-	           <li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li>
-	           <li><a href="../../es/projects/findPi.html">Find Pi</a></li>
+	           <!-- <li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li> -->
+	           <li><a href="../../es/projects/findPi.html">Encontrar Pi</a></li>
 	           <li><a href="../../es/projects/8Ball.html">8-Ball</a></li>
-	           <li class="divider"></li>
-	           
+	           <!-- <li class="divider"></li> -->
+	           <!--
 	            
 	            <li><a href="../../es/projects/robotFace.html">Robot Face</a></li>
 
@@ -186,7 +189,7 @@
 
               <li class="divider"></li>
 	            <li><a href="../../projects/breakoutOnline.html">Breakout Online</a></li>
-							-->
+							
 	          </ul>
 	        </li>
 
@@ -251,12 +254,12 @@
 	          </ul>
 	        </li>-->
 
-	       <!-- <li class="dropdown">
+	        <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bonus <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
                 <li><a href="../../es/bonus-index.html">Bonus overview</a></li>
 	          </ul>
-	        </li>-->
+	        </li>
 
 	        <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formularios<b class="caret"></b></a>
@@ -301,9 +304,51 @@
 </script>
 
 
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Pelota que rebota </h1><p> Basado en un ejemplo de Mehran Sahami </p><p> Folletos: <a href="../../es/handouts/graphics.html">Referencia Gráfica</a><br/> Ejemplo de trabajo: <a href="../../es/projects/mysterySquare.html">Misterio cuadrado</a>, <a href="../../es/projects/gravityBall.html">Bola de gravedad</a>, <a href="../../es/projects/goCenter.html">Ir al centro</a></p></div><hr/><div class="row"><div class="col-md-12"><p> Escriba un ProgramaDeGraficos que cree una bola (una instancia de GOval) y la haga rebotar en la pantalla. Ignore la gravedad y tenga una colisión con la pared derecha o izquierda que refleja la dirección x de la bola, y tenga una colisión con la pared superior o inferior para cambiar la dirección y de la bola. </p><p> La siguiente figura muestra una bola que se mueve a través de un rebote con la pared inferior. </p><p><center><img src="../../img/projects/bouncingBall/demo.png" style="width:500px"/></center></p></div></div><div class="row"><div class="col-md-12"><h2> Hito 1: Crear una bola </h2><p> Puede ser de cualquier tamaño. </p></div></div><div class="row"><div class="col-md-12"><h2> Hito 2: Hazlo moverse </h2><p> Ciclo for siempre y en el bucle actualiza el balón y pausa. Puedes pausar usando el comando: <div class="well"><code>pausa( <i>milisegundos</i>);</code></div>¡Si no hace una pausa, la computadora animará más rápido para que el ojo humano pueda ver el movimiento! </p><p> También hay un método para mover un GOval (o un GRect): <div class="well"><code><i>objeto</i>.moverse( <i>dx</i>, <i>dy</i>);</code></div><i>dx</i> es el número de píxeles que el objeto se moverá en la dirección x. <br/><i>dy</i> es el número de píxeles que el objeto se moverá en la dirección y. </p></div></div><div class="row"><div class="col-md-12"><h2> Hito 3: Rebote </h2><p> Ahora, antes de actualizar la posición de la bola, debe verificar si la bola ha chocado con la pared y, de ser así, debe actualizar la dirección en la que se está moviendo. </p><p> Las reflexiones deben seguir la regla de que el ángulo de incidencia es igual al ángulo de reflexión. Esto resulta ser fácil de implementar. Simplemente gira la dirección x si golpeas una pared izquierda o derecha y gira la dirección y si golpeas una pared inferior o superior </p><p>¿Cómo averiguas la posición de la pelota? Puedes usar los métodos: </p><div class="well"><code><i>objeto</i>.obtenerX(); <br/><i>objeto</i>.obtenerY();</code></div><p> Asegúrate de revisar las demostraciones: <a href="../../es/projects/gravityBall.html">Gravity Ball</a> and <a href="../../es/projects/goCenter.html">Go Center</a></p>. </div></div>
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Header -->
+        <div id="pageHeader">
+            <h1> Pelota que rebota </h1>
+            <p> Basado en un ejemplo de Mehran Sahami </p>
+            <p> Folletos: <a href="../../es/handouts/graphics.html">Referencia Gráfica</a>
+                <br/> Ejemplo de trabajo: <a href="../../es/projects/mysterySquare.html">Misterio cuadrado</a>, <a href="../../es/projects/gravityBall.html">Bola de gravedad</a>, <a href="../../es/projects/goCenter.html">Ir al centro</a></p>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-12">
+                <p> Escriba un ProgramaDeGraficos que cree una bola (una instancia de GOval) y la haga rebotar en la pantalla. Ignore la gravedad y tenga una colisión con la pared derecha o izquierda que refleja la dirección x de la bola, y tenga una colisión con la pared superior o inferior para cambiar la dirección y de la bola. </p>
+                <p> La siguiente figura muestra una bola que se mueve a través de un rebote con la pared inferior. </p>
+                <p>
+                    <center><img src="../../img/projects/bouncingBall/demo.png" style="width:500px" /></center>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2> Hito 1: Crear una bola </h2>
+                <p> Puede ser de cualquier tamaño. </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2> Hito 2: Hazlo moverse </h2>
+                <p> Ciclo for siempre y en el bucle actualiza el balón y pausa. Puedes pausar usando el comando:
+                    <div class="well"><code>pausa( <i>milisegundos</i>);</code></div>¡Si no hace una pausa, la computadora animará más rápido para que el ojo humano pueda ver el movimiento! </p>
+                <p> También hay un método para mover un GOval (o un GRect):
+                    <div class="well"><code><i>objeto</i>.moverse( <i>dx</i>, <i>dy</i>);</code></div><i>dx</i> es el número de píxeles que el objeto se moverá en la dirección x.
+                    <br/><i>dy</i> es el número de píxeles que el objeto se moverá en la dirección y. </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2> Hito 3: Rebote </h2>
+                <p> Ahora, antes de actualizar la posición de la bola, debe verificar si la bola ha chocado con la pared y, de ser así, debe actualizar la dirección en la que se está moviendo. </p>
+                <p> Las reflexiones deben seguir la regla de que el ángulo de incidencia es igual al ángulo de reflexión. Esto resulta ser fácil de implementar. Simplemente gira la dirección x si golpeas una pared izquierda o derecha y gira la dirección y si golpeas una pared inferior o superior </p>
+                <p>¿Cómo averiguas la posición de la pelota? Puedes usar los métodos: </p>
+                <div class="well"><code><i>objeto</i>.darX(); <br/><i>objeto</i>.darY();</code></div>
+                <p> Asegúrate de revisar las demostraciones: <a href="../../es/projects/gravityBall.html">Gravity Ball</a> and <a href="../../es/projects/goCenter.html">Go Center</a></p>. </div>
+        </div>
 
-		
 <hr>
 
 <div class="footer">
@@ -329,4 +374,5 @@
 		s.parentNode.insertBefore(ga, s);
 	})();
 </script>-->
-</div></body>
+    </div>
+</body>

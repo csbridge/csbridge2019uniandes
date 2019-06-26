@@ -22,7 +22,10 @@
 <!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});
   </script>-->
-</head><body><!-- Navigation Bar -->
+</head>
+
+<body>
+	<!-- Navigation Bar -->
 <nav class="navbar-inverse navbar-default" role="navigation">
   <div class="container-fluid">
   	<div class="container">
@@ -47,9 +50,9 @@
 	          	<li><a href="http://karel.csbridge.org/es/intro.html">Lector de Karel</a></li>
 	          	<li><a href="../../es/handouts/karel.html">Karel Referencia</a></li>
 	          	
-	          	<!--<li><a href="../../es/handouts/console.html">Console Reference</a></li>
-	          	<li><a href="../../es/handouts/random.html">Random Generator Reference</a></li>
-	          	<li><a href="../../es/handouts/graphics.html">Graphics Reference</a></li>
+	          	<li><a href="../../es/handouts/console.html">Consola Referencia</a></li>
+	          	<li><a href="../../es/handouts/random.html">Generador Aleatorio Referencia</a></li>
+	          	<!--<li><a href="../../es/handouts/graphics.html">Graphics Reference</a></li>
 	          	<li><a href="../../es/handouts/events.html">Events Reference</a></li>
 
 	          	
@@ -79,14 +82,14 @@
 	          	<li><a href="../../es/projects/mountain.html">Montaña  Karel</a></li>
 	          	<li><a href="../../es/projects/randomPainter.html">Pintor  Aleatorio</a></li>
 	          	
-	          	<!--<li class="divider"></li>
-	          	<li><a href="../../es/projects/sandcastles.html">Sandcastles</a></li>
-	          	<li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li>
-	          	<li><a href="../../es/projects/medicine.html">Medicine</a></li>
-	          	<li><a href="../../es/projects/someSum.html">Some Sum</a></li>
+	          	<li class="divider"></li>
+	          	<li><a href="../../es/projects/sandcastles.html">Castillos de arena</a></li>
+	          	<li><a href="../../es/projects/favoriteNumber.html">Número favorito</a></li>
+	          	<!-- <li><a href="../../es/projects/medicine.html">Medicine</a></li> -->
+	          	<li><a href="../../es/projects/someSum.html">Sumar Numeros</a></li>
 	          	<li><a href="../../es/projects/gameOfStones.html">Nimm</a></li>
 	          	
-
+	          	<!--
 	          	<li class="divider"></li>
 
 	          	<li><a href="../../es/projects/awesome.html">Programming is Awesome</a></li>
@@ -148,14 +151,14 @@
 	          	<li><a href="../../es/projects/beeperLine.html">Fila De Conos</a></li>
 	          	<li><a href="../../es/projects/invert.html">Invertir Conos</a></li>
 	          	<li><a href="../../es/projects/unKarel.html">Karel Nu</a></li>
-	          	<!--<li class="divider"></li>
+	          	<li class="divider"></li>
 	            <li><a href="../../es/projects/emc2.html">E=MC2</a></li>
 	            <li><a href="../../es/projects/fibb.html">Fibonacci</a></li>
-	           <li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li>
-	           <li><a href="../../es/projects/findPi.html">Find Pi</a></li>
+	           <!-- <li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li> -->
+	           <li><a href="../../es/projects/findPi.html">Encontrar Pi</a></li>
 	           <li><a href="../../es/projects/8Ball.html">8-Ball</a></li>
-	           <li class="divider"></li>
-	           
+	           <!-- <li class="divider"></li> -->
+	           <!--
 	            
 	            <li><a href="../../es/projects/robotFace.html">Robot Face</a></li>
 
@@ -185,7 +188,7 @@
 
               <li class="divider"></li>
 	            <li><a href="../../projects/breakoutOnline.html">Breakout Online</a></li>
-							-->
+							
 	          </ul>
 	        </li>
 
@@ -250,12 +253,12 @@
 	          </ul>
 	        </li>-->
 
-	       <!-- <li class="dropdown">
+	        <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bonus <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
                 <li><a href="../../es/bonus-index.html">Bonus overview</a></li>
 	          </ul>
-	        </li>-->
+	        </li>
 
 	        <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formularios<b class="caret"></b></a>
@@ -300,7 +303,42 @@
 </script>
 
 
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Referencia de generador aleatorio </h1><p> Escrito por Danielle Kain y Lisa Yan </p></div><hr/> Los generadores aleatorios le permiten agregar aleatoriedad a su programa. Independientemente del tipo de objeto aleatorio que desee, primero deberá crear un generador aleatorio: <div class="well"><code>GeneradorAleatorio rgen = new GeneradorAleatorio();</code></div><br/> Puedes hacer muchos tipos de objetos aleatorios usando RandomGenerators. Aquí hay unos ejemplos: <div class="well"><code>int aleatorioInt = rgen.siguienteInt(); //Devuelve un int aleatorio <br/> double dobleAleatorio = rgen.siguienteDoble(); //Devuelve un doble aleatorio <br/> Color colAlAzar = rgen.siguienteColor(); //Devuelve un color al azar <br/> boolean aleatorioBooleano = rgen.siguienteBooleano(); //Devuelve un booleano aleatorio</code></div><h2> Enteros </h2><p> La llamada al método predeterminado (sin argumentos) devuelve un entero <i>sin límites</i>, que puede ser muy grande o muy pequeño. Para restringir el rango de los enteros que obtiene, puede especificar límites. Entonces, para obtener un entero entre 0 y 10, inclusive, puedes hacer lo siguiente: </p><div class="well"><code>int lb = 0; <br/> int ub = 10; <br/> int x = rgen.siguienteInt(lb, ub); // entero en el rango [0,10] <br/></code></div><h2> Dobles </h2><p> La llamada al método por defecto devuelve un doble entre 0.0 y 1.0. Para aumentar el rango de dobles, puede especificar límites: </p><div class="well"><code>double y = rgen.siguienteDoble(-3, 5.5); // nota -3 se convierte de entero a doble -3.0</code></div><h2> Booleanos </h2><p> A diferencia de los enteros y los dobles, hay un solo argumento <code>p</code> que define el comportamiento de <code>rgen.siguienteBooleano(p)</code>: <ul><li> Devuelve <code>true</code> con probabilidad <code>p</code>. </li><li> Devuelve <code>false</code> con probabilidad <code>1-p</code>. </li><li><code>p</code> debe ser un doble entre 0 y 1.0. </li><li> El valor predeterminado de <code>p</code> es 0.5. </li></ul><div class="well"><code>bool igualProb = rgen.siguienteBooleano(); <br/> bool probDesigual = rgen.siguienteBooleano(0.75); // devuelve verdad 3/4 del tiempo <br/></code></div>
+	<!-- Main Content -->
+	<div class="container">
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1> Generador aleatorio </h1>
+			<p> Escrito por Danielle Kain y Lisa Yan </p>
+		</div>
+		<hr /> Los objetos aleatorios te permiten agregar azar a tus programas.
+		Puedes crear varios tipos de objetos aleatorios usando los métodos que te ofrece <code>EsConsole</code>.
+		Por ejemplo: <div class="well">
+			<code>int enteroAleatorio = intAleatorio(); //Devuelve un número entero aleatorio <br/> 
+	double doubleAlAzar = doubleAleatorio(); //Devuelve un double aleatorio <br/> Color colorAlAzar = colorAleatorio(); //Devuelve un color al azar <br/> boolean booleanAlAzar = booleanAleatorio(); //Devuelve un booleano aleatorio</code>
+		</div>
+		<h2> Enteros </h2>
+		<p> La llamada al método sin parámetros devuelve un entero aleatorio <i>sin límites</i>, es decir, puede ser un
+			número inmenso o uno muy pequeño. Es posible definir un rango para los números enteros generados al pasarlo como parámetro a la función. 
+		<div class="well">
+			<code>int minimoEntero = 0; <br/> int maximoEntero = 10; <br/> intAleatorio(minimoEntero, maximoEntero); // Número entero en el rango [0,10] <br/></code>
+		</div>
+		<h2> Doubles </h2>
+		<p> La llamada al método por defecto, es decir, sin parámetros, devuelve un double entre 0.0 y 1.0. Para aumentar el rango de los doubles generados, también:
+			podemos especificar límites. </p>
+		<div class="well">
+			<code>double y = doubleAleatorio(-3, 5.5); // Nota: -3 se convierte de entero a double (-3.0)</code></div>
+		<h2> Booleanos </h2>
+		<p> A diferencia de los enteros y los doubles, hay un solo parámetro <code>p</code> que define el comportamiento
+			de <code>booleanAleatorio()</code>. El número que se ingresa al método afecta la probabilidad con la que el boolean adquiera
+			un valor de <code>verdadero</code> o <code>falso</code>.<ul>
+				<li> Devuelve <code>verdadero</code> con probabilidad <code>p</code>. </li>
+				<li> Devuelve <code>falso</code> con probabilidad <code>1-p</code>. </li>
+				<li><code>p</code> debe ser un doble entre 0 y 1.0. </li>
+				<li> El valor predeterminado de <code>p</code> es 0.5. </li>
+			</ul>
+			<div class="well">
+				<code>boolean probabilidadIgual = booleanAleatorio(); <br/> boolean probabilidadDesigual = booleanAleatorio(0.75); // Es verdadero 3/4 del tiempo <br/></code>
+			</div>
 
 <hr>
 
@@ -327,4 +365,6 @@
 		s.parentNode.insertBefore(ga, s);
 	})();
 </script>-->
-</p></div></body>
+		</p>
+	</div>
+</body>

@@ -48,9 +48,9 @@
 	          	<li><a href="http://karel.csbridge.org/es/intro.html">Lector de Karel</a></li>
 	          	<li><a href="../../es/handouts/karel.html">Karel Referencia</a></li>
 	          	
-	          	<!--<li><a href="../../es/handouts/console.html">Console Reference</a></li>
-	          	<li><a href="../../es/handouts/random.html">Random Generator Reference</a></li>
-	          	<li><a href="../../es/handouts/graphics.html">Graphics Reference</a></li>
+	          	<li><a href="../../es/handouts/console.html">Consola Referencia</a></li>
+	          	<li><a href="../../es/handouts/random.html">Generador Aleatorio Referencia</a></li>
+	          	<!--<li><a href="../../es/handouts/graphics.html">Graphics Reference</a></li>
 	          	<li><a href="../../es/handouts/events.html">Events Reference</a></li>
 
 	          	
@@ -80,14 +80,14 @@
 	          	<li><a href="../../es/projects/mountain.html">Montaña  Karel</a></li>
 	          	<li><a href="../../es/projects/randomPainter.html">Pintor  Aleatorio</a></li>
 	          	
-	          	<!--<li class="divider"></li>
-	          	<li><a href="../../es/projects/sandcastles.html">Sandcastles</a></li>
-	          	<li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li>
-	          	<li><a href="../../es/projects/medicine.html">Medicine</a></li>
-	          	<li><a href="../../es/projects/someSum.html">Some Sum</a></li>
+	          	<li class="divider"></li>
+	          	<li><a href="../../es/projects/sandcastles.html">Castillos de arena</a></li>
+	          	<li><a href="../../es/projects/favoriteNumber.html">Número favorito</a></li>
+	          	<!-- <li><a href="../../es/projects/medicine.html">Medicine</a></li> -->
+	          	<li><a href="../../es/projects/someSum.html">Sumar Numeros</a></li>
 	          	<li><a href="../../es/projects/gameOfStones.html">Nimm</a></li>
 	          	
-
+	          	<!--
 	          	<li class="divider"></li>
 
 	          	<li><a href="../../es/projects/awesome.html">Programming is Awesome</a></li>
@@ -149,14 +149,14 @@
 	          	<li><a href="../../es/projects/beeperLine.html">Fila De Conos</a></li>
 	          	<li><a href="../../es/projects/invert.html">Invertir Conos</a></li>
 	          	<li><a href="../../es/projects/unKarel.html">Karel Nu</a></li>
-	          	<!--<li class="divider"></li>
+	          	<li class="divider"></li>
 	            <li><a href="../../es/projects/emc2.html">E=MC2</a></li>
 	            <li><a href="../../es/projects/fibb.html">Fibonacci</a></li>
-	           <li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li>
-	           <li><a href="../../es/projects/findPi.html">Find Pi</a></li>
+	           <!-- <li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li> -->
+	           <li><a href="../../es/projects/findPi.html">Encontrar Pi</a></li>
 	           <li><a href="../../es/projects/8Ball.html">8-Ball</a></li>
-	           <li class="divider"></li>
-	           
+	           <!-- <li class="divider"></li> -->
+	           <!--
 	            
 	            <li><a href="../../es/projects/robotFace.html">Robot Face</a></li>
 
@@ -186,7 +186,7 @@
 
               <li class="divider"></li>
 	            <li><a href="../../projects/breakoutOnline.html">Breakout Online</a></li>
-							-->
+							
 	          </ul>
 	        </li>
 
@@ -251,12 +251,12 @@
 	          </ul>
 	        </li>-->
 
-	       <!-- <li class="dropdown">
+	        <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bonus <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
                 <li><a href="../../es/bonus-index.html">Bonus overview</a></li>
 	          </ul>
-	        </li>-->
+	        </li>
 
 	        <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formularios<b class="caret"></b></a>
@@ -301,7 +301,8 @@
 </script>
 
 
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Medicina falsificada </h1><p> Problema escrito por Chris Piech </p><p> Ejemplos trabajados: <a href="../../es/projects/emc2.html">E = MC2</a>, <a href="../../es/projects/fibb.html">Fibbonacci</a>, <a href="../../es/projects/carbonDating.html">Carbono</a></p></div><hr/><div class="row"><div class="col-md-12"><h2 style="margin-top:0px;"> La historia </h2><p> Este problema comienza con una triste historia. Cuando crecía en Kenia, se estimaba que más del 38% de los medicamentos vendidos en farmacias eran falsos [1]. ¡Eso fue un gran problema! Según la organización que solicite, las muertes por medicamentos falsificados oscilaron entre 100.000 por año (OMS) y 700.000 (IPN) [2]. <blockquote> Las muertes por medicamentos falsificados son equivalentes a &quot;cuatro aviones jumbo completamente cargados que se estrellan todos los días&quot; [2] </blockquote><!--Wow. Why would anyone do such a terrible thing? Because counterfeit medicine is a $200 billion-per-year business.--></p><p> En 2009, un compañero ghanés llamado Bright Simmons ideó una solución tecnológica directa que llamó mPedigree. Se asoció con empresas que hacen medicina. En cada paquete legítimo de medicina estamparon un código de rasguño único. Ahora, cuando compra medicamentos en una farmacia en Kenia, verifica el código de scratch y el mensaje de texto mPedigree. Si el código está en su sistema y nunca se ha utilizado antes, mPedigree envía un mensaje de texto de vuelta diciendo: &quot;válido&quot;. Ha habido una disminución del 58% en las muertes infantiles por malaria solo [3]. A veces, las soluciones de programación simples pueden tener un gran impacto positivo en el mundo. </p></div></div><div class="row"><div class="col-md-12"><h2> Tu trabajo </h2><p> Escriba un programa que genere números de 10 dígitos para 1,000 paquetes de medicamentos. Cada número que genere debe ser (1) único e (2) impredecible. </p><p> Aquí hay una captura de pantalla de un ejemplo de ejecución: <center><img src="../../img/projects/medicine/medicineRun.png" style="width:500px"/><p style="text-align:center"><!--<i>Unique, unpredictable numbers for medicines.</i>--></p></center></p><p> Esos números se pondrán en los paquetes de medicamentos. Los contragolladores no tendrán una oportunidad! </p></div></div><div class="row"><div class="col-md-12"><h2> Números al azar </h2><p> Para generar números aleatorios, cree una variable de instancia GeneradorAleatorio (una variable declarada fuera de todos los métodos) así: <div class="well"><code>private GeneradorAleatorio rgen = new GeneradorAleatorio();</code></div></p><p> A continuación, puede utilizar la variable para generar números aleatorios. <div class="well"><code>rgen.siguienteInt( <i>min</i>, <i>max</i>) //genera un int aleatorio en el rango (min, max) inclusive</code></div></p></div></div><div class="row"><div class="col-md-12"><p>¡Eso es todo! Haga preguntas si no entiende algo (o si desea saber más sobre medicamentos falsificados) </p></div></div><!--<div class="row">
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Medicina falsificada </h1><p> Problema escrito por Chris Piech </p><p> Ejemplos trabajados: <a href="../../es/projects/emc2.html">E = MC2</a>, <a href="../../es/projects/fibb.html">Fibbonacci</a>, <a href="../../es/projects/carbonDating.html">Carbono</a></p></div><hr/><div class="row"><div class="col-md-12"><h2 style="margin-top:0px;"> La historia </h2><p> Este problema comienza con una triste historia. Cuando crecía en Kenia, se estimaba que más del 38% de los medicamentos vendidos en farmacias eran falsos [1]. ¡Eso fue un gran problema! Según la organización a la que se le pregunte, las muertes por medicamentos falsificados están entre 100.000 por año (OMS) y 700.000 (IPN) [2]. <blockquote> Las muertes por medicamentos falsificados son equivalentes a &quot;cuatro aviones jumbo completamente cargados que se estrellan todos los días&quot; [2] </blockquote></p><p> En 2009, un compañero ghanés llamado Bright Simmons ideó una solución tecnológica que llamó mPedigree. Se asoció con empresas que hacen medicina y en cada paquete legítimo de medicina estamparon un código único. Ahora, cuando compras medicamentos en una farmacia en Kenia, verificas el código y le envías un mensaje de texto a mPedigree. Si el código está en su sistema y nunca se ha utilizado antes, mPedigree envía un mensaje de texto de vuelta diciendo: &quot;válido&quot;. Ha habido una disminución del 58% en las muertes infantiles por malaria [3]. A veces, las soluciones de programación simples pueden tener un gran impacto positivo en el mundo. </p></div></div><div class="row"><div class="col-md-12"><h2> Tu trabajo </h2><p> Escribe un programa que genere números de 10 dígitos para 1,000 paquetes de medicamentos. Cada número que generes debe ser (1) único e (2) impredecible. </p><p> Aquí hay una captura de pantalla de un ejemplo de ejecución del programa: <center><img src="../../img/projects/medicine/medicineRun.png" style="width:500px"/><p style="text-align:center"></p></center></p><p> Esos números se pondrán en los paquetes de medicamentos, ¡Los falsificadores no podrán hacer nada! </p></div></div><div class="row"><div class="col-md-12"><h2> Números al azar </h2><p> Para generar números aleatorios, use el siguiente método: <div class="well"><code> intAleatorio(min, max); // genera un número aleatorio en el rango (min , max) inclusivo </code></div></p>
+<p>¡Eso es todo! Haz preguntas si no entiendes algo (o si deseas saber más sobre medicamentos falsificados) </p></div></div><!--<div class="row">
 			<div class="col-md-12">
 				<h2>Solution</h2>
 

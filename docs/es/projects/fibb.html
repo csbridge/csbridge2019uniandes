@@ -48,9 +48,9 @@
 	          	<li><a href="http://karel.csbridge.org/es/intro.html">Lector de Karel</a></li>
 	          	<li><a href="../../es/handouts/karel.html">Karel Referencia</a></li>
 	          	
-	          	<!--<li><a href="../../es/handouts/console.html">Console Reference</a></li>
-	          	<li><a href="../../es/handouts/random.html">Random Generator Reference</a></li>
-	          	<li><a href="../../es/handouts/graphics.html">Graphics Reference</a></li>
+	          	<li><a href="../../es/handouts/console.html">Consola Referencia</a></li>
+	          	<li><a href="../../es/handouts/random.html">Generador Aleatorio Referencia</a></li>
+	          	<!--<li><a href="../../es/handouts/graphics.html">Graphics Reference</a></li>
 	          	<li><a href="../../es/handouts/events.html">Events Reference</a></li>
 
 	          	
@@ -80,14 +80,14 @@
 	          	<li><a href="../../es/projects/mountain.html">Montaña  Karel</a></li>
 	          	<li><a href="../../es/projects/randomPainter.html">Pintor  Aleatorio</a></li>
 	          	
-	          	<!--<li class="divider"></li>
-	          	<li><a href="../../es/projects/sandcastles.html">Sandcastles</a></li>
-	          	<li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li>
-	          	<li><a href="../../es/projects/medicine.html">Medicine</a></li>
-	          	<li><a href="../../es/projects/someSum.html">Some Sum</a></li>
+	          	<li class="divider"></li>
+	          	<li><a href="../../es/projects/sandcastles.html">Castillos de arena</a></li>
+	          	<li><a href="../../es/projects/favoriteNumber.html">Número favorito</a></li>
+	          	<!-- <li><a href="../../es/projects/medicine.html">Medicine</a></li> -->
+	          	<li><a href="../../es/projects/someSum.html">Sumar Numeros</a></li>
 	          	<li><a href="../../es/projects/gameOfStones.html">Nimm</a></li>
 	          	
-
+	          	<!--
 	          	<li class="divider"></li>
 
 	          	<li><a href="../../es/projects/awesome.html">Programming is Awesome</a></li>
@@ -149,14 +149,14 @@
 	          	<li><a href="../../es/projects/beeperLine.html">Fila De Conos</a></li>
 	          	<li><a href="../../es/projects/invert.html">Invertir Conos</a></li>
 	          	<li><a href="../../es/projects/unKarel.html">Karel Nu</a></li>
-	          	<!--<li class="divider"></li>
+	          	<li class="divider"></li>
 	            <li><a href="../../es/projects/emc2.html">E=MC2</a></li>
 	            <li><a href="../../es/projects/fibb.html">Fibonacci</a></li>
-	           <li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li>
-	           <li><a href="../../es/projects/findPi.html">Find Pi</a></li>
+	           <!-- <li><a href="../../es/projects/favoriteNumber.html">Favorite Number</a></li> -->
+	           <li><a href="../../es/projects/findPi.html">Encontrar Pi</a></li>
 	           <li><a href="../../es/projects/8Ball.html">8-Ball</a></li>
-	           <li class="divider"></li>
-	           
+	           <!-- <li class="divider"></li> -->
+	           <!--
 	            
 	            <li><a href="../../es/projects/robotFace.html">Robot Face</a></li>
 
@@ -186,7 +186,7 @@
 
               <li class="divider"></li>
 	            <li><a href="../../projects/breakoutOnline.html">Breakout Online</a></li>
-							-->
+							
 	          </ul>
 	        </li>
 
@@ -251,12 +251,12 @@
 	          </ul>
 	        </li>-->
 
-	       <!-- <li class="dropdown">
+	        <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bonus <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
                 <li><a href="../../es/bonus-index.html">Bonus overview</a></li>
 	          </ul>
-	        </li>-->
+	        </li>
 
 	        <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formularios<b class="caret"></b></a>
@@ -301,28 +301,28 @@
 </script>
 
 
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Fibbonacci (con solución) </h1><p> Problema escrito por Eric Robets </p></div><hr/><div class="row"><div class="col-md-12"><p> En el siglo XIII, el matemático italiano Leonardo Fibonacci, como una forma de explicar el crecimiento geométrico de una población de conejos, ideó una secuencia matemática que ahora lleva su nombre. Los primeros dos términos en esta secuencia, Fib (0) y Fib (1), son 0 y 1, y cada término subsiguiente es la suma de los dos anteriores. Por lo tanto, los primeros términos en la secuencia de Fibonacci se ven así: </p><p style="padding-left:2em"> Fib (0) = 0 <br/> Fib (1) = 1 <br/> Fib (2) = 1 (0 + 1) <br/> Fib (3) = 2 (1 + 1) <br/> Fib (4) = 3 (1 + 2) <br/> Fib (5) = 5 (2 + 3) </p><p> Escriba un programa que muestre los términos en la secuencia de Fibonacci, comenzando con Fib (0) y continúe mientras los términos sean menos de 10,000. Por lo tanto, su programa debe producir la siguiente ejecución de muestra: </p><p><center><img src="../../img/projects/fib/demo.png" style="width:400px"/></center></p><p> Este programa debe continuar siempre que el valor del término sea menor que el valor máximo. Para hacer esto, debes usar un ciclo while que, presumiblemente con una línea de encabezado que se ve así: <div class="well"><code>while (término &lt; VALOR_MAXIMO_PLAZO)</code></div> Tenga en cuenta que el valor máximo del término se especifica utilizando una constante nombrada. </p></div></div><div class="row"><div class="col-md-12"><h2> Solución </h2><pre id="editor" style="height:480px">/ *
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Fibbonacci (con solución) </h1><p> Problema escrito por Eric Robets </p></div><hr/><div class="row"><div class="col-md-12"><p> En el siglo XIII, el matemático italiano Leonardo Fibonacci, como una forma de explicar el crecimiento geométrico de una población de conejos, ideó una secuencia matemática que ahora lleva su nombre. Los primeros dos términos en esta secuencia, Fib (0) y Fib (1), son 0 y 1, y cada término subsecuente es la suma de los dos anteriores. Por lo tanto, los primeros términos en la secuencia de Fibonacci se ven así: </p><p style="padding-left:2em"> Fib (0) = 0 <br/> Fib (1) = 1 <br/> Fib (2) = 1 (0 + 1) <br/> Fib (3) = 2 (1 + 1) <br/> Fib (4) = 3 (1 + 2) <br/> Fib (5) = 5 (2 + 3) </p><p> Escriba un programa que muestre los términos en la secuencia de Fibonacci, comenzando con Fib (0) y continúe mientras los términos sean menores a 10,000. Por lo tanto, su programa debe producir la siguiente ejecución de muestra: </p><p><center><img src="../../img/projects/fib/demo.png" style="width:400px"/></center></p><p> Este programa debe continuar siempre que el valor del término sea menor que el valor máximo. Para hacer esto, debes usar un ciclo while que, presumiblemente con una línea de encabezado que se ve así: <div class="well"><code>while (termino &lt; VALOR_MAXIMO)</code></div> Tenga en cuenta que el valor máximo del término se especifica utilizando una constante. </p></div></div><div class="row"><div class="col-md-12"><h2> Solución </h2><pre id="editor" style="height:480px">/ *
  * Archivo&nbsp;: Fibonacci.java
  * -----------------------
  *&nbsp;Este programa enumera los términos en la
- * secuencia de fibonacci hasta un
- * VALOR_MAXIMO_PLAZO constante, que es el término
- * más grande de Fibonacci que se incluyó en el programa.
+ * secuencia de fibonacci hasta la constante
+ * VALOR_MAXIMO, que es el término
+ * más grande de Fibonacci que se incluirá en el programa.
  * /
 
-import acm.programa. *;
+import acm.program.*;
 
-clase pública Fibonacci extiende ProgramaDeConsola {
+public class Fibonacci extends EsConsole {
 
 
-   / * Definir el término más grande que se refiere * /
-	final estático privado int VALOR_MAXIMO_PLAZO = 10000;
+   / * Definir el término más grande que se imprimira * /
+	private static final int VALOR_MAXIMO = 10000;
 
 	public void run () {
 		imprimir (&quot;Este programa enumera la secuencia de Fibonacci&quot;);
 		int t1 = 0;
 		int t2 = 1;
-		while (t1 &lt;= VALOR_MAXIMO_PLAZO) {
+		while (t1 &lt;= VALOR_MAXIMO) {
 			imprimir (t1);
 			int t3 = t1 + t2;
 			t1 = t2;

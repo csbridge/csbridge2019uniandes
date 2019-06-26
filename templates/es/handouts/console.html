@@ -13,26 +13,54 @@
 <!-- Header -->
 <div id="pageHeader">
 <h1>
-				Console Program Reference
+				Referencia del programa de consola
 			</h1>
-<p>
-				Written by Danielle Kain, Kevin Miller
-			</p>
+
 </div>
 <hr/>
 
-		Console Programs allow for interaction between your program and the user. In order to write a program, make sure your program extends ProgramaDeConsola: 
-		<div class="well"><code><pre>
-public class Ejemplo extends ProgramaDeConsola {
-		</pre></code></div>
-<br/>
-		One cool thing that Console Programs let you do is get input from the user. Below are some examples:
-		<div class="well"><code><pre>
-leerLinea(Cuerda mensajeRápido); //Lee una cadena de usuarios y devuelve
-leerInt(Cuerda mensajeRápido); //Lee en el usuario y lo devuelve.
-leerDoble(Cuerda mensajeRápido); //Lee un doble del usuario y lo devuelve.
-imprimir(Cuerda imprimirMensaje); //Imprime un mensaje a la consola.
-		</pre></code></div>
+		<p>Los programas de consola permiten la interacción entre su programa y el usuario. Para escribir un programa, asegúrese de que su programa extienda ProgramaDeConsola:</p>
+		<div class="well"><code>
+public class Ejemplo extends EsConsole {
+		</code></div>
+
+		<h2>Imprimir</h2>
+		<div class="well"><code>
+imprimir(<i class="codeText">mensaje</i>); //Imprime un mensaje a la consola.
+		</code></div>
+
+<h2>Leer</h2>
+		Una cosa interesante que los Programas de la Consola te permiten hacer es obtener información del usuario. A continuación se presentan algunos ejemplos:
+		<div class="well"><code>
+leerInt(<i class="codeText">aviso</i>); //Lee un entero y lo devuelve.<br/>
+leerDouble(<i class="codeText">aviso</i>); //Lee un double del usuario y lo devuelve.<br/>
+		</code></div>
+
+		<h2>Ejemplo</h2>
+		Aquí hay un ejemplo que lee un número entero y lo imprime dividido por dos
+		<div class="well"><code>
+<span class="keyword">public class</span> Ejemplo <span class="keyword">extends</span> EsConsole {<br/>
+&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> run() {<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span> numeroDeUsuario = leerInt(<span class="codeText">"por favor digita un numero"</span>);<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imprimir(numeroDeUsuario / 2);<br/>
+&nbsp;&nbsp;&nbsp;}<br/>
+}<br/>
+		</code></div>
+
+		<h2>Otras Cosas Útiles</h2>
+		Puedes controllar como imprimir el texto, si quieres completar la linea o mantener el cursor en la misma linea. Se usa como así:
+		<div class="well"><code>
+imprimir(<i class="codeText">mensaje</i>); //Imprime y mueve el cursor a la proxima linea.<br/>
+imprimirEnLinea(<i class="codeText">mensaje</i>); //Imprime y mantiene el cursor en la misma linea.<br/>
+		</code></div>
+
+		Puedes obtener más información de los usuarios que sólo números. Aquí son otros ejemplos:
+		<div class="well"><code>
+leerLinea(<i class="codeText">aviso</i>); //Lee una linea como texto y la devuelve en tipo String.<br/>
+leerBoolean(<i class="codeText">aviso</i>); //Lee un texto de boolean (true/false) y lo devuelve.<br/>
+		</code></div>
+
+		También hay una manera de tener números y colores aleatorios en EsConsole, <a href="{{pathToRoot}}es/handouts/random.html">que se puede ver aquí</a>.
 
 		%include templates/parts/footer.html
 

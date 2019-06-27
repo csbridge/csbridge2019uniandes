@@ -1,71 +1,11 @@
-<head>
+import graphics.EsGraphics;
+
+import java.awt.Color;
+
+import graphics.*;
 
 
-	%include templates/parts/head.html
-
-</head>
-<body>
-<!-- Navigation Bar -->
-
-	%include templates/parts/navBarEs.html
-
-<!-- Main Content -->
-<div class="container">
-<!-- Header -->
-<div id="pageHeader">
-<h1>
-				Dibuja una cara de robot
-			</h1>
-<p>
-				Escrito por Eric Roberts. Actualizado por Chris Piech.
-			</p>
-</div>
-<hr/>
-<div class="row">
-<div class="col-md-12">
-<p>
-					Escribe un programa que dibuje esta imagen. Te recomendamos usar las constantes dadas, pero sientete libre de cambiarlas (o recolorear cualquier parte de la cara)</p>
-<p>
-<center>
-<img src="{{pathToRoot}}img/projects/robotFace/face.png" style="width:500px"/>
-</center>
-</p>
-<p>Te damos algunas constantes. Úsalas para no tener que usar números "mágicos" en el programa.</p>
-<p>
-<div class="well">
-<code style="font-size:12px">
-							/*El ancho de la cara del robot:*/
-							<br/>private static final int ANCHO_DE_CARA = 300;
-							<br/>
-<br/>/*La altura de la cara del robot:*/
-							<br/>private static final int ALTURA_DE_CARA = 350;
-							<br/>
-<br/>/*El diámetro de cada ojo robot:*/
-							<br/>private static final int DIÁMETRO_DE_OJOS = 70;
-							<br/>
-<br/>/*La distancia desde la parte superior de la cabeza hasta la parte superior de los ojos:*/
-							<br/>private static final int COMPENSACION_OJO_Y = 40;
-							<br/>
-<br/>/*El ancho de la boca:*/
-							<br/>private static final int ANCHO_DE_BOCA = 150;
-							<br/>
-<br/>/*La altura de la boca:*/
-							<br/>private static final int ALTURA_DE_BOCA = 30;
-							<br/>
-<br/>/*La distancia desde la parte superior de la cabeza hasta la parte superior de la boca:*/
-							<br/>private static final int COMPENSACION_BOCA_Y = 200;
-							<br/>
-<br/>/*La distancia desde la parte superior de la pantalla hasta la base de la etiqueta:*/
-							<br/>private static final int ETIQUETA_Y = 50;
-						</code>
-</div>
-</p>
-</div>
-</div>
-<div class="row">
-<div class="col-md-12">
-<h2>Solución</h2>
-<pre id="editor" style="height:1220px">/**
+/**
  *&nbsp;Dibujar cara
  * ------------
  *&nbsp;Dibuja una impresionante cara de robot, con
@@ -140,23 +80,4 @@ public class DibujarCara extends EsGraphics {
 		double x = (darAncho() - etiqueta.darAncho()) / 2;
 		agregar(etiqueta, x, ETIQUETA_Y);
 	}
-}</pre>
-<script charset="utf-8" src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript"></script>
-<script>
-    var editor = ace.edit("editor");
-   editor.setTheme('ace/theme/eclipse');
-   editor.getSession().setMode("ace/mode/java");
-   editor.setReadOnly(true);
-   editor.setShowPrintMargin(false);
-   editor.renderer.setShowGutter(false); 
-    /*editor.setTheme("ace/theme/eclipse");
-    editor.getSession().setMode("ace/mode/java");*/
-</script>
-</div>
-</div>
-
-		
-		%include templates/parts/footer.html
-
-</div>
-</body>
+}

@@ -9,20 +9,20 @@
 
 	<!-- Header --><div id="pageHeader">
 
-		<h1> Referencia Gráfica </h1>
+		<h1> Interfaces Gráficas Referencia </h1>
 		<p> Escrito por Eric Roberts y Lisa Yan </p>
 	</div>
 
 	<hr/>
 
-	<h2>Agregar y quitar de la ventana</h2>
-	Cuando creas objetos de tipo SObjeto, necesitas agregarlos a la ventana. Despues de crear los objetos con sus constructores, necesitas agregarlos para que se aparezcan en la ventana. Para eso, se usa estos métodos, sin ubicación o con ubicación respectivamente.
+	<h2>Agregar y quitar del canvas</h2>
+	Cuando creas objetos del tipo SObjeto, necesitas agregarlos al canvas. Después de crear los objetos con sus constructores, necesitas agregarlos para que se aparezcan en el canvas. Para eso, se usa estos métodos, sin ubicación o con ubicación respectivamente.
 	<div class="well"><code>
 agregar(<i class="codeText">objeto</i>) // en la ubicación que indica el objeto <br/>
-agregar(<i class="codeText">objeto</i>, <i class="codeText">x</i>, <i class="codeText">y</i>) // en la ubicación pasado
+agregar(<i class="codeText">objeto</i>, <i class="codeText">x</i>, <i class="codeText">y</i>) // en la ubicación indicada
 	</code></div>
 
-	También puedes quitar un objeto o quitar todo de la pantalla.
+	También puedes quitar un objeto o todos los objetos del canvas.
 	<div class="well"><code>
 quitar(<i class="codeText">objeto</i>) // quita este objeto<br/>
 quitarTodo() // quita todos los objetos que ya agregaste
@@ -30,39 +30,39 @@ quitarTodo() // quita todos los objetos que ya agregaste
 
 	Esos otros métodos de EsGraphics te puede servir también:
 	<div class="well"><code>
-pausa(<i class="codeText">millisegundos</i>) // pausa el código<br/>
-GObjeto darObjetoA(<i class="codeText">x</i>, <i class="codeText">y</i>) // retorna el objeto en esta ubicacion
+pausa(<i class="codeText">milisegundos</i>) // pausa el código<br/>
+SObjeto darObjetoA(<i class="codeText">x</i>, <i class="codeText">y</i>) // devuelve el objeto en esta ubicación
 	</code></div>
 
 	<h2>Constructores</h2>
 	<div>
-		Todos los objetos de la librería gráfica son tipos de SObjeto, y los constructores están mostrado aquí.
-		Los objetos se puede construir sin ubicación o con ubicación respectivamente.
-		En el constructor o cuando lo agregues, necesitas dar una ubicación. Si no haya ubicación, el punto por defecto seria (0, 0).
+		Todos los objetos de la librería de interfaces gráficas son tipos de SObjeto, y se muestran los constructores aquí.
+		Se puede construir sin ubicación o con ubicación respectivamente.
+		Necesitas especificar una ubicación cuando construyes un objeto o cuando lo agregas al canvas. Si no especificas la ubicación, por defecto será (0, 0).
 
 		<h3>SOvalo</h3>
-		Crea un ovalo en la ventana, con ancho y alto.
+		Crea un ovalo en el canvas, con ancho y alto.
 		<div class="well"><code>
 new SOvalo(<i class="codeText">ancho</i>, <i class="codeText">alto</i>)<br/>
 new SOvalo(<i class="codeText">x</i>, <i class="codeText">y</i>, <i class="codeText">ancho</i>, <i class="codeText">alto</i>)
 		</code></div>
 
 		<h3>SRect</h3>
-		Crea un rectángulo en la ventana, con ancho y alto.
+		Crea un rectángulo en el canvas, con ancho y alto.
 		<div class="well"><code>
 new SRect(<i class="codeText">ancho</i>, <i class="codeText">alto</i>)<br/>
 new SRect(<i class="codeText">x</i>, <i class="codeText">y</i>, <i class="codeText">ancho</i>, <i class="codeText">alto</i>)<br/>
 		</code></div>
 
-		<h3>SLabel</h3>
-		Crea una etiqueta en la ventana.
+		<h3>SEtiqueta</h3>
+		Crea una etiqueta en el canvas.
 		<div class="well"><code>
-new SLabel(<i class="codeText">etiqueta</i>)<br/>
-new SLabel(<i class="codeText">etiqueta</i>, <i class="codeText">x</i>, <i class="codeText">y</i>)
+new SEtiqueta(<i class="codeText">etiqueta</i>)<br/>
+new SEtiqueta(<i class="codeText">etiqueta</i>, <i class="codeText">x</i>, <i class="codeText">y</i>)
 		</code></div>
 
 <!-- 		<h3>SImagen</h3>
-		Crea una imágen en la ventana, puedes cargar el imagen de un archivo o tambien puedes pasar un arreglo de pixeles que representa los colores de un imagen.
+		Crea una imágen en el canvas, puedes cargar el imagen de un archivo o tambien puedes pasar un arreglo de pixeles que representa los colores de un imagen.
 		<div class="well"><code>
 new SImagen(<i class="codeText">archivo</i>)<br/>
 new SImagen(<i class="codeText">archivo</i>, <i class="codeText">x</i>, <i class="codeText">y</i>)<br/>
@@ -71,14 +71,14 @@ new SImagen(<i class="codeText">arregloDePixeles</i>, <i class="codeText">x</i>,
 		</code></div> -->
 
 		<h3>SLinea</h3>
-		Crea una linea en la ventana, pasando el punto inicio y el punto final.
+		Crea una línea en el canvas, indicando el punto inicio y el punto final.
 		<div class="well"><code>
 new SLinea(<i class="codeText">x0</i>, <i class="codeText">y0</i>, <i class="codeText">x1</i>, <i class="codeText">y1</i>)
 		</code></div>
 
 	</div>
 
-	<h2>Métodos de tipo SObjeto</h2>
+	<h2>Métodos del tipo SObjeto</h2>
 
 	Estos métodos se puede usar con todos los objetos gráficos.
 	<div class="well"><code>
@@ -88,32 +88,32 @@ double darAncho()<br/>
 double darAlto() 
 </br/><br/>
 
-cambiarUbicacion(<i class="codeText">i</i>, <i class="codeText">j</i>) // cambia la ubicacion para estar en punto i-j<br/>
+cambiarUbicacion(<i class="codeText">i</i>, <i class="codeText">j</i>) // cambia la ubicación para estar en punto (i,j)<br/>
 cambiarColor(<i class="codeText">color</i>)</br/><br/>
 
 cambiarVisible(<i class="codeText">visibleSiNo</i>)<br/>
 boolean esVisible()<br/>
 
-int darX() // devolver el parte X del punto de la esquina noroeste<br/>
-int darY() // devolver el parte Y del punto de la esquina noroeste<br/>
+int darX() // devolver la parte X del punto de la esquina noroeste<br/>
+int darY() // devolver la parte Y del punto de la esquina noroeste<br/>
 	</code></div>
 
-	Estos métodos se puede usar con GOval y GRect.
+	Estos métodos se puede usar con SOvalo y SRect.
 	<div class="well"><code>
 cambiarRelleno(<i class="codeText">rellenoSiNo</i>)</br/>
 boolean estaRelleno()<br/>
-cambiarColorRelleno(<i class="codeText">color</i>) // que color usamos para llenar <br/>
+cambiarColorRelleno(<i class="codeText">color</i>) // qué color usamos para llenar <br/>
 	</code></div>
 
-	Estos métodos se puede usar con GLabel.
+	Estos métodos se puede usar con SEtiqueta.
 	<div class="well"><code>
 cambiarTexto(<i class="codeText">etiqueta</i>)<br/> 
 cambiarFuente(<i class="codeText">fuente</i>)// por ejemplo Tahoma-24 <br/>
-double darAscension()<br/>
+double darAscenso()<br/>
 double darDescenso()<br/>
 	</code></div>
 
-	Estos métodos se puede usar con GLinea.
+	Estos métodos se puede usar con SLinea.
 	<div class="well"><code>
 cambiarPuntoPrincipio(<i class="codeText">x</i>, <i class="codeText">y</i>)<br/>
 cambiarPuntoFinal(<i class="codeText">x</i>, <i class="codeText">y</i>)<br/>
@@ -124,7 +124,7 @@ double darPuntoFinalY()<br/>
 	</code></div>
 
 
-	<div>Instrucciones de usar mouse viene pronto.</div>
+	<div>Instrucciones de usar mouse vienen pronto.</div>
 <!-- </div></body><p> Documentación completa: <br><a href="http://cs.stanford.edu/people/eroberts/jtf/javadoc/student/index.html">http://cs.stanford.edu/people/eroberts/jtf/javadoc/student/index.html</a></br></p><h3> EtiquetaG </h3><p> Recuerde que escogerLocalización (x, y) establece el <i>origen</i> de un GRect, GOval o LíneaG en las coordenadas (x, y), donde el origen se define como la esquina superior izquierda. EtiquetaG tiene la misma definición de origen, pero la altura se define un poco más alta que la altura del texto real. Aquí hay una vista detallada de todas las diferentes definiciones de altura para EtiquetaG: </p><center><img src="{{pathToRoot}}img/handouts/graphics/GLabelGeometry.png" style="width:700px;"/></center><br><p> Nota al margen: el origen se encuentra en la parte central izquierda de la imagen de arriba, porque estamos tratando con una etiquetaG multilínea. Para GLabels con líneas simples, el origen es la parte superior izquierda. </p><p> Entonces, para centrar verticalmente una EtiquetaG, usaríamos el <i>ascenso</i> de una EtiquetaG: </p><div class="well"><code>double y = obtenerAltura()/2 + etiqueta.obtenerAscenso()/2;</code></div><h3> GImagen </h3><p>¡También puedes subir tus propias imágenes y agregarlas a tu programa de gráficos! </p><p> Algunos consejos: </p><ul><li> Guarde su imagen en la misma carpeta &quot;fuente&quot; que contiene su archivo java. </li><li> Encuentre la ubicación de su archivo java en Eclipse, haga clic con el botón derecho en el archivo java en el Explorador de proyectos (el menú de la izquierda) y vaya a &quot;Propiedades&quot;. </li><li> Si aún tiene errores, asegúrese de poder ver el archivo de imagen en Eclipse. Actualice el proyecto (haga clic con el botón derecho en la carpeta del proyecto en Eclipse y seleccione &quot;Actualizar&quot;). </li></ul></br> -->
 
 		

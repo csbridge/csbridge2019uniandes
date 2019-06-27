@@ -29,6 +29,13 @@ public class SLinea extends GLine implements SObjeto{
 		return getEndPoint().getY();
 	}
 
+	public double darX() {
+		return darPuntoPrincipioX();
+	}
+	public double darY() {
+		return darPuntoPrincipioY();
+	}
+
 	public void moverse(double dx, double dy) {
 		move(dx, dy);
 	}
@@ -52,7 +59,7 @@ public class SLinea extends GLine implements SObjeto{
 	public void cambiarVisible(boolean visible) {
 		setVisible(visible);
 	}
-	public boolean esVisible() {
+	public boolean estaVisible() {
 		return isVisible();
 	}
 

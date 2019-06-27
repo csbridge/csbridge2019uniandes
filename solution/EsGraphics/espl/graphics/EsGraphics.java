@@ -32,17 +32,17 @@ public abstract class EsGraphics extends GraphicsProgram{
 		setBackground(c);
 	}
 	
-	/* Escuchadores de raton. */
+	/* Listeners de raton. */
 	public void mouseClicked(MouseEvent e) { mouseClickeado(e); }
 	public void mouseClickeado(MouseEvent e) { /* overload */ }
 	public void mouseMoved(MouseEvent e) { mouseMovido(e); }
 	public void mouseMovido(MouseEvent e) { /* overload */ }
 	public void mouseDragged(MouseEvent e) { mouseArrastrado(e); }
 	public void mouseArrastrado(MouseEvent e) { /* overload */ }
-	public void mouseEntered(MouseEvent e) { mouseEntrado(e); }
-	public void mouseEntrado(MouseEvent e) { /* overload */ }
-	public void mouseExited(MouseEvent e) { mouseSalido(e); }
-	public void mouseSalido(MouseEvent e) { /* overload */ }
+	public void mouseEntered(MouseEvent e) { mouseEntra(e); }
+	public void mouseEntra(MouseEvent e) { /* overload */ }
+	public void mouseExited(MouseEvent e) { mouseSale(e); }
+	public void mouseSale(MouseEvent e) { /* overload */ }
 	public void mousePressed(MouseEvent e) { mousePulsado(e); }
 	public void mousePulsado(MouseEvent e) { /* overload */ }
 	public void mouseReleased(MouseEvent e) { mouseSoltado(e); }

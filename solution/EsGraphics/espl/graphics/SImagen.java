@@ -18,7 +18,7 @@ public class SImagen extends GImage implements SObjeto{
 	}
 
 	public SImagen(int[][] arregloDePixeles, double x, double y) {
-		super(arregloDePixeles);
+		super(arregloDePixeles, x, y);
 	}
 
 	public void guardarImagen(String nombreDeArchivo) {
@@ -27,6 +27,13 @@ public class SImagen extends GImage implements SObjeto{
 
 	public int[][] darArregloDePixeles() {
 		return getPixelArray();
+	}
+
+	public double darX() {
+		return getX();
+	}
+	public double darY() {
+		return getY();
 	}
 
 	/* Utilidades de pixeles. */
@@ -76,7 +83,7 @@ public class SImagen extends GImage implements SObjeto{
 	public void cambiarVisible(boolean visible) {
 		setVisible(visible);
 	}
-	public boolean esVisible() {
+	public boolean estaVisible() {
 		return isVisible();
 	}
 

@@ -48,14 +48,14 @@ SOvalo ovalo2 = new SOvalo(<i class="codeText">x</i>, <i class="codeText">y</i>,
 
             <h3>SRect</h3> Crea un rectángulo en el canvas, con ancho y alto.
             <div class="well"><code>
-new SRect(<i class="codeText">ancho</i>, <i class="codeText">alto</i>)<br/>
-new SRect(<i class="codeText">x</i>, <i class="codeText">y</i>, <i class="codeText">ancho</i>, <i class="codeText">alto</i>)<br/>
+SRect rect1 = new SRect(<i class="codeText">ancho</i>, <i class="codeText">alto</i>)<br/>
+SRect rect2 = new SRect(<i class="codeText">x</i>, <i class="codeText">y</i>, <i class="codeText">ancho</i>, <i class="codeText">alto</i>)<br/>
 		</code></div>
 
             <h3>SEtiqueta</h3> Crea una etiqueta en el canvas.
             <div class="well"><code>
-new SEtiqueta(<i class="codeText">etiqueta</i>)<br/>
-new SEtiqueta(<i class="codeText">etiqueta</i>, <i class="codeText">x</i>, <i class="codeText">y</i>)
+SEtiqueta etiqueta1 = new SEtiqueta(<i class="codeText">etiqueta</i>)<br/>
+SEtiqueta etiqueta2 = new SEtiqueta(<i class="codeText">etiqueta</i>, <i class="codeText">x</i>, <i class="codeText">y</i>)
 		</code></div>
 
             <!-- 		<h3>SImagen</h3>
@@ -69,7 +69,7 @@ new SImagen(<i class="codeText">arregloDePixeles</i>, <i class="codeText">x</i>,
 
             <h3>SLinea</h3> Crea una línea en el canvas, indicando el punto inicio y el punto final.
             <div class="well"><code>
-new SLinea(<i class="codeText">x0</i>, <i class="codeText">y0</i>, <i class="codeText">x1</i>, <i class="codeText">y1</i>)
+SLinea linea = new SLinea(<i class="codeText">x0</i>, <i class="codeText">y0</i>, <i class="codeText">x1</i>, <i class="codeText">y1</i>)
 		</code></div>
 
         </div>
@@ -78,8 +78,8 @@ new SLinea(<i class="codeText">x0</i>, <i class="codeText">y0</i>, <i class="cod
         <div class="well"><code>
 void moverse(<i class="codeText">dx</i>, <i class="codeText">dy</i>) // mueve el objeto en los axises x-y respectivamente</br/><br/>
 
-double ancho = darAncho()<br/>
-double alto = darAlto() 
+double ancho = linea.darAncho()<br/>
+double alto = linea.darAlto() 
 </br/><br/>
 
 cambiarUbicacion(<i class="codeText">i</i>, <i class="codeText">j</i>) // cambia la ubicación para estar en punto (i,j)<br/>

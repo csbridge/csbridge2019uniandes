@@ -18,7 +18,7 @@ public class SImagen extends GImage implements SObjeto{
 	}
 
 	public SImagen(int[][] arregloDePixeles, double x, double y) {
-		super(arregloDePixeles);
+		super(arregloDePixeles, x, y);
 	}
 
 	public void guardarImagen(String nombreDeArchivo) {

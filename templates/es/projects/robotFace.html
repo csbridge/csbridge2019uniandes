@@ -94,10 +94,10 @@ public class DibujarCara extends ProgramaDeGraficos {
 	private void dibujarLaCabeza() {
 		double x = (obtenerAncho() - ANCHO_DE_CARA) / 2;
 		double y = (obtenerAltura() - ALTURA_DE_LA_CARA) / 2;
-		GRect cabeza = new GRect(x, y, ANCHO_DE_CARA, ALTURA_DE_LA_CARA);
-		cabeza.conjuntoLleno(true);
-		cabeza.establecerColorDeRelleno(Color.NARANJA);
-		añadir(cabeza);
+		SRect cabeza = new SRect(x, y, ANCHO_DE_CARA, ALTURA_DE_LA_CARA);
+		cabeza.cambiarRelleno(true);
+		cabeza.cambiarColor(Color.NARANJA);
+		agregar(cabeza);
 	}
 	
 	private void dibujarOjoIzquierdo() {
@@ -106,10 +106,10 @@ public class DibujarCara extends ProgramaDeGraficos {
 		double cabezaY = (obtenerAltura() - ALTURA_DE_LA_CARA) / 2;
 		double x =  cabezaX + espaciamientoDeLosOjos;
 		double y = cabezaY + EYE_Y_OFFSET;
-		GOval ojo = new GOval(x, y, DIÁMETRO_DE_OJOS, DIÁMETRO_DE_OJOS);
-		ojo.conjuntoLleno(true);
-		ojo.establecerColorDeRelleno(Color.AZUL);
-		añadir(ojo);
+		SOval ojo = new SOval(x, y, DIÁMETRO_DE_OJOS, DIÁMETRO_DE_OJOS);
+		ojo.cambiarRelleno(true);
+		ojo.cambiarColor(Color.AZUL);
+		agregar(ojo);
 	}
 	
 	private void dibujarOjoDerecho() {
@@ -118,10 +118,10 @@ public class DibujarCara extends ProgramaDeGraficos {
 		double cabezaY = (obtenerAltura() - ALTURA_DE_LA_CARA) / 2;
 		double x =  cabezaX + espaciamientoDeLosOjos * 2 + DIÁMETRO_DE_OJOS;
 		double y = cabezaY + EYE_Y_OFFSET;
-		GOval ojo = new GOval(x, y, DIÁMETRO_DE_OJOS, DIÁMETRO_DE_OJOS);
-		ojo.conjuntoLleno(true);
-		ojo.establecerColorDeRelleno(Color.VERDE);
-		añadir(ojo);
+		SOval ojo = new SOval(x, y, DIÁMETRO_DE_OJOS, DIÁMETRO_DE_OJOS);
+		ojo.cambiarRelleno(true);
+		ojo.cambiarColor(Color.VERDE);
+		agregar(ojo);
 	}
 	
 	private void dibujarBoca() {
@@ -129,16 +129,16 @@ public class DibujarCara extends ProgramaDeGraficos {
 		double cabezaY = (obtenerAltura() - ALTURA_DE_LA_CARA) / 2;
 		double x = cabezaX + (ANCHO_DE_CARA - ANCHO_DE_BOCA) / 2;
 		double y = cabezaY + MOUTH_Y_OFFSET;
-		GRect boca = new GRect(x, y, ANCHO_DE_BOCA, ALTURA_DE_LA_BOCA);
-		boca.conjuntoLleno(true);
-		añadir(boca);
+		SRect boca = new SRect(x, y, ANCHO_DE_BOCA, ALTURA_DE_LA_BOCA);
+		boca.cambiarRelleno(true);
+		agregar(boca);
 	}
 	
 	private void dibujarEtiqueta() {
-		EtiquetaG etiqueta = new EtiquetaG("Cara de robot");
-		etiqueta.establecerFuente("Mensajero-50");
+		SLabel etiqueta = new SLabel("Cara de robot");
+		etiqueta.cambiarFont("Mensajero-50");
 		double x = (obtenerAncho() - etiqueta.obtenerAncho()) / 2;
-		añadir(etiqueta, x, ETIQUETA_Y);
+		agregar(etiqueta, x, ETIQUETA_Y);
 	}
 }</pre>
 <script charset="utf-8" src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript"></script>

@@ -57,17 +57,10 @@ public class SRect extends GRect implements SObjeto{
 		setSize(ancho, alto);
 	}
 
-	public double cambiarAncho(double ancho) {
-		cambiarTamano(ancho, darAlto())
-	}
-	
-	public double cambiarAlto(double alto) {
-		cambiarAlto(darAncho(), alto);
-	}
-
 	public void cambiarVisible(boolean visible) {
 		setVisible(visible);
 	}
+
 	public boolean estaVisible() {
 		return isVisible();
 	}

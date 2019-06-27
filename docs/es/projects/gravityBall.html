@@ -178,7 +178,6 @@
 
 	          	<li><a href="../../es/projects/halfGreen.html">Half Green</a></li>
 
-							<!--
 	          	<li class="divider"></li>
 							<li><a href="../../es/projects/rocketShip.html">Rockets</a></li>
 
@@ -191,6 +190,8 @@
 
               <li class="divider"></li>
 	            <li><a href="../../projects/breakoutOnline.html">Breakout Online</a></li>
+
+	        -->
 							
 	          </ul>
 	        </li>
@@ -200,8 +201,8 @@
 	          <ul class="dropdown-menu">
 	          	<li><a href="../../slides/Welcome.pdf">Karel</a></li>
 	          	<li><a href="../../slides/ControlFlow.pdf">Flujo de Control</a></li>
-	          	<!--<li><a href="../../slides/Variables.pdf">Variables</a></li>
-	          	<li><a href="../../slides/Graphics.pdf">Graphics</a></li>
+	          	<li><a href="../../slides/Variables.pdf">Variables</a></li>
+	          	<!--<li><a href="../../slides/Graphics.pdf">Graphics</a></li>
 	          	<li><a href="../../slides/Animation.pdf">Animation</a></li>
 	          	<li><a href="../../slides/Methods.pdf">Methods</a></li>
 	          	<li><a href="../../slides/Review.pdf">Review</a></li>
@@ -322,7 +323,7 @@
 <div class="row">
 <div class="col-md-12">
 <p>
-				Makes a ball that bounces as if under the influence of gravity.
+				Hace una bola que rebota como si estuviera bajo la influencia de la gravedad.
 			</p>
 <p>
 <center>
@@ -334,9 +335,9 @@
 <div class="row">
 <div class="col-md-12">
 <h2>Solution</h2>
-<pre id="editor" style="height:580px">public class BolaDeGravedad extends ProgramaDeGraficos {
+<pre id="editor" style="height:580px">public class BolaDeGravedad extends EsGraphics {
 
-    private static final int TAMAÑO = 20;
+    private static final int TAMANO = 20;
     private static final int RETRASAR = 20;
     
     private static final double GRAVEDAD = 0.5;
@@ -344,9 +345,9 @@
 	
 	public void run() {
 		// Dibuja una bola en la esquina superior derecha
-		GOval oval = new GOval(0,0,TAMAÑO, TAMAÑO);
-		oval.conjuntoLleno(true);
-		añadir(oval);
+		SOval oval = new SOval(0,0,TAMANO, TAMANO);
+		oval.cambiarRelleno(true);
+		agregar(oval);
 		
 		// Declarar variables de velocidad.
 		double vx = 3;
@@ -357,7 +358,7 @@
 			vy = vy + GRAVEDAD;
 			
 			// ¿Debe rebotar la pelota?
-			if(oval.obtenerY() &gt; (obtenerAltura() - TAMAÑO) &amp;&amp; vy &gt; 0) {
+			if(oval.darY() &gt; (darAltura() - TAMANO) &amp;&amp; vy &gt; 0) {
 				vy = vy * -MOJADURA;
 			}
 			

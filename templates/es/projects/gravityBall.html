@@ -24,7 +24,7 @@
 <div class="row">
 <div class="col-md-12">
 <p>
-				Makes a ball that bounces as if under the influence of gravity.
+				Hace una bola que rebota como si estuviera bajo la influencia de la gravedad.
 			</p>
 <p>
 <center>
@@ -36,9 +36,9 @@
 <div class="row">
 <div class="col-md-12">
 <h2>Solution</h2>
-<pre id="editor" style="height:580px">public class BolaDeGravedad extends ProgramaDeGraficos {
+<pre id="editor" style="height:580px">public class BolaDeGravedad extends EsGraphics {
 
-    private static final int TAMAÑO = 20;
+    private static final int TAMANO = 20;
     private static final int RETRASAR = 20;
     
     private static final double GRAVEDAD = 0.5;
@@ -46,9 +46,9 @@
 	
 	public void run() {
 		// Dibuja una bola en la esquina superior derecha
-		GOval oval = new GOval(0,0,TAMAÑO, TAMAÑO);
-		oval.conjuntoLleno(true);
-		añadir(oval);
+		SOval oval = new SOval(0,0,TAMANO, TAMANO);
+		oval.cambiarRelleno(true);
+		agregar(oval);
 		
 		// Declarar variables de velocidad.
 		double vx = 3;
@@ -59,7 +59,7 @@
 			vy = vy + GRAVEDAD;
 			
 			// ¿Debe rebotar la pelota?
-			if(oval.obtenerY() &gt; (obtenerAltura() - TAMAÑO) &amp;&amp; vy &gt; 0) {
+			if(oval.darY() &gt; (darAltura() - TAMANO) &amp;&amp; vy &gt; 0) {
 				vy = vy * -MOJADURA;
 			}
 			

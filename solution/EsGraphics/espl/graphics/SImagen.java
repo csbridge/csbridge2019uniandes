@@ -31,10 +31,10 @@ public class SImagen extends GImage implements SObjeto{
 
 	/* Utilidades de pixeles. */
 	public int crearRGBPixel(int rojo, int verde, int azul) {
-		return createRGBPixel(rojo, verde, azul)
+		return createRGBPixel(rojo, verde, azul);
 	}
 	public int crearRGBPixel(int rojo, int verde, int azul, int alpha) {
-		return createRGBPixel(rojo, verde, azul, alpha)
+		return createRGBPixel(rojo, verde, azul, alpha);
 	}
 	public int darAlpha(int pixel) { return getAlpha(pixel); }
 	public int darRojo(int pixel) { return getRed(pixel); }
@@ -71,14 +71,7 @@ public class SImagen extends GImage implements SObjeto{
 	public void cambiarTamano(double ancho, double alto) {
 		setSize(ancho, alto);
 	}
-
-	public double cambiarAncho(double ancho) {
-		cambiarTamano(ancho, darAlto())
-	}
 	
-	public double cambiarAlto(double alto) {
-		cambiarAlto(darAncho(), alto);
-	}
 	
 	public void cambiarVisible(boolean visible) {
 		setVisible(visible);

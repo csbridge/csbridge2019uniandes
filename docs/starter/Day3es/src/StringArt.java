@@ -19,10 +19,10 @@ public class StringArt extends EsGraphics {
 	public static final int APPLICATION_HEIGHT = 400;
 	
 	/** The number of pixels between end points of the line **/
-	public static final int LINE_SPACING = 20;
+	public static final int ESPACIADO_ENTRE_LÍNEAS = 20;
 	
 	/** The number of lines we will have to draw **/
-	public static final int NUM_LINES = APPLICATION_WIDTH / LINE_SPACING;
+	public static final int NUM_LINEAS = APPLICATION_WIDTH / ESPACIADO_ENTRE_LÍNEAS;
 	
 	public void run() {
 		// your code here...

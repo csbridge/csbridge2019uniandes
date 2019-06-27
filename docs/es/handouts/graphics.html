@@ -162,17 +162,16 @@
 	           
 	            
 	            <li><a href="../../es/projects/robotFace.html">Robot Face</a></li>
-
+	            <li><a href="../../es/projects/drawPeople.html">Draw People</a></li>
+	            <li><a href="../../es/projects/halfGreen.html">Half Green</a></li>
+	            <li><a href="../../es/projects/goCenter.html">Go To Center</a></li>
 	            
 
-	            <!--<li><a href="../../es/projects/goCenter.html">Go To Center</a></li>
+	            <!--
 
 	            <li><a href="../../es/projects/gravityBall.html">Gravity Ball</a></li>
 
 	          	<li><a href="../../es/projects/averageMethod.html">Average Method</a></li>	
-	          	<li><a href="../../es/projects/drawPeople.html">Draw People</a></li>	
-
-	          	<li><a href="../../es/projects/halfGreen.html">Half Green</a></li>
 
 	          	<li class="divider"></li>
 							<li><a href="../../es/projects/rocketShip.html">Rockets</a></li>
@@ -373,20 +372,20 @@ SLinea linea = new SLinea(<i class="codeText">x0</i>, <i class="codeText">y0</i>
 
         <h2>Métodos del tipo SObjeto</h2> Estos métodos se puede usar con todos los objetos gráficos.
         <div class="well"><code>
-objecto.moverse(<i class="codeText">dx</i>, <i class="codeText">dy</i>) // mueve el objeto en los axises x-y respectivamente</br/><br/>
+objeto.moverse(<i class="codeText">dx</i>, <i class="codeText">dy</i>) // mueve el objeto en los axises x-y respectivamente</br/><br/>
 
-double ancho = objecto.darAncho()<br/>
-double alto = objecto.darAlto() 
+double ancho = objeto.darAncho()<br/>
+double alto = objeto.darAlto() 
 </br/><br/>
 
-objecto.cambiarUbicacion(<i class="codeText">i</i>, <i class="codeText">j</i>) // cambia la ubicación para estar en punto (i,j)<br/>
-objecto.cambiarColor(<i class="codeText">color</i>)</br/><br/>
+objeto.cambiarUbicacion(<i class="codeText">i</i>, <i class="codeText">j</i>) // cambia la ubicación para estar en punto (i,j)<br/>
+objeto.cambiarColor(<i class="codeText">color</i>)</br/><br/>
 
-objecto.cambiarVisible(<i class="codeText">visibleSiNo</i>)<br/>
-boolean visible = objecto.esVisible()<br/>
+objeto.cambiarVisible(<i class="codeText">visibleSiNo</i>)<br/>
+boolean visible = objeto.esVisible()<br/>
 
-int x = objecto.darX() // devolver la parte X del punto de la esquina noroeste<br/>
-int y = objecto.darY() // devolver la parte Y del punto de la esquina noroeste<br/>
+int x = objeto.darX() // devolver la parte X del punto de la esquina noroeste<br/>
+int y = objeto.darY() // devolver la parte Y del punto de la esquina noroeste<br/>
 	</code></div>
 
         Estos métodos se puede usar con SOvalo y SRect.

@@ -312,13 +312,14 @@
             <h1> Pelota que rebota </h1>
             <p> Basado en un ejemplo de Mehran Sahami </p>
             <p> Folletos: <a href="../../es/handouts/graphics.html">Referencia Gráfica</a>
-                <br/> Ejemplo de trabajo: <a href="../../es/projects/mysterySquare.html">Misterio cuadrado</a>, <a href="../../es/projects/gravityBall.html">Bola de gravedad</a>, <a href="../../es/projects/goCenter.html">Ir al centro</a></p>
+                <br/> Ejemplo solucionado: <a href="../../es/projects/mysterySquare.html">Cuadrado misterioso</a>, <a href="../../es/projects/gravityBall.html">Bola de gravedad</a>, <a href="../../es/projects/goCenter.html">Ir al centro</a></p>
         </div>
         <hr/>
         <div class="row">
             <div class="col-md-12">
-                <p> Escriba un ProgramaDeGraficos que cree una bola (una instancia de GOval) y la haga rebotar en la pantalla. Ignore la gravedad y tenga una colisión con la pared derecha o izquierda que refleja la dirección x de la bola, y tenga una colisión con la pared superior o inferior para cambiar la dirección y de la bola. </p>
-                <p> La siguiente figura muestra una bola que se mueve a través de un rebote con la pared inferior. </p>
+                <p> Escribe un GraphicsProgram que cree una pelota (una instancia de SOval) y la haga rebotar en la pantalla. Si la pelota rebota contra las paredes izquierda o derecha, se refleja la dirección x de la bola. Si la pelota rebota contra las paredes superior e inferior, la bola cambia de dirección. No se tiene en cuenta la gravedad.</p>
+                <p><b> Importante: </b>para que desarrolles con éxito el ejercicio es necesario que revises cada una de las metas que se muestran a continuación. Si divides tu programa en partes más pequeñas será más fácil crearlo. </p>
+                <p> La siguiente figura muestra una pelota que se mueve tras rebotar con la pared inferior. </p>
                 <p>
                     <center><img src="../../img/projects/bouncingBall/demo.png" style="width:500px" /></center>
                 </p>
@@ -326,28 +327,28 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h2> Hito 1: Crear una bola </h2>
-                <p> Puede ser de cualquier tamaño. </p>
+                <h2> Meta #1: Crear una pelota </h2>
+                <p> Crea una pelota de cualquier tamaño.</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h2> Hito 2: Hazlo moverse </h2>
-                <p> Ciclo for siempre y en el bucle actualiza el balón y pausa. Puedes pausar usando el comando:
+                <h2> Meta #2: Haz que se mueva </h2>
+                <p> Crea un ciclo infinito y dentro del ciclo actualiza la pelota y pausa. Puedes pausar usando el método:
                     <div class="well"><code>pausa( <i>milisegundos</i>);</code></div>¡Si no hace una pausa, la computadora animará más rápido para que el ojo humano pueda ver el movimiento! </p>
-                <p> También hay un método para mover un GOval (o un GRect):
+                <p> También hay un método para mover un SOval (o un SRect):
                     <div class="well"><code><i>objeto</i>.moverse( <i>dx</i>, <i>dy</i>);</code></div><i>dx</i> es el número de píxeles que el objeto se moverá en la dirección x.
                     <br/><i>dy</i> es el número de píxeles que el objeto se moverá en la dirección y. </p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h2> Hito 3: Rebote </h2>
+                <h2> Meta #3: Rebote </h2>
                 <p> Ahora, antes de actualizar la posición de la bola, debe verificar si la bola ha chocado con la pared y, de ser así, debe actualizar la dirección en la que se está moviendo. </p>
-                <p> Las reflexiones deben seguir la regla de que el ángulo de incidencia es igual al ángulo de reflexión. Esto resulta ser fácil de implementar. Simplemente gira la dirección x si golpeas una pared izquierda o derecha y gira la dirección y si golpeas una pared inferior o superior </p>
-                <p>¿Cómo averiguas la posición de la pelota? Puedes usar los métodos: </p>
+                <p> Las reflexiones deben seguir la regla de que el ángulo de incidencia es igual al ángulo de reflexión. Esto resulta ser fácil de implementar, simplemente gira la dirección <code>x</code> si golpeas una pared izquierda o derecha y gira la dirección <code>y</code> si golpeas una pared inferior o superior </p>
+                <p>¿Cómo sabes la posición de la pelota? Puedes usar los métodos: </p>
                 <div class="well"><code><i>objeto</i>.darX(); <br/><i>objeto</i>.darY();</code></div>
-                <p> Asegúrate de revisar las demostraciones: <a href="../../es/projects/gravityBall.html">Gravity Ball</a> and <a href="../../es/projects/goCenter.html">Go Center</a></p>. </div>
+                <p> Asegúrate de revisar las demostraciones: <a href="../../es/projects/gravityBall.html">Gravity Ball</a> and <a href="../../es/projects/goCenter.html">Go Center</a>.</p> </div>
         </div>
 
 <hr>

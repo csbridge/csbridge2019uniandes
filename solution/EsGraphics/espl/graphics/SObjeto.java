@@ -2,6 +2,8 @@ package graphics;
 import java.awt.Color;
 
 public interface SObjeto {
+	public double darX();
+	public double darY();
 	public void cambiarColor(Color c);
 	public void cambiarUbicacion(double i, double j);
 	public void moverse(double dx, double dy);

@@ -29,6 +29,13 @@ public class SImagen extends GImage implements SObjeto{
 		return getPixelArray();
 	}
 
+	public double darX() {
+		return getX();
+	}
+	public double darY() {
+		return getY();
+	}
+
 	/* Utilidades de pixeles. */
 	public int crearRGBPixel(int rojo, int verde, int azul) {
 		return createRGBPixel(rojo, verde, azul);

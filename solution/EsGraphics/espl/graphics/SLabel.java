@@ -3,20 +3,19 @@ import java.awt.Color;
 
 import acm.graphics.GLabel;
 
-public class SEtiqueta extends GLabel implements SObjeto {
+public class SLabel extends GLabel implements SObjeto{
 
-	public SEtiqueta(String str) {
+	public SLabel(String str) {
 		super(str);
 	}
 	
-	public SEtiqueta(String str, double x, double y) {
+	public SLabel(String str, double x, double y) {
 		super(str, x, y);
 	}
 	
 	public double darAscension() {
 		return getAscent();
 	}
-	
 	public double darDescenso() {
 		return getDescent();
 	}
@@ -37,8 +36,6 @@ public class SEtiqueta extends GLabel implements SObjeto {
 	public double darY() {
 		return getY();
 	}
-	
-	
 
 	public void moverse(double dx, double dy) {
 		move(dx, dy);

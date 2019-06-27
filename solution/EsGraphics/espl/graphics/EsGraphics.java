@@ -16,8 +16,8 @@ public abstract class EsGraphics extends GraphicsProgram{
 		add((GObject)obj);
 	}
 	
-	public void agregar(GObject obj, double x, double y) {
-		add(obj, x, y);
+	public void agregar(SObjeto obj, double x, double y) {
+		add((GObject)obj, x, y);
 	}
 	
 	public void quitar(SObjeto obj) {
@@ -26,6 +26,10 @@ public abstract class EsGraphics extends GraphicsProgram{
 	
 	public void quitarTodo() {
 		removeAll();
+	}
+
+	public void cambiarFondo(Color c) {
+		setBackground(c);
 	}
 	
 	/* Escuchadores de raton. */

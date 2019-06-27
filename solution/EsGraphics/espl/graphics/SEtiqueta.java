@@ -13,7 +13,7 @@ public class SEtiqueta extends GLabel implements SObjeto {
 		super(str, x, y);
 	}
 	
-	public double darAscension() {
+	public double darAscenso() {
 		return getAscent();
 	}
 	

@@ -373,20 +373,20 @@ SLinea linea = new SLinea(<i class="codeText">x0</i>, <i class="codeText">y0</i>
 
         <h2>Métodos del tipo SObjeto</h2> Estos métodos se puede usar con todos los objetos gráficos.
         <div class="well"><code>
-void moverse(<i class="codeText">dx</i>, <i class="codeText">dy</i>) // mueve el objeto en los axises x-y respectivamente</br/><br/>
+objecto.moverse(<i class="codeText">dx</i>, <i class="codeText">dy</i>) // mueve el objeto en los axises x-y respectivamente</br/><br/>
 
 double ancho = objecto.darAncho()<br/>
 double alto = objecto.darAlto() 
 </br/><br/>
 
-cambiarUbicacion(<i class="codeText">i</i>, <i class="codeText">j</i>) // cambia la ubicación para estar en punto (i,j)<br/>
-cambiarColor(<i class="codeText">color</i>)</br/><br/>
+objecto.cambiarUbicacion(<i class="codeText">i</i>, <i class="codeText">j</i>) // cambia la ubicación para estar en punto (i,j)<br/>
+objecto.cambiarColor(<i class="codeText">color</i>)</br/><br/>
 
-cambiarVisible(<i class="codeText">visibleSiNo</i>)<br/>
-boolean visible = esVisible()<br/>
+objecto.cambiarVisible(<i class="codeText">visibleSiNo</i>)<br/>
+boolean visible = objecto.esVisible()<br/>
 
-int x = darX() // devolver la parte X del punto de la esquina noroeste<br/>
-int y = darY() // devolver la parte Y del punto de la esquina noroeste<br/>
+int x = objecto.darX() // devolver la parte X del punto de la esquina noroeste<br/>
+int y = objecto.darY() // devolver la parte Y del punto de la esquina noroeste<br/>
 	</code></div>
 
         Estos métodos se puede usar con SOvalo y SRect.

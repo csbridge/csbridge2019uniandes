@@ -24,13 +24,13 @@
 <div class="row">
 <div class="col-md-12">
 <p>
-					Write a program that draws this picture. You should use the constants provided, but feel free to change them (or recolor any part of the face)</p>
+					Escribe un programa que dibuje esta imagen. Te recomendamos usar las constantes dadas, pero sientete libre de cambiarlas (o recolorear cualquier parte de la cara)</p>
 <p>
 <center>
 <img src="{{pathToRoot}}img/projects/robotFace/face.png" style="width:500px"/>
 </center>
 </p>
-<p>A few constants are provided. Use them so that you don't have "magic" numbers in your program.</p>
+<p>Te damos algunas constantes. Úsalas para no tener que usar números "mágicos" en el programa.</p>
 <p>
 <div class="well">
 <code style="font-size:12px">
@@ -44,16 +44,16 @@
 							<br/>private static final int DIÁMETRO_DE_OJOS = 70;
 							<br/>
 <br/>/*La distancia desde la parte superior de la cabeza hasta la parte superior de los ojos:*/
-							<br/>private static final int EYE_Y_OFFSET = 40;
+							<br/>private static final int COMPENSACION_OJO_Y = 40;
 							<br/>
 <br/>/*El ancho de la boca:*/
 							<br/>private static final int ANCHO_DE_BOCA = 150;
 							<br/>
 <br/>/*La altura de la boca:*/
-							<br/>private static final int ALTURA_DE_LA_BOCA = 30;
+							<br/>private static final int ALTURA_DE_BOCA = 30;
 							<br/>
 <br/>/*La distancia desde la parte superior de la cabeza hasta la parte superior de la boca:*/
-							<br/>private static final int MOUTH_Y_OFFSET = 200;
+							<br/>private static final int COMPENSACION_BOCA_Y = 200;
 							<br/>
 <br/>/*La distancia desde la parte superior de la pantalla hasta la base de la etiqueta:*/
 							<br/>private static final int ETIQUETA_Y = 50;
@@ -64,7 +64,7 @@
 </div>
 <div class="row">
 <div class="col-md-12">
-<h2>Solution</h2>
+<h2>Solución</h2>
 <pre id="editor" style="height:1220px">/**
  *&nbsp;Dibujar cara
  * ------------
@@ -77,10 +77,10 @@ public class DibujarCara extends ProgramaDeGraficos {
 	private static final int ANCHO_DE_CARA = 300;
 	private static final int ALTURA_DE_LA_CARA = 350;
 	private static final int DIÁMETRO_DE_OJOS = 70;
-	private static final int EYE_Y_OFFSET = 40;
+	private static final int COMPENSACION_OJO_Y = 40;
 	private static final int ANCHO_DE_BOCA = 150;
-	private static final int ALTURA_DE_LA_BOCA = 30;
-	private static final int MOUTH_Y_OFFSET = 200;
+	private static final int ALTURA_DE_BOCA = 30;
+	private static final int COMPENSACION_BOCA_Y = 200;
 	private static final int ETIQUETA_Y = 50;
 
 	public void run() {
@@ -105,7 +105,7 @@ public class DibujarCara extends ProgramaDeGraficos {
 		double cabezaX = (obtenerAncho() - ANCHO_DE_CARA) / 2;
 		double cabezaY = (obtenerAltura() - ALTURA_DE_LA_CARA) / 2;
 		double x =  cabezaX + espaciamientoDeLosOjos;
-		double y = cabezaY + EYE_Y_OFFSET;
+		double y = cabezaY + COMPENSACION_OJO_Y;
 		SOval ojo = new SOval(x, y, DIÁMETRO_DE_OJOS, DIÁMETRO_DE_OJOS);
 		ojo.cambiarRelleno(true);
 		ojo.cambiarColor(Color.AZUL);
@@ -117,7 +117,7 @@ public class DibujarCara extends ProgramaDeGraficos {
 		double cabezaX = (obtenerAncho() - ANCHO_DE_CARA) / 2;
 		double cabezaY = (obtenerAltura() - ALTURA_DE_LA_CARA) / 2;
 		double x =  cabezaX + espaciamientoDeLosOjos * 2 + DIÁMETRO_DE_OJOS;
-		double y = cabezaY + EYE_Y_OFFSET;
+		double y = cabezaY + COMPENSACION_OJO_Y;
 		SOval ojo = new SOval(x, y, DIÁMETRO_DE_OJOS, DIÁMETRO_DE_OJOS);
 		ojo.cambiarRelleno(true);
 		ojo.cambiarColor(Color.VERDE);
@@ -128,15 +128,15 @@ public class DibujarCara extends ProgramaDeGraficos {
 		double cabezaX = (obtenerAncho() - ANCHO_DE_CARA) / 2;
 		double cabezaY = (obtenerAltura() - ALTURA_DE_LA_CARA) / 2;
 		double x = cabezaX + (ANCHO_DE_CARA - ANCHO_DE_BOCA) / 2;
-		double y = cabezaY + MOUTH_Y_OFFSET;
-		SRect boca = new SRect(x, y, ANCHO_DE_BOCA, ALTURA_DE_LA_BOCA);
+		double y = cabezaY + COMPENSACION_BOCA_Y;
+		SRect boca = new SRect(x, y, ANCHO_DE_BOCA, ALTURA_DE_BOCA);
 		boca.cambiarRelleno(true);
 		agregar(boca);
 	}
 	
 	private void dibujarEtiqueta() {
 		SLabel etiqueta = new SLabel("Cara de robot");
-		etiqueta.cambiarFont("Mensajero-50");
+		etiqueta.cambiarFont("Courier-50");
 		double x = (obtenerAncho() - etiqueta.obtenerAncho()) / 2;
 		agregar(etiqueta, x, ETIQUETA_Y);
 	}

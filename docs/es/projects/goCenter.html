@@ -313,17 +313,17 @@
 <!-- Header -->
 <div id="pageHeader">
 <h1>
-				Go to Center
+				Ir al centro
 			</h1>
 <p>
-				Problem written by Chris and Julia.
+				Problema escrito por Chris y Julia.
 			</p>
 </div>
 <hr/>
 <div class="row">
 <div class="col-md-12">
 <p>
-				This program animates a square that moves until it is in the center of the screen. It starts on the left side.
+				En este programa movemos un cuadrado desde la izquierda al centro de la pantalla.
 			</p>
 <p>
 <center>
@@ -334,24 +334,24 @@
 </div>
 <div class="row">
 <div class="col-md-12">
-<h2>Solution</h2>
+<h2>Solución</h2>
 <pre id="editor" style="height:400px">public class IrAlCentro extends ProgramaDeGraficos {
 
-    private static final int TAMAÑO = 20;
+    private static final int TAMANO = 20;
     private static final int RETRASAR = 100;
 	
 	public void run() {
 		// Dibuja un cuadrado a la izquierda de la pantalla.
-		GRect rect = new GRect(TAMAÑO, TAMAÑO);
+		GRect rect = new GRect(TAMANO, TAMANO);
 		double x = 0;
-		double y = (obtenerAltura() - rect.obtenerAltura()) / 2;
-		rect.conjuntoLleno(true);
-		añadir(rect, x, y);
+		double y = (darAlto() - rect.darAlto()) / 2;
+		rect.cambiarRelleno(true);
+		agregar(rect, x, y);
 		
 		// Mover hasta el centro
-		// rect.obtenerX () devuelve la coordenada x del rectángulo
-		double maxX = (obtenerAncho() - rect.obtenerAncho()) /2;
-		while(rect.obtenerX() &lt; maxX) {
+		// rect.darX () devuelve la coordenada x del rectángulo
+		double maxX = (darAncho() - rect.darAncho()) /2;
+		while(rect.darX() &lt; maxX) {
 		    // moverse un pixel a la derecha
 			rect.moverse(1, 0);
 			// pausa de animación

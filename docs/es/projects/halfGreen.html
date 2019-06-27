@@ -302,35 +302,34 @@
 </script>
 
 
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Mitad verde </h1><p> Escrito por Chris Piech </p><p> Folletos: <a href="../../es/handouts/graphics.html">Referencia Gráfica</a></p></div><hr/><div class="row"><div class="col-md-12"><p> Vamos a crear 1000 círculos en posiciones aleatorias en la pantalla. Los círculos más cercanos a la esquina inferior izquierda serán azules y los círculos más cercanos a la esquina superior derecha serán verdes. Este es un ejemplo de valores de retorno. </p><p><center><img src="../../img/projects/halfGrees/halfGreen.png" style="width:500px"/></center></p><p> Cada círculo es de 20 píxeles por 20 píxeles. </p></div></div><div class="row"><div class="col-md-12"><h2> Solución </h2><pre id="editor" style="height:500px"> Clase pública CirculoAlAzar2 extiende ProgramaDeGraficos {
-
-	GeneradorAleatorio privado = nuevo GeneradorAleatorio ();
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Mitad verde </h1><p> Escrito por Chris Piech </p><p> Folletos: <a href="../../es/handouts/graphics.html">Referencia Gráfica</a></p></div><hr/><div class="row"><div class="col-md-12"><p> Vamos a crear 1000 círculos en posiciones aleatorias en la pantalla. Los círculos más cercanos a la esquina inferior izquierda serán azules y los círculos más cercanos a la esquina superior derecha serán verdes. Este es un ejemplo de ejecución del programa. </p><p><center><img src="../../img/projects/halfGreen/halfGreen.png" style="width:500px"/></center></p><p> Cada círculo es de 20 por 20 píxeles. </p></div></div><div class="row"><div class="col-md-12"><h2> Solución </h2><pre id="editor" style="height:500px"> public class CirculoAlAzar2 extends ProgramaDeGraficos {
+	private RandomGenerator rd = new RandomGenerator();
 	public static final int ANCHO_DE_APLICACIÓN = 500;
 	public static final int ALTURA_DE_APLICACION = 500;
-	final estático privado int TAMAÑO = 20;
-	
+	public static final int TAMANO = 20;
+
 	public void run () {
 		para (int i = 0; i &lt;1000; i ++) {
-			int x = rd.siguienteInt (obtenerAncho () - TAMAÑO);
-			int y = rd.siguienteInt (obtenerAltura () - TAMAÑO);
+			int x = rd.nextInt(darAncho()-TAMANO);
+			int y = rd.nextInt (darAlto()-TAMANO);
 
-			GOval o = new GOval (x, y, TAMAÑO, TAMAÑO);
-			o.conjuntoLleno (true);
-			o.establecerColor (obtenerColor (x, y));
-			añadir (o);
+			GOval o = new GOval (x, y, TAMANO, TAMANO);
+			o.cambiarRelleno (true);
+			o.cambiarColorRelleno (darColor (x, y));
+			agregar (o);
 			pausa (2);
 		}
 	}
 
-	Color privado obtenerColor (int x, int y) {
+	private Color darColor (int x, int y) {
 		if (esVerde (x, y)) {
-			vuelve Color.verde;
+			return Color.verde;
 		}
 		vuelve Color.azul;
 	}
 	
-	esVerde booleano privado (int x, int y) {
-		devuelve x&gt; y;
+	private boolean esVerde (int x, int y) {
+		return x&gt; y;
 	}
 } </pre><script charset="utf-8" src="../../plugins/ace/ace.js" type="text/javascript"></script><script>
     var editor = ace.edit("editor");

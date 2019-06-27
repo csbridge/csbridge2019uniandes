@@ -19,6 +19,13 @@ pre {
     font-size:15px;
 }
 
+.comment {
+  color:#729683;
+  font-family: monaco;
+  font-weight:400;
+  font-size:13px;
+} 
+
 .col-xs-2 {
    width: 16.6% !important;
    padding-left: 7px !important;

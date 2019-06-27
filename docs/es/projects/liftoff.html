@@ -308,69 +308,24 @@
     <div class="container">
         <!-- Header -->
         <div id="pageHeader">
-            <h1> Objetivo </h1>
-            <p> Escrito por Eric Roberts y Mehran Sahami </p>
-            <p> Folletos: <a href="../../es/handouts/graphics.html">Referencia Gráfica</a></p>
-            <p> Ejemplos: <a href="../../es/projects/drawPeople.html">dibujar personas</a></p>
+            <h1> Liftoff </h1>
+            <p> Escrito por Chris Piech </p>
+            <p> Guias: <a href="../../es/handouts/console.html">Referencia Consola</a></p>
+            <p> Ejemplos: <a href="../../es/projects/stringArtSoln.html">arte de cuerdas</a></p>
         </div>
         <hr/>
         <div class="row">
             <div class="col-md-12">
 
-            	<h2>Calentamiento</h2>
-            	<p>Escribe el metodo <code>esCuadrado</code></p>
-            		<pre><span class="keyword">private boolean</span> esCuadrado(SRect rect) {
-  <span class="comment">/* devuelve cierto si-y-solo-si el rect 
-   * tiene un ancho que es igual a su alto */</span>
-}</pre>
-            	<p>
-            	</p>
 
-            	<h2>Objective</h2>
-                <p> Supongamos que ha sido contratado para producir un programa que dibuja una imagen de un objetivo de tiro al arco que se parece a esto: </p>
+            	<h2>Liftoff</h2>
+                <p> Complete el método de "run" para un programa de EsConsole que imprime las llamadas de una nave espacial que está a punto de iniciarse. Escribe los números 10 a 1 y luego escribe "Liftoff". Debes usar un ciclo for: </p>
                 <p>
-                    <center><img src="../../img/projects/target/target.png" style="width:500px" /></center>
+                    <center><img class="demoImg" src="../../img/projects/liftoff/demo.png" style="width:200px" /></center>
                 </p>
-                <p> Esta figura es simplemente tres objetos SOvalo, dos rojos y uno blanco, dibujados en el orden correcto. El círculo exterior debe tener un radio de 150 píxeles, el círculo blanco tiene un radio de 100 píxeles y el círculo rojo interno tiene un radio de 50 píxeles. La figura debe estar centrada en la ventana. </p>
+                
             </div>
         </div>
-        <!--<div class="row">
-			<div class="col-md-12">
-				<h2>Solution</h2>
-
-<pre id="editor" style="height:300px">public class Target extends EsGraphics {
-
-	public void run() {
-		dibujarCirculoCentrado(150, Color.RED);
-		dibujarCirculoCentrado(100, Color.WHITE);
-		dibujarCirculoCentrado(50, Color.RED);
-	}
-
-	private void dibujarCirculoCentrado(int radius, Color color) {
-		SOvalo circulo = new SOvalo(radius * 2, radius * 2);
-		double x = (darAncho() - circulo.darAncho()) / 2;
-		double y = (darAlto() - circulo.darAlto()) / 2;
-		circulo.cambiarRelleno(true);
-		circulo.darColor(color);
-		agregar(circulo, x, y);
-	}
-
-}</pre>
-
-<script src="../../plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
-<script>
-    var editor = ace.edit("editor");
-   editor.setTheme('ace/theme/eclipse');
-   editor.getSession().setMode("ace/mode/java");
-   editor.setReadOnly(true);
-   editor.renderer.setShowGutter(false); 
-    /*editor.setTheme("ace/theme/eclipse");
-    editor.getSession().setMode("ace/mode/java");*/
-</script>
-
-			</div>
-
-		</div>-->
 
 <hr>
 

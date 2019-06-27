@@ -1,7 +1,8 @@
+import graphics.EsGraphics;
+import graphics.*;
 import acm.graphics.*;
 import acm.program.*;
-import java.awt.*;
-
+import java.awt.Color;
 /**
  * Warning: This is an extension! You should only do it if you finish
  * Illusions1.

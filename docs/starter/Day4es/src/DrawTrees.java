@@ -1,8 +1,10 @@
+import graphics.EsGraphics;
+import graphics.*;
 import acm.graphics.*;
-import acm.program.GraphicsProgram;
+import acm.program.*;
 import java.awt.Color;
 
-public class DrawTrees extends GraphicsProgram {
+public class DrawTrees extends EsGraphics {
 
 	private static final int TRUNK_WIDTH = 20;
 	private static final int TRUNK_HEIGHT = 20;

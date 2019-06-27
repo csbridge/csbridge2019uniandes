@@ -1,6 +1,8 @@
+import graphics.EsGraphics;
+import graphics.*;
 import acm.graphics.*;
 import acm.program.*;
-import java.awt.*;
+import java.awt.Color;
 
 public class Illusion1 extends GraphicsProgram {
 	/* These constants tell the graphics program how big to be.

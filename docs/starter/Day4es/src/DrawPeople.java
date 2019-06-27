@@ -1,8 +1,10 @@
+import graphics.EsGraphics;
+import graphics.*;
 import acm.graphics.*;
-import acm.program.GraphicsProgram;
+import acm.program.*;
 import java.awt.Color;
 
-public class DrawPeople extends GraphicsProgram {
+public class DrawPeople extends EsGraphics {
 
 	public void run() {
 		drawPerson(50, 150);

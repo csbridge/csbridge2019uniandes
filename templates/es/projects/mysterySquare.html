@@ -14,7 +14,7 @@
 <!-- Header -->
 <div id="pageHeader">
 <h1>
-				Mystery Square
+				Cuadrado misterioso
 			</h1>
 <p>
 				Problem written by a mystery CS106A professor.
@@ -23,7 +23,7 @@
 <hr/>
 <div class="row">
 <div class="col-md-12">
-				Draw a square (100 pixels by 100 pixels) in the center of the screen and change its color every second.
+				Dibuja un cuadrado (100 pixeles por 100 pixeles) en el centro de la pantalla y haz que cambie de color cada segundo.
 			</div>
 </div>
 <div class="row">
@@ -34,24 +34,22 @@
  * ---------------------------------------------------
  *&nbsp;Realmente hace lo que dice.
  */
-public class PlazaDelMisterio extends ProgramaDeGraficos {
+public class PlazaDelMisterio extends EsGraphics {
 
-    private static final int TAMAÑO = 100;
+    private static final int TAMANO = 100;
     private static final int RETRASAR = 1000;
-
-	private static GeneradorAleatorio rg = new GeneradorAleatorio();
 	
 	public void run() {
 		// Dibuja un cuadrado en el centro de la pantalla.
-		GRect rect = new GRect(TAMAÑO, TAMAÑO);
-		double x = (obtenerAncho() - rect.obtenerAncho()) / 2;
-		double y = (obtenerAltura() - rect.obtenerAltura()) / 2;
-		rect.conjuntoLleno(true);
-		añadir(rect, x, y);
+		SRect rect = new SRect(TAMANO, TAMANO);
+		double x = (darAncho() - rect.darAncho()) / 2;
+		double y = (darAltura() - rect.darAltura()) / 2;
+		rect.cambiarRelleno(true);
+		agregar(rect, x, y);
 		
-		// Cambia su color cada segundo.
+		// Cambia de color cada segundo.
 		while(true) {
-			rect.establecerColor(rg.siguienteColor()); 
+			rect.cambiarColor(colorAleatorio()); 
 			pausa(RETRASAR);
 		}
 	}

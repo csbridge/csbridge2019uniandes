@@ -14,21 +14,21 @@
 <!-- Header -->
 <div id="pageHeader">
 <h1>
-				Draw People
+				Dibuja Personas
 			</h1>
 <p>
-				Written by Chris, Bryce and Julia
+				Escrito por Chris, Bryce and Julia
 			</p>
 <p>
-				Handouts:
-				<a href="{{pathToRoot}}es/handouts/graphics.html">Graphics Reference</a>
+				Guías:
+				<a href="{{pathToRoot}}es/handouts/graphics.html">Referencia Graphics</a>
 </p>
 </div>
 <hr/>
 <div class="row">
 <div class="col-md-12">
 <p>
-					This demo shows a simple method that draws people with the bottom of their feet at the provided (x, y) position.
+					Este ejemplo muestra una manera simple de dibujar personas con los pies en la posición (x , y) dada. 
 					<div class="well"><code>private void dibujarPersona(int x, int y)</code></div>
 </p>
 <center>
@@ -51,19 +51,19 @@
 
 	private void dibujarPersona(int x, int y) {
 		GRect cuerpo = new GRect(20, 80);
-		cuerpo.establecerColor(Color.NEGRO);
-		cuerpo.conjuntoLleno(true);
-		añadir(cuerpo, x - cuerpo.obtenerAncho()/2, y - cuerpo.obtenerAltura());
+		cuerpo.cambiarColorRelleno(Color.BLACK);
+		cuerpo.cambiarRelleno(true);
+		agregar(cuerpo, x - cuerpo.obtenerAncho()/2, y - cuerpo.obtenerAltura());
 		
 		GRect brazos = new GRect(40, 40);
-		brazos.establecerColor(Color.NEGRO);
-		brazos.conjuntoLleno(true);
-		añadir(brazos, x - brazos.obtenerAncho()/2, y - 60);
+		brazos.cambiarColorRelleno(Color.BLACK);
+		brazos.cambiarRelleno(true);
+		agregar(brazos, x - brazos.obtenerAncho()/2, y - 60);
 		
 		GOval cabeza = new GOval(40, 40);
-		cabeza.establecerColor(Color.AZUL);
-		cabeza.conjuntoLleno(true);
-		añadir(cabeza, x - 20, y - 100);
+		cabeza.cambiarColorRelleno(Color.BLUE);
+		cabeza.cambiarRelleno(true);
+		agregar(cabeza, x - 20, y - 100);
 	}
 }</pre>
 <script charset="utf-8" src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript"></script>

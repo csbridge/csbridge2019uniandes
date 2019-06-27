@@ -88,7 +88,7 @@ public class Breakout extends EsGraphics {
 	//paddle set-up
 	private void dibujarPala() {
 		double x = darAncho()/2 - PALETA_ANCHO/2; 
-		double y = darAltura() - PALETA_Y_OFFSET - PALETA_ALTURA;
+		double y = darAlto() - PALETA_Y_OFFSET - PALETA_ALTURA;
 		pala = new SRect (x, y, PALETA_ANCHO, PALETA_ALTURA);
 		pala.cambiarRelleno(true);
 		agregar(pala);
@@ -99,7 +99,7 @@ public class Breakout extends EsGraphics {
 	public void mouseMovido(MouseEvent e) {
 		if ((e.getX() < darAncho() - PALETA_ANCHO/2) && (e.getX() > PALETA_ANCHO/2)) {
 			double newX = e.getX() - PALETA_ANCHO/2;
-			double newY = darAltura() - PALETA_Y_OFFSET - PALETA_ALTURA;
+			double newY = darAlto() - PALETA_Y_OFFSET - PALETA_ALTURA;
 			pala.cambiarUbicacion(newX, newY);
 		}
 	}
@@ -107,7 +107,7 @@ public class Breakout extends EsGraphics {
 	//ball set-up
 	private void dibujarPelota() {
 		double x = darAncho()/2 - PELOTA_RADIO;
-		double y = darAltura()/2 - PELOTA_RADIO;
+		double y = darAlto()/2 - PELOTA_RADIO;
 		pelota = new SOvalo(x, y, PELOTA_RADIO, PELOTA_RADIO);
 		pelota.cambiarRelleno(true);
 		agregar(pelota);
@@ -118,7 +118,7 @@ public class Breakout extends EsGraphics {
 		darPelotaVelocidad();
 		while (true) {
 			moverPelota();
-			if (pelota.darY() >= darAltura()) {
+			if (pelota.darY() >= darAlto()) {
 				break;
 			}
 			if(contadorLadrillos == 0) {
@@ -184,16 +184,16 @@ public class Breakout extends EsGraphics {
 	}
 
 	private void imprimirPerdida() {
-		SLabel finPartido = new SLabel ("FIN", darAncho()/2, darAltura()/2);
-		finPartido.moverse(-finPartido.darAncho()/2, -finPartido.darAltura());
+		SLabel finPartido = new SLabel ("FIN", darAncho()/2, darAlto()/2);
+		finPartido.moverse(-finPartido.darAncho()/2, -finPartido.darAlto());
 		finPartido.cambiarColor(Color.RED);
 		add (finPartido);
 	}
 
 
 	private void imprimirGana() {
-		SLabel ganador = new SLabel ("Ganador!!", darAncho()/2, darAltura()/2);
-		ganador.moverse(-ganador.darAncho()/2, -ganador.darAltura());
+		SLabel ganador = new SLabel ("Ganador!!", darAncho()/2, darAlto()/2);
+		ganador.moverse(-ganador.darAncho()/2, -ganador.darAlto());
 		ganador.cambiarColor(Color.RED);
 		add (ganador);
 	}

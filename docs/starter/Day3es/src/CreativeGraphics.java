@@ -6,8 +6,8 @@ import acm.program.*;
 public class CreativeGraphics extends EsGraphics {
 	
 	public void run() {
-		// Your code here...
-		// Anything you want!
+		// tu codigo aca...
+		// Todo lo que quieras!
 	}
 
 }

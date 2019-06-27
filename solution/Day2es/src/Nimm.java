@@ -29,7 +29,7 @@ public class Nimm extends EsConsole {
 		imprimir("Juego terminado");
 	}
 
-	private void reto1() {
+	public void run() {
 		int numStones = 20;
 		while(numStones > 0) {
 			imprimir("Quedan " + numStones + " piedras");

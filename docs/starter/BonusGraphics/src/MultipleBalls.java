@@ -1,10 +1,10 @@
+import graphics.EsGraphics;
+import graphics.*;
+import acm.graphics.*;
+import acm.program.*;
+import java.awt.Color;
 
-import acm.graphics.*;     // GOval, GRect, etc.
-import acm.program.*;      // GraphicsProgram
-import acm.util.*;         // RandomGenerator
-import java.awt.*;         // Color
-
-public class MultipleBalls extends GraphicsProgram {
+public class MultipleBalls extends EsGraphics {
 	
 	public void run() {
 		// your code here...

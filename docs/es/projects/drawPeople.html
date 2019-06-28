@@ -339,8 +339,8 @@
 </div>
 <div class="row">
 <div class="col-md-12">
-<h2>Solution</h2>
-<pre id="editor" style="height:500px">public class DibujarPersonas extends ProgramaDeGraficos {
+<h2>Solucion</h2>
+<pre id="editor" style="height:500px">public class DibujarPersonas extends EsGraphics {
 
 	public void run() {
 		dibujarPersona(50, 150);
@@ -351,20 +351,20 @@
 	}
 
 	private void dibujarPersona(int x, int y) {
-		GRect cuerpo = new GRect(20, 80);
-		cuerpo.cambiarColorRelleno(Color.BLACK);
+		SRect cuerpo = new SRect(20, 80);
+		cuerpo.cambiarColor(Color.BLACK);
 		cuerpo.cambiarRelleno(true);
-		agregar(cuerpo, x - cuerpo.obtenerAncho()/2, y - cuerpo.obtenerAltura());
+		add(cuerpo, x - cuerpo.darAncho()/2, y - cuerpo.darAlto());
 		
-		GRect brazos = new GRect(40, 40);
-		brazos.cambiarColorRelleno(Color.BLACK);
+		SRect brazos = new SRect(40, 40);
+		brazos.cambiarColor(Color.BLACK);
 		brazos.cambiarRelleno(true);
-		agregar(brazos, x - brazos.obtenerAncho()/2, y - 60);
+		add(brazos, x - brazos.darAncho()/2, y - 60);
 		
-		GOval cabeza = new GOval(40, 40);
-		cabeza.cambiarColorRelleno(Color.BLUE);
+		SOvalo cabeza = new SOvalo(40, 40);
+		cabeza.cambiarColor(Color.BLUE);
 		cabeza.cambiarRelleno(true);
-		agregar(cabeza, x - 20, y - 100);
+		add(cabeza, x - 20, y - 100);
 	}
 }</pre>
 <script charset="utf-8" src="../../plugins/ace/ace.js" type="text/javascript"></script>

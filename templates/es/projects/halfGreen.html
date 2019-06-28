@@ -3,20 +3,19 @@
 	%include templates/parts/head.html
 </head><body><!-- Navigation Bar -->
 	%include templates/parts/navBarEs.html
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Mitad verde </h1><p> Escrito por Chris Piech </p><p> Folletos: <a href="{{pathToRoot}}es/handouts/graphics.html">Referencia Gráfica</a></p></div><hr/><div class="row"><div class="col-md-12"><p> Vamos a crear 1000 círculos en posiciones aleatorias en la pantalla. Los círculos más cercanos a la esquina inferior izquierda serán azules y los círculos más cercanos a la esquina superior derecha serán verdes. Este es un ejemplo de ejecución del programa. </p><p><center><img src="{{pathToRoot}}img/projects/halfGreen/halfGreen.png" style="width:500px"/></center></p><p> Cada círculo es de 20 por 20 píxeles. </p></div></div><div class="row"><div class="col-md-12"><h2> Solución </h2><pre id="editor" style="height:500px"> public class CirculoAlAzar2 extends ProgramaDeGraficos {
-	private RandomGenerator rd = new RandomGenerator();
-	public static final int ANCHO_DE_APLICACIÓN = 500;
-	public static final int ALTURA_DE_APLICACION = 500;
+<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Mitad verde </h1><p> Escrito por Chris Piech </p><p> Folletos: <a href="{{pathToRoot}}es/handouts/graphics.html">Referencia Gráfica</a></p></div><hr/><div class="row"><div class="col-md-12"><p> Vamos a crear 1000 círculos en posiciones aleatorias en la pantalla. Los círculos más cercanos a la esquina inferior izquierda serán azules y los círculos más cercanos a la esquina superior derecha serán verdes. Este es un ejemplo de ejecución del programa. </p><p><center><img src="{{pathToRoot}}img/projects/halfGreen/halfGreen.png" style="width:500px"/></center></p><p> Cada círculo es de 20 por 20 píxeles. </p></div></div><div class="row"><div class="col-md-12"><h2> Solución </h2><pre id="editor" style="height:500px"> public class CirculoAlAzar2 extends EsGraphics {
+	public static final int APPLICATION_WIDTH = 500;
+	public static final int APPLICATION_HEIGHT = 500;
 	public static final int TAMANO = 20;
 
 	public void run () {
 		para (int i = 0; i &lt;1000; i ++) {
-			int x = rd.nextInt(darAncho()-TAMANO);
-			int y = rd.nextInt (darAlto()-TAMANO);
+			int x = intAleatorio(darAncho()-TAMANO);
+			int y = intAleatorio(darAlto()-TAMANO);
 
 			GOval o = new GOval (x, y, TAMANO, TAMANO);
 			o.cambiarRelleno (true);
-			o.cambiarColorRelleno (darColor (x, y));
+			o.cambiarColor (darColor (x, y));
 			agregar (o);
 			pausa (2);
 		}
@@ -24,9 +23,9 @@
 
 	private Color darColor (int x, int y) {
 		if (esVerde (x, y)) {
-			return Color.verde;
+			return Color.GREEN;
 		}
-		vuelve Color.azul;
+		return Color.BLUE;
 	}
 	
 	private boolean esVerde (int x, int y) {

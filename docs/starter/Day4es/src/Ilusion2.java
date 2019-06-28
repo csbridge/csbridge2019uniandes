@@ -12,10 +12,10 @@ public class Ilusion2 extends EsGraphics {
 	public static final int APPLICATION_WIDTH = 800;
 	public static final int APPLICATION_HEIGHT = 520;
 	
-	private static final int FILA_ALTA = 50;
+	private static final int ALTO_FILA = 50;
 	private static final int N_FILAS = 10;
 	
 	public void run() {
-		//your code here...
+		// tu codigo va aca...
 	}
 }

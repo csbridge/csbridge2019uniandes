@@ -17,6 +17,10 @@ public class Ilusion1 extends EsGraphics {
 	private static final int BRECHA = 10;
 	
 	public void run() {
-		// tu codigo va acs.
+		// tu codigo va aca.
+		
 	}
+	
+	
+	
 }

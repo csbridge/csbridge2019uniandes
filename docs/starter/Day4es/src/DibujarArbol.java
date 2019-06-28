@@ -6,9 +6,9 @@ import java.awt.Color;
 
 public class DibujarArbol extends EsGraphics {
 
-	private static final int TRUNCO_ANCHO = 20;
-	private static final int TRUNCO_ALTO = 20;
-	private static final int HOJAS_RADIO = 30;
+	private static final int ANCHO_TRONCO = 20;
+	private static final int ALTO_TRONCO = 20;
+	private static final int RADIO_HOJAS = 30;
 	
 	public void run() {
 		dibujarArbol(50, 150);
@@ -21,11 +21,11 @@ public class DibujarArbol extends EsGraphics {
 	/** 
 	 * Methodo: Dibujar Arbol
 	 * -----------------
-	 * El método de dibujar árbol dibuja un árbol 
+	 * El metodo de dibujar arbol dibuja un arbol 
 	 * con la base de su tronco centrada en la 
-	 * posición proporcionada (x, y):
+	 * posicion proporcionada (x, y):
 	 */
 	private void dibujarArbol(int x, int y) {
-		// your code here...
+		// tu codigo va aca...
 	}
 }

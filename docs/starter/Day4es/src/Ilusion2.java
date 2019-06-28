@@ -4,16 +4,16 @@ import acm.graphics.*;
 import acm.program.*;
 import java.awt.Color;
 /**
- * Warning: This is an extension! You should only do it if you finish
- * Illusions1.
+ * Cuidada: Este es un bono! Solo debes hacerlo 
+ * si terminas la Ilusiones1..
  */
-public class Illusion2 extends GraphicsProgram {
+public class Ilusion2 extends EsGraphics {
 	
 	public static final int APPLICATION_WIDTH = 800;
 	public static final int APPLICATION_HEIGHT = 520;
 	
-	private static final int ROW_HEIGHT = 50;
-	private static final int NUM_ROWS = 10;
+	private static final int FILA_ALTA = 50;
+	private static final int N_FILAS = 10;
 	
 	public void run() {
 		//your code here...

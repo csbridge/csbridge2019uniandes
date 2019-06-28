@@ -4,10 +4,10 @@ import acm.graphics.*;
 import acm.program.*;
 import java.awt.Color;
 
-public class ShortFilm extends GraphicsProgram {
+public class Cortometraje extends EsGraphics {
 
 	public void run() {
-		// animate a movie!
+		// animar una pelicula!
 	}
 
 }

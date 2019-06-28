@@ -103,11 +103,12 @@
 	          	
 
 	          	<li><a href="../../es/projects/madMethods.html"> Methodos Locos</a></li>
-	          	<!--<li><a href="../../es/projects/target.html">Target</a></li>
-	          	<li><a href="../../es/projects/illusion.html">Optical Illusion</a></li>
-	          	<li><a href="../../es/projects/sunset.html">Short Film</a></li>
+	          	<li><a href="../../es/projects/target.html">Objetivo</a></li>
+	          	<li><a href="../../es/projects/liftoff.html">Despegue</a></li>
+	          	<li><a href="../../es/projects/illusion.html">Ilusión Óptica</a></li>
+	          	<li><a href="../../es/projects/sunset.html">Cortometraje</a></li>
 
-	          	<li class="divider"></li>
+	          	<!--<li class="divider"></li>
 
 	          	<li><a href="../../es/projects/makingTracks.html">Making Tracks</a></li>
 	             <li><a href="../../es/projects/stampTool.html">Stamp Tool</a></li>
@@ -165,24 +166,36 @@
 	            
 	            <li><a href="../../es/projects/robotFace.html">Robot Face</a></li>
 	            <li><a href="../../es/projects/goCenter.html">Go To Center</a></li>
+	            <li><a href="../../es/projects/gravityBall.html">Gravity Ball</a></li>
 	            
 
 	            <li class="divider"></li>
+<<<<<<< HEAD
 	            <li><a href="../../es/projects/drawPeople.html">Draw People</a></li>
 	            <li><a href="../../es/projects/halfGreen.html">Half Green</a></li>
 	            <li><a href="../../es/projects/spectra.html">Espectros</a></li>
+=======
+	            <li><a href="../../es/projects/drawPeople.html">Dibuja Personas</a></li>
+	            <li><a href="../../es/projects/halfGreen.html">Mitad verde</a></li>
+	            
+	            <li><a href="../../es/projects/averageMethod.html">Método promedio</a></li>
+
+
+	          	
+>>>>>>> e7a98a05aa37f69efc721c97c75d1a0580b81d44
 
 	            <!--
 
-	            <li><a href="../../es/projects/gravityBall.html">Gravity Ball</a></li>
+	            	<li><a href="../../es/projects/suchADrag.html">Such a Drag</a></li>
 
-	          	<li><a href="../../es/projects/averageMethod.html">Average Method</a></li>	
+	            
+
+	          		
 
 	          	<li class="divider"></li>
 							<li><a href="../../es/projects/rocketShip.html">Rockets</a></li>
 
-	          	<li><a href="../../es/projects/debrisSweeper.html">Debris Sweeper</a></li>	
-	          	<li><a href="../../es/projects/suchADrag.html">Such a Drag</a></li>
+	          	
 	              
 	             
 	             <li><a href="../../projects/stampTool.html">Stamp Tool</a></li>
@@ -328,22 +341,20 @@
 					dice &quot;Fin&quot;. <p> Agrega un método a tu programa que dibuje un mensaje en la
 						pantalla (sobre un fondo negro) y deja el mensaje durante dos segundos. </p>
 					<div class="well"><code><b>private</b> void mostrarMensaje(String mensaje)</code></div> Después de
-					dos segundos debes eliminar el GRect que es el fondo y la EtiquetaG que es el texto. Para hacerlo,
-					puedes usar el método retirar (hace lo contrario al método agregar. Toma un ObjetoG que estaba en el
-					lienzo y lo elimina). <div class="well"><code>retirar( <i>tuObjeto</i>);</code></div> El mensaje de
+					dos segundos debes eliminar el SRect que es el fondo y la SEtiqueta que es el texto. Para hacerlo,
+					puedes usar el método quitar (hace lo contrario al método agregar. Toma un SObjecto que estaba en el
+					lienzo y lo elimina). <div class="well"><code>quitar( <i>tuObjeto</i>);</code></div> El mensaje de
 					inicio debe verse como la pantalla de la izquierda. El mensaje final debe parecerse a la pantalla de
 					la derecha: <div>
 						<div class="col-md-6 col-xs-6"><img src="../../img/projects/sunset/onceUpon.png"
 								style="width:100%" /></div>
 						<div class="col-md-6 col-xs-6"><img src="../../img/projects/sunset/theEnd.png"
 								style="width:100%" /></div>
-					</div> La fuente que utilizamos fue: <div class="well"><i>etiqueta</i>.establecerFuente
+					</div> La fuente que utilizamos fue: <div class="well"><i>etiqueta</i>.cambiarFuente
 						(&quot;Papyrus-40&quot;); </div>
 				</p>
 			</div>
-		</div>
-	</div>
-</body> Por supuesto, puedes reutilizar este método tanto como quieras para contar tu historia. <div class="row">
+		 Por supuesto, puedes reutilizar este método tanto como quieras para contar tu historia. <div class="row">
 	<div class="col-md-12">
 		<h2> Puesta de sol </h2>
 		<p> Tu película debe tener una escena para comenzar: una puesta de sol. Dibuja el cielo, la tierra y un sol.
@@ -368,7 +379,7 @@
 	</div>
 </div>
 <p> Escribe un método que tome el tiempo y devuelva el color del sol. </p>
-<div class="well"><code><b>private</b> Color obtenerColor( <b>int</b> cuadro)</code></div>
+<div class="well"><code><b>private</b> Color darColor(<b>int</b> tiempo)</code></div>
 <p> Haga que el método devuelva <code>Color.YELLOW, Color.ORANGE</code> o <code>Color.RED</code> en función de cuántas iteraciones hayan pasado.
 </p>
 <div class="row">

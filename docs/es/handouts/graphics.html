@@ -331,6 +331,7 @@ quitarTodo() // quita todos los objetos que ya agregaste
         Esos otros métodos de EsGraphics te puede servir también:
         <div class="well"><code>
 pausa(<i class="codeText">milisegundos</i>) // pausa el código<br/>
+cambiarFondo(<i class="codeText">color</i>) // cambia el color del fondo<br/>
 SObjeto darObjetoA(<i class="codeText">x</i>, <i class="codeText">y</i>) // devuelve el objeto en esta ubicación
 	</code></div>
 
@@ -354,16 +355,16 @@ SRect rect2 = new SRect(<i class="codeText">x</i>, <i class="codeText">y</i>, <i
             <div class="well"><code>
 SEtiqueta etiqueta1 = new SEtiqueta(<i class="codeText">etiqueta</i>)<br/>
 SEtiqueta etiqueta2 = new SEtiqueta(<i class="codeText">etiqueta</i>, <i class="codeText">x</i>, <i class="codeText">y</i>)
-		</code></div>
+		  </code></div>
 
-            <!-- 		<h3>SImagen</h3>
-		Crea una imágen en el canvas, puedes cargar el imagen de un archivo o tambien puedes pasar un arreglo de pixeles que representa los colores de un imagen.
-		<div class="well"><code>
-new SImagen(<i class="codeText">archivo</i>)<br/>
-new SImagen(<i class="codeText">archivo</i>, <i class="codeText">x</i>, <i class="codeText">y</i>)<br/>
+            <h3>SImagen</h3>
+            Crea una imágen en el canvas, puedes cargar el imagen de un archivo o tambien puedes pasar un arreglo de pixeles que representa los colores de un imagen.
+            <div class="well"><code>
+new SImagen(<i class="codeText">nombreDeArchivo</i>)<br/>
+new SImagen(<i class="codeText">nombreDeArchivo</i>, <i class="codeText">x</i>, <i class="codeText">y</i>)<br/>
 new SImagen(<i class="codeText">arregloDePixeles</i>)<br/>
 new SImagen(<i class="codeText">arregloDePixeles</i>, <i class="codeText">x</i>, <i class="codeText">y</i>)
-		</code></div> -->
+            </code></div>
 
             <h3>SLinea</h3> Crea una línea en el canvas, indicando el punto inicio y el punto final.
             <div class="well"><code>
@@ -388,14 +389,14 @@ boolean visible = objeto.esVisible()<br/>
 
 int x = objeto.darX() // devolver la parte X del punto de la esquina noroeste<br/>
 int y = objeto.darY() // devolver la parte Y del punto de la esquina noroeste<br/>
-	</code></div>
+	   </code></div>
 
         Estos métodos se puede usar con SOvalo y SRect.
         <div class="well"><code>
 cambiarRelleno(<i class="codeText">rellenoSiNo</i>)</br/>
 boolean relleno = estaRelleno()<br/>
 cambiarColorRelleno(<i class="codeText">color</i>) // qué color usamos para llenar <br/>
-	</code></div>
+	   </code></div>
 
         Estos métodos se puede usar con SEtiqueta.
         <div class="well"><code>
@@ -403,7 +404,7 @@ etiqueta.cambiarTexto(<i class="codeText">etiqueta</i>)<br/>
 etiqueta.cambiarFuente(<i class="codeText">fuente</i>)// por ejemplo Tahoma-24 <br/>
 double ascenso = etiqueta.darAscenso()<br/>
 double descenso = etiqueta.darDescenso()<br/>
-	</code></div>
+	   </code></div>
 
         Estos métodos se puede usar con SLinea.
         <div class="well"><code>
@@ -413,7 +414,23 @@ double principioX = linea.darPuntoPrincipioX()<br/>
 double principioY = linea.darPuntoPrincipioY()<br/>
 double finalX = linea.darPuntoFinalX()<br/>
 double finalY = linea.darPuntoFinalY()<br/>
-	</code></div>
+	   </code></div>
+
+        Estos métodos se puede usar con SImagen.
+        <div class="well"><code>
+imagen.guardarImagen(nombreDeArchivo)<br/>
+int[][] arreglo = darArregloDePixeles()<br/><br/>
+        </code></div>
+
+        Y finalmente hay unos métodos útiles que se puede usar con cualquier SImagen.
+        <div class="well"><code>
+int pixel = imagen.crearRGBPixel(<i class="codeText">rojo</i>, <i class="codeText">verde</i>, <i class="codeText">azul</i>)<br/>
+int pixel = imagen.crearRGBPixel(<i class="codeText">rojo</i>, <i class="codeText">verde</i>, <i class="codeText">azul</i>, <i class="codeText">alpha</i>)<br/>
+int alphaParteDelPixel = imagen.darAlpha(<i class="codeText">pixel</i>)<br/>
+int alphaParteDelPixel = imagen.darRojo(<i class="codeText">pixel</i>)<br/>
+int alphaParteDelPixel = imagen.darVerde(<i class="codeText">pixel</i>)<br/>
+int alphaParteDelPixel = imagen.darAzul(<i class="codeText">pixel</i>)<br/>
+        </code></div>
 
         <!-- <div>Instrucciones de usar mouse vienen pronto.</div> -->
         <!-- </div></body><p> Documentación completa: <br><a href="http://cs.stanford.edu/people/eroberts/jtf/javadoc/student/index.html">http://cs.stanford.edu/people/eroberts/jtf/javadoc/student/index.html</a></br></p><h3> EtiquetaG </h3><p> Recuerde que escogerLocalización (x, y) establece el <i>origen</i> de un GRect, GOval o LíneaG en las coordenadas (x, y), donde el origen se define como la esquina superior izquierda. EtiquetaG tiene la misma definición de origen, pero la altura se define un poco más alta que la altura del texto real. Aquí hay una vista detallada de todas las diferentes definiciones de altura para EtiquetaG: </p><center><img src="../../img/handouts/graphics/GLabelGeometry.png" style="width:700px;"/></center><br><p> Nota al margen: el origen se encuentra en la parte central izquierda de la imagen de arriba, porque estamos tratando con una etiquetaG multilínea. Para GLabels con líneas simples, el origen es la parte superior izquierda. </p><p> Entonces, para centrar verticalmente una EtiquetaG, usaríamos el <i>ascenso</i> de una EtiquetaG: </p><div class="well"><code>double y = obtenerAltura()/2 + etiqueta.obtenerAscenso()/2;</code></div><h3> GImagen </h3><p>¡También puedes subir tus propias imágenes y agregarlas a tu programa de gráficos! </p><p> Algunos consejos: </p><ul><li> Guarde su imagen en la misma carpeta &quot;fuente&quot; que contiene su archivo java. </li><li> Encuentre la ubicación de su archivo java en Eclipse, haga clic con el botón derecho en el archivo java en el Explorador de proyectos (el menú de la izquierda) y vaya a &quot;Propiedades&quot;. </li><li> Si aún tiene errores, asegúrese de poder ver el archivo de imagen en Eclipse. Actualice el proyecto (haga clic con el botón derecho en la carpeta del proyecto en Eclipse y seleccione &quot;Actualizar&quot;). </li></ul></br> -->

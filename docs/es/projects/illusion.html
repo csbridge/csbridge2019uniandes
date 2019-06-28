@@ -311,12 +311,15 @@
             <h1> Ilusión óptica </h1>
             <p> Basado en una idea de Steve Cooper. Escrito por Chris Piech. </p>
             <p> Folletos: <a href="../../es/handouts/graphics.html">Referencia Gráfica</a>
-                <br/> Ejemplo solucionado: <a href="../../es/projects/stringArtSoln.html">String Art Solution</a></p>
+                <br /> Ejemplo solucionado: <a href="../../es/projects/stringArtSoln.html">String Art
+                    Solution</a></p>
         </div>
-        <hr/>
+        <hr />
         <div class="row">
             <div class="col-md-12">
-                <p> A veces, repetir los patrones puede hacer que nuestros ojos vean cosas que no están allí. Mira la foto de abajo. ¿Puedes ver pequeños cuadrados grises en las intersecciones de las líneas blancas? Escribe un Programa EsGraphics que cree la ilusión óptica: </p>
+                <p> Hay veces en las que los patrones repetitivos pueden hacer que nuestros ojos vean cosas que no están
+                    allí. Mira la imagen de abajo. ¿Puedes ver pequeños cuadrados grises en las intersecciones de las
+                    líneas blancas? Escribe un Programa <code>EsGraphics</code> que cree la ilusión óptica: </p>
                 <p>
                     <center><img src="../../img/projects/illusion/illusion1.png" style="width:500px" /></center>
                 </p>
@@ -325,8 +328,14 @@
         <div class="row">
             <div class="col-md-12">
                 <h2> Constantes </h2>
-                <p> Puede observar que el código de inicio para este proyecto tiene las líneas:
-                    <div class="well"><code>private static final int TAMANO = 100; <br/> private static final int BRECHA = 10;</code></div> que se escriben fuera del método de ejecución (como el generador de números aleatorios). Estas líneas definen constantes: variables cuyos valores nunca cambian y como se definen fuera de un método, puede leer su valor desde cualquier punto del programa. Aunque se <i>podría</i> escribir esta ilusión óptica utilizando los números 100 y 10 directamente, usando las constantes hace que su programa mucho más fácil de leer.
+                <p> Observa que el código de inicio para este proyecto tiene las líneas:
+                    <div class="well">
+                        <code>private static final int TAMANO = 100; <br/> private static final int BRECHA = 10;</code>
+                    </div> que se escriben fuera del método de ejecución (como el generador de números aleatorios).
+                    Estas líneas definen constantes: variables cuyos valores nunca cambian y como se definen fuera de un
+                    método, se puede obtener su valor desde cualquier parte del programa. Aunque se <i>podría</i> escribir
+                    esta ilusión óptica utilizando los números 100 y 10 directamente, usar constantes hace que su
+                    que tu programa sea mucho más fácil de leer.
                     <!--<div class="well"><code>private drawSquare(int row, int col) {
 						<br/>&nbsp;&nbsp;&nbsp;//code for drawing a square at the position row, col
 						<br/>}</code></div>-->
@@ -336,8 +345,10 @@
         <div class="row">
             <div class="col-md-12">
                 <h2> Doble ciclo for </h2>
-                <p> Este problema requiere usar un ciclo for dentro de un ciclo for. Recuerde utilizar una variable de iterador diferente para el ciclo interno. Por ejemplo, si su ciclo externo es de la forma
-                    <div class="well"><code>for(int i = 0; i &lt; 100; i++)</code></div> El bucle en el cuerpo debe iterar a través de una variable distinta de i.
+                <p> Este problema requiere usar un ciclo for dentro de un ciclo for. Recuerda utilizar una variable de iteración distinta
+                    para el ciclo interno. Por ejemplo, si tu ciclo externo es de la forma
+                    <div class="well"><code>for(int i = 0; i &lt; 100; i++)</code></div> Entonces el ciclo interno debe
+                    iterar a través de una variable distinta de <code>i</code>.
                     <!--<div class="well"><code>private drawSquare(int row, int col) {
 						<br/>&nbsp;&nbsp;&nbsp;//code for drawing a square at the position row, col
 						<br/>}</code></div>-->
@@ -358,11 +369,13 @@
         <div class="row">
             <div class="col-md-12">
                 <h2> Extensión </h2>
-                <p> Si tienes tiempo, ¡intenta crear esta ilusión óptica! ¡Tenga en cuenta que todos los cuadrados son del mismo tamaño y todas las líneas son horizontales! Piensa en cómo descomponer tu solución. </p>
+                <p> Si tienes tiempo, ¡intenta crear esta ilusión óptica! ¡Ten en cuenta que todos los cuadrados son
+                    del mismo tamaño y todas las líneas son horizontales! Piensa en cómo descomponer tu solución. </p>
                 <p>
                     <center><img src="../../img/projects/illusion/illusion2.png" style="width:500px" /></center>
                 </p>
-                <p> Si está atascado, intente dibujar cada fila con el primer cuadrado negro comenzando siempre en x = 0. Luego, intente averiguar cómo crear el patrón de desplazamiento. </p>
+                <p> Si estás atorado, intenta dibujar cada fila con el primer cuadrado negro comenzando siempre en x =
+                    0. Luego, intenta averiguar cómo crear el patrón de desplazamiento. </p>
             </div>
         </div>
 

@@ -1,20 +1,60 @@
 <head>
 
-	%include templates/parts/head.html
-</head><body><!-- Navigation Bar -->
-	%include templates/parts/navBarEs.html
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Métodos locos </h1><p> Escrito por Chris y Bryce </p><p> Ejemplo: <a href="{{pathToRoot}}es/projects/averageMethod.html">Método promedio</a>, <a href="{{pathToRoot}}es/projects/drawPeople.html">dibujar personas</a>, <a href="{{pathToRoot}}es/projects/halfGreen.html">mitad verde.</a></p></div><hr/><div class="row"><div class="col-md-12"><h2> 1. Mad Max </h2><p> Complete el programa <code>MadMax</code> completando el método <code>max</code> que devuelve el mayor de sus dos parámetros: </p><div class="well"><code>private int max(int i, int j)</code></div><p> El método de ejecución ya ha sido escrito: <pre> public void run () {
+    %include templates/parts/head.html
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    %include templates/parts/navBarEs.html
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Header -->
+        <div id="pageHeader">
+            <h1> Métodos locos </h1>
+            <p> Escrito por Chris y Bryce </p>
+            <p> Ejemplo: <a href="{{pathToRoot}}es/projects/averageMethod.html">Método promedio</a>, <a
+                    href="{{pathToRoot}}es/projects/drawPeople.html">dibujar personas</a>, <a
+                    href="{{pathToRoot}}es/projects/halfGreen.html">mitad verde.</a></p>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <h2> 1. Mad Max </h2>
+                <p> Completa el programa <code>MadMax</code> llenando el método <code>max</code> que devuelve el
+                    mayor de sus dos parámetros: </p>
+                <div class="well"><code>private int max(int i, int j)</code></div>
+                <p> El método de ejecución ya ha sido escrito:
+                    <pre> public void run () {
     imprimir (&quot;El máximo de 4 y 5 es:&quot; + max (4, 5));
     imprimir (&quot;El máximo de -4 y 4 es:&quot; + max (-4, 4));
     imprimir (&quot;El máximo de 1 y 2 es:&quot; + max (1, 2));
     imprimir (&quot;El máximo de 0 y 0 es:&quot; + max (0, 0));
-} </pre></p><p> Tu salida debería verse así: <center><img src="{{pathToRoot}}img/projects/madMax/madMax.png" style="width:500px"/></center></p><h2> 2. Dibujar árbol </h2><p> Complete el método <code>dibujarArbol</code> que dibuja un árbol con la <b>base</b> de su tronco centrado en la posición proporcionada (x, y): </p><div class="well"><code>private void dibujarArbol(int x, int y)</code></div><p> El método de ejecución ya ha sido escrito: <pre> public void run () {
+} </pre>
+                </p>
+                <p> Tu salida debería verse así: <center><img src="{{pathToRoot}}img/projects/madMax/madMax.png"
+                            style="width:500px" /></center>
+                </p>
+                <h2> 2. Dibujar árbol </h2>
+                <p> Complete el método <code>dibujarArbol</code> que dibuja un árbol con la <b>base</b> de su tronco
+                    centrado en la posición dada (x, y): </p>
+                <div class="well"><code>private void dibujarArbol(int x, int y)</code></div>
+                <p> El método de ejecución ya ha sido escrito:
+                    <pre> public void run () {
     dibujarArbol (50, 150);
     dibujarArbol (100, 300);
     dibujarArbol (500, 200);
     dibujarArbol (300, 250);
     dibujarArbol (700, 310);
-} </pre></p><p> Cada árbol debe tener un camión con un ancho de 20 píxeles y una altura de 80 píxeles. Las hojas deben tener un radio de 30 píxeles. Tu salida debería verse así: <center><img src="{{pathToRoot}}img/projects/madMax/drawTree.png" style="width:500px"/></center></p><p> Si terminas temprano, mira qué hermoso árbol puedes crear.  </p></div></div>
-		
-		%include templates/parts/footer.html
-</div></body>
+} </pre>
+                </p>
+                <p> Cada árbol debe tener un camión con un ancho de 20 píxeles y una altura de 80 píxeles. Las hojas
+                    deben tener un radio de 30 píxeles. Tu salida debería verse así: <center><img
+                            src="{{pathToRoot}}img/projects/madMax/dibujarArbol.png" style="width:500px" /></center>
+                </p>
+                <p> Si terminas temprano, experimenta con cuán hermoso puedes hacer que luzca un árbol.</p>
+            </div>
+        </div>
+
+        %include templates/parts/footer.html
+    </div>
+</body>

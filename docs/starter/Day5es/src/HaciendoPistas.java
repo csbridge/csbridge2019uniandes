@@ -6,6 +6,7 @@ import acm.graphics.*;
 
 public class HaciendoPistas extends EsGraphics {
 	
+	
 	public void run() {
 		// tu codigo aca
 		

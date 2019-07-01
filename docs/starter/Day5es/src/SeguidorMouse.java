@@ -28,4 +28,15 @@ public class SeguidorMouse extends EsGraphics {
 		agregar(casilla);
 		return casilla;
 	}
+	
+	public void mouseClickeado(MouseEvento e) {
+		int x = e.darX();
+		int y = e.darY();
+		SObjeto objeto = darObjetoEn(x, y);
+		if (objeto != null) {
+			quitar(objeto);
+		}
+	}
+	
+	
 }

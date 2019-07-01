@@ -63,6 +63,16 @@ public abstract class EsGraphics extends GraphicsProgram{
 	public void mouseReleased(MouseEvent e) { 
 		mouseSoltado(new MouseEvento(e)); 
 	}
+
+	public void agregarTeclaListeners() {addMouseListeners();}
+
+	public void	teclaPulsada(KeyEvent e) { /* overload */ }
+	public void	teclaSoltada(KeyEvent e) { /* overload */ }
+	public void	teclaEspichada(KeyEvent e) { /* overload */ }
+
+	public void	keyPressed(KeyEvent e) { teclaPulsada(e); }
+	public void	keyReleased(KeyEvent e) { teclaSoltada(e); }
+	public void	keyTyped(KeyEvent e) { teclaEspichada(e); }
 	
 
 	/* Cosas de EsConsole se necesita aqui tambien. */

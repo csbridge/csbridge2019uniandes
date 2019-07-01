@@ -24,7 +24,7 @@
                 <p> Tu trabajo en esta tarea es escribir el clásico juego de arcade Escaparse, que fue inventado por Steve Wozniak antes de que fundara Apple con Steve Jobs (momento de silencio). Es una tarea grande, pero completamente manejable, siempre y cuando rompas el problema en pedazos. </p>
             </div>
         </div>
-        <h2> El juego del escaparse </h2>
+        <h2 style="color:blue"> El juego del escaparse </h2>
         <div class="row">
             <div class="col-md-12">
                 <p> En Escaparse, la configuración inicial del mundo aparece como se muestra a la derecha. Los rectángulos de colores en la parte superior de la pantalla son <b>ladrillos</b>, y el rectángulo un poco más grande en la parte inferior es la <b>paleta</b>. La paleta se encuentra en una posición fija en la dimensión vertical, pero se mueve hacia adelante y hacia atrás a través de la pantalla junto con el mouse hasta que alcanza el borde de su espacio. </p>
@@ -42,7 +42,7 @@
                 <p> El éxito en esta tarea dependerá de dividir el problema en partes manejables y de que cada una funcione antes de pasar a la siguiente. Las siguientes secciones describen un enfoque por etapas razonable del problema. </p>
             </div>
         </div>
-        <h2> 1. Crea ladrillos </h2>
+        <h2 style="color:blue"> 1. Crea ladrillos </h2>
         <div class="row">
             <div class="col-md-12">
                 <p> Antes de comenzar a jugar, debes configurar las diferentes piezas. Por lo tanto, probablemente tenga sentido implementar el método de ejecución como dos llamadas de método: uno que configura el juego y otro que lo juega. Una parte importante de la configuración consiste en crear las filas de ladrillos en la parte superior del juego, que tienen este aspecto: </p>
@@ -52,7 +52,7 @@
                 <p> El número, las dimensiones y el espaciado de los ladrillos se especifican utilizando constantes con nombre en el archivo de inicio, como es la distancia desde la parte superior de la ventana hasta la primera línea de ladrillos. El único valor que necesita calcular es la coordenada x de la primera columna, que debe elegirse de modo que los ladrillos queden centrados en la ventana, con el espacio restante dividido igualmente en los lados izquierdo y derecho. El color de los ladrillos permanece constante durante dos filas y se ejecuta en la siguiente secuencia similar a un arco iris: RED, ORANGE, YELLOW, GREEN, CYAN. </p>
             </div>
         </div>
-        <h2> 2. Crea la paleta. </h2>
+        <h2 style="color:blue"> 2. Crea la paleta. </h2>
         <div class="row">
             <div class="col-md-12">
                 <p> El siguiente paso es crear la paleta. Sólo hay una paleta, que es un GRect relleno. Incluso sabes su posición en relación con la parte inferior de la ventana. </p>
@@ -68,7 +68,7 @@
                 </p>
             </div>
         </div>
-        <h2> 3. Hacer que la bola se mueva. </h2>
+        <h2 style="color:blue"> 3. Hacer que la bola se mueva. </h2>
         <div class="row">
             <div class="col-md-12">
                 <p> En un nivel, crear la pelota es fácil, dado que es solo un GOval lleno. La parte interesante radica en lograr que se mueva y rebote adecuadamente. Ya ha pasado la fase de &quot;configuración&quot; y ha pasado a la fase de &quot;juego&quot; del juego. Para empezar, crea una bola y colócala en el centro de la ventana. Mientras lo hace, tenga en cuenta que las coordenadas de GOval no especifican la ubicación del centro de la pelota, sino su esquina superior izquierda. </p>
@@ -86,7 +86,7 @@
                 <p> Calcular lo que sucede después de un rebote es extremadamente simple. Si una bola rebota en la pared superior o inferior, todo lo que necesita hacer es revertir el signo de vy. Simétricamente, los rebotes de las paredes laterales simplemente invierten el signo de vx. </p>
             </div>
         </div>
-        <h2> 4. Compruebe si hay colisiones </h2>
+        <h2 style="color:blue"> 4. Compruebe si hay colisiones </h2>
         <div class="row">
             <div class="col-md-12">
                 <p> Ahora viene la parte interesante. Para que Escaparse se convierta en un juego real, debes saber si la pelota está chocando con otro objeto en la ventana. Como suelen hacer los científicos, es útil comenzar por hacer una suposición simplificadora y luego relajarla más tarde. Supongamos que la bola fuera un solo punto en lugar de un círculo. En ese caso, ¿cómo podría saber si había chocado con otro objeto? </p>

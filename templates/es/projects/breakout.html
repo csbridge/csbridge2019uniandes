@@ -78,6 +78,7 @@
                 </p>
                 <p> Los componentes de velocidad representan el cambio de posición que se produce en cada paso de tiempo. Inicialmente, la bola debe ir hacia abajo, y puede intentar una velocidad inicial de +3.0 para vy (recuerde que los valores de y en Java aumentan a medida que avanza por la pantalla). El juego sería aburrido si cada bola tomara el mismo rumbo, por lo que deberías elegir el componente vx al azar. Simplemente debes hacer lo siguiente: </p>
                 <p>
+                	<b>aleatorio pelota direction</b>: 
                      Inicialice la variable vx de la siguiente manera: vx = rgen.siguienteDoble (1.0, 3.0); if (rgen.siguienteBooleano (0.5)) vx = -vx; Este código establece que vx es un doble aleatorio en el rango de 1.0 a 3.0 y luego lo hace negativo la mitad del tiempo. Esta estrategia funciona mucho mejor para Escaparse que para llamar a SiguienteDoble (-3.0, +3.0), lo que podría generar una bola que va más o menos hacia abajo. Eso haría la vida demasiado fácil para el jugador.
                     
                 </p>

@@ -369,17 +369,12 @@
                 <p> En un nivel, crear la pelota es fácil, dado que es solo un GOval lleno. La parte interesante radica en lograr que se mueva y rebote adecuadamente. Ya ha pasado la fase de &quot;configuración&quot; y ha pasado a la fase de &quot;juego&quot; del juego. Para empezar, crea una bola y colócala en el centro de la ventana. Mientras lo hace, tenga en cuenta que las coordenadas de GOval no especifican la ubicación del centro de la pelota, sino su esquina superior izquierda. </p>
                 <p> El programa debe realizar un seguimiento de la velocidad de la bola, que consta de dos componentes separados, que presumiblemente declarará como variables de instancia como esta: </p>
                 <p>
-                    <div class="well"><code>private double vx<br/>private double vy;</code></div>
+                    <div class="well"><code>private double vx;<br/>private double vy;</code></div>
                 </p>
                 <p> Los componentes de velocidad representan el cambio de posición que se produce en cada paso de tiempo. Inicialmente, la bola debe ir hacia abajo, y puede intentar una velocidad inicial de +3.0 para vy (recuerde que los valores de y en Java aumentan a medida que avanza por la pantalla). El juego sería aburrido si cada bola tomara el mismo rumbo, por lo que deberías elegir el componente vx al azar. Simplemente debes hacer lo siguiente: </p>
                 <p>
-                    <ol>
-                        <li>
-                            <p> Declare una variable de instancia rgen, que servirá como generador de números aleatorios:
-                                <div class="well"><code>private GeneradorAleatorio rgen = GeneradorAleatorio.obtenerInstancia();</code></div> Recuerde que las variables de instancia se declaran fuera de cualquier método pero dentro de la clase. </p>
-                        </li>
-                        <li> Inicialice la variable vx de la siguiente manera: vx = rgen.siguienteDoble (1.0, 3.0); if (rgen.siguienteBooleano (0.5)) vx = -vx; Este código establece que vx es un doble aleatorio en el rango de 1.0 a 3.0 y luego lo hace negativo la mitad del tiempo. Esta estrategia funciona mucho mejor para Escaparse que para llamar a SiguienteDoble (-3.0, +3.0), lo que podría generar una bola que va más o menos hacia abajo. Eso haría la vida demasiado fácil para el jugador. </li>
-                    </ol>
+                     Inicialice la variable vx de la siguiente manera: vx = rgen.siguienteDoble (1.0, 3.0); if (rgen.siguienteBooleano (0.5)) vx = -vx; Este código establece que vx es un doble aleatorio en el rango de 1.0 a 3.0 y luego lo hace negativo la mitad del tiempo. Esta estrategia funciona mucho mejor para Escaparse que para llamar a SiguienteDoble (-3.0, +3.0), lo que podría generar una bola que va más o menos hacia abajo. Eso haría la vida demasiado fácil para el jugador.
+                    
                 </p>
                 <p> Una vez que hayas hecho eso, tu próximo desafío es conseguir que la pelota rebote alrededor del mundo, ignorando por completo la paleta y los ladrillos. Para hacerlo, debe verificar si las coordenadas de la bola han ido más allá del límite, teniendo en cuenta que la bola tiene un tamaño distinto de cero. Por lo tanto, para ver si la bola ha rebotado en la pared derecha, debe ver si la coordenada del borde derecho de la bola es mayor que el ancho de la ventana; Las otras tres direcciones son tratadas de manera similar. Por ahora, haz que la pelota rebote en la pared inferior para que puedas verla hacer su camino alrededor del mundo. </p>
                 <p> Calcular lo que sucede después de un rebote es extremadamente simple. Si una bola rebota en la pared superior o inferior, todo lo que necesita hacer es revertir el signo de vy. Simétricamente, los rebotes de las paredes laterales simplemente invierten el signo de vx. </p>

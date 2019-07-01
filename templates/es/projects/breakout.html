@@ -21,42 +21,42 @@
         <hr/>
         <div class="row">
             <div class="col-md-12">
-                <p> Tu trabajo en esta tarea es escribir el clásico juego de arcade Escaparse, que fue inventado por Steve Wozniak antes de que fundara Apple con Steve Jobs (momento de silencio). Es una tarea grande, pero completamente manejable, siempre y cuando rompas el problema en pedazos. </p>
+                <p> Tu trabajo en esta tarea es escribir el clásico juego de arcade Escaparse, que fue inventado por Steve Wozniak antes de que fundara Apple con Steve Jobs (momento de silencio). Es una tarea grande, pero fácil de manejar, siempre y cuando rompas el problema en pedazos. </p>
             </div>
         </div>
         <h2 style="color:blue"> El juego del escaparse </h2>
         <div class="row">
             <div class="col-md-12">
-                <p> En Escaparse, la configuración inicial del mundo aparece como se muestra a la derecha. Los rectángulos de colores en la parte superior de la pantalla son <b>ladrillos</b>, y el rectángulo un poco más grande en la parte inferior es la <b>paleta</b>. La paleta se encuentra en una posición fija en la dimensión vertical, pero se mueve hacia adelante y hacia atrás a través de la pantalla junto con el mouse hasta que alcanza el borde de su espacio. </p>
+                <p> En Escaparse, la configuración inicial del mundo aparece como se muestra a la derecha. Los rectángulos de colores en la parte superior de la pantalla son <b>bloques</b>, y el rectángulo un poco más grande en la parte inferior es la <b>barra</b>. La barra se encuentra en una posición fija en la dimensión vertical, pero se mueve hacia adelante y hacia atrás a través de la pantalla junto con el mouse hasta que alcanza el borde de su espacio. </p>
                 <p>
                     <center><img src="/img/projects/breakout/breakoutGameH.png" style="padding:10px;max-width:100%" /></center>
                 </p>
-                <p> Un juego completo consta de tres turnos. En cada turno, se lanza una bola desde el centro de la ventana hacia la parte inferior de la pantalla en un ángulo aleatorio. Esa bola rebota en la paleta y en las paredes del mundo, de acuerdo con el principio físico generalmente expresado como &quot;el ángulo de incidencia es igual al ángulo de reflexión&quot; (que resulta ser muy fácil de implementar como se explica más adelante en este folleto) . Por lo tanto, después de dos rebotes, uno fuera de la paleta y otro fuera de la pared derecha, la bola podría tener la trayectoria que se muestra en el segundo diagrama. (Tenga en cuenta que la línea de puntos está allí para mostrar la trayectoria de la bola y no aparecerá en la pantalla). </p>
-                <p> Como puede ver en el segundo diagrama, la bola está a punto de chocar con uno de los ladrillos en la fila inferior. Cuando eso sucede, la pelota rebota igual que en cualquier otra colisión, pero el ladrillo desaparece. El tercer diagrama muestra cómo se ve el juego después de esa colisión y después de que el jugador haya movido la paleta para ponerla en línea con la bola que se aproxima. </p>
+                <p> Un juego completo consta de tres turnos. En cada turno, se lanza una bola desde el centro de la ventana hacia la parte inferior de la pantalla en un ángulo aleatorio. Esa bola rebota en la barra y en las paredes del mundo, de acuerdo con el principio físico generalmente expresado como &quot;el ángulo de incidencia es igual al ángulo de reflexión&quot; (que resulta ser muy fácil de implementar como se explica más adelante en este folleto) . Por lo tanto, después de dos rebotes, uno fuera de la barra y otro fuera de la pared derecha, la bola podría tener la trayectoria que se muestra en el segundo diagrama. (Tenga en cuenta que la línea de puntos está allí para mostrar la trayectoria de la bola y no aparecerá en la pantalla). </p>
+                <p> Como puede ver en el segundo diagrama, la bola está a punto de chocar con uno de los bloques en la fila inferior. Cuando eso sucede, la pelota rebota igual que en cualquier otra colisión, pero el ladrillo desaparece. El tercer diagrama muestra cómo se ve el juego después de esa colisión y después de que el jugador haya movido la barra para ponerla en línea con la bola que se aproxima. </p>
                 <p> El juego en un turno continúa de esta manera hasta que ocurre una de dos condiciones:
                     <ol>
-                        <li> La pelota golpea la pared inferior, lo que significa que el jugador debe haberla perdido con la paleta. En este caso, el turno termina y la siguiente bola se sirve si el jugador tiene algún turno a la izquierda. Si no, el juego termina en una pérdida para el jugador. </li>
+                        <li> La pelota golpea la pared inferior, lo que significa que el jugador debe haberla perdido con la barra. En este caso, el turno termina y la siguiente bola se sirve si el jugador tiene algún turno a la izquierda. Si no, el juego termina en una pérdida para el jugador. </li>
                         <li> El último ladrillo es eliminado. En este caso, el jugador gana, y el juego termina inmediatamente. </li>
                     </ol>
                 </p>
                 <p> El éxito en esta tarea dependerá de dividir el problema en partes manejables y de que cada una funcione antes de pasar a la siguiente. Las siguientes secciones describen un enfoque por etapas razonable del problema. </p>
             </div>
         </div>
-        <h2 style="color:blue"> 1. Crea ladrillos </h2>
+        <h2 style="color:blue"> 1. Crea bloques </h2>
         <div class="row">
             <div class="col-md-12">
-                <p> Antes de comenzar a jugar, debes configurar las diferentes piezas. Por lo tanto, probablemente tenga sentido implementar el método de ejecución como dos llamadas de método: uno que configura el juego y otro que lo juega. Una parte importante de la configuración consiste en crear las filas de ladrillos en la parte superior del juego, que tienen este aspecto: </p>
+                <p> Antes de comenzar a jugar, debes configurar las diferentes piezas. Por lo tanto, probablemente tenga sentido implementar el método de ejecución como dos llamadas de método: uno que configura el juego y otro que lo juega. Una parte importante de la configuración consiste en crear las filas de bloques en la parte superior del juego, que tienen este aspecto: </p>
                 <p>
                     <center><img src="/img/projects/breakout/breakoutBricks.png" style="padding:10px;max-width:100%" /></center>
                 </p>
-                <p> El número, las dimensiones y el espaciado de los ladrillos se especifican utilizando constantes con nombre en el archivo de inicio, como es la distancia desde la parte superior de la ventana hasta la primera línea de ladrillos. El único valor que necesita calcular es la coordenada x de la primera columna, que debe elegirse de modo que los ladrillos queden centrados en la ventana, con el espacio restante dividido igualmente en los lados izquierdo y derecho. El color de los ladrillos permanece constante durante dos filas y se ejecuta en la siguiente secuencia similar a un arco iris: RED, ORANGE, YELLOW, GREEN, CYAN. </p>
+                <p> El número, las dimensiones y el espaciado de los bloques se especifican utilizando constantes con nombre en el archivo de inicio, como es la distancia desde la parte superior de la ventana hasta la primera línea de bloques. El único valor que necesita calcular es la coordenada x de la primera columna, que debe elegirse de modo que los bloques queden centrados en la ventana, con el espacio restante dividido igualmente en los lados izquierdo y derecho. El color de los bloques permanece constante durante dos filas y se ejecuta en la siguiente secuencia similar a un arco iris: RED, ORANGE, YELLOW, GREEN, CYAN. </p>
             </div>
         </div>
-        <h2 style="color:blue"> 2. Crea la paleta. </h2>
+        <h2 style="color:blue"> 2. Crea la barra. </h2>
         <div class="row">
             <div class="col-md-12">
-                <p> El siguiente paso es crear la paleta. Sólo hay una paleta, que es un GRect relleno. Incluso sabes su posición en relación con la parte inferior de la ventana. </p>
-                <p> El desafío al crear la paleta es hacer que rastree el mouse. Aquí, sin embargo, solo debe prestar atención a la coordenada x del mouse porque la posición y de la paleta es fija. </p>
+                <p> El siguiente paso es crear la barra. Sólo hay una barra, que es un GRect relleno. Incluso sabes su posición en relación con la parte inferior de la ventana. </p>
+                <p> El desafío al crear la barra es hacer que rastree el mouse. Aquí, sin embargo, solo debe prestar atención a la coordenada x del mouse porque la posición y de la barra es fija. </p>
                 <p> Si llama al método (tal vez desde ejecutar):
                     <div class="well"><code>agregarMouseListeners();</code></div>
                     <p> E implementa el método:
@@ -82,7 +82,7 @@
                      Inicialice la variable vx de la siguiente manera: <code>vx = doubleAleatorio (1.0, 3.0);</code> y si <code>booleanAleatorio(0.5)</code> es verdad, <code>vx = -vx;</code> Este código establece que vx es un doble aleatorio en el rango de 1.0 a 3.0 y luego lo hace negativo la mitad del tiempo. Esta estrategia funciona mucho mejor para Escaparse que para llamar a <code>doubleAleatorio(-3.0, +3.0)</code>, lo que podría generar una bola que va más o menos hacia abajo. Eso haría la vida demasiado fácil para el jugador.
                     
                 </p>
-                <p> Una vez que hayas hecho eso, tu próximo desafío es conseguir que la pelota rebote alrededor del mundo, ignorando por completo la paleta y los ladrillos. Para hacerlo, debe verificar si las coordenadas de la bola han ido más allá del límite, teniendo en cuenta que la bola tiene un tamaño distinto de cero. Por lo tanto, para ver si la bola ha rebotado en la pared derecha, debe ver si la coordenada del borde derecho de la bola es mayor que el ancho de la ventana; Las otras tres direcciones son tratadas de manera similar. Por ahora, haz que la pelota rebote en la pared inferior para que puedas verla hacer su camino alrededor del mundo. </p>
+                <p> Una vez que hayas hecho eso, tu próximo desafío es conseguir que la pelota rebote alrededor del mundo, ignorando por completo la barra y los bloques. Para hacerlo, debe verificar si las coordenadas de la bola han ido más allá del límite, teniendo en cuenta que la bola tiene un tamaño distinto de cero. Por lo tanto, para ver si la bola ha rebotado en la pared derecha, debe ver si la coordenada del borde derecho de la bola es mayor que el ancho de la ventana; Las otras tres direcciones son tratadas de manera similar. Por ahora, haz que la pelota rebote en la pared inferior para que puedas verla hacer su camino alrededor del mundo. </p>
                 <p> Calcular lo que sucede después de un rebote es extremadamente simple. Si una bola rebota en la pared superior o inferior, todo lo que necesita hacer es revertir el signo de vy. Simétricamente, los rebotes de las paredes laterales simplemente invierten el signo de vx. </p>
             </div>
         </div>
@@ -109,15 +109,15 @@
     <div class="well"><code>SObjeto objeto = darObjetoEn(x, y)</code></div> Eso devuelve el objeto involucrado en la colisión, en su caso, y <b>nulo de lo</b> contrario Entonces podrías usarlo en una declaración como:
     <div class="well"><code>SObjeto colisionador = darObjetoDeColision();</code></div>
 </p>
-<p> Desde aquí, lo único que queda por hacer es decidir qué hacer cuando ocurre una colisión. Hay solo dos posibilidades. Primero, el objeto que recuperas puede ser la paleta, que puedes probar marcando </p>
-<div class="well"><code>if (colisionador == paleta)</code></div>
-<p> Si es la paleta, necesitas rebotar la pelota para que comience a subir. Si no es la paleta, la única otra cosa que podría ser es un ladrillo, ya que esos son los únicos otros objetos en el mundo. Una vez más, debes causar un rebote en la dirección vertical, pero también debes quitar el ladrillo. Para hacerlo, todo lo que necesita hacer es eliminarlo de la pantalla llamando al método removerse. </p>
+<p> Desde aquí, lo único que queda por hacer es decidir qué hacer cuando ocurre una colisión. Hay solo dos posibilidades. Primero, el objeto que recuperas puede ser la barra, que puedes probar marcando </p>
+<div class="well"><code>if (colisionador == barra)</code></div>
+<p> Si es la barra, necesitas rebotar la pelota para que comience a subir. Si no es la barra, la única otra cosa que podría ser es un ladrillo, ya que esos son los únicos otros objetos en el mundo. Una vez más, debes causar un rebote en la dirección vertical, pero también debes quitar el ladrillo. Para hacerlo, todo lo que necesita hacer es eliminarlo de la pantalla llamando al método removerse. </p>
 <h2 style="color:blue"> Toques extra </h2>
         <p> Si has llegado hasta aquí, has hecho todas las partes difíciles. Hay, sin embargo, algunos detalles más que podría tener en cuenta si tiene tiempo. </p>
         <ol>
             <li> Cuida el caso cuando la pelota toque la pared inferior. En el prototipo que has estado construyendo, el balón simplemente rebota en esta pared como todos los demás, pero eso hace que el juego sea bastante difícil de perder. Modifique la estructura de su ciclo for que pruebe si golpea la pared inferior como una de sus condiciones de terminación. </li>
-            <li> Verifique la otra condición de terminación, que está golpeando el último bloque. ¿Cómo sabes cuándo lo has hecho? Aunque hay otras formas de hacerlo, una de las más fáciles es hacer que su programa realice un seguimiento de la cantidad de ladrillos restantes. Cada vez que golpeas uno, resta uno de ese contador. Cuando el conteo llega a cero, debes hacerlo. Sería bueno darle al jugador una pequeña retroalimentación que al menos indique si el juego se ganó o se perdió. </li>
-            <li> Prueba tu programa para ver si funciona. Si crees que todo está funcionando, hay algo que probar: Justo antes de que la pelota pase el nivel de la paleta, mueve la paleta rápidamente para que la paleta colisione con la pelota en lugar de viceversa. ¿Todavía funciona todo, o parece que tu bola se &quot;pega&quot; a la paleta? Este error se produce porque la bola choca con la paleta, cambia de dirección y luego vuelve a chocar con la pala antes de escapar. ¿Cómo puedes arreglar este error? </li>
+            <li> Verifique la otra condición de terminación, que está golpeando el último bloque. ¿Cómo sabes cuándo lo has hecho? Aunque hay otras formas de hacerlo, una de las más fáciles es hacer que su programa realice un seguimiento de la cantidad de bloques restantes. Cada vez que golpeas uno, resta uno de ese contador. Cuando el conteo llega a cero, debes hacerlo. Sería bueno darle al jugador una pequeña retroalimentación que al menos indique si el juego se ganó o se perdió. </li>
+            <li> Prueba tu programa para ver si funciona. Si crees que todo está funcionando, hay algo que probar: Justo antes de que la pelota pase el nivel de la barra, mueve la barra rápidamente para que la barra colisione con la pelota en lugar de viceversa. ¿Todavía funciona todo, o parece que tu bola se &quot;pega&quot; a la barra? Este error se produce porque la bola choca con la barra, cambia de dirección y luego vuelve a chocar con la pala antes de escapar. ¿Cómo puedes arreglar este error? </li>
         </ol>
     </div>
 </div>
@@ -136,13 +136,13 @@
         <p> Si tiene el juego básico funcionando bien, entonces esta sería una gran oportunidad para ir más allá. Aquí hay algunas ideas de posibles extensiones (por supuesto, le recomendamos que use su imaginación para proponer otras ideas también): </p>
         <ul>
             <li style="margin-bottom:10px"><i>Añadir sonidos.</i>
-                <p> La versión que se ejecuta como un applet en la página de asignación del CS 106A reproduce un sonido de rebote corto cada vez que la bola choca con un ladrillo o la paleta. Esta extensión resulta muy fácil. El proyecto de inicio contiene un archivo de clip de audio llamado bounce.au que contiene ese sonido. Puedes cargar el sonido escribiendo
+                <p> La versión que se ejecuta como un applet en la página de asignación del CS 106A reproduce un sonido de rebote corto cada vez que la bola choca con un ladrillo o la barra. Esta extensión resulta muy fácil. El proyecto de inicio contiene un archivo de clip de audio llamado bounce.au que contiene ese sonido. Puedes cargar el sonido escribiendo
                     <div class="well"><code>AudioClip bounceClip = MediaTools.loadAudioClip("res/bounce.au");</code></div>
                     <p> y luego jugarlo llamando
                         <div class="well"><code>bounceClip.play();</code></div> Las bibliotecas de Java hacen algunas cosas fáciles. </p>
                 </p>
             </li>
-            <li style="margin-bottom:10px"><i>Mejorar el control del usuario sobre los rebotes.</i> El programa se vuelve bastante aburrido si lo único que tiene que hacer el jugador es golpear la pelota. Es mucho más interesante, si el jugador puede controlar la pelota al golpearla en diferentes partes de la paleta. La forma en que funcionaba el antiguo juego de arcade era que la bola rebotaría en ambas direcciones, x e y, si la golpeas en el borde de la paleta de la que venía la bola. La versión web implementa esta característica. </li>
+            <li style="margin-bottom:10px"><i>Mejorar el control del usuario sobre los rebotes.</i> El programa se vuelve bastante aburrido si lo único que tiene que hacer el jugador es golpear la pelota. Es mucho más interesante, si el jugador puede controlar la pelota al golpearla en diferentes partes de la barra. La forma en que funcionaba el antiguo juego de arcade era que la bola rebotaría en ambas direcciones, x e y, si la golpeas en el borde de la barra de la que venía la bola. La versión web implementa esta característica. </li>
             <li style="margin-bottom:10px"><i>Usa tu imaginación.</i>¿Qué otra cosa siempre has querido hacer con un juego como este? </li>
         </ul>
     </div>

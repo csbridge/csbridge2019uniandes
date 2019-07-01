@@ -1,0 +1,177 @@
+<head>
+
+    %include templates/parts/head.html
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+
+    %include templates/parts/navBarEs.html
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Header -->
+        <div id="pageHeader">
+            <h1>
+				Espectros (con solución)
+			</h1>
+            <p>
+                Problema escrito por Colin Kincaid
+            </p>
+            <p>
+                Guras:
+                <a href="{{pathToRoot}}es/handouts/graphics.html">Referencia de interfaces gráficas</a>
+            </p>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    Queremos hacer el diseño para una camiseta que se llama "La Fiesta de Karel":
+                </p>
+                <p>
+                    <center>
+                        <img src="{{pathToRoot}}img/projects/spectra/kareles.png" style="width:300px" />
+                    </center>
+                </p>
+                <p>
+                    El fondo debería ser un espectro de colores, y deberías colocar varios Kareles al azár.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Solución</h2>
+                <pre id="editor" style="height:750px">/**
+ *&nbsp;Programa: Fiesta de Kareles
+ *&nbsp;---------------------------
+ *&nbsp;Pinta varios Kareles bailando sobre un espectro de colores
+ */
+public class EspectroConKareles extends EsGraphics {
+
+	public static final int APPLICATION_WIDTH = 256;
+	public static final int APPLICATION_HEIGHT = 256;
+
+	/* La longitud de un lado de una casilla */
+	private static final int TAMANO = 4;
+
+	private static final int NUMERO_DE_COLORES = 256;
+
+	private static final int TAMANO_KAREL = TAMANO * 8;
+
+	private static final int AVANCE = APPLICATION_WIDTH / 8;
+
+	public void run() {
+		for (int x = 0; x &lt; darAncho(); x += TAMANO) {
+			for (int y = 0; y &lt; darAlto(); y += TAMANO) {
+				SRect punto = crearCasillaDeColor(x, y, 100);
+				agregar(punto, x, y);
+			}
+		}
+		for (int x = 0; x &lt; darAncho(); x += AVANCE) {
+			SImagen karel = new SImagen("res/karel.png");
+			karel.cambiarTamano(TAMANO_KAREL, TAMANO_KAREL);
+			double y = doubleAleatorio(0, darAlto() - TAMANO_KAREL);
+			agregar(karel, x, y);
+		}
+	}
+
+	private SRect crearCasillaDeColor(int rojo, int verde, int azul) {
+		SRect casilla = new SRect(TAMANO, TAMANO);
+		Color c = new Color(rojo % NUMERO_DE_COLORES,
+							verde % NUMERO_DE_COLORES,
+							azul % NUMERO_DE_COLORES);
+		casilla.cambiarColor(c);
+		casilla.cambiarRelleno(true);
+		return casilla;
+	}
+
+}</pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    Ahora, usa un método pero crear varios espectros en el mismo canvas, así:
+                </p>
+                <p>
+                    <center>
+                        <img src="{{pathToRoot}}img/projects/spectra/cuatro.png" style="width:300px" />
+                    </center>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Solución</h2>
+                <pre id="editor2" style="height:700px">/**
+ *&nbsp;Programa: Cuatro Espectros
+ *&nbsp;--------------------------
+ *&nbsp;Pinta cuatro espectros de diferentes colores, utilizando un solo método
+ */
+public class CuatroEspectros extends EsGraphics {
+
+	public static final int APPLICATION_WIDTH = 512;
+	public static final int APPLICATION_HEIGHT = 512;
+
+	private static final int NUMERO_DE_COLORES = 256;
+
+	/* La longitud de un lado de una casilla */
+	private static final int TAMANO = 4;
+
+	public void run() {
+		dibujarEspectro(0, 0, 0);
+		dibujarEspectro(darAncho() / 2, 0, 85);
+		dibujarEspectro(0, darAlto() / 2, 170);
+		dibujarEspectro(darAncho() / 2, darAlto() / 2, 255);
+	}
+
+	private void dibujarEspectro(double xInicial, double yInicial, int azul) {
+		for (int y = 0; y &lt; darAlto() / 2; y += TAMANO) {
+			for (int x = 0; x &lt; darAncho() / 2; x += TAMANO) {
+				SRect casilla = crearCasillaDeColor(x, y, azul);
+				agregar(casilla, x + xInicial, y + yInicial);
+			}
+		}
+	}
+
+	private SRect crearCasillaDeColor(int rojo, int verde, int azul) {
+		SRect casilla = new SRect(TAMANO, TAMANO);
+		casilla.cambiarRelleno(true);
+		Color c = new Color(rojo % NUMERO_DE_COLORES,
+							verde % NUMERO_DE_COLORES,
+							azul % NUMERO_DE_COLORES);
+		casilla.cambiarColor(c);
+		return casilla;
+	}
+
+}</pre>
+            </div>
+        </div>
+        <script charset="utf-8" src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript"></script>
+        <script>
+            var editor = ace.edit("editor");
+            editor.setTheme('ace/theme/eclipse');
+            editor.getSession().setMode("ace/mode/java");
+            editor.setReadOnly(true);
+            editor.renderer.setShowGutter(false);
+            /*editor.setTheme("ace/theme/eclipse");
+            editor.getSession().setMode("ace/mode/java");*/
+        </script>
+
+        <script charset="utf-8" src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript"></script>
+        <script>
+            var editor = ace.edit("editor2");
+            editor.setTheme('ace/theme/eclipse');
+            editor.getSession().setMode("ace/mode/java");
+            editor.setReadOnly(true);
+            editor.renderer.setShowGutter(false);
+            /*editor.setTheme("ace/theme/eclipse");
+            editor.getSession().setMode("ace/mode/java");*/
+        </script>
+
+        %include templates/parts/footer.html
+    </div>
+</body>

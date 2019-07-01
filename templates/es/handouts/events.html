@@ -21,39 +21,43 @@
 			</p>
 </div>
 <hr/>
-		 Para comenzar, cuando esté utilizando MouseEvents, asegúrese de escribir lo siguiente en su método de ejecución:
-		<div class="well"><code>
+
+	
+		<h3>Mouse Listeners</h3>
+		Cuando usas eventos de mouse, es necesario poner este método en su primera linea del método run(). Esto alertará al programa para que reaccione a los eventos de MouseEvento.
+<div class="well"><code>
 agregarMouseListeners();
-		</code></div>
-		Esto alertará al programa para que reaccione a los MouseEventos.
+</code></div>
 
-		<!--If you are using KeyListeners you'll want to include:
-		<div class="well"><code>
-añadirOyentesClave();
-		</code></div>-->
+		Aquí tenemos todos los métodos que escribirás para usar el movimiento y uso del mouse en su código. Recuerda que <b>no se debe llamar esos métodos</b>. Cuando lo escriben, los métodos van a llamarse cuando el evento pase.
+<div class="well"><code>
+	public void mouseMovido(MouseEvento e) // cuando muevas mouse<br/>
+	public void mouseArrastrado(MouseEvento e) // cuando arrastres mouse<br/>
 
-		Una vez que haya configurado a todos sus oyentes, ¡es hora de llegar al código! A continuación se muestra una lista de los cuatro eventos que pueden ser útiles para Breakout. Para una lista completa, echa un vistazo a: <!--<a href="http://docs.oracle.com/javase/7/docs/api/java/awt/event/MouseListener.html">this link</a> for MouseEvents --> <br/><br/>
-<div class="well"><code><pre>
-public void mousePulsado(EventoDelRatón e) {
-   //Este método se llama cuando se hace clic con el mouse.
-}
+	public void mousePulsado(MouseEvento e) // cuando pulses en mouse<br/>
+	public void mouseSoltado(MouseEvento e) // despues de pulsar cuando el mouse solte<br/>
+	public void mouseClickeado(MouseEvento e) // click (pulsado y soltado en misma ubicación)<br/>
 
-public void mouseMovido(EventoDelRatón e) {
-   //Este método se llama cuando se mueve el mouse.
-}
+	public void mouseSale(MouseEvento e) // cuando mouse sale del canvas<br/>
+	public void mouseEntra(MouseEvento e) // cuando mouse entra el canvas<br/>
+</code></div>
 
-esperarClic(); //Esto hará una pausa hasta que el usuario haga clic.
-		</pre></code></div>
-<p>Here are some examples of how to use events:
+
+		Esto es un ejemplo de escribir uno de esos métodos.
 		<div class="well"><code><pre>
-public void mousePulsado(EventoDelRatón e) {
-   imprimir("X: " + e.darX() + "y:" + e.darY());
-   //Esto imprimirá las coordenadas de donde hace clic.
+public void mousePulsado(MouseEvento e) {
+	imprimir("X: " + e.darX() + "y:" + e.darY());
+	//Esto imprimirá las coordenadas de donde presionas mouse.
 }</pre></code></div>
 
+<!-- 		This will alert the program to react to MouseEvents. If you are using KeyListeners you'll want to include:
+		<div class="well"><code>
+agregarTeclaListeners();
+		</code></div> -->
 
-	<h3>KeyListeners</h3>
-	<p> Here is a reference for <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/event/KeyListener.html">KeyListeners</a>. </p>
+	<h3>Tecla Listeners</h3>
+	Para escuchar los eventos de teclado, pregunta tu líder de sección.
+	
 		
 		%include templates/parts/footer.html
 

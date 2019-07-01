@@ -1,82 +1,82 @@
 <head>
 
-	%include templates/parts/head.html
+  %include templates/parts/head.html
 </head>
 
 <body>
-	<!-- Navigation Bar -->
-	%include templates/parts/navBarEs.html
-	<!-- Main Content -->
-	<div class="container">
-		<!-- Header -->
-		<div id="pageHeader">
-			<h1> Herramienta de sello </h1>
-			<p> Problema escrito por un misterioso Profesor CS106A. </p>
-		</div>
-		<hr />
-		<div class="row">
-			<div class="col-md-12">
-				<p> Escribe un programa que, simulando un sello, tenga un GRect que siga el mouse del usuario y
-					que cuando el usuario haga clic se dibuje un GRect. </p>
-				<p>
-					<center><img src="{{pathToRoot}}img/projects/stampTool/demo.png" style="width:500px" /></center>
-				</p>
-				<p> Recuerda que ya que necesitas tener una variable que puede cambiar dentro de una clase de evento de
-					mouse (el GRect que representa tu sello), tendrás que declararlo como una variable de instancia.
-					Pide ayuda a uno de tus maestros si no entiendes muy bien qué significa. </p>
+  <!-- Navigation Bar -->
+  %include templates/parts/navBarEs.html
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Header -->
+    <div id="pageHeader">
+      <h1> Herramienta de sello </h1>
+      <p> Problema escrito por un misterioso Profesor CS106A. </p>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-md-12">
+        <p> Escribe un programa que, simulando un sello, tenga un GRect que siga el mouse del usuario y
+          que cuando el usuario haga clic se dibuje un GRect. </p>
+        <p>
+          <center><img src="{{pathToRoot}}img/projects/stampTool/demo.png" style="width:500px" /></center>
+        </p>
+        <p> Recuerda que ya que necesitas tener una variable que puede cambiar dentro de una clase de evento de
+          mouse (el GRect que representa tu sello), tendrás que declararlo como una variable de instancia.
+          Pide ayuda a uno de tus maestros si no entiendes muy bien qué significa. </p>
 
 
-				<h3>Solucion</h3>
-				<pre>public class Estampando extends EsGraphics {
+        <h3>Solucion</h3>
+        <pre>public class Estampando extends EsGraphics {
 
-	private static final int TAMANO = 50;
-	
-	private SRect punteroSello = new SRect(TAMANO, TAMANO);
-	
-	public void run() {
-		punteroSello.cambiarColor(Color.BLUE);
-		punteroSello.cambiarRelleno(true);
-		agregar(punteroSello);
-		agregarMouseListeners();
-	}
+  private static final int TAMANO = 50;
+  
+  private SRect punteroSello = new SRect(TAMANO, TAMANO);
+  
+  public void run() {
+    punteroSello.cambiarColor(Color.BLUE);
+    punteroSello.cambiarRelleno(true);
+    agregar(punteroSello);
+    agregarMouseListeners();
+  }
 
-	public void mouseClickeado(MouseEvento e) {
-		int x = e.darX() - TAMANO / 2;
-		int y = e.darY() - TAMANO / 2;
-		
-		SRect r = new SRect(TAMANO, TAMANO);
-		r.setFilled(true);
-		add(r, x, y);
-	}
-	
-	public void mouseMovido(MouseEvento e) {
-		int x = e.darX() - TAMANO / 2;
-		int y = e.darY() - TAMANO / 2;
-		punteroSello.cambiarUbicacion(x, y);
-	}
+  public void mouseClickeado(MouseEvento e) {
+    int x = e.darX() - TAMANO / 2;
+    int y = e.darY() - TAMANO / 2;
+    
+    SRect r = new SRect(TAMANO, TAMANO);
+    r.setFilled(true);
+    add(r, x, y);
+  }
+  
+  public void mouseMovido(MouseEvento e) {
+    int x = e.darX() - TAMANO / 2;
+    int y = e.darY() - TAMANO / 2;
+    punteroSello.cambiarUbicacion(x, y);
+  }
 }</pre>
-			</div>
+      </div>
 
 
-		</div>
-		<!--
-		<div class="row">
-			<div class="col-md-12">
-				<h2>Solution</h2>
+    </div>
+    <!--
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Solution</h2>
 
 
 <pre id="editor" style="height:470px">public class StampTool extends ProgramaDeGraficos {
 
-	private static final int SIZE = 50;
-	
-	public void run() {
-	}
-	
-	public void ratónPresionado(EventoDelRatón e) {
-	}
-	
-	public void ratónMovido(EventoDelRatón e) {
-	}
+  private static final int SIZE = 50;
+  
+  public void run() {
+  }
+  
+  public void ratónPresionado(EventoDelRatón e) {
+  }
+  
+  public void ratónMovido(EventoDelRatón e) {
+  }
 }</pre>
     
 <script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
@@ -90,10 +90,10 @@
     /*editor.setTheme("ace/theme/eclipse");
     editor.getSession().setMode("ace/mode/java");*/
 </script>
-	
-	</div>
-	</div>
-	-->
-		%include templates/parts/footer.html
-	</div>
+  
+  </div>
+  </div>
+  -->
+    %include templates/parts/footer.html
+  </div>
 </body>

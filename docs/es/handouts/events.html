@@ -26,8 +26,9 @@
   </script>-->
 
 </head>
+
 <body>
-<!-- Navigation Bar -->
+	<!-- Navigation Bar -->
 
 <nav class="navbar-inverse navbar-default" role="navigation">
   <div class="container-fluid">
@@ -309,28 +310,30 @@
 
 
 
-<!-- Main Content -->
-<div class="container">
-<!-- Header -->
-<div id="pageHeader">
-<h1>
+	<!-- Main Content -->
+	<div class="container">
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
 				Events Reference
 			</h1>
-<p>
+			<p>
 				Written by Danielle Kain, Kevin Miller
 			</p>
-</div>
-<hr/>
+		</div>
+		<hr />
 
-	
+
 		<h3>Mouse Listeners</h3>
-		Cuando usas eventos de mouse, es necesario poner este método en su primera linea del método run(). Esto alertará al programa para que reaccione a los eventos de MouseEvento.
-<div class="well"><code>
+		Cuando usas eventos de mouse, debes escribir el método <code>agregarMouseListeners</code> en la primera línea
+		del método <code>run()</code>. Esto indica al programa que debe reaccionar a los eventos de MouseEvento.
+		<div class="well"><code>
 agregarMouseListeners();
 </code></div>
 
-		Aquí tenemos todos los métodos que escribirás para usar el movimiento y uso del mouse en su código. Recuerda que <b>no se debe llamar esos métodos</b>. Cuando lo escriben, los métodos van a llamarse cuando el evento pase.
-<div class="well"><code>
+		A continuación se encuentran todos los métodos que puedes usar para describir el movimiento y uso del mouse en tu código. 
+		Recuerda que los métodos <b>no se llaman manualmente</b> sino que se invocan cuando el evento sucede.
+		<div class="well"><code>
 	public void mouseMovido(MouseEvento e) // cuando muevas mouse<br/>
 	public void mouseArrastrado(MouseEvento e) // cuando arrastres mouse<br/>
 
@@ -350,15 +353,15 @@ public void mousePulsado(MouseEvento e) {
 	//Esto imprimirá las coordenadas de donde presionas mouse.
 }</pre></code></div>
 
-<!-- 		This will alert the program to react to MouseEvents. If you are using KeyListeners you'll want to include:
+		<!-- 		This will alert the program to react to MouseEvents. If you are using KeyListeners you'll want to include:
 		<div class="well"><code>
 agregarTeclaListeners();
 		</code></div> -->
 
-	<h3>Tecla Listeners</h3>
-	Para escuchar los eventos de teclado, pregunta tu líder de sección.
-	
-		
+		<h3>Listeners de teclas</h3>
+		Para escuchar los eventos de teclado, pregunta a tu líder de sección.
+
+
 <hr>
 
 <div class="footer">
@@ -385,5 +388,6 @@ agregarTeclaListeners();
 	})();
 </script>-->
 
-</p></div>
+		</p>
+	</div>
 </body>

@@ -355,7 +355,38 @@ agregarTeclaListeners();
 		</code></div> -->
 
 		<h3>Listeners de teclas</h3>
-		Para escuchar los eventos de teclado, pregunta a tu líder de sección.
+		Para escuchar al teclado, como los eventos del mouse, necesitas llamar a este método en run() para agregar los métodos de tecla.
+		<div class="well"><code>
+agregarTeclaListeners();
+		</code></div>
+
+		<div class="well"><code>
+	public void	teclaPulsada(KeyEvent e) // cuando pulses en cualquier tecla<br/>
+	public void	teclaSoltada(KeyEvent e) // despues de pulsar cuando soltes de la tecla<br/>
+	public void	teclaEspichada(KeyEvent e) // una escrita de cualquier tecla<br/>
+</code></div>
+
+Para usar los eventos de KeyEvent, tienes que importar esta librería. Ten cuidado porque esta librería, como puedes ver en el ejemplo abajo, es en inglés. Si necesitas ayuda con la lengua o con escuchar al teclado, pregunta a tu líder de sección.
+<div class="well"><code>
+import java.awt.event.KeyEvent;
+</code></div>
+
+		Este es un ejemplo de escuchar por los movimientos de "WASD". T
+		<div class="well"><code><pre>
+public void teclaEspichada(KeyEvent e) {
+	if (e.getKeyCode() == KeyEvent.VK_W) {
+		imprimir("arriba");
+	}
+	if (e.getKeyCode() == KeyEvent.VK_A) {
+		imprimir("izquierda");
+	}
+	if (e.getKeyCode() == KeyEvent.VK_S) {
+		imprimir("abajo");
+	}
+	if (e.getKeyCode() == KeyEvent.VK_D) {
+		imprimir("derecha");
+	}
+}</pre></code></div>
 
 
 <hr>

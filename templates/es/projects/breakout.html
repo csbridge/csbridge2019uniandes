@@ -91,7 +91,7 @@
             <div class="col-md-12">
                 <p> Ahora viene la parte interesante. Para que Escaparse se convierta en un juego real, debes saber si la pelota está chocando con otro objeto en la ventana. Como suelen hacer los científicos, es útil comenzar por hacer una suposición simplificadora y luego relajarla más tarde. Supongamos que la bola fuera un solo punto en lugar de un círculo. En ese caso, ¿cómo podría saber si había chocado con otro objeto? </p>
                 <p> Hay un método:
-                    <div class="well"><code>SObjecto object = darObjectoEn(<span class="codeText">x</span>, <span class="codeText">y</span>)</code></div> que toma una posición en la ventana y devuelve el objeto gráfico en esa ubicación, si corresponde. Si no hay objetos gráficos que cubran esa posición, obtenerElementoEn devuelve la constante especial null. Si hay más de uno, obtenerElementoEn siempre elige el más cercano a la parte superior de la pila, que es el que parece estar al frente en la pantalla. </p>
+                    <div class="well"><code>SObjecto objeto = darObjetoEn(<span class="codeText">x</span>, <span class="codeText">y</span>)</code></div> que toma una posición en la ventana y devuelve el objeto gráfico en esa ubicación, si corresponde. Si no hay objetos gráficos que cubran esa posición, darObjetoEn devuelve la constante especial null. Si hay más de uno, darObjetoEn siempre elige el más cercano a la parte superior de la pila, que es el que parece estar al frente en la pantalla. </p>
                 <p> Lo más fácil de hacer, que de hecho es típico de los juegos de computadora reales, es verificar algunos puntos cuidadosamente elegidos en el exterior de la pelota y ver si alguno de esos puntos ha chocado con algo. Tan pronto como encuentre algo en uno de esos puntos, puede declarar que la bola ha chocado con ese objeto. </p> En su implementación, verifique los cuatro puntos de la esquina en el cuadrado en el que está inscrita la bola. Recuerde que un GOval se define en términos de su rectángulo delimitador, de modo que si la esquina superior izquierda de la bola está en el punto (x, y), las otras esquinas estarán en las ubicaciones que se muestran en este diagrama: </div>
         </div>
     </div>
@@ -102,15 +102,15 @@
 <p> Estos puntos tienen la ventaja de estar fuera de la pelota pero, sin embargo, lo suficientemente cerca como para que parezca que se han producido colisiones. Por lo tanto, para cada uno de estos cuatro puntos, necesita: </p>
 <p>
     <ol>
-        <li> Llame a obtenerElementoEn en esa ubicación para ver si hay algo allí. </li>
+        <li> Llame a darObjetoEn en esa ubicación para ver si hay algo allí. </li>
         <li> Si el valor que recupera no es nulo, entonces no necesita buscar más y puede tomar ese valor como ObjetoG con el que se produjo la colisión. </li>
-        <li> Si obtenerElementoEn devuelve un valor nulo para una esquina en particular, continúa y prueba la siguiente esquina. </li>
+        <li> Si darObjetoEn devuelve un valor "null" para una esquina en particular, continúa y prueba la siguiente esquina. </li>
         <li> Si atraviesas las cuatro esquinas sin encontrar una colisión, entonces no existe colisión. </li>
     </ol>
 </p>
 <p> Sería muy útil escribir esta sección de código como un método separado.
-    <div class="well"><code>public ObjetoG obtenerObjetoDeColisión()</code></div> Eso devuelve el objeto involucrado en la colisión, en su caso, y <b>nulo de lo</b> contrario Entonces podrías usarlo en una declaración como:
-    <div class="well"><code>ObjetoG colisionador = obtenerObjetoDeColisión();</code></div>
+    <div class="well"><code>SObjeto objeto = darObjetoEn(x, y)</code></div> Eso devuelve el objeto involucrado en la colisión, en su caso, y <b>nulo de lo</b> contrario Entonces podrías usarlo en una declaración como:
+    <div class="well"><code>SObjeto colisionador = darObjetoDeColision();</code></div>
 </p>
 <p> Desde aquí, lo único que queda por hacer es decidir qué hacer cuando ocurre una colisión. Hay solo dos posibilidades. Primero, el objeto que recuperas puede ser la paleta, que puedes probar marcando </p>
 <div class="well"><code>if (colisionador == paleta)</code></div>
@@ -142,9 +142,9 @@
         <ul>
             <li style="margin-bottom:10px"><i>Añadir sonidos.</i>
                 <p> La versión que se ejecuta como un applet en la página de asignación del CS 106A reproduce un sonido de rebote corto cada vez que la bola choca con un ladrillo o la paleta. Esta extensión resulta muy fácil. El proyecto de inicio contiene un archivo de clip de audio llamado bounce.au que contiene ese sonido. Puedes cargar el sonido escribiendo
-                    <div class="well"><code>SegmentoDeAudio clipDeRebote = HerramientasDeMedios.cargarClipDeAudio(&quot;res / bounce.au&quot;);</code></div>
+                    <div class="well"><code>AudioClip bounceClip = MediaTools.loadAudioClip("res/bounce.au");</code></div>
                     <p> y luego jugarlo llamando
-                        <div class="well"><code>clipDeRebote.jugar();</code></div> Las bibliotecas de Java hacen algunas cosas fáciles. </p>
+                        <div class="well"><code>bounceClip.play();</code></div> Las bibliotecas de Java hacen algunas cosas fáciles. </p>
                 </p>
             </li>
             <li style="margin-bottom:10px"><i>Mejorar el control del usuario sobre los rebotes.</i> El programa se vuelve bastante aburrido si lo único que tiene que hacer el jugador es golpear la pelota. Es mucho más interesante, si el jugador puede controlar la pelota al golpearla en diferentes partes de la paleta. La forma en que funcionaba el antiguo juego de arcade era que la bola rebotaría en ambas direcciones, x e y, si la golpeas en el borde de la paleta de la que venía la bola. La versión web implementa esta característica. </li>

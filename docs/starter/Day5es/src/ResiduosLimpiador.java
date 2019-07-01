@@ -40,7 +40,7 @@ public class ResiduosLimpiador extends EsGraphics {
 		double x = doubleAleatorio(0, getWidth() - width);
 		double y = doubleAleatorio(0, getHeight() - height);
 		
-		GOval oval = new GOval(x, y, width, height);
+		SOvalo oval = new SOvalo(x, y, width, height);
 		oval.setFilled(true);
 		oval.setColor(colorAleatorio());
 		add(oval);

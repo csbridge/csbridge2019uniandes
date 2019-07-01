@@ -55,7 +55,7 @@
         <h2 style="color:blue"> 2. Crea la barra. </h2>
         <div class="row">
             <div class="col-md-12">
-                <p> El siguiente paso es crear la barra. Sólo hay una barra, que es un GRect relleno. Incluso sabes su posición en relación con la parte inferior de la ventana. </p>
+                <p> El siguiente paso es crear la barra. Sólo hay una barra, que es un SRect relleno. Incluso sabes su posición en relación con la parte inferior de la ventana. </p>
                 <p> El desafío al crear la barra es hacer que rastree el mouse. Aquí, sin embargo, solo debe prestar atención a la coordenada x del mouse porque la posición y de la barra es fija. </p>
                 <p> Si llama al método (tal vez desde ejecutar):
                     <div class="well"><code>agregarMouseListeners();</code></div>
@@ -71,7 +71,7 @@
         <h2 style="color:blue"> 3. Hacer que la bola se mueva. </h2>
         <div class="row">
             <div class="col-md-12">
-                <p> En un nivel, crear la pelota es fácil, dado que es solo un GOval lleno. La parte interesante radica en lograr que se mueva y rebote adecuadamente. Ya ha pasado la fase de &quot;configuración&quot; y ha pasado a la fase de &quot;juego&quot; del juego. Para empezar, crea una bola y colócala en el centro de la ventana. Mientras lo hace, tenga en cuenta que las coordenadas de GOval no especifican la ubicación del centro de la pelota, sino su esquina superior izquierda. </p>
+                <p> En un nivel, crear la pelota es fácil, dado que es solo un SOvalo lleno. La parte interesante radica en lograr que se mueva y rebote adecuadamente. Ya ha pasado la fase de &quot;configuración&quot; y ha pasado a la fase de &quot;juego&quot; del juego. Para empezar, crea una bola y colócala en el centro de la ventana. Mientras lo hace, tenga en cuenta que las coordenadas de SOvalo no especifican la ubicación del centro de la pelota, sino su esquina superior izquierda. </p>
                 <p> El programa debe realizar un seguimiento de la velocidad de la bola, que consta de dos componentes separados, que presumiblemente declarará como variables de instancia como esta: </p>
                 <p>
                     <div class="well"><code>private double vx;<br/>private double vy;</code></div>
@@ -92,7 +92,7 @@
                 <p> Ahora viene la parte interesante. Para que Escaparse se convierta en un juego real, debes saber si la pelota está chocando con otro objeto en la ventana. Como suelen hacer los científicos, es útil comenzar por hacer una suposición simplificadora y luego relajarla más tarde. Supongamos que la bola fuera un solo punto en lugar de un círculo. En ese caso, ¿cómo podría saber si había chocado con otro objeto? </p>
                 <p> Hay un método:
                     <div class="well"><code>SObjecto objeto = darObjetoEn(<span class="codeText">x</span>, <span class="codeText">y</span>);</code></div> que toma una posición en la ventana y devuelve el objeto gráfico en esa ubicación, si corresponde. Si no hay objetos gráficos que cubran esa posición, darObjetoEn devuelve la constante especial null. Si hay más de uno, darObjetoEn siempre elige el más cercano a la parte superior de la pila, que es el que parece estar al frente en la pantalla. </p>
-                <p> Lo más fácil de hacer, que de hecho es típico de los juegos de computadora reales, es verificar algunos puntos cuidadosamente elegidos en el exterior de la pelota y ver si alguno de esos puntos ha chocado con algo. Tan pronto como encuentre algo en uno de esos puntos, puede declarar que la bola ha chocado con ese objeto. </p> En su implementación, verifique los cuatro puntos de la esquina en el cuadrado en el que está inscrita la bola. Recuerde que un GOval se define en términos de su rectángulo delimitador, de modo que si la esquina superior izquierda de la bola está en el punto (x, y), las otras esquinas estarán en las ubicaciones que se muestran en este diagrama: 
+                <p> Lo más fácil de hacer, que de hecho es típico de los juegos de computadora reales, es verificar algunos puntos cuidadosamente elegidos en el exterior de la pelota y ver si alguno de esos puntos ha chocado con algo. Tan pronto como encuentre algo en uno de esos puntos, puede declarar que la bola ha chocado con ese objeto. </p> En su implementación, verifique los cuatro puntos de la esquina en el cuadrado en el que está inscrita la bola. Recuerde que un SOvalo se define en términos de su rectángulo delimitador, de modo que si la esquina superior izquierda de la bola está en el punto (x, y), las otras esquinas estarán en las ubicaciones que se muestran en este diagrama: 
 <p>
     <center><img src="/img/projects/breakout/breakoutCollision.png" /></center>
 </p>
@@ -100,7 +100,7 @@
 <p>
     <ol>
         <li> Llame a darObjetoEn en esa ubicación para ver si hay algo allí. </li>
-        <li> Si el valor que recupera no es nulo, entonces no necesita buscar más y puede tomar ese valor como ObjetoG con el que se produjo la colisión. </li>
+        <li> Si el valor que recupera no es nulo, entonces no necesita buscar más y puede tomar ese valor como SObjeto con el que se produjo la colisión. </li>
         <li> Si darObjetoEn devuelve un valor "null" para una esquina en particular, continúa y prueba la siguiente esquina. </li>
         <li> Si atraviesas las cuatro esquinas sin encontrar una colisión, entonces no existe colisión. </li>
     </ol>

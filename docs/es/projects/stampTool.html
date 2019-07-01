@@ -319,7 +319,40 @@
 				<p> Recuerda que ya que necesitas tener una variable que puede cambiar dentro de una clase de evento de
 					mouse (el GRect que representa tu sello), tendrás que declararlo como una variable de instancia.
 					Pide ayuda a uno de tus maestros si no entiendes muy bien qué significa. </p>
+
+
+				<h3>Solucion</h3>
+				<pre>public class Estampando extends EsGraphics {
+
+	private static final int TAMANO = 50;
+	
+	private SRect punteroSello = new SRect(TAMANO, TAMANO);
+	
+	public void run() {
+		punteroSello.cambiarColor(Color.BLUE);
+		punteroSello.cambiarRelleno(true);
+		agregar(punteroSello);
+		agregarMouseListeners();
+	}
+
+	public void mouseClickeado(MouseEvento e) {
+		int x = e.darX() - TAMANO / 2;
+		int y = e.darY() - TAMANO / 2;
+		
+		SRect r = new SRect(TAMANO, TAMANO);
+		r.setFilled(true);
+		add(r, x, y);
+	}
+	
+	public void mouseMovido(MouseEvento e) {
+		int x = e.darX() - TAMANO / 2;
+		int y = e.darY() - TAMANO / 2;
+		punteroSello.cambiarUbicacion(x, y);
+	}
+}</pre>
 			</div>
+
+
 		</div>
 		<!--
 		<div class="row">

@@ -1,9 +1,32 @@
 <head>
 
 	%include templates/parts/head.html
-</head><body><!-- Navigation Bar -->
+</head>
+
+<body>
+	<!-- Navigation Bar -->
 	%include templates/parts/navBarEs.html
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Herramienta de sello </h1><p> Problema escrito por un misterioso CS106A Profesor. </p></div><hr/><div class="row"><div class="col-md-12"><p> Escriba un programa que tenga un GRect (que represente un sello) siga al ratón de los usuarios y dibuje un GRect en la pantalla centrada alrededor del mouse cuando el usuario haga clic. </p><p><center><img src="{{pathToRoot}}img/projects/stampTool/demo.png" style="width:500px"/></center></p><p> Recuerde que ya que necesita tener una variable que puede cambiar dentro de una clase de evento de mouse (el GRect que representa su sello) tendrá que declararlo como una variable de distancia. Pídale a uno de los maestros que explique esto si no tiene sentido. </p></div></div><!--
+	<!-- Main Content -->
+	<div class="container">
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1> Herramienta de sello </h1>
+			<p> Problema escrito por un misterioso Profesor CS106A. </p>
+		</div>
+		<hr />
+		<div class="row">
+			<div class="col-md-12">
+				<p> Escribe un programa que, simulando un sello, tenga un GRect que siga el mouse del usuario y
+					que cuando el usuario haga clic se dibuje un GRect. </p>
+				<p>
+					<center><img src="{{pathToRoot}}img/projects/stampTool/demo.png" style="width:500px" /></center>
+				</p>
+				<p> Recuerda que ya que necesitas tener una variable que puede cambiar dentro de una clase de evento de
+					mouse (el GRect que representa tu sello), tendrás que declararlo como una variable de instancia.
+					Pide ayuda a uno de tus maestros si no entiendes muy bien qué significa. </p>
+			</div>
+		</div>
+		<!--
 		<div class="row">
 			<div class="col-md-12">
 				<h2>Solution</h2>
@@ -39,4 +62,5 @@
 	</div>
 	-->
 		%include templates/parts/footer.html
-</div></body>
+	</div>
+</body>

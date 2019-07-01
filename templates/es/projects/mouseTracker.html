@@ -1,0 +1,31 @@
+<head>
+
+    %include templates/parts/head.html
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    %include templates/parts/navBarEs.html
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Header -->
+        <div id="pageHeader">
+            <h1> MouseTracker </h1>
+            <p> Escrito por Chris </p>
+            <p> Guias: <a href="{{pathToRoot}}es/handouts/events.html">Eventos</a>
+                <br/> Ejemplos: </p>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-12">
+                <p> Escriba un programa muy simple que agregue un MouseListener y cada vez que el mouse se mueva, imprima la ubicación x, y del mouse (sugerencia: use <code>imprimir</code>)</p>
+                <p>
+                    <center><img src="{{pathToRoot}}img/projects/mouseTracker/demo.png" style="float:left; width:400px" /></center>
+                </p>
+                
+            </div>
+        </div>
+
+        %include templates/parts/footer.html
+    </div>
+</body>

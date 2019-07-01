@@ -23,7 +23,10 @@
 <!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});
   </script>-->
-</head><body><!-- Navigation Bar -->
+</head>
+
+<body>
+	<!-- Navigation Bar -->
 <nav class="navbar-inverse navbar-default" role="navigation">
   <div class="container-fluid">
   	<div class="container">
@@ -102,10 +105,12 @@
 
 	          	<li class="divider"></li>
 
-	          	<li><a href="../../es/projects/makingTracks.html">Making Tracks</a></li>
-	             <li><a href="../../es/projects/stampTool.html">Stamp Tool</a></li>
+	          	<li><a href="../../es/projects/mouseTracker.html">MouseTracker</a></li>
+	          	<li><a href="../../es/projects/makingTracks.html">Dejando huellas</a></li>
 	          	<li><a href="../../es/projects/catchMeIfYouCan.html">Atrápame si puedes</a></li>
-	          	<!--<li><a href="../../es/projects/breakout.html">Breakout</a></li>
+	             <!--<li><a href="../../es/projects/stampTool.html">Stamp Tool</a></li>
+	          	
+	          	<li><a href="../../es/projects/breakout.html">Breakout</a></li>
 
 							
 	          	<li class="divider"></li>
@@ -167,21 +172,15 @@
 	            <li><a href="../../es/projects/spectra.html">Espectros</a></li>
 	            <li><a href="../../es/projects/averageMethod.html">Método promedio</a></li>
 
-	            <!--
+	            <li class="divider"></li>
 
-	            	<li><a href="../../es/projects/suchADrag.html">Such a Drag</a></li>
-
-	            
-
-	          		
-
-	          	<li class="divider"></li>
-							<li><a href="../../es/projects/rocketShip.html">Rockets</a></li>
-
-	          	
-	              
+	            	
 	             
-	             <li><a href="../../projects/stampTool.html">Stamp Tool</a></li>
+	             <li><a href="../../es/projects/stampTool.html">Estampando</a></li>
+
+
+	            <!--  <li><a href="../../es/projects/suchADrag.html">Such a Drag</a></li> -->
+	             <!--
 	            <li><a href="../../projects/snow.html">Snow</a></li>
 
               <li class="divider"></li>
@@ -201,9 +200,9 @@
 	          	<li><a href="../../slides/Graphics.pdf">Graphics</a></li>
 	          	<li><a href="../../slides/Animation.pdf">Animation</a></li>
 	          	<li><a href="../../slides/Methods.pdf">Methods</a></li>
-	          	<!--<li><a href="../../slides/Review.pdf">Review</a></li>
+	          	<!-- <li><a href="../../slides/Review.pdf">Review</a></li> -->
 	          	<li><a href="../../slides/Events.pdf">Events</a></li>
-	          	<li><a href="../../slides/Internet.pdf">Internet</a></li>
+	          	<!--<li><a href="../../slides/Internet.pdf">Internet</a></li>
 	          	<li><a href="../../slides/Arrays.pdf">Arrays</a></li>
 	          	<li><a href="../../slides/ArrayLists.pdf">Array Lists</a></li>
 	          	<li><a href="../../slides/Strings.pdf">Strings</a></li>
@@ -303,10 +302,31 @@
 </script>
 
 
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Haciendo pistas </h1><p> Problema escrito por un misterioso CS106A Profesor. </p><p> Guias: <a href="../../es/handouts/events.html">Eventos</a><br/> Ejemplos: <a href="../../es/projects/stampTool.html">Herramienta de sello</a></p></div><hr/><div class="row"><div class="col-md-12"><p> Escriba un programa que dibuje una impresión de oso en cualquier lugar donde el usuario haga clic. </p><p><center><img src="../../img/icons/makingTracks.png" style="width:500px"/></center></p><p> Se le proporciona un método <code>dibujarPistaDeOso</code> que dibuja una única pista de oso en la posición dada (x, y): </p><pre> public void dibujarHuellaOso (<span class="codeText">x</span>, <span class="codeText">y</span>) </pre></div></div>
-		
-		
-		
+	<!-- Main Content -->
+	<div class="container">
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1> Dejando huellas  </h1>
+			<p> Problema escrito por un misterioso Profesor de CS106A. </p>
+			<p> Guias: <a href="../../es/handouts/events.html">Eventos</a><br /> Ejemplos: <a
+					href="../../es/projects/stampTool.html">Herramienta de sello</a></p>
+		</div>
+		<hr />
+		<div class="row">
+			<div class="col-md-12">
+				<p> Escriba un programa que dibuje una huella de oso en cualquier lugar donde el usuario haga clic.
+				</p>
+				<p>
+					<center><img src="../../img/icons/makingTracks.png" style="width:500px" /></center>
+				</p>
+				<p> Se le proporciona un método <code>dibujarHuellaDeOso</code> que dibuja una única huella de oso en la
+					posición dada (x, y): </p>
+				<pre> public void dibujarHuellaOso (<span class="codeText">x</span>, <span class="codeText">y</span>) </pre>
+			</div>
+		</div>
+
+
+
 <hr>
 
 <div class="footer">
@@ -332,4 +352,5 @@
 		s.parentNode.insertBefore(ga, s);
 	})();
 </script>-->
-</div></body>
+	</div>
+</body>

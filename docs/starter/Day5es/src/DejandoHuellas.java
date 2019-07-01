@@ -4,7 +4,7 @@ import espl.*;
 import java.awt.event.*;
 import acm.graphics.*;
 
-public class HaciendoPistas extends EsGraphics {
+public class DejandoHuellas extends EsGraphics {
 	
 	
 	public void run() {

@@ -12,6 +12,10 @@ public class SRect extends GRect implements SObjeto{
 	public SRect(double x, double y, double ancho, double alto) {
 		super(x, y, ancho, alto);
 	}
+	
+	public void enviarAlFondo() {
+		sendToBack();
+	}
 
 	public double darX() {
 		return getX();

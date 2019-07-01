@@ -3,7 +3,7 @@ import java.awt.event.MouseEvent;
 
 import espl.*;
 
-public class ReporteroMouse extends EsGraphics {
+public class MouseTracker extends EsGraphics {
 
 	public void run() {
 		// tu codigo aca

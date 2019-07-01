@@ -15,7 +15,6 @@ public class ResiduosLimpiador extends EsGraphics {
 		agregarMouseListeners();
 	}
 	
-	@Override
 	public void mousePulsado(MouseEvento e) {
 		SObjeto objecto = darObjetoEn(e.darX(), e.darY());
 		if (objecto != null) {
@@ -28,19 +27,19 @@ public class ResiduosLimpiador extends EsGraphics {
 	/* Crea escombros y los derrama al azar a la pantalla. */
 	private void agregarResiduos() {
 		for (int i = 0; i < N_RESIDUOS; i++) {
-			createSingleDebrisPiece();
+			agregarResiduo();
 		}
 	}
 	
 	/* Crea una sola pieza de escombros y la agrega a 
 	 * la pantalla. */
-	private void createSingleDebrisPiece() {
+	private void agregarResiduo() {
 		double width  = doubleAleatorio(MIN_TAMANO_RESIDUO, MAX_TAMANO_RESIDUO);
 		double height = doubleAleatorio(MIN_TAMANO_RESIDUO, MAX_TAMANO_RESIDUO);
 		double x = doubleAleatorio(0, getWidth() - width);
 		double y = doubleAleatorio(0, getHeight() - height);
 		
-		GOval oval = new GOval(x, y, width, height);
+		SOvalo oval = new SOvalo(x, y, width, height);
 		oval.setFilled(true);
 		oval.setColor(colorAleatorio());
 		add(oval);

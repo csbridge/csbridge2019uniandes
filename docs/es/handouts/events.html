@@ -26,8 +26,9 @@
   </script>-->
 
 </head>
+
 <body>
-<!-- Navigation Bar -->
+	<!-- Navigation Bar -->
 
 <nav class="navbar-inverse navbar-default" role="navigation">
   <div class="container-fluid">
@@ -107,10 +108,12 @@
 
 	          	<li class="divider"></li>
 
-	          	<li><a href="../../es/projects/makingTracks.html">Making Tracks</a></li>
-	             <li><a href="../../es/projects/stampTool.html">Stamp Tool</a></li>
+	          	<li><a href="../../es/projects/mouseTracker.html">MouseTracker</a></li>
+	          	<li><a href="../../es/projects/makingTracks.html">Dejando huellas</a></li>
 	          	<li><a href="../../es/projects/catchMeIfYouCan.html">Atrápame si puedes</a></li>
-	          	<!--<li><a href="../../es/projects/breakout.html">Breakout</a></li>
+	             <!--<li><a href="../../es/projects/stampTool.html">Stamp Tool</a></li>
+	          	
+	          	<li><a href="../../es/projects/breakout.html">Breakout</a></li>
 
 							
 	          	<li class="divider"></li>
@@ -172,21 +175,15 @@
 	            <li><a href="../../es/projects/spectra.html">Espectros</a></li>
 	            <li><a href="../../es/projects/averageMethod.html">Método promedio</a></li>
 
-	            <!--
+	            <li class="divider"></li>
 
-	            	<li><a href="../../es/projects/suchADrag.html">Such a Drag</a></li>
-
-	            
-
-	          		
-
-	          	<li class="divider"></li>
-							<li><a href="../../es/projects/rocketShip.html">Rockets</a></li>
-
-	          	
-	              
+	            	
 	             
-	             <li><a href="../../projects/stampTool.html">Stamp Tool</a></li>
+	             <li><a href="../../es/projects/stampTool.html">Estampando</a></li>
+
+
+	            <!--  <li><a href="../../es/projects/suchADrag.html">Such a Drag</a></li> -->
+	             <!--
 	            <li><a href="../../projects/snow.html">Snow</a></li>
 
               <li class="divider"></li>
@@ -206,9 +203,9 @@
 	          	<li><a href="../../slides/Graphics.pdf">Graphics</a></li>
 	          	<li><a href="../../slides/Animation.pdf">Animation</a></li>
 	          	<li><a href="../../slides/Methods.pdf">Methods</a></li>
-	          	<!--<li><a href="../../slides/Review.pdf">Review</a></li>
+	          	<!-- <li><a href="../../slides/Review.pdf">Review</a></li> -->
 	          	<li><a href="../../slides/Events.pdf">Events</a></li>
-	          	<li><a href="../../slides/Internet.pdf">Internet</a></li>
+	          	<!--<li><a href="../../slides/Internet.pdf">Internet</a></li>
 	          	<li><a href="../../slides/Arrays.pdf">Arrays</a></li>
 	          	<li><a href="../../slides/ArrayLists.pdf">Array Lists</a></li>
 	          	<li><a href="../../slides/Strings.pdf">Strings</a></li>
@@ -309,28 +306,30 @@
 
 
 
-<!-- Main Content -->
-<div class="container">
-<!-- Header -->
-<div id="pageHeader">
-<h1>
+	<!-- Main Content -->
+	<div class="container">
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
 				Events Reference
 			</h1>
-<p>
-				Written by Danielle Kain, Kevin Miller
+			<p>
+				Written by Danielle Kain, Kevin Miller, and Nathan Dalal
 			</p>
-</div>
-<hr/>
+		</div>
+		<hr />
 
-	
-		<h3>Mouse Listeners</h3>
-		Cuando usas eventos de mouse, es necesario poner este método en su primera linea del método run(). Esto alertará al programa para que reaccione a los eventos de MouseEvento.
-<div class="well"><code>
+
+		<h3>Listeners de Mouse</h3>
+		Cuando usas eventos de mouse, debes escribir el método <code>agregarMouseListeners</code> en la primera línea
+		del método <code>run()</code>. Esto indica al programa que debe reaccionar a los eventos de MouseEvento.
+		<div class="well"><code>
 agregarMouseListeners();
 </code></div>
 
-		Aquí tenemos todos los métodos que escribirás para usar el movimiento y uso del mouse en su código. Recuerda que <b>no se debe llamar esos métodos</b>. Cuando lo escriben, los métodos van a llamarse cuando el evento pase.
-<div class="well"><code>
+		A continuación se encuentran todos los métodos que puedes usar para describir el movimiento y uso del mouse en tu código. 
+		Recuerda que los métodos <b>no se llaman manualmente</b> sino que se invocan cuando el evento sucede.
+		<div class="well"><code>
 	public void mouseMovido(MouseEvento e) // cuando muevas mouse<br/>
 	public void mouseArrastrado(MouseEvento e) // cuando arrastres mouse<br/>
 
@@ -350,15 +349,46 @@ public void mousePulsado(MouseEvento e) {
 	//Esto imprimirá las coordenadas de donde presionas mouse.
 }</pre></code></div>
 
-<!-- 		This will alert the program to react to MouseEvents. If you are using KeyListeners you'll want to include:
+		<!-- 		This will alert the program to react to MouseEvents. If you are using KeyListeners you'll want to include:
 		<div class="well"><code>
 agregarTeclaListeners();
 		</code></div> -->
 
-	<h3>Tecla Listeners</h3>
-	Para escuchar los eventos de teclado, pregunta tu líder de sección.
-	
-		
+		<h3>Listeners de teclas</h3>
+		Para escuchar al teclado, como los eventos del mouse, necesitas llamar a este método en run() para agregar los métodos de tecla.
+		<div class="well"><code>
+agregarTeclaListeners();
+		</code></div>
+
+		<div class="well"><code>
+	public void	teclaPulsada(KeyEvent e) // cuando pulses en cualquier tecla<br/>
+	public void	teclaSoltada(KeyEvent e) // despues de pulsar cuando soltes de la tecla<br/>
+	public void	teclaEspichada(KeyEvent e) // una escrita de cualquier tecla<br/>
+</code></div>
+
+Para usar los eventos de KeyEvent, tienes que importar esta librería. Ten cuidado porque esta librería, como puedes ver en el ejemplo abajo, es en inglés. Si necesitas ayuda con la lengua o con escuchar al teclado, pregunta a tu líder de sección.
+<div class="well"><code>
+import java.awt.event.KeyEvent;
+</code></div>
+
+		Este es un ejemplo de escuchar por los movimientos de "WASD".
+		<div class="well"><code><pre>
+public void teclaEspichada(KeyEvent e) {
+	if (e.getKeyCode() == KeyEvent.VK_W) {
+		imprimir("arriba");
+	}
+	if (e.getKeyCode() == KeyEvent.VK_A) {
+		imprimir("izquierda");
+	}
+	if (e.getKeyCode() == KeyEvent.VK_S) {
+		imprimir("abajo");
+	}
+	if (e.getKeyCode() == KeyEvent.VK_D) {
+		imprimir("derecha");
+	}
+}</pre></code></div>
+
+
 <hr>
 
 <div class="footer">
@@ -385,5 +415,6 @@ agregarTeclaListeners();
 	})();
 </script>-->
 
-</p></div>
+		</p>
+	</div>
 </body>

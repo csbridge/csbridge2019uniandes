@@ -12,6 +12,10 @@ public class SOvalo extends GOval implements SObjeto{
 	public SOvalo(double x, double y, double ancho, double alto) {
 		super(x, y, ancho, alto);
 	}
+	
+	public void enviarAlFondo() {
+		sendToBack();
+	}
 
 	public double darX() {
 		return getX();

@@ -78,7 +78,7 @@
                 </p>
                 <p> Los componentes de velocidad representan el cambio de posición que se produce en cada paso de tiempo. Inicialmente, la bola debe ir hacia abajo, y puede intentar una velocidad inicial de +3.0 para vy (recuerde que los valores de y en Java aumentan a medida que avanza por la pantalla). El juego sería aburrido si cada bola tomara el mismo rumbo, por lo que deberías elegir el componente vx al azar. Simplemente debes hacer lo siguiente: </p>
                 <p>
-                    <b>aleatorio pelota direction</b>:<br/> 
+                    <b>Dirección aleatoria de la pelota</b>:<br/> 
                      Inicialice la variable vx de la siguiente manera: <code>vx = doubleAleatorio (1.0, 3.0);</code> y si <code>booleanAleatorio(0.5)</code> es verdad, <code>vx = -vx;</code> Este código establece que vx es un doble aleatorio en el rango de 1.0 a 3.0 y luego lo hace negativo la mitad del tiempo. Esta estrategia funciona mucho mejor para Escaparse que para llamar a <code>doubleAleatorio(-3.0, +3.0)</code>, lo que podría generar una bola que va más o menos hacia abajo. Eso haría la vida demasiado fácil para el jugador.
                     
                 </p>
@@ -91,7 +91,7 @@
             <div class="col-md-12">
                 <p> Ahora viene la parte interesante. Para que Escaparse se convierta en un juego real, debes saber si la pelota está chocando con otro objeto en la ventana. Como suelen hacer los científicos, es útil comenzar por hacer una suposición simplificadora y luego relajarla más tarde. Supongamos que la bola fuera un solo punto en lugar de un círculo. En ese caso, ¿cómo podría saber si había chocado con otro objeto? </p>
                 <p> Hay un método:
-                    <div class="well"><code>SObjecto objeto = darObjetoEn(<span class="codeText">x</span>, <span class="codeText">y</span>)</code></div> que toma una posición en la ventana y devuelve el objeto gráfico en esa ubicación, si corresponde. Si no hay objetos gráficos que cubran esa posición, darObjetoEn devuelve la constante especial null. Si hay más de uno, darObjetoEn siempre elige el más cercano a la parte superior de la pila, que es el que parece estar al frente en la pantalla. </p>
+                    <div class="well"><code>SObjecto objeto = darObjetoEn(<span class="codeText">x</span>, <span class="codeText">y</span>);</code></div> que toma una posición en la ventana y devuelve el objeto gráfico en esa ubicación, si corresponde. Si no hay objetos gráficos que cubran esa posición, darObjetoEn devuelve la constante especial null. Si hay más de uno, darObjetoEn siempre elige el más cercano a la parte superior de la pila, que es el que parece estar al frente en la pantalla. </p>
                 <p> Lo más fácil de hacer, que de hecho es típico de los juegos de computadora reales, es verificar algunos puntos cuidadosamente elegidos en el exterior de la pelota y ver si alguno de esos puntos ha chocado con algo. Tan pronto como encuentre algo en uno de esos puntos, puede declarar que la bola ha chocado con ese objeto. </p> En su implementación, verifique los cuatro puntos de la esquina en el cuadrado en el que está inscrita la bola. Recuerde que un GOval se define en términos de su rectángulo delimitador, de modo que si la esquina superior izquierda de la bola está en el punto (x, y), las otras esquinas estarán en las ubicaciones que se muestran en este diagrama: 
 <p>
     <center><img src="/img/projects/breakout/breakoutCollision.png" /></center>
@@ -106,7 +106,7 @@
     </ol>
 </p>
 <p> Sería muy útil escribir esta sección de código como un método separado.
-    <div class="well"><code>SObjeto objeto = darObjetoEn(x, y)</code></div> Eso devuelve el objeto involucrado en la colisión, en su caso, y <b>nulo de lo</b> contrario Entonces podrías usarlo en una declaración como:
+    <div class="well"><code>SObjeto objeto = darObjetoEn(x, y);</code></div> Eso devuelve el objeto involucrado en la colisión, en su caso, y <b>"null"</b> de lo contrario. Entonces podrías usarlo en una declaración como:
     <div class="well"><code>SObjeto colisionador = darObjetoDeColision();</code></div>
 </p>
 <p> Desde aquí, lo único que queda por hacer es decidir qué hacer cuando ocurre una colisión. Hay solo dos posibilidades. Primero, el objeto que recuperas puede ser la barra, que puedes probar marcando </p>
@@ -121,7 +121,7 @@
         </ol>
     </div>
 </div>
-<h2 style="color:blue"> Manifestación </h2>
+<h2 style="color:blue"> Demonstración </h2>
 <div class="row">
     <div class="col-md-12">
         <p></p>

@@ -1,11 +1,36 @@
 <head>
 
 	%include templates/parts/head.html
-</head><body><!-- Navigation Bar -->
+</head>
+
+<body>
+	<!-- Navigation Bar -->
 	%include templates/parts/navBarEs.html
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Haciendo pistas </h1><p> Problema escrito por un misterioso CS106A Profesor. </p><p> Guias: <a href="{{pathToRoot}}es/handouts/events.html">Eventos</a><br/> Ejemplos: <a href="{{pathToRoot}}es/projects/stampTool.html">Herramienta de sello</a></p></div><hr/><div class="row"><div class="col-md-12"><p> Escriba un programa que dibuje una impresión de oso en cualquier lugar donde el usuario haga clic. </p><p><center><img src="{{pathToRoot}}img/icons/makingTracks.png" style="width:500px"/></center></p><p> Se le proporciona un método <code>dibujarPistaDeOso</code> que dibuja una única pista de oso en la posición dada (x, y): </p><pre> public void dibujarHuellaOso (<span class="codeText">x</span>, <span class="codeText">y</span>) </pre></div></div>
-		
-		
-		
+	<!-- Main Content -->
+	<div class="container">
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1> Dejando huellas  </h1>
+			<p> Problema escrito por un misterioso Profesor de CS106A. </p>
+			<p> Guias: <a href="{{pathToRoot}}es/handouts/events.html">Eventos</a><br /> Ejemplos: <a
+					href="{{pathToRoot}}es/projects/stampTool.html">Herramienta de sello</a></p>
+		</div>
+		<hr />
+		<div class="row">
+			<div class="col-md-12">
+				<p> Escriba un programa que dibuje una huella de oso en cualquier lugar donde el usuario haga clic.
+				</p>
+				<p>
+					<center><img src="{{pathToRoot}}img/icons/makingTracks.png" style="width:500px" /></center>
+				</p>
+				<p> Se le proporciona un método <code>dibujarHuellaDeOso</code> que dibuja una única huella de oso en la
+					posición dada (x, y): </p>
+				<pre> public void dibujarHuellaOso (<span class="codeText">x</span>, <span class="codeText">y</span>) </pre>
+			</div>
+		</div>
+
+
+
 		%include templates/parts/footer.html
-</div></body>
+	</div>
+</body>

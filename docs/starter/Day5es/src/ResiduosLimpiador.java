@@ -15,7 +15,6 @@ public class ResiduosLimpiador extends EsGraphics {
 		agregarMouseListeners();
 	}
 	
-	@Override
 	public void mousePulsado(MouseEvento e) {
 		SObjeto objecto = darObjetoEn(e.darX(), e.darY());
 		if (objecto != null) {

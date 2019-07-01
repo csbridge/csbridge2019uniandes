@@ -322,9 +322,9 @@
 </div>
 <hr/>
 		 Cuando usas eventos de mouse, es necesario poner este método en su primera linea del método run():
-		<div class="well"><code>
+<div class="well"><code>
 agregarMouseListeners();
-		</code></div>
+</code></div>
 
 		Aquí tenemos todos los métodos que escribirás para usar el movimiento y uso del mouse en su código. Recuerda que <b>no se debe llamar esos métodos</b>. Cuando lo escriben, los métodos van a llamarse cuando el evento pase.
 <div class="well"><code>
@@ -340,13 +340,12 @@ agregarMouseListeners();
 </code></div>
 
 
-<p>Esto es un ejemplo de escribir uno de esos métodos.
+		Esto es un ejemplo de escribir uno de esos métodos.
 		<div class="well"><code><pre>
 public void mousePulsado(MouseEvento e) {
 	imprimir("X: " + e.darX() + "y:" + e.darY());
 	//Esto imprimirá las coordenadas de donde presionas mouse.
-}
-		</pre></code></div>
+}</pre></code></div>
 
 <!-- 		This will alert the program to react to MouseEvents. If you are using KeyListeners you'll want to include:
 		<div class="well"><code>

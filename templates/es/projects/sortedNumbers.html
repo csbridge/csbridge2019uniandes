@@ -1,16 +1,47 @@
 <head>
 
-	%include templates/parts/head.html
-</head><body><!-- Navigation Bar -->
-	%include templates/parts/navBarEs.html
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Números ordenados </h1><p> Escrito por Chris Piech </p><p> Folletos: <a href="{{pathToRoot}}es/handouts/arrayLists.html">ArrayLists</a><br/> Ejemplos: <a href="{{pathToRoot}}es/projects/rocketShip.html">cohetes</a></p></div><hr/><div class="row"><div class="col-md-12"><p> Pida al usuario que tenga menos de 10 números, luego imprima esos números en orden ordenado. </p><p><center><img src="{{pathToRoot}}img/projects/sorted/demo.png" style="width:500px"/></center></p><p> Almacena los números que el usuario ingresó en una ListaDeArreglo. Puedes ordenar el contenido de un ListaDeArreglo usando: <pre> Colecciones.ordenar ( <i>listaDeArreglo</i>); </pre> La ordenación de llamadas reordena los elementos de la matriz pasada. Por ejemplo, la ordenación de llamadas en la siguiente matriz tiene el resultado dado: </p><p><center><img src="{{pathToRoot}}img/projects/sorted/sorting.png" style="width:400px"/></center></p><h2> Consejos </h2><p> Para crear una lista matricial de números use: <pre> ListaDeArreglo &lt;Entero&gt; miLista = nuevo ListaDeArreglo &lt;Entero&gt; (); </pre></p><br/><p> Recuerde que puede leer un intenger del usuario usando: <pre> int número = leerInt ( <i>rápido</i>); </pre></p><br/><p> Para agregar un elemento a una lista: <pre> miLista.añadir ( <i>nuevoValor</i>); </pre></p><br/><p> Para obtener un elemento de una lista: <pre> miLista.obtener ( <i>índice</i>); </pre></p><br/><p> Para recorrer todos los elementos de una lista: <pre> para (int i = 0; i &lt;miLista.tamaño (); i ++) {
-    miLista.obtener (i);
-} </pre></p></div></div>
+    %include templates/parts/head.html
+</head>
 
-		
+<body>
+    <!-- Navigation Bar -->
+    %include templates/parts/navBarEs.html
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Header -->
+        <div id="pageHeader">
+            <h1> Números ordenados </h1>
+            <p> Escrito por Chris Piech </p>
+            <p> Folletos: <a href="{{pathToRoot}}es/handouts/arrayLists.html">ArrayLists</a>
+                <br/> Ejemplos: <a href="{{pathToRoot}}es/projects/rocketShip.html">cohetes</a></p>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-12">
+                <p> Pida al usuario que tenga menos de 10 números, luego imprima esos números en orden ordenado. </p>
+                <p>
+                    <center><img src="{{pathToRoot}}img/projects/sorted/demo.png" style="width:500px" /></center>
+                </p>
+                <p> Almacena los números que el usuario ingresó en una ArrayList. Puedes ordenar el contenido de un ArrayList usando: <pre> Collections.sort( <i class="codeText">miLista</i>); </pre> La ordenación de llamadas reordena los elementos de la matriz pasada. Por ejemplo, la ordenación de llamadas en la siguiente matriz tiene el resultado dado: </p>
+                <p>
+                    <center><img src="{{pathToRoot}}img/projects/sorted/sorting.png" style="width:400px" /></center>
+                </p>
+                <h2> Consejos </h2>
+                <p> Para crear una lista matricial de números use: <pre> ArrayList&lt;Integer&gt; miLista = new ArrayList &lt;Integer&gt; (); </pre></p>
+                <br/>
+                <p> Recuerde que puede leer un entero del usuario usando: <pre> int numero = leerInt ( <i>mensaje</i>); </pre></p>
+                <br/>
+                <p> Para agregar un elemento a una lista: <pre> miLista.add ( <i>nuevoValor</i>); </pre></p>
+                <br/>
+                <p> Para obtener un elemento de una lista: <pre> miLista.get ( <i>indice</i>); </pre></p>
+                <br/>
+                <p> Para recorrer todos los elementos de una lista: <pre> for (int i = 0; i &lt;miLista.size(); i ++) {
+    int temp = miLista.get(i);
+    imprimir(temp);
+} </pre></p>
+            </div>
+        </div>
 
-		
-
-		
-		%include templates/parts/footer.html
-</div></body>
+        %include templates/parts/footer.html
+    </div>
+</body>

@@ -1,0 +1,49 @@
+<head>
+
+
+	%include templates/parts/head.html
+
+</head>
+
+<body>
+	<!-- Navigation Bar -->
+
+	%include templates/parts/navBarEs.html
+
+	<!-- Main Content -->
+	<div class="container">
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Referencia de Leer Archivos
+			</h1>
+			<p>
+				Written by Nathan Dalal
+			</p>
+		</div>
+		<hr />
+
+
+		<h3>Como Leer Archivos</h3>
+		Los programas de EsGraphics y EsConsole tiene dos métodos extras para leer archivos.
+		Esos dos métodos devuelven lista de lineas y de palabras respectivamente.
+		<div class="well"><code>
+ArrayList&lt;String&gt; lineas = leerLineasDelArchivo(<i class="codeText">nombreDeArchivo</i>)<br/>
+ArrayList&lt;String&gt; palabras = leerPalabrasDelArchivo(<i class="codeText">nombreDeArchivo</i>)<br/>
+</code></div>
+
+		Esto es un ejemplo de imprimir las lineas en un archivo.
+		<div class="well"><code><pre>
+public void imprimirArchivo() {
+	ArrayList<String> lineas = leerLineasDelArchivo("res/nombres.txt");
+	for (int i = 0; i < lineas.size(); i++) {
+		imprimir(lineas.get(i));
+	}
+}</pre></code></div>
+
+
+		%include templates/parts/footer.html
+
+		</p>
+	</div>
+</body>

@@ -28,7 +28,7 @@
 <div class="row">
 <div class="col-md-12">
 <p>
-					On mouseclick fire a rocket! There is no limit to the number of rockets you can fire.	
+					En el clic del mouse disparar un cohete! No hay límite para la cantidad de cohetes que puedes disparar.
 				</p>
 <p>
 <center>
@@ -44,17 +44,17 @@
 	
 	// constantes
 	public static final int ALTURA_DE_APLICACION = 600;
-	private static final double TAMAÑO_DE_LA_BOLA = 10;
+	private static final double TAMANO_DE_LA_BOLA = 10;
 	private static final int PADLE_Y = ALTURA_DE_APLICACION - 50;
 	private static final int PODER_ANCHO = 100;
 	private static final int ALTURA_DE_PADDLE = 20;
 	
 	// la lista de cohetes
-	private ListaDeArreglo<goval> listaDeCohetes;
+	private ArrayList&lt;SOvalo> listaDeCohetes;
 	private GRect paleta;
 	
 	public void run() {
-		listaDeCohetes = new ListaDeArreglo<goval>();
+		listaDeCohetes = new ListaDeArreglo<SOvalo>();
 		paleta = new GRect(0, PADLE_Y, PODER_ANCHO, ALTURA_DE_PADDLE);
 		paleta.conjuntoLleno(true);
 		añadir(paleta);

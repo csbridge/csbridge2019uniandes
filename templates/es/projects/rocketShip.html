@@ -28,7 +28,7 @@
 <div class="row">
 <div class="col-md-12">
 <p>
-					On mouseclick fire a rocket! There is no limit to the number of rockets you can fire.	
+					En el clic del mouse disparar un cohete! No hay límite para la cantidad de cohetes que puedes disparar.
 				</p>
 <p>
 <center>
@@ -44,59 +44,59 @@
 	
 	// constantes
 	public static final int ALTURA_DE_APLICACION = 600;
-	private static final double TAMAÑO_DE_LA_BOLA = 10;
+	private static final double TAMANO_DE_LA_BOLA = 10;
 	private static final int PADLE_Y = ALTURA_DE_APLICACION - 50;
 	private static final int PODER_ANCHO = 100;
 	private static final int ALTURA_DE_PADDLE = 20;
 	
 	// la lista de cohetes
-	private ListaDeArreglo<goval> listaDeCohetes;
-	private GRect paleta;
+	private ArrayList&lt;SOvalo> listaDeCohetes;
+	private SRect paleta;
 	
 	public void run() {
-		listaDeCohetes = new ListaDeArreglo<goval>();
-		paleta = new GRect(0, PADLE_Y, PODER_ANCHO, ALTURA_DE_PADDLE);
-		paleta.conjuntoLleno(true);
-		añadir(paleta);
-		añadirMouseListeners();
+		listaDeCohetes = new ArrayList<SOvalo>();
+		paleta = new SRect(0, PADLE_Y, PODER_ANCHO, ALTURA_DE_PADDLE);
+		paleta.cambiarRelleno(true);
+		agregar(paleta);
+		agregarMouseListeners();
 		while(true) {
 			cohetesAnimados();
 			pausa(10);
 		}
 	}
 	
-	public void ratónMovido(EventoDelRatón e){
-		double x = e.obtenerX() - PODER_ANCHO/2;
-		paleta.escogerLocalización(x, PADLE_Y);
+	public void mouseMovido(MouseEvento e){
+		double x = e.darX() - PODER_ANCHO/2;
+		paleta.cambiarUbicacion(x, PADLE_Y);
 	}
 	
-	public void ratónPresionado(EventoDelRatón e) {
-		double x = e.obtenerX();
+	public void mousePulsado(MouseEvento e) {
+		double x = e.darX();
 		double y = PADLE_Y;
-		GOval r = new GOval(x, y, TAMAÑO_DE_LA_BOLA, TAMAÑO_DE_LA_BOLA);
-		r.conjuntoLleno(true);
-		r.establecerColor(Color.AZUL);
+		SOvalo r = new SOvalo(x, y, TAMAÑO_DE_LA_BOLA, TAMAÑO_DE_LA_BOLA);
+		r.cambiarRelleno(true);
+		r.cambiarColor(Color.BLUE);
 		
 		// agrega el cohete a la pantalla
-		añadir(r);
+		agregar(r);
 		
 		// agrega el cohete a la lista
-		listaDeCohetes.añadir(r);
+		listaDeCohetes.add(r);
 	}
 
 	private void cohetesAnimados() {
 		// bucle sobre la lista hacia atrás para que podamos eliminar de forma segura
 		// de la lista.
-		for(int i = listaDeCohetes.tamaño() - 1; i &gt;= 0; i--) {
-			GOval oval = listaDeCohetes.obtener(i);
+		for(int i = listaDeCohetes.size() - 1; i &gt;= 0; i--) {
+			SOvalo oval = listaDeCohetes.get(i);
 			
 			// mover el cohete
 			oval.moverse(0, -5);
 			
 			// removerse el cohete?
-			if(oval.obtenerY() &lt; 0) {
-				retirar(listaDeCohetes.obtener(i));
-				listaDeCohetes.retirar(i);
+			if(oval.getY() &lt; 0) {
+				quitar(listaDeCohetes.get(i));
+				listaDeCohetes.remove(i);
 			}
 		}
 	}

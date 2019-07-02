@@ -1,13 +1,39 @@
 <head>
 
-	%include templates/parts/head.html
-</head><body><!-- Navigation Bar -->
-	%include templates/parts/navBarEs.html
-<!-- Main Content --><div class="container"><!-- Header --><div id="pageHeader"><h1> Nieve </h1><p> Escrito por Chris Piech </p><p> Folletos: <a href="{{pathToRoot}}es/handouts/arrayLists.html">ArrayLists</a><br/> Ejemplos: <a href="{{pathToRoot}}es/projects/rocketShip.html">cohetes</a></p></div><hr/><div class="row"><div class="col-md-12"><p> Anime los valles (nieve) que caen del cielo y se acumulan en el suelo. </p><p><center><img src="{{pathToRoot}}img/projects/snow/snow.png" style="width:100%"/></center></p><p> Utilice un bucle de animación. Cada vez a través del bucle: <ol><li> Animar todos los copos de nieve no en el suelo </li><li> Genere un nuevo copo de nieve en la parte superior de la pantalla con un 10% de probabilidad </li><li> Pausa durante 10 milisegundos </li></ol></p></div></div></div></body>
+    %include templates/parts/head.html
+</head>
 
-		
+<body>
+    <!-- Navigation Bar -->
+    %include templates/parts/navBarEs.html
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Header -->
+        <div id="pageHeader">
+            <h1> Nieve </h1>
+            <p> Escrito por Chris Piech </p>
+            <p> Folletos: <a href="{{pathToRoot}}es/handouts/arrayLists.html">ArrayLists</a>
+                <br/> Ejemplos: <a href="{{pathToRoot}}es/projects/rocketShip.html">cohetes</a></p>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-12">
+                <p> Anime los valles (nieve) que caen del cielo y se acumulan en el suelo. </p>
+                <p>
+                    <center><img src="{{pathToRoot}}img/projects/snow/snow.png" style="width:100%" /></center>
+                </p>
+                <p> Utilice un bucle de animación. Cada vez a través del bucle:
+                    <ol>
+                        <li> Animar todos los copos de nieve no en el suelo </li>
+                        <li> Genere un nuevo copo de nieve en la parte superior de la pantalla con un 10% de probabilidad </li>
+                        <li> Pausa durante 10 milisegundos </li>
+                    </ol>
+                </p>
+            </div>
+        </div>
 
-		
+%include templates/parts/footer.html
 
-		
-		%include templates/parts/footer.html
+
+    </div>
+</body>

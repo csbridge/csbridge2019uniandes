@@ -7,7 +7,7 @@ import java.awt.Color;
 import java.awt.event.*;
 import java.util.ArrayList;
 
-public class PelotasQueRebota extends EsGraphics {
+public class PelotasQueRebotan extends EsGraphics {
 	private static final double TAMANO_PELOTA = 20;
 	private static final double N_PELOTAS = 20;
 	
@@ -20,12 +20,12 @@ public class PelotasQueRebota extends EsGraphics {
 	public void run() {
 		crearPelotas();
 		while(true) {
-			animaPelotas();
+			animarPelotas();
 			pausa(10);
 		}
 	}
 
-	private void animaPelotas() {
+	private void animarPelotas() {
 		// anima cada pelota
 		for(int i = 0; i < N_PELOTAS; i++) {
 			SOvalo pelota = pelotas.get(i);

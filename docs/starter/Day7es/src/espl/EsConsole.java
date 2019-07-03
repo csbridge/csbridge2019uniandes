@@ -1,5 +1,9 @@
 package espl;
 import java.awt.Color;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 import acm.program.ConsoleProgram;
 import acm.util.RandomGenerator;
@@ -27,6 +31,21 @@ import acm.util.RandomGenerator;
 public abstract class EsConsole extends ConsoleProgram{
 
 	private RandomGenerator rg = new RandomGenerator();
+	
+	public ArrayList<String> leerArchivo(String name) {
+		try {
+			Scanner input = new Scanner(new File(name));
+			ArrayList<String> labelsList = new ArrayList<String>();
+			while (input.hasNextLine()) {
+				String line = input.nextLine();
+				labelsList.add(line);
+			}
+			input.close();
+			return labelsList;
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
 	
 	public void imprimir(String s) {
 		println(s);

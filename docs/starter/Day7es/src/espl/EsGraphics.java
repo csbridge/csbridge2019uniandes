@@ -3,6 +3,10 @@ package espl;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 import acm.graphics.*;
 import acm.program.*;
@@ -12,6 +16,21 @@ public abstract class EsGraphics extends GraphicsProgram{
 
 	private RandomGenerator rg = new RandomGenerator();
 
+	public ArrayList<String> leerArchivo(String name) {
+		try {
+			Scanner input = new Scanner(new File(name));
+			ArrayList<String> labelsList = new ArrayList<String>();
+			while (input.hasNextLine()) {
+				String line = input.nextLine();
+				labelsList.add(line);
+			}
+			input.close();
+			return labelsList;
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
 	/* EsGraphics metodos. */
 	public void agregar(SObjeto obj) {
 		add((GObject)obj);
